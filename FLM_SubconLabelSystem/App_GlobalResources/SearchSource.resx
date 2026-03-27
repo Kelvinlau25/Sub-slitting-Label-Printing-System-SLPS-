@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MM_COMM_FIELD" xml:space="preserve">
+    <value>[{"Text":"Code","Value":"CODE"},{"Text":"Description","Value":"CODE_DESC"}]</value>
+  </data>
+  <data name="MM_COMPANY" xml:space="preserve">
+    <value>[{"Text":"Company Code", "Value":"COMPANYCODE"},{"Text":"Company Name", "Value":"COMPANYNAME"},{"Text":"Address", "Value":"ADDRESS"},{"Text":"Email Address", "Value":"EMAIL"}]</value>
+  </data>
+  <data name="MM_Email_Group" xml:space="preserve">
+    <value>[ {"Text":"Section", "Value":"SEC_DESC"},
+{"Text":"Email Group Name", "Value":"EMAIL_GROUP_NAME"},
+{"Text":"Email Group Description", "Value":"EMAIL_GROUP_DESC"}]</value>
+  </data>
+  <data name="MM_Email_List" xml:space="preserve">
+    <value>[{"Text":"Email Group Description", "Value":"EMAIL_GROUP_DESC"}
+]</value>
+  </data>
+  <data name="MM_Equipment" xml:space="preserve">
+    <value>[{"Text":"Carrier Code", "Value":"EQUIPMENT_CODE"}, {"Text":"Carrier Name", "Value":"EQUIPMENT_NAME"}]</value>
+  </data>
+  <data name="MM_Equipment_Reg" xml:space="preserve">
+    <value>[ {"Text":"Carrier Name", "Value":"EQUIPMENT_NAME"},{"Text":"RFID Type", "Value":"RFID_TYPE"}, {"Text":"Batch ID", "Value":"BATCH_ID"}, {"Text":"RFID ID", "Value":"ID_RFID"}, {"Text":"RFID ID 2", "Value":"ID_RFID_2"}]</value>
+  </data>
+  <data name="MM_Mac_Cond" xml:space="preserve">
+    <value>[{"Text":"Setup","Value":"setup"},
+{"Text":"Section","Value":"Section"},
+{"Text":"Process","Value":"Process"}]</value>
+  </data>
+  <data name="MM_PC1" xml:space="preserve">
+    <value>[{"Text":"PC1", "Value":"PC1"},{"Text":"Description", "Value":"DESCRIPTION"}]</value>
+  </data>
+  <data name="MM_PC2" xml:space="preserve">
+    <value>[{"Text":"PC2", "Value":"PC2"},{"Text":"Thickness", "Value":"THICKNESS"},{"Text":"Type", "Value":"TYPE"},{"Text":"Width", "Value":"WIDTH"},{"Text":"Length", "Value":"LENGTH"},{"Text":"Packing Code", "Value":"PACK_CODE"},{"Text":"Grade", "Value":"GRADE"},{"Text":"Unit Weight", "Value":"UNIT_WEIGHT"}]</value>
+  </data>
+  <data name="MM_PC2_MOTHER" xml:space="preserve">
+    <value>[{"Text":"PC2", "Value":"PC2M"},{"Text":"Thickness", "Value":"THICKNESS"},{"Text":"Type", "Value":"TYPE"},{"Text":"Width", "Value":"WIDTH"},{"Text":"Length", "Value":"LENGTH"},{"Text":"Packing Code", "Value":"PACK_CODE"},{"Text":"Machine", "Value":"MACHINE"}, {"Text":"Unit Weight", "Value":"UNIT_WEIGHT"}]</value>
+  </data>
+  <data name="MM_PRODLINE" xml:space="preserve">
+    <value>[{"Text":"Product Line","Value":"PRODLINE_NO"}, {"Text":"Description", "Value":"DESCRIPTION"}]</value>
+  </data>
+  <data name="MM_RFID_LOC_AREA" xml:space="preserve">
+    <value>[{"Text":"RFID Location Area", "Value":"RFID_LOC_AREA"}]</value>
+  </data>
+  <data name="MM_RFID_LOC_READER_REG" xml:space="preserve">
+    <value>[{"Text":"Plant", "Value":"PLANT"},{"Text":"Section", "Value":"SEC_DESC"},{"Text":"RFID CEL Reader Name", "Value":"RFID_CEL_READER_NAME"},{"Text":"Location Name", "Value":"LOCATION_NAME"},{"Text":"RFID Location Area", "Value":"RFID_LOC_AREA"},{"Text":"IP Address", "Value":"IP_ADDRESS"},{"Text":"Configuration Path", "Value":"APPL_PATH_URL"}]</value>
+  </data>
+  <data name="MM_RFID_Type" xml:space="preserve">
+    <value>[{"Text":"RFID Type", "Value":"RFID_TYPE"}]</value>
+  </data>
+  <data name="MM_ST_CONTROL" xml:space="preserve">
+    <value>[{"Text":"Chop  No","Value":"CHOP_NO"}]</value>
+  </data>
+  <data name="MM_USER" xml:space="preserve">
+    <value>[{"Text":"UserID", "Value":"USERID"},{"Text":"Name", "Value":"NAME"},{"Text":"Level", "Value":"ULEVEL"},{"Text":"Email Address", "Value":"EMAIL"},{"Text":"Company Name", "Value":"COMPANYNAME"}]</value>
+  </data>
+  <data name="PC2_LOTNO" xml:space="preserve">
+    <value>[{"Text":"Ref No", "Value":"REFNO"},{"Text":"Lot No", "Value":"LOTNO"},{"Text":"Planning Year Month", "Value":"PLAN_YEAR_MONTH"},{"Text":"Production Line", "Value":"PRODLINE_NO"},{"Text":"PC2", "Value":"PC2_MOTHER"},{"Text":"Company Code", "Value":"COMPANYCODE"}]</value>
+  </data>
+  <data name="PP_ChopNo" xml:space="preserve">
+    <value>[{"Text":"Chop No","Value":"CHOP_NO"}]</value>
+  </data>
+  <data name="PP_Order_Detail" xml:space="preserve">
+    <value>[{"Text":"Production Order No","Value":"PROD_ORDER_NO"},
+{"Text":"PO Serial No","Value":"PO_SERIAL_NO"},
+{"Text":"Chop No","Value":"CHOP_NO"},
+{"Text":"Finish Code","Value":"FINCODE"}]</value>
+  </data>
+  <data name="PP_PC2" xml:space="preserve">
+    <value>[{"Text":"PC 2 Mother","Value":"PC2"}]</value>
+  </data>
+  <data name="PP_PC2SUB" xml:space="preserve">
+    <value>[{"Text":"Product Code 2","Value":"PC2"}]</value>
+  </data>
+  <data name="PP_PC2_Cust" xml:space="preserve">
+    <value>[{"Text":"PC 2 Customer","Value":"PC2"}]</value>
+  </data>
+  <data name="PP_PO" xml:space="preserve">
+    <value>[{"Text":"PO  No","Value":"PROD_ORDER_NO"}]</value>
+  </data>
+  <data name="PRINT_ALIGN_INIT" xml:space="preserve">
+    <value>[{"Text":"Printer Name","Value":"Printer_Name"}]</value>
+  </data>
+  <data name="PV_SUBSLIT_REQUEST_LIST" xml:space="preserve">
+    <value>[{"Text":"Reference No", "Value":"REFNO"},{"Text":"Company Code", "Value":"COMPANYTO"},{"Text":"Request Date", "Value":"DATEREQ"},{"Text":"Request Status", "Value":"REQUEST_STATUS"},{"Text":"Vendor Status", "Value":"VENDOR_STATUS"},{"Text":"Revision", "Value":"REVISIONCOUNT"},{"Text":"Updated Date", "Value":"UPDATED_DATE"}]</value>
+  </data>
+  <data name="VIEW_LOT_SLITTING_SERIES" xml:space="preserve">
+    <value>[{"Text":"Ref No", "Value":"REFNO"},{"Text":"PC2 Mother", "Value":"PC2_MOTHER"},{"Text":"Lot No", "Value":"LOTNO"},{"Text":"Planning Year Month", "Value":"PLAN_YEAR_MONTH"},{"Text":"Production Line", "Value":"PRODLINE_NO"},{"Text":"Slit Lot No", "Value":"SLIT_LOT_NO"},{"Text":"Print Status", "Value":"STATUS"},{"Text":"Company Code", "Value":"COMPANYCODE"}]</value>
+  </data>
+</root>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Library.Database.IPCMS
+</name>
+</assembly>
+<members>
+<member name="M:Library.Database.IPCMS.BLL.LogService.GetLogList(System.String,System.String,System.Int32,System.String)">
+	<summary>
+ Retrieve the log (Common Function)
+ Based on the Setup Key, the View's Name will be retrieved from the resource page
+ Select the data based on the key, and the page no. was applied
+ </summary>
+</member><member name="M:Library.Database.IPCMS.DAL.Log.getLogList(System.String,System.String,System.Int32,System.Int32,System.String)">
+	<summary>
+ Retrieve List according selection
+ </summary>
+</member><member name="T:Library.Database.IPCMS.DAL.M1S">
+	<summary>
+ Data Access Layer
+ ------------------------------------------------
+ 15 March 2012  C.C.Yeon Initial Version
+ </summary>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

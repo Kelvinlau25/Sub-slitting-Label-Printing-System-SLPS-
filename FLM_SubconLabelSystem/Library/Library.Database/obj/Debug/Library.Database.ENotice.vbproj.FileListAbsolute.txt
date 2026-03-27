@@ -1,0 +1,30 @@
+C:\Users\lee_chun_yong\Desktop\CG\ENotice\Library\Library.Database.ENotice\bin\Debug\Library.Oraclecls.dll
+C:\Users\lee_chun_yong\Desktop\CG\ENotice\Library\Library.Database.ENotice\bin\Debug\Library.Root.dll
+C:\Users\lee_chun_yong\Desktop\CG\ENotice\Library\Library.Database.ENotice\bin\Debug\Library.Root.pdb
+C:\Users\lee_chun_yong\Desktop\CG\ENotice\Library\Library.Database.ENotice\bin\Debug\Library.Root.xml
+C:\Users\lee_chun_yong\Desktop\CG\ENotice\Library\Library.Database.ENotice\bin\Debug\Library.Oraclecls.pdb
+C:\Users\lee_chun_yong\Desktop\CG\ENotice\Library\Library.Database.ENotice\bin\Debug\Library.Oraclecls.xml
+C:\Users\lee_chun_yong\Desktop\CG\ENotice\Library\Library.Database.ENotice\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\lee_chun_yong\Desktop\CG\ENotice\Library\Library.Database.ENotice\obj\Debug\Library.Database.ENotice.vbproj.GenerateResource.Cache
+C:\Users\lee_chun_yong\Desktop\CG\ENotice\Library\Library.Database.ENotice\bin\Debug\Library.Database.ENotice.dll
+C:\Users\lee_chun_yong\Desktop\CG\ENotice\Library\Library.Database.ENotice\bin\Debug\Library.Database.ENotice.pdb
+C:\Users\lee_chun_yong\Desktop\CG\ENotice\Library\Library.Database.ENotice\bin\Debug\Library.Database.ENotice.xml
+C:\Users\lee_chun_yong\Desktop\CG\ENotice\Library\Library.Database.ENotice\obj\Debug\Library.Database.ENotice.Resources.resources
+C:\Users\lee_chun_yong\Desktop\CG\ENotice\Library\Library.Database.ENotice\obj\Debug\Library.Database.ENotice.dll
+C:\Users\lee_chun_yong\Desktop\CG\ENotice\Library\Library.Database.ENotice\obj\Debug\Library.Database.ENotice.xml
+C:\Users\lee_chun_yong\Desktop\CG\ENotice\Library\Library.Database.ENotice\obj\Debug\Library.Database.ENotice.pdb
+C:\Users\lee_chun_yong\Desktop\CG\ENotice Library\Library\Library.Database.ENotice\bin\Debug\Library.Database.ENotice.dll
+C:\Users\lee_chun_yong\Desktop\CG\ENotice Library\Library\Library.Database.ENotice\bin\Debug\Library.Database.ENotice.pdb
+C:\Users\lee_chun_yong\Desktop\CG\ENotice Library\Library\Library.Database.ENotice\bin\Debug\Library.Database.ENotice.xml
+C:\Users\lee_chun_yong\Desktop\CG\ENotice Library\Library\Library.Database.ENotice\bin\Debug\Library.Oraclecls.dll
+C:\Users\lee_chun_yong\Desktop\CG\ENotice Library\Library\Library.Database.ENotice\bin\Debug\Library.Root.dll
+C:\Users\lee_chun_yong\Desktop\CG\ENotice Library\Library\Library.Database.ENotice\bin\Debug\Library.Root.pdb
+C:\Users\lee_chun_yong\Desktop\CG\ENotice Library\Library\Library.Database.ENotice\bin\Debug\Library.Root.xml
+C:\Users\lee_chun_yong\Desktop\CG\ENotice Library\Library\Library.Database.ENotice\bin\Debug\Library.Oraclecls.pdb
+C:\Users\lee_chun_yong\Desktop\CG\ENotice Library\Library\Library.Database.ENotice\bin\Debug\Library.Oraclecls.xml
+C:\Users\lee_chun_yong\Desktop\CG\ENotice Library\Library\Library.Database.ENotice\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\lee_chun_yong\Desktop\CG\ENotice Library\Library\Library.Database.ENotice\obj\Debug\Library.Database.ENotice.Resources.resources
+C:\Users\lee_chun_yong\Desktop\CG\ENotice Library\Library\Library.Database.ENotice\obj\Debug\Library.Database.ENotice.vbproj.GenerateResource.Cache
+C:\Users\lee_chun_yong\Desktop\CG\ENotice Library\Library\Library.Database.ENotice\obj\Debug\Library.Database.ENotice.dll
+C:\Users\lee_chun_yong\Desktop\CG\ENotice Library\Library\Library.Database.ENotice\obj\Debug\Library.Database.ENotice.xml
+C:\Users\lee_chun_yong\Desktop\CG\ENotice Library\Library\Library.Database.ENotice\obj\Debug\Library.Database.ENotice.pdb

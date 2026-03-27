@@ -1,0 +1,159 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+CaptchaImage
+</name>
+</assembly>
+<members>
+<member name="P:PC.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:PC.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:PC.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="P:PC.PC.CaptchaImage.FailureMessage">
+	<summary>
+ Property to hold the failure message to be displayed to the user
+ </summary>
+	<value>A string the developer choses to use</value>
+	<returns>The string message (or a NullReferenceException if it isnt provided)</returns>
+	<remarks></remarks>
+</member><member name="P:PC.PC.CaptchaImage.Text">
+	<summary>
+ Readonly property to hold the text of the CAPTCHA image
+ </summary>
+	<value></value>
+	<returns>String value</returns>
+	<remarks></remarks>
+</member><member name="P:PC.PC.CaptchaImage.Image">
+	<summary>
+ Readonly property to hold the image
+ </summary>
+	<value></value>
+	<returns>A bitmap image</returns>
+	<remarks></remarks>
+</member><member name="P:PC.PC.CaptchaImage.Width">
+	<summary>
+ Readonly property to hold the width of the image
+ </summary>
+	<value></value>
+	<returns>Int value</returns>
+	<remarks></remarks>
+</member><member name="P:PC.PC.CaptchaImage.Height">
+	<summary>
+ Readonly property to hold the height of the image
+ </summary>
+	<value></value>
+	<returns>Int value</returns>
+	<remarks></remarks>
+</member><member name="P:PC.PC.CaptchaImage.MainColor">
+	<summary>
+ Readonly property to hold the main color of the image
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:PC.PC.CaptchaImage.SecondaryColor">
+	<summary>
+ Readonly property to hold the secondaty color of the image
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:PC.PC.CaptchaImage.HatchType">
+	<summary>
+ Readonly property to hold the style of HatchBrush used
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:PC.PC.CaptchaImage.#ctor(System.String)">
+	<summary>
+ First New Constructor
+ </summary>
+	<param name="s">String to be displayed on the image</param>
+	<remarks></remarks>
+</member><member name="M:PC.PC.CaptchaImage.#ctor(System.String,System.Int32,System.Int32)">
+	<summary>
+ Second New Constructor
+ </summary>
+	<param name="s">String to be displayed on the image</param>
+	<param name="width">Width of the image</param>
+	<param name="height">Height of the image</param>
+	<remarks></remarks>
+</member><member name="M:PC.PC.CaptchaImage.#ctor(System.String,System.Int32,System.Int32,System.String)">
+	<summary>
+ Third New Constructor
+ </summary>
+	<param name="s">String to be displayed on the image</param>
+	<param name="width">Width of the image</param>
+	<param name="height">Height of the image</param>
+	<param name="fontName">Name of the font to be used</param>
+	<remarks></remarks>
+</member><member name="M:PC.PC.CaptchaImage.#ctor(System.String,System.Int32,System.Int32,System.String,PC.PC.CaptchaImage.HatchStyles,System.Drawing.Color,System.Drawing.Color)">
+	<summary>
+ Fourth New Constructor
+ </summary>
+	<param name="s">String to be displayed on the image</param>
+	<param name="width">Width of the image</param>
+	<param name="height">Height of the image</param>
+	<param name="fontName">Name of the font to be used</param>
+	<param name="hatch">HatchBrush to use</param>
+	<param name="maincolor">Main color of the image</param>
+	<param name="secondarycolor">Secondary color of the image</param>
+	<remarks></remarks>
+</member><member name="M:PC.PC.CaptchaImage.Finalize">
+	<summary>
+ Finalize method
+ </summary>
+	<remarks></remarks>
+</member><member name="M:PC.PC.CaptchaImage.Dispose">
+	<summary>
+ Dispose method
+ </summary>
+	<remarks></remarks>
+</member><member name="M:PC.PC.CaptchaImage.Dispose(System.Boolean)">
+	<summary>
+ Overridable Dispose method (uses the boolean disposing variable)
+ </summary>
+	<param name="disposing"></param>
+	<remarks></remarks>
+</member><member name="M:PC.PC.CaptchaImage.SetPicSize(System.Int32,System.Int32)">
+	<summary>
+ Method for setting the size of the image
+ </summary>
+	<param name="width">Desired width of the image</param>
+	<param name="height">Desired height of the image</param>
+	<remarks></remarks>
+</member><member name="M:PC.PC.CaptchaImage.SetFont(System.String)">
+	<summary>
+ Procedure to set the font to be used on the CAPTCHA image
+ </summary>
+	<param name="fontName">Name of the font (Verdana, Arial, Tahoma, etc)</param>
+	<remarks></remarks>
+</member><member name="M:PC.PC.CaptchaImage.BuildCAPTCHA">
+	<summary>
+ Method for generating the CAPTCHA image
+ </summary>
+	<remarks></remarks>
+</member><member name="M:PC.PC.CaptchaImage.GenerateRandomString(System.Int32)">
+	<summary>
+ Function to generate the random string to be displayed on the image
+ </summary>
+	<param name="size">Length of the random string</param>
+	<returns>A 5 character random string</returns>
+	<remarks>
+ To keep track of do this:
+ Session("CaptchaText") = GenerateRandomString
+</remarks>
+</member>
+</members>
+</doc>

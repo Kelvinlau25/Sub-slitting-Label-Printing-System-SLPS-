@@ -1,0 +1,10 @@
+<publishData>
+  <publishTarget publishUrl="D:\Deploy\">
+    <file relUrl="DownloadCSV.aspx" publishTime="10/02/2017 18:30:30" />
+    <file relUrl="Default.aspx" publishTime="09/28/2017 16:26:26" />
+    <file relUrl="bin/PFRLabelIssuing.pdb" publishTime="10/04/2017 11:25:21" />
+    <file relUrl="bin/PFRLabelIssuing.xml" publishTime="10/04/2017 11:25:21" />
+    <file relUrl="bin/PFRLabelIssuing.dll" publishTime="10/04/2017 11:25:21" />
+    <file relUrl="Web.config" publishTime="09/28/2017 16:11:00" />
+  </publishTarget>
+</publishData>

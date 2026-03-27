@@ -1,0 +1,352 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Library.Database.DMS_KPI
+</name>
+</assembly>
+<members>
+<member name="T:Library.Database.DMS_KPI.BLL.Baume">
+	<summary>
+ Business Logic Layer
+ ---------------------------------
+ 18 Feb 2012   Yeon    Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.BLL.QC_Trans">
+	<summary>
+ Business Logic Layer
+ ---------------------------------
+ 18 Feb 2012   Yeon    Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.DAL.CCCMeter">
+	<summary>
+ CapexCapital Data Access Layer
+ ------------------------------------------------
+ 15 March 2012  C.C.Yeon Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.DAL.Record">
+	<summary>
+ CapexCapital Data Access Layer
+ ------------------------------------------------
+ 15 March 2012  C.C.Yeon Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Library.Database.DMS_KPI.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Library.Database.DMS_KPI.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Library.Database.DMS_KPI.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:Library.Database.DMS_KPI.BLL.Inq">
+	<summary>
+ Business Logic Layer
+ ---------------------------------
+ 18 Feb 2012   Yeon    Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.BLL.QC_Condition">
+	<summary>
+ Business Logic Layer
+ ---------------------------------
+ 18 Feb 2012   Yeon    Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.DAL.QC_Trans">
+	<summary>
+ CapexCapital Data Access Layer
+ ------------------------------------------------
+ 15 March 2012  C.C.Yeon Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.BLL.ChemicalPrepareLst">
+	<summary>
+ Business Logic Layer
+ ---------------------------------
+ 18 Feb 2012   Yeon    Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.DAL.ChemicalPumpOpChk">
+	<summary>
+ CapexCapital Data Access Layer
+ ------------------------------------------------
+ 15 March 2012  C.C.Yeon Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.DAL.MM_Module">
+	<summary>
+ CapexCapital Data Access Layer
+ ------------------------------------------------
+ 15 March 2012  C.C.Yeon Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.DAL.SOP">
+	<summary>
+ CapexCapital Data Access Layer
+ ------------------------------------------------
+ 15 March 2012  C.C.Yeon Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.BLL.MachineDiagram">
+	<summary>
+ Business Logic Layer
+ ---------------------------------
+ 18 Feb 2012   Yeon    Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.DAL.EmailEsca">
+	<summary>
+ CapexCapital Data Access Layer
+ ------------------------------------------------
+ 15 March 2012  C.C.Yeon Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Library.Database.DMS_KPI.DAL.Log.getLogList(System.String,System.String,System.Int32,System.Int32,System.String)">
+	<summary>
+ Retrieve List according selection
+ </summary>
+</member><member name="T:Library.Database.DMS_KPI.DAL.Log">
+	<summary>
+ Log Data Access Layer
+ ------------------------------------------------
+ 15 March 2012  C.C.Yeon Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.DAL.ChemicalConChk">
+	<summary>
+ CapexCapital Data Access Layer
+ ------------------------------------------------
+ 15 March 2012  C.C.Yeon Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.DAL.Group">
+	<summary>
+ CapexCapital Data Access Layer
+ ------------------------------------------------
+ 15 March 2012  C.C.Yeon Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.DAL.EmailDetail">
+	<summary>
+ CapexCapital Data Access Layer
+ ------------------------------------------------
+ 15 March 2012  C.C.Yeon Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.BLL.EmailDetail">
+	<summary>
+ Business Logic Layer
+ ---------------------------------
+ 18 Feb 2012   Yeon    Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.BLL.Group">
+	<summary>
+ Business Logic Layer
+ ---------------------------------
+ 18 Feb 2012   Yeon    Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.BLL.pH">
+	<summary>
+ Business Logic Layer
+ ---------------------------------
+ 18 Feb 2012   Yeon    Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.BLL.Trouble">
+	<summary>
+ Business Logic Layer
+ ---------------------------------
+ 18 Feb 2012   Yeon    Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.DAL.Trouble">
+	<summary>
+ CapexCapital Data Access Layer
+ ------------------------------------------------
+ 15 March 2012  C.C.Yeon Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.BLL.ChemicalPumpOpChk">
+	<summary>
+ Business Logic Layer
+ ---------------------------------
+ 18 Feb 2012   Yeon    Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.BLL.SOP">
+	<summary>
+ Business Logic Layer
+ ---------------------------------
+ 18 Feb 2012   Yeon    Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.BLL.ChemicalConChk">
+	<summary>
+ Business Logic Layer
+ ---------------------------------
+ 18 Feb 2012   Yeon    Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Library.Database.DMS_KPI.BLL.Log.GetLogList(System.String,System.String,System.Int32,System.String)">
+	<summary>
+ Retrieve the log (Common Function)
+ Based on the Setup Key, the View's Name will be retrieved from the resource page
+ Select the data based on the key, and the page no. was applied
+ </summary>
+</member><member name="T:Library.Database.DMS_KPI.BLL.Log">
+	<summary>
+ Business Logic Layer
+ ---------------------------------
+ 18 Feb 2012   Yeon    Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.BLL.MachineProcCond">
+	<summary>
+ Business Logic Layer
+ ---------------------------------
+ 18 Feb 2012   Yeon    Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.DAL.Inq">
+	<summary>
+ CapexCapital Data Access Layer
+ ------------------------------------------------
+ 15 March 2012  C.C.Yeon Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Library.Database.DMS_KPI.BLL.CMS.ARTICLE_BL.CompileList_FileItem(System.String,Library.Database.DMS_KPI.BLL.CMS.ARTICLE_BL.FileItem[]@)">
+	<summary>
+ Compile Article Files Lists
+ </summary>
+	<param name="RawContent"></param>
+	<param name="fi"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Library.Database.DMS_KPI.BLL.CMS.ARTICLE_BL.CompileList_VideoItem(System.String,Library.Database.DMS_KPI.BLL.CMS.ARTICLE_BL.FileItem[]@)">
+	<summary>
+ Compile Article Videos Lists
+ </summary>
+	<param name="RawContent"></param>
+	<param name="fi"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Library.Database.DMS_KPI.BLL.CMS.ARTICLE_BL.BuildFileList_Database(Library.Database.DMS_KPI.BLL.CMS.ARTICLE_BL.FileItem[])">
+	<summary>
+ Build Article Files Lists into Database Varchar format
+ </summary>
+	<param name="fi"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Library.Database.DMS_KPI.BLL.CMS.ARTICLE_BL.BuildFileList_HTML(Library.Database.DMS_KPI.BLL.CMS.ARTICLE_BL.FileItem[],System.Boolean,System.Boolean)">
+	<summary>
+ Build Article Files Lists into HTML format
+ </summary>
+	<param name="fi"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Library.Database.DMS_KPI.BLL.CMS.ARTICLE_BL.BuildFileList_HTML(Library.Database.DMS_KPI.BLL.CMS.ARTICLE_BL.FileItem[],System.Boolean,System.Boolean,System.Boolean)">
+	<summary>
+ Build Article Files Lists into HTML format
+ </summary>
+	<param name="fi"></param>
+	<param name="IsReadOnly"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.DAL.pH">
+	<summary>
+ CapexCapital Data Access Layer
+ ------------------------------------------------
+ 15 March 2012  C.C.Yeon Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.BLL.Record">
+	<summary>
+ Business Logic Layer
+ ---------------------------------
+ 18 Feb 2012   Yeon    Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.DAL.Email">
+	<summary>
+ CapexCapital Data Access Layer
+ ------------------------------------------------
+ 15 March 2012  C.C.Yeon Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.DAL.MachineDiagram">
+	<summary>
+ CapexCapital Data Access Layer
+ ------------------------------------------------
+ 15 March 2012  C.C.Yeon Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.BLL.Email">
+	<summary>
+ Business Logic Layer
+ ---------------------------------
+ 18 Feb 2012   Yeon    Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.BLL.MM_Module">
+	<summary>
+ Business Logic Layer
+ ---------------------------------
+ 18 Feb 2012   Yeon    Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.DAL.ChemicalPrepareLst">
+	<summary>
+ CapexCapital Data Access Layer
+ ------------------------------------------------
+ 15 March 2012  C.C.Yeon Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.DAL.QC_Condition">
+	<summary>
+ CapexCapital Data Access Layer
+ ------------------------------------------------
+ 15 March 2012  C.C.Yeon Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.BLL.CCCMeter">
+	<summary>
+ Business Logic Layer
+ ---------------------------------
+ 18 Feb 2012   Yeon    Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.BLL.EmailEsca">
+	<summary>
+ Business Logic Layer
+ ---------------------------------
+ 18 Feb 2012   Yeon    Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.DAL.Baume">
+	<summary>
+ CapexCapital Data Access Layer
+ ------------------------------------------------
+ 15 March 2012  C.C.Yeon Initial Version
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Library.Database.DMS_KPI.DAL.MachineProcCond">
+	<summary>
+ CapexCapital Data Access Layer
+ ------------------------------------------------
+ 15 March 2012  C.C.Yeon Initial Version
+ </summary>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

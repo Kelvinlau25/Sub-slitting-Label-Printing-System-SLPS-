@@ -1,0 +1,279 @@
+C:\Users\lee_chun_yong\Desktop\CG\DMS_KPI\Library\Library.Database.ENotice\bin\Debug\Library.Database.ENotice.dll
+C:\Users\lee_chun_yong\Desktop\CG\DMS_KPI\Library\Library.Database.ENotice\bin\Debug\Library.Database.ENotice.pdb
+C:\Users\lee_chun_yong\Desktop\CG\DMS_KPI\Library\Library.Database.ENotice\bin\Debug\Library.Database.ENotice.xml
+C:\Users\lee_chun_yong\Desktop\CG\DMS_KPI\Library\Library.Database.ENotice\bin\Debug\Library.Oraclecls.dll
+C:\Users\lee_chun_yong\Desktop\CG\DMS_KPI\Library\Library.Database.ENotice\bin\Debug\Library.Root.dll
+C:\Users\lee_chun_yong\Desktop\CG\DMS_KPI\Library\Library.Database.ENotice\bin\Debug\Library.Root.pdb
+C:\Users\lee_chun_yong\Desktop\CG\DMS_KPI\Library\Library.Database.ENotice\bin\Debug\Library.Root.xml
+C:\Users\lee_chun_yong\Desktop\CG\DMS_KPI\Library\Library.Database.ENotice\bin\Debug\Library.Oraclecls.pdb
+C:\Users\lee_chun_yong\Desktop\CG\DMS_KPI\Library\Library.Database.ENotice\bin\Debug\Library.Oraclecls.xml
+C:\Users\lee_chun_yong\Desktop\CG\DMS_KPI\Library\Library.Database.ENotice\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\lee_chun_yong\Desktop\CG\DMS_KPI\Library\Library.Database.ENotice\obj\Debug\Library.Database.ENotice.Resources.resources
+C:\Users\lee_chun_yong\Desktop\CG\DMS_KPI\Library\Library.Database.ENotice\obj\Debug\Library.Database.DMS_KPI.vbproj.GenerateResource.Cache
+C:\Users\lee_chun_yong\Desktop\CG\DMS_KPI\Library\Library.Database.ENotice\obj\Debug\Library.Database.ENotice.dll
+C:\Users\lee_chun_yong\Desktop\CG\DMS_KPI\Library\Library.Database.ENotice\obj\Debug\Library.Database.ENotice.xml
+C:\Users\lee_chun_yong\Desktop\CG\DMS_KPI\Library\Library.Database.ENotice\obj\Debug\Library.Database.ENotice.pdb
+C:\Users\ng_wet_xiang\Desktop\CG\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.dll
+C:\Users\ng_wet_xiang\Desktop\CG\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\ng_wet_xiang\Desktop\CG\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.xml
+C:\Users\ng_wet_xiang\Desktop\CG\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.dll
+C:\Users\ng_wet_xiang\Desktop\CG\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.dll
+C:\Users\ng_wet_xiang\Desktop\CG\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.pdb
+C:\Users\ng_wet_xiang\Desktop\CG\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.xml
+C:\Users\ng_wet_xiang\Desktop\CG\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.pdb
+C:\Users\ng_wet_xiang\Desktop\CG\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.xml
+C:\Users\ng_wet_xiang\Desktop\CG\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ng_wet_xiang\Desktop\CG\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.Resources.resources
+C:\Users\ng_wet_xiang\Desktop\CG\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.vbproj.GenerateResource.Cache
+C:\Users\ng_wet_xiang\Desktop\CG\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.dll
+C:\Users\ng_wet_xiang\Desktop\CG\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.xml
+C:\Users\ng_wet_xiang\Desktop\CG\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\ng_wet_xiang\Desktop\miao\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.dll
+C:\Users\ng_wet_xiang\Desktop\miao\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\ng_wet_xiang\Desktop\miao\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.xml
+C:\Users\ng_wet_xiang\Desktop\miao\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.dll
+C:\Users\ng_wet_xiang\Desktop\miao\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.dll
+C:\Users\ng_wet_xiang\Desktop\miao\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.pdb
+C:\Users\ng_wet_xiang\Desktop\miao\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.xml
+C:\Users\ng_wet_xiang\Desktop\miao\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.pdb
+C:\Users\ng_wet_xiang\Desktop\miao\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.xml
+C:\Users\ng_wet_xiang\Desktop\miao\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ng_wet_xiang\Desktop\miao\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.Resources.resources
+C:\Users\ng_wet_xiang\Desktop\miao\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.vbproj.GenerateResource.Cache
+C:\Users\ng_wet_xiang\Desktop\miao\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.dll
+C:\Users\ng_wet_xiang\Desktop\miao\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.xml
+C:\Users\ng_wet_xiang\Desktop\miao\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\elven_lee\Desktop\MC\Project 05112014\CG_Source Code\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.dll
+C:\Users\elven_lee\Desktop\MC\Project 05112014\CG_Source Code\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\elven_lee\Desktop\MC\Project 05112014\CG_Source Code\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.xml
+C:\Users\elven_lee\Desktop\MC\Project 05112014\CG_Source Code\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.dll
+C:\Users\elven_lee\Desktop\MC\Project 05112014\CG_Source Code\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.dll
+C:\Users\elven_lee\Desktop\MC\Project 05112014\CG_Source Code\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.pdb
+C:\Users\elven_lee\Desktop\MC\Project 05112014\CG_Source Code\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.xml
+C:\Users\elven_lee\Desktop\MC\Project 05112014\CG_Source Code\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.pdb
+C:\Users\elven_lee\Desktop\MC\Project 05112014\CG_Source Code\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.xml
+C:\Users\elven_lee\Desktop\MC\Project 05112014\CG_Source Code\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\elven_lee\Desktop\MC\Project 05112014\CG_Source Code\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.Resources.resources
+C:\Users\elven_lee\Desktop\MC\Project 05112014\CG_Source Code\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.vbproj.GenerateResource.Cache
+C:\Users\elven_lee\Desktop\MC\Project 05112014\CG_Source Code\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.dll
+C:\Users\elven_lee\Desktop\MC\Project 05112014\CG_Source Code\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.xml
+C:\Users\elven_lee\Desktop\MC\Project 05112014\CG_Source Code\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\ng_wet_xiang\Desktop\miao miao miao\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.dll
+C:\Users\ng_wet_xiang\Desktop\miao miao miao\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\ng_wet_xiang\Desktop\miao miao miao\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.xml
+C:\Users\ng_wet_xiang\Desktop\miao miao miao\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.dll
+C:\Users\ng_wet_xiang\Desktop\miao miao miao\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.dll
+C:\Users\ng_wet_xiang\Desktop\miao miao miao\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.pdb
+C:\Users\ng_wet_xiang\Desktop\miao miao miao\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.xml
+C:\Users\ng_wet_xiang\Desktop\miao miao miao\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.pdb
+C:\Users\ng_wet_xiang\Desktop\miao miao miao\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.xml
+C:\Users\ng_wet_xiang\Desktop\miao miao miao\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ng_wet_xiang\Desktop\miao miao miao\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.Resources.resources
+C:\Users\ng_wet_xiang\Desktop\miao miao miao\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.vbproj.GenerateResource.Cache
+C:\Users\ng_wet_xiang\Desktop\miao miao miao\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.dll
+C:\Users\ng_wet_xiang\Desktop\miao miao miao\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.xml
+C:\Users\ng_wet_xiang\Desktop\miao miao miao\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\cheah_chun_leong\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.dll
+C:\Users\cheah_chun_leong\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\cheah_chun_leong\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.xml
+C:\Users\cheah_chun_leong\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.dll
+C:\Users\cheah_chun_leong\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.dll
+C:\Users\cheah_chun_leong\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.pdb
+C:\Users\cheah_chun_leong\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.xml
+C:\Users\cheah_chun_leong\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.pdb
+C:\Users\cheah_chun_leong\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.xml
+C:\Users\cheah_chun_leong\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\cheah_chun_leong\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.Resources.resources
+C:\Users\cheah_chun_leong\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.vbproj.GenerateResource.Cache
+C:\Users\cheah_chun_leong\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.dll
+C:\Users\cheah_chun_leong\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.xml
+C:\Users\cheah_chun_leong\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\ng_wet_xiang\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.dll
+C:\Users\ng_wet_xiang\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\ng_wet_xiang\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.xml
+C:\Users\ng_wet_xiang\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.dll
+C:\Users\ng_wet_xiang\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.dll
+C:\Users\ng_wet_xiang\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.pdb
+C:\Users\ng_wet_xiang\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.xml
+C:\Users\ng_wet_xiang\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.pdb
+C:\Users\ng_wet_xiang\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.xml
+C:\Users\ng_wet_xiang\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ng_wet_xiang\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.Resources.resources
+C:\Users\ng_wet_xiang\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.vbproj.GenerateResource.Cache
+C:\Users\ng_wet_xiang\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.dll
+C:\Users\ng_wet_xiang\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.xml
+C:\Users\ng_wet_xiang\Desktop\DMS_KPI\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\cheah_chun_leong\Desktop\dms20150421\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.dll
+C:\Users\cheah_chun_leong\Desktop\dms20150421\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\cheah_chun_leong\Desktop\dms20150421\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.xml
+C:\Users\cheah_chun_leong\Desktop\dms20150421\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.dll
+C:\Users\cheah_chun_leong\Desktop\dms20150421\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.dll
+C:\Users\cheah_chun_leong\Desktop\dms20150421\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.pdb
+C:\Users\cheah_chun_leong\Desktop\dms20150421\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.xml
+C:\Users\cheah_chun_leong\Desktop\dms20150421\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.pdb
+C:\Users\cheah_chun_leong\Desktop\dms20150421\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.xml
+C:\Users\cheah_chun_leong\Desktop\dms20150421\Library\Library.Database.DMS_KPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\cheah_chun_leong\Desktop\dms20150421\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.Resources.resources
+C:\Users\cheah_chun_leong\Desktop\dms20150421\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.vbproj.GenerateResource.Cache
+C:\Users\cheah_chun_leong\Desktop\dms20150421\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.dll
+C:\Users\cheah_chun_leong\Desktop\dms20150421\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.xml
+C:\Users\cheah_chun_leong\Desktop\dms20150421\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\ng_wet_xiang\Desktop\Medical Live Latest\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.dll
+C:\Users\ng_wet_xiang\Desktop\Medical Live Latest\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\ng_wet_xiang\Desktop\Medical Live Latest\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.xml
+C:\Users\ng_wet_xiang\Desktop\Medical Live Latest\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.dll
+C:\Users\ng_wet_xiang\Desktop\Medical Live Latest\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.dll
+C:\Users\ng_wet_xiang\Desktop\Medical Live Latest\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.pdb
+C:\Users\ng_wet_xiang\Desktop\Medical Live Latest\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.xml
+C:\Users\ng_wet_xiang\Desktop\Medical Live Latest\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.pdb
+C:\Users\ng_wet_xiang\Desktop\Medical Live Latest\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.xml
+C:\Users\ng_wet_xiang\Desktop\Medical Live Latest\Library\Library.Database.DMS_KPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ng_wet_xiang\Desktop\Medical Live Latest\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.Resources.resources
+C:\Users\ng_wet_xiang\Desktop\Medical Live Latest\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.vbproj.GenerateResource.Cache
+C:\Users\ng_wet_xiang\Desktop\Medical Live Latest\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.dll
+C:\Users\ng_wet_xiang\Desktop\Medical Live Latest\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.xml
+C:\Users\ng_wet_xiang\Desktop\Medical Live Latest\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\ng_wet_xiang\Desktop\Medical Live Latest\Library\Library.Database.DMS_KPI\bin\Debug\Oracle.DataAccess.dll
+C:\Users\ng_wet_xiang\Desktop\DMS LIVE 20150610\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.dll
+C:\Users\ng_wet_xiang\Desktop\DMS LIVE 20150610\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\ng_wet_xiang\Desktop\DMS LIVE 20150610\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.xml
+C:\Users\ng_wet_xiang\Desktop\DMS LIVE 20150610\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.dll
+C:\Users\ng_wet_xiang\Desktop\DMS LIVE 20150610\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.dll
+C:\Users\ng_wet_xiang\Desktop\DMS LIVE 20150610\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.pdb
+C:\Users\ng_wet_xiang\Desktop\DMS LIVE 20150610\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.xml
+C:\Users\ng_wet_xiang\Desktop\DMS LIVE 20150610\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.pdb
+C:\Users\ng_wet_xiang\Desktop\DMS LIVE 20150610\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.xml
+C:\Users\ng_wet_xiang\Desktop\DMS LIVE 20150610\Library\Library.Database.DMS_KPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ng_wet_xiang\Desktop\DMS LIVE 20150610\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.Resources.resources
+C:\Users\ng_wet_xiang\Desktop\DMS LIVE 20150610\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.vbproj.GenerateResource.Cache
+C:\Users\ng_wet_xiang\Desktop\DMS LIVE 20150610\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.dll
+C:\Users\ng_wet_xiang\Desktop\DMS LIVE 20150610\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.xml
+C:\Users\ng_wet_xiang\Desktop\DMS LIVE 20150610\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\ng_wet_xiang\Desktop\DMS LIVE 20150610\Library\Library.Database.DMS_KPI\bin\Debug\Oracle.DataAccess.dll
+C:\Users\ng_wet_xiang\Desktop\dms live 20150615\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.dll
+C:\Users\ng_wet_xiang\Desktop\dms live 20150615\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\ng_wet_xiang\Desktop\dms live 20150615\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.xml
+C:\Users\ng_wet_xiang\Desktop\dms live 20150615\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.dll
+C:\Users\ng_wet_xiang\Desktop\dms live 20150615\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.dll
+C:\Users\ng_wet_xiang\Desktop\dms live 20150615\Library\Library.Database.DMS_KPI\bin\Debug\Oracle.DataAccess.dll
+C:\Users\ng_wet_xiang\Desktop\dms live 20150615\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.pdb
+C:\Users\ng_wet_xiang\Desktop\dms live 20150615\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.xml
+C:\Users\ng_wet_xiang\Desktop\dms live 20150615\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.pdb
+C:\Users\ng_wet_xiang\Desktop\dms live 20150615\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.xml
+C:\Users\ng_wet_xiang\Desktop\dms live 20150615\Library\Library.Database.DMS_KPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ng_wet_xiang\Desktop\dms live 20150615\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.Resources.resources
+C:\Users\ng_wet_xiang\Desktop\dms live 20150615\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.vbproj.GenerateResource.Cache
+C:\Users\ng_wet_xiang\Desktop\dms live 20150615\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.dll
+C:\Users\ng_wet_xiang\Desktop\dms live 20150615\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.xml
+C:\Users\ng_wet_xiang\Desktop\dms live 20150615\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\ng_wet_xiang\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.dll
+C:\Users\ng_wet_xiang\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\ng_wet_xiang\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.xml
+C:\Users\ng_wet_xiang\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.dll
+C:\Users\ng_wet_xiang\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.dll
+C:\Users\ng_wet_xiang\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.pdb
+C:\Users\ng_wet_xiang\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.xml
+C:\Users\ng_wet_xiang\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.pdb
+C:\Users\ng_wet_xiang\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.xml
+C:\Users\ng_wet_xiang\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ng_wet_xiang\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.Resources.resources
+C:\Users\ng_wet_xiang\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.vbproj.GenerateResource.Cache
+C:\Users\ng_wet_xiang\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.dll
+C:\Users\ng_wet_xiang\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.xml
+C:\Users\ng_wet_xiang\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\cheah_chun_leong\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.dll
+C:\Users\cheah_chun_leong\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\cheah_chun_leong\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.xml
+C:\Users\cheah_chun_leong\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.dll
+C:\Users\cheah_chun_leong\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.dll
+C:\Users\cheah_chun_leong\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.pdb
+C:\Users\cheah_chun_leong\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.xml
+C:\Users\cheah_chun_leong\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.pdb
+C:\Users\cheah_chun_leong\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.xml
+C:\Users\cheah_chun_leong\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\cheah_chun_leong\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.Resources.resources
+C:\Users\cheah_chun_leong\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.vbproj.GenerateResource.Cache
+C:\Users\cheah_chun_leong\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.dll
+C:\Users\cheah_chun_leong\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.xml
+C:\Users\cheah_chun_leong\Desktop\DMS Live 20150616\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\cheah_chun_leong\Desktop\DMS 20150629\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.dll
+C:\Users\cheah_chun_leong\Desktop\DMS 20150629\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\cheah_chun_leong\Desktop\DMS 20150629\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.xml
+C:\Users\cheah_chun_leong\Desktop\DMS 20150629\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.dll
+C:\Users\cheah_chun_leong\Desktop\DMS 20150629\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.dll
+C:\Users\cheah_chun_leong\Desktop\DMS 20150629\Library\Library.Database.DMS_KPI\bin\Debug\MySql.Data.dll
+C:\Users\cheah_chun_leong\Desktop\DMS 20150629\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.pdb
+C:\Users\cheah_chun_leong\Desktop\DMS 20150629\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.xml
+C:\Users\cheah_chun_leong\Desktop\DMS 20150629\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.pdb
+C:\Users\cheah_chun_leong\Desktop\DMS 20150629\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.xml
+C:\Users\cheah_chun_leong\Desktop\DMS 20150629\Library\Library.Database.DMS_KPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\cheah_chun_leong\Desktop\DMS 20150629\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.Resources.resources
+C:\Users\cheah_chun_leong\Desktop\DMS 20150629\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.vbproj.GenerateResource.Cache
+C:\Users\cheah_chun_leong\Desktop\DMS 20150629\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.dll
+C:\Users\cheah_chun_leong\Desktop\DMS 20150629\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.xml
+C:\Users\cheah_chun_leong\Desktop\DMS 20150629\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\cheah_chun_leong\Desktop\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.dll
+C:\Users\cheah_chun_leong\Desktop\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\cheah_chun_leong\Desktop\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.xml
+C:\Users\cheah_chun_leong\Desktop\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.dll
+C:\Users\cheah_chun_leong\Desktop\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.dll
+C:\Users\cheah_chun_leong\Desktop\DMS\Library\Library.Database.DMS_KPI\bin\Debug\MySql.Data.dll
+C:\Users\cheah_chun_leong\Desktop\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.pdb
+C:\Users\cheah_chun_leong\Desktop\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.xml
+C:\Users\cheah_chun_leong\Desktop\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.pdb
+C:\Users\cheah_chun_leong\Desktop\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.xml
+C:\Users\cheah_chun_leong\Desktop\DMS\Library\Library.Database.DMS_KPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\cheah_chun_leong\Desktop\DMS\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.Resources.resources
+C:\Users\cheah_chun_leong\Desktop\DMS\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.vbproj.GenerateResource.Cache
+C:\Users\cheah_chun_leong\Desktop\DMS\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.dll
+C:\Users\cheah_chun_leong\Desktop\DMS\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.xml
+C:\Users\cheah_chun_leong\Desktop\DMS\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\ng_wet_xiang\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ng_wet_xiang\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.Resources.resources
+C:\Users\ng_wet_xiang\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.vbproj.GenerateResource.Cache
+C:\Users\ng_wet_xiang\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.dll
+C:\Users\ng_wet_xiang\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.xml
+C:\Users\ng_wet_xiang\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\ng_wet_xiang\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.dll
+C:\Users\ng_wet_xiang\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\ng_wet_xiang\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.xml
+C:\Users\ng_wet_xiang\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.dll
+C:\Users\ng_wet_xiang\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.dll
+C:\Users\ng_wet_xiang\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\bin\Debug\MySql.Data.dll
+C:\Users\ng_wet_xiang\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.pdb
+C:\Users\ng_wet_xiang\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.xml
+C:\Users\ng_wet_xiang\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.pdb
+C:\Users\ng_wet_xiang\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.xml
+C:\Users\cheah_chun_leong\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.dll
+C:\Users\cheah_chun_leong\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\cheah_chun_leong\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.xml
+C:\Users\cheah_chun_leong\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.dll
+C:\Users\cheah_chun_leong\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.dll
+C:\Users\cheah_chun_leong\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\bin\Debug\MySql.Data.dll
+C:\Users\cheah_chun_leong\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.pdb
+C:\Users\cheah_chun_leong\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.xml
+C:\Users\cheah_chun_leong\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.pdb
+C:\Users\cheah_chun_leong\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.xml
+C:\Users\cheah_chun_leong\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\cheah_chun_leong\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.Resources.resources
+C:\Users\cheah_chun_leong\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.vbproj.GenerateResource.Cache
+C:\Users\cheah_chun_leong\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.dll
+C:\Users\cheah_chun_leong\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.xml
+C:\Users\cheah_chun_leong\Desktop\DMS_CCL\DMS\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\ng_wet_xiang\Desktop\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.dll
+C:\Users\ng_wet_xiang\Desktop\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\ng_wet_xiang\Desktop\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Database.DMS_KPI.xml
+C:\Users\ng_wet_xiang\Desktop\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.dll
+C:\Users\ng_wet_xiang\Desktop\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.dll
+C:\Users\ng_wet_xiang\Desktop\DMS\Library\Library.Database.DMS_KPI\bin\Debug\MySql.Data.dll
+C:\Users\ng_wet_xiang\Desktop\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.pdb
+C:\Users\ng_wet_xiang\Desktop\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Root.xml
+C:\Users\ng_wet_xiang\Desktop\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.pdb
+C:\Users\ng_wet_xiang\Desktop\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Library.Oraclecls.xml
+C:\Users\ng_wet_xiang\Desktop\DMS\Library\Library.Database.DMS_KPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ng_wet_xiang\Desktop\DMS\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.Resources.resources
+C:\Users\ng_wet_xiang\Desktop\DMS\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.vbproj.GenerateResource.Cache
+C:\Users\ng_wet_xiang\Desktop\DMS\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.dll
+C:\Users\ng_wet_xiang\Desktop\DMS\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.xml
+C:\Users\ng_wet_xiang\Desktop\DMS\Library\Library.Database.DMS_KPI\obj\Debug\Library.Database.DMS_KPI.pdb
+C:\Users\ng_wet_xiang\Desktop\DMS\Library\Library.Database.DMS_KPI\bin\Debug\Oracle.DataAccess.dll

@@ -1,0 +1,48 @@
+C:\Users\mohamad_syafiq\Documents\GitHub\PFRLabelIssuingSystem_20200313_CWTAN\FLM_SubconLabelSystem\Library\WIP_Process\bin\Debug\WIP_Process.dll
+C:\Users\mohamad_syafiq\Documents\GitHub\PFRLabelIssuingSystem_20200313_CWTAN\FLM_SubconLabelSystem\Library\WIP_Process\bin\Debug\WIP_Process.pdb
+C:\Users\mohamad_syafiq\Documents\GitHub\PFRLabelIssuingSystem_20200313_CWTAN\FLM_SubconLabelSystem\Library\WIP_Process\bin\Debug\WIP_Process.xml
+C:\Users\mohamad_syafiq\Documents\GitHub\PFRLabelIssuingSystem_20200313_CWTAN\FLM_SubconLabelSystem\Library\WIP_Process\bin\Debug\ACL.dll
+C:\Users\mohamad_syafiq\Documents\GitHub\PFRLabelIssuingSystem_20200313_CWTAN\FLM_SubconLabelSystem\Library\WIP_Process\bin\Debug\cls_DB.dll
+C:\Users\mohamad_syafiq\Documents\GitHub\PFRLabelIssuingSystem_20200313_CWTAN\FLM_SubconLabelSystem\Library\WIP_Process\bin\Debug\Oracle.DataAccess.dll
+C:\Users\mohamad_syafiq\Documents\GitHub\PFRLabelIssuingSystem_20200313_CWTAN\FLM_SubconLabelSystem\Library\WIP_Process\bin\Debug\Symbol.RFID3.Host.dll
+C:\Users\mohamad_syafiq\Documents\GitHub\PFRLabelIssuingSystem_20200313_CWTAN\FLM_SubconLabelSystem\Library\WIP_Process\bin\Debug\cls_DB.pdb
+C:\Users\mohamad_syafiq\Documents\GitHub\PFRLabelIssuingSystem_20200313_CWTAN\FLM_SubconLabelSystem\Library\WIP_Process\bin\Debug\cls_DB.xml
+C:\Users\mohamad_syafiq\Documents\GitHub\PFRLabelIssuingSystem_20200313_CWTAN\FLM_SubconLabelSystem\Library\WIP_Process\obj\Debug\WIP_Process.vbprojAssemblyReference.cache
+C:\Users\mohamad_syafiq\Documents\GitHub\PFRLabelIssuingSystem_20200313_CWTAN\FLM_SubconLabelSystem\Library\WIP_Process\obj\Debug\Resources.resources
+C:\Users\mohamad_syafiq\Documents\GitHub\PFRLabelIssuingSystem_20200313_CWTAN\FLM_SubconLabelSystem\Library\WIP_Process\obj\Debug\WIP_Process.vbproj.GenerateResource.cache
+C:\Users\mohamad_syafiq\Documents\GitHub\PFRLabelIssuingSystem_20200313_CWTAN\FLM_SubconLabelSystem\Library\WIP_Process\obj\Debug\WIP_Process.vbproj.CoreCompileInputs.cache
+C:\Users\mohamad_syafiq\Documents\GitHub\PFRLabelIssuingSystem_20200313_CWTAN\FLM_SubconLabelSystem\Library\WIP_Process\obj\Debug\WIP_Process.vbproj.CopyComplete
+C:\Users\mohamad_syafiq\Documents\GitHub\PFRLabelIssuingSystem_20200313_CWTAN\FLM_SubconLabelSystem\Library\WIP_Process\obj\Debug\WIP_Process.dll
+C:\Users\mohamad_syafiq\Documents\GitHub\PFRLabelIssuingSystem_20200313_CWTAN\FLM_SubconLabelSystem\Library\WIP_Process\obj\Debug\WIP_Process.xml
+C:\Users\mohamad_syafiq\Documents\GitHub\PFRLabelIssuingSystem_20200313_CWTAN\FLM_SubconLabelSystem\Library\WIP_Process\obj\Debug\WIP_Process.pdb
+C:\Users\TMS-JoeTanX6\Documents\GitDev\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\bin\Debug\WIP_Process.dll
+C:\Users\TMS-JoeTanX6\Documents\GitDev\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\bin\Debug\WIP_Process.pdb
+C:\Users\TMS-JoeTanX6\Documents\GitDev\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\bin\Debug\WIP_Process.xml
+C:\Users\TMS-JoeTanX6\Documents\GitDev\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\bin\Debug\cls_DB.dll
+C:\Users\TMS-JoeTanX6\Documents\GitDev\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\bin\Debug\Oracle.DataAccess.dll
+C:\Users\TMS-JoeTanX6\Documents\GitDev\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\bin\Debug\Symbol.RFID3.Host.dll
+C:\Users\TMS-JoeTanX6\Documents\GitDev\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\bin\Debug\cls_DB.pdb
+C:\Users\TMS-JoeTanX6\Documents\GitDev\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\bin\Debug\cls_DB.xml
+C:\Users\TMS-JoeTanX6\Documents\GitDev\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\obj\Debug\WIP_Process.vbproj.AssemblyReference.cache
+C:\Users\TMS-JoeTanX6\Documents\GitDev\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\obj\Debug\Resources.resources
+C:\Users\TMS-JoeTanX6\Documents\GitDev\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\obj\Debug\WIP_Process.vbproj.GenerateResource.cache
+C:\Users\TMS-JoeTanX6\Documents\GitDev\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\obj\Debug\WIP_Process.vbproj.CoreCompileInputs.cache
+C:\Users\TMS-JoeTanX6\Documents\GitDev\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\obj\Debug\WIP_Proc.DBD4C892.Up2Date
+C:\Users\TMS-JoeTanX6\Documents\GitDev\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\obj\Debug\WIP_Process.dll
+C:\Users\TMS-JoeTanX6\Documents\GitDev\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\obj\Debug\WIP_Process.xml
+C:\Users\TMS-JoeTanX6\Documents\GitDev\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\obj\Debug\WIP_Process.pdb
+C:\Users\ong_chun_zhao\OneDrive - Max System\Documents\GitHub\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\bin\Debug\WIP_Process.dll
+C:\Users\ong_chun_zhao\OneDrive - Max System\Documents\GitHub\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\bin\Debug\WIP_Process.pdb
+C:\Users\ong_chun_zhao\OneDrive - Max System\Documents\GitHub\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\bin\Debug\WIP_Process.xml
+C:\Users\ong_chun_zhao\OneDrive - Max System\Documents\GitHub\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\bin\Debug\cls_DB.dll
+C:\Users\ong_chun_zhao\OneDrive - Max System\Documents\GitHub\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\bin\Debug\Symbol.RFID3.Host.dll
+C:\Users\ong_chun_zhao\OneDrive - Max System\Documents\GitHub\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\bin\Debug\cls_DB.pdb
+C:\Users\ong_chun_zhao\OneDrive - Max System\Documents\GitHub\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\bin\Debug\cls_DB.xml
+C:\Users\ong_chun_zhao\OneDrive - Max System\Documents\GitHub\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\obj\Debug\WIP_Process.vbproj.AssemblyReference.cache
+C:\Users\ong_chun_zhao\OneDrive - Max System\Documents\GitHub\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\obj\Debug\Resources.resources
+C:\Users\ong_chun_zhao\OneDrive - Max System\Documents\GitHub\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\obj\Debug\WIP_Process.vbproj.GenerateResource.cache
+C:\Users\ong_chun_zhao\OneDrive - Max System\Documents\GitHub\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\obj\Debug\WIP_Process.vbproj.CoreCompileInputs.cache
+C:\Users\ong_chun_zhao\OneDrive - Max System\Documents\GitHub\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\obj\Debug\WIP_Proc.DBD4C892.Up2Date
+C:\Users\ong_chun_zhao\OneDrive - Max System\Documents\GitHub\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\obj\Debug\WIP_Process.dll
+C:\Users\ong_chun_zhao\OneDrive - Max System\Documents\GitHub\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\obj\Debug\WIP_Process.xml
+C:\Users\ong_chun_zhao\OneDrive - Max System\Documents\GitHub\FLM_SubSlittingLabelPrinting\FLM_SubconLabelSystem\Library\WIP_Process\obj\Debug\WIP_Process.pdb
