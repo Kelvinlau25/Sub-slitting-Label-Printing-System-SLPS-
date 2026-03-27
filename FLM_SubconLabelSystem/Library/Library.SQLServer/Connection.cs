@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 
 /// <summary>
-/// Handler the Oracle Connection Class
+/// Handler the SQL Server Connection Class
 /// -------------------------------------------
 /// C.C.Yeon    25 April 2011   Initial Version
 /// </summary>
