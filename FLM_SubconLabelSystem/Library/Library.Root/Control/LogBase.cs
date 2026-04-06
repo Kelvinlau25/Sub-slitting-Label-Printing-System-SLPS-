@@ -35,9 +35,9 @@ namespace Library.Root.Control
                             this._setupKey = Request.QueryString["key"];
                             break;
                         case "page":
-                            if (Microsoft.VisualBasic.Information.IsNumeric(Request.QueryString["page"]))
+                            if (int.TryParse(Request.QueryString["page"], out int parsedPage))
                             {
-                                this._Pageno = Convert.ToInt32(Request.QueryString["page"]);
+                                this._Pageno = parsedPage;
                             }
                             else
                             {

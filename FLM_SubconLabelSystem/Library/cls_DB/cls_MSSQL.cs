@@ -1,9 +1,6 @@
-using Microsoft.VisualBasic.CompilerServices;
 using System;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
-using System.Data.Common;
 using System.Data.SqlClient;
 using System.Web.Configuration;
 
@@ -144,7 +141,7 @@ namespace cls_DB
         private void Locate_ConnStr(string pStr_DB_Tag_or_ConnStr)
         {
             string str = this.chk_config_file_auto(pStr_DB_Tag_or_ConnStr);
-            if (Microsoft.VisualBasic.CompilerServices.Operators.CompareString(str, "", false) == 0)
+            if (string.IsNullOrEmpty(str))
             {
                 this.str_connstr = pStr_DB_Tag_or_ConnStr;
                 this.str_DB_Tag = "";
@@ -184,7 +181,7 @@ namespace cls_DB
                     flag = false;
                     break;
                 }
-                else if (Microsoft.VisualBasic.CompilerServices.Operators.CompareString(parr_str_param[i, 0], "", false) != 0)
+                else if (!string.IsNullOrEmpty(parr_str_param[i, 0]))
                 {
                     flag1 = false;
                     i = i + 1;
@@ -205,7 +202,7 @@ namespace cls_DB
             this.str_LastErroMsg = "";
             try
             {
-                if (Microsoft.VisualBasic.CompilerServices.Operators.CompareString(this.str_DB_Tag, "", false) != 0)
+                if (!string.IsNullOrEmpty(this.str_DB_Tag))
                 {
                     this.str_connstr = this.chk_config_file_auto(this.str_DB_Tag);
                 }
@@ -226,7 +223,7 @@ namespace cls_DB
             bool flag;
             if (this.dbConn != null)
             {
-                if (Microsoft.VisualBasic.CompilerServices.Operators.CompareString(this.str_DB_Tag, "", false) != 0)
+                if (!string.IsNullOrEmpty(this.str_DB_Tag))
                 {
                     this.str_connstr = this.chk_config_file_auto(this.str_DB_Tag);
                 }

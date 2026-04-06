@@ -3,7 +3,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Microsoft.VisualBasic;
 
 namespace Library.Root.Control
 {
@@ -217,9 +216,9 @@ namespace Library.Root.Control
                             this._sortDirection = Request.QueryString["dic"];
                             break;
                         case "page":
-                            if (Information.IsNumeric(Request.QueryString["page"]))
+                            if (int.TryParse(Request.QueryString["page"], out int parsedPage))
                             {
-                                this._Pageno = Convert.ToInt32(Request.QueryString["page"]);
+                                this._Pageno = parsedPage;
                             }
                             else
                             {
