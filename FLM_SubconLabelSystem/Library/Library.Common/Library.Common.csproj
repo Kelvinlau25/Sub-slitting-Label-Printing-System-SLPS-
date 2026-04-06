@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{FAE04EC0-301F-11D3-BF4B-00A05F709F98}</ProjectGuid>
+    <ProjectGuid>{1322656D-2FAA-4F49-A511-3696DFC1D29C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Library.common</RootNamespace>
     <AssemblyName>Library.common</AssemblyName>

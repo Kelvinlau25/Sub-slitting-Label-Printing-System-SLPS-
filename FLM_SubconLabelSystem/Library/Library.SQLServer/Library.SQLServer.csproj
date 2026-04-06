@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{FAE04EC0-301F-11D3-BF4B-00A05F709F98}</ProjectGuid>
+    <ProjectGuid>{0A1F849F-46BC-4255-A499-7D1F76055D36}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Library.SQLServer</RootNamespace>
     <AssemblyName>Library.SQLServer</AssemblyName>

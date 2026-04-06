@@ -99,11 +99,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Library.Root\Library.Root.vbproj">
+    <ProjectReference Include="..\Library.Root\Library.Root.csproj">
       <Project>{8aa16f5a-5199-4552-9d10-44a74f06d853}</Project>
       <Name>Library.Root</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Library.SQLServer\Library.SQLServer.vbproj">
+    <ProjectReference Include="..\Library.SQLServer\Library.SQLServer.csproj">
       <Project>{0a1f849f-46bc-4255-a499-7d1f76055d36}</Project>
       <Name>Library.SQLServer</Name>
     </ProjectReference>
