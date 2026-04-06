@@ -72,7 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Library.Common\Library.Common.csproj">
-      <Project>{FAE04EC0-301F-11D3-BF4B-00A05F709F98}</Project>
+      <Project>{1322656D-2FAA-4F49-A511-3696DFC1D29C}</Project>
       <Name>Library.Common</Name>
     </ProjectReference>
   </ItemGroup>
