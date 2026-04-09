@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -107,9 +106,9 @@ namespace Library.Root.Control
                     TemplateField _field = new TemplateField();
                     _field.ItemTemplate = new deletefield(ListItemType.Item);
                     _field.ItemStyle.HorizontalAlign = HorizontalAlign.Center;
-                    _field.ControlStyle.Width = Unit.op_Implicit(30);
-                    _field.ItemStyle.Width = Unit.op_Implicit(30);
-                    _field.HeaderStyle.Width = Unit.op_Implicit(30);
+                    _field.ControlStyle.Width = 30;
+                    _field.ItemStyle.Width = 30;
+                    _field.HeaderStyle.Width = 30;
                     _field.ItemStyle.CssClass = "Delete";
                     this.GridView.Columns.Insert(0, _field);
                 }
@@ -121,9 +120,9 @@ namespace Library.Root.Control
                     _field.ItemStyle.HorizontalAlign = HorizontalAlign.Center;
                     _field.HeaderTemplate = new checkboxfield(ListItemType.Header);
                     _field.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
-                    _field.ControlStyle.Width = Unit.op_Implicit(30);
-                    _field.ItemStyle.Width = Unit.op_Implicit(30);
-                    _field.HeaderStyle.Width = Unit.op_Implicit(30);
+                    _field.ControlStyle.Width = 30;
+                    _field.ItemStyle.Width = 30;
+                    _field.HeaderStyle.Width = 30;
                     this.GridView.Columns.Insert(0, _field);
                 }
 
@@ -134,9 +133,9 @@ namespace Library.Root.Control
                     _field.ItemStyle.HorizontalAlign = HorizontalAlign.Center;
                     //_field.HeaderTemplate = new radiobuttonfield(ListItemType.Header);
                     //_field.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
-                    _field.ControlStyle.Width = Unit.op_Implicit(30);
-                    _field.ItemStyle.Width = Unit.op_Implicit(30);
-                    _field.HeaderStyle.Width = Unit.op_Implicit(30);
+                    _field.ControlStyle.Width = 30;
+                    _field.ItemStyle.Width = 30;
+                    _field.HeaderStyle.Width = 30;
                     this.GridView.Columns.Insert(0, _field);
                 }
 
@@ -147,9 +146,9 @@ namespace Library.Root.Control
                     _field.ItemStyle.HorizontalAlign = HorizontalAlign.Center;
                     _field.HeaderTemplate = new historyfield(ListItemType.Header);
                     _field.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
-                    _field.ControlStyle.Width = Unit.op_Implicit(80);
-                    _field.ItemStyle.Width = Unit.op_Implicit(80);
-                    _field.HeaderStyle.Width = Unit.op_Implicit(80);
+                    _field.ControlStyle.Width = 80;
+                    _field.ItemStyle.Width = 80;
+                    _field.HeaderStyle.Width = 80;
                     this.GridView.Columns.Add(_field);
                 }
 
@@ -716,7 +715,7 @@ namespace Library.Root.Control
             {
                 if (ReturnURLControl)
                 {
-                    return URL + (URL.IndexOf("?") != -1 ? "&" : "?") + "ReturnURL=" + Server.UrlEncode(HttpContext.Current.Request.RawUrl);
+                    return URL + (URL.IndexOf("?") != -1 ? "&" : "?") + "ReturnURL=" + Server.UrlEncode(Request.RawUrl);
                 }
                 else
                 {

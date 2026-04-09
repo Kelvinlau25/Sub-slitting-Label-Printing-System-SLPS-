@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -453,7 +452,7 @@ namespace Library.Root.Control
             if (URL != string.Empty)
             {
                 if (ReturnURLControl)
-                    return URL + (URL.IndexOf("?") != -1 ? "&" : "?") + "ReturnURL=" + Server.UrlEncode(HttpContext.Current.Request.RawUrl);
+                    return URL + (URL.IndexOf("?") != -1 ? "&" : "?") + "ReturnURL=" + Server.UrlEncode(Request.RawUrl);
                 else
                     return URL;
             }

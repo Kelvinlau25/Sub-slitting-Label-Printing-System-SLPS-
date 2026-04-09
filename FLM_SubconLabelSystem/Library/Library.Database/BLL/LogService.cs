@@ -1,6 +1,4 @@
-﻿using System.Web;
-
-namespace Library.Database.BLL
+﻿namespace Library.Database.BLL
 {
     public class LogService : Library.Root.Other.BusinessLogicBase
     {

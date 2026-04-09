@@ -1,8 +1,7 @@
 using System;
 using System.Configuration;
 using System.Data;
-using System.Data.SqlClient;
-using System.Web.Configuration;
+using Microsoft.Data.SqlClient;
 
 namespace cls_DB
 {
@@ -69,33 +68,20 @@ namespace cls_DB
 
         private string chk_config_file_auto(string pStr_DB_Tag)
         {
-            string connectionString;
             this.str_LastErroMsg = "";
             try
             {
-                string lower = AppDomain.CurrentDomain.SetupInformation.ConfigurationFile.ToLower();
-                if (lower.IndexOf(string.Concat(AppDomain.CurrentDomain.FriendlyName.ToLower(), ".config")) > 0)
+                var connStringSetting = ConfigurationManager.ConnectionStrings[pStr_DB_Tag];
+                if (connStringSetting != null)
                 {
-                    connectionString = ConfigurationManager.ConnectionStrings[pStr_DB_Tag].ConnectionString;
-                    return connectionString;
-                }
-                else if (lower.IndexOf("web.config") > 0)
-                {
-                    connectionString = WebConfigurationManager.ConnectionStrings[pStr_DB_Tag].ConnectionString;
-                    return connectionString;
-                }
-                else if (lower.IndexOf("app.config") > 0)
-                {
-                    connectionString = ConfigurationManager.ConnectionStrings[pStr_DB_Tag].ConnectionString;
-                    return connectionString;
+                    return connStringSetting.ConnectionString;
                 }
             }
             catch (System.Exception exception)
             {
                 this.str_LastErroMsg = exception.ToString();
             }
-            connectionString = "";
-            return connectionString;
+            return "";
         }
 
         public void Commit_Trans()
@@ -170,7 +156,7 @@ namespace cls_DB
                         int num = parr_str_param.GetLength(0) - 1;
                         for (i = 0; i <= num; i++)
                         {
-                            System.Data.SqlClient.SqlParameter sqlParameter = new System.Data.SqlClient.SqlParameter()
+                            Microsoft.Data.SqlClient.SqlParameter sqlParameter = new Microsoft.Data.SqlClient.SqlParameter()
                             {
                                 ParameterName = parr_str_param[i, 0],
                                 Value = parr_str_param[i, 1]
@@ -342,9 +328,9 @@ namespace cls_DB
             return flag;
         }
 
-        private System.Data.SqlClient.SqlDataReader n_executeQuery(string pstrQuery, string[,] parr_str_param, bool pbol_StoreProc)
+        private Microsoft.Data.SqlClient.SqlDataReader n_executeQuery(string pstrQuery, string[,] parr_str_param, bool pbol_StoreProc)
         {
-            System.Data.SqlClient.SqlDataReader sqlDataReader;
+            Microsoft.Data.SqlClient.SqlDataReader sqlDataReader;
             this.str_LastErroMsg = "";
             try
             {

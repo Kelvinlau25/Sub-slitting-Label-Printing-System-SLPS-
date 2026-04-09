@@ -1,5 +1,4 @@
 using System;
-using System.Web;
 
 namespace Library.Root.Objects
 {
@@ -13,12 +12,27 @@ namespace Library.Root.Objects
         public Base()
         {
             _id = 0;
-            _createdby = Convert.ToString(HttpContext.Current.Session["gstrUserID"]);
+            _createdby = string.Empty;
             _createddate = DateTime.Now;
-            _createdloc = HttpContext.Current.Request.UserHostAddress;
-            _Updatedby = Convert.ToString(HttpContext.Current.Session["gstrUserID"]);
+            _createdloc = string.Empty;
+            _Updatedby = string.Empty;
             _updatedDate = DateTime.Now;
-            _UpdatedLoc = HttpContext.Current.Request.UserHostAddress;
+            _UpdatedLoc = string.Empty;
+
+            try
+            {
+                var httpContext = System.Web.HttpContext.Current;
+                if (httpContext != null)
+                {
+                    _createdby = Convert.ToString(httpContext.Session["gstrUserID"]);
+                    _createdloc = httpContext.Request.UserHostAddress;
+                    _Updatedby = Convert.ToString(httpContext.Session["gstrUserID"]);
+                    _UpdatedLoc = httpContext.Request.UserHostAddress;
+                }
+            }
+            catch
+            {
+            }
         }
 
         private int _id = 0;
