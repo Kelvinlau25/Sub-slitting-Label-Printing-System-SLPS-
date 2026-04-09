@@ -1,0 +1,24 @@
+@page
+@model PFRLabelIssuing.Pages.SessionExpiredModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Session Time Out</title>
+</head>
+<body>
+    <h2>Session Expired</h2>
+    <p>
+        <span style="color:White;">Your session has expired due to inactivity.</span>
+        <br />
+        <br />
+        <a target="_parent" href="@Url.Content(Model.ReturnURL)">Click here to login again</a>
+    </p>
+    <script type="text/javascript">
+        window.parent.location.href = '@Url.Content("~/")';
+    </script>
+</body>
+</html>

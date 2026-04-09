@@ -1,0 +1,41 @@
+@* Partial: _GridFooter – replaces App_Module/GridFooter.ascx *@
+@{
+    int totalRecords = ViewData["TotalRecords"] != null ? (int)ViewData["TotalRecords"] : 0;
+    int totalPages = ViewData["TotalPages"] != null ? (int)ViewData["TotalPages"] : 0;
+    int currentPage = ViewData["CurrentPage"] != null ? (int)ViewData["CurrentPage"] : 1;
+    string baseUrl = ViewData["BaseListUrl"] as string ?? "#";
+}
+<table class="navigatorbar" width="100%">
+    <tr>
+        <th align="right" valign="middle" style="height: 20px">
+            <span>Total of @totalRecords records found</span>
+            @if (totalPages > 1)
+            {
+                if (currentPage > 1)
+                {
+                    <text>&nbsp;</text><a href="@baseUrl&amp;page=1"><img src="@Url.Content("~/image/first.gif")" height="20" alt="First" /></a>
+                    <text>&nbsp;</text><a href="@baseUrl&amp;page=@(currentPage - 1)"><img src="@Url.Content("~/image/prior.gif")" height="20" alt="Previous" /></a>
+                }
+                <text>&nbsp;</text>
+                <select onchange="window.location.href='@(baseUrl)&page='+this.value">
+                    @for (int i = 1; i <= totalPages; i++)
+                    {
+                        if (i == currentPage)
+                        {
+                            <option value="@i" selected="selected">@i</option>
+                        }
+                        else
+                        {
+                            <option value="@i">@i</option>
+                        }
+                    }
+                </select>
+                if (currentPage < totalPages)
+                {
+                    <text>&nbsp;</text><a href="@baseUrl&amp;page=@(currentPage + 1)"><img src="@Url.Content("~/image/next.gif")" height="20" alt="Next" /></a>
+                    <text>&nbsp;</text><a href="@baseUrl&amp;page=@totalPages"><img src="@Url.Content("~/image/last.gif")" height="20" alt="Last" /></a>
+                }
+            }
+        </th>
+    </tr>
+</table>

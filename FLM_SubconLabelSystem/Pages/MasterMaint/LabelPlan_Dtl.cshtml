@@ -1,0 +1,109 @@
+@page
+@model PFRLabelIssuing.Pages.MasterMaint.LabelPlan_DtlModel
+@{
+    ViewData["PageTitle"] = Model.PageTitle;
+}
+<partial name="_Title" />
+<partial name="_Error" />
+
+@if (Model.Action == BasePageModel.EnumAction.View || Model.Action == BasePageModel.EnumAction.Delete)
+{
+    <table class="detailinfo">
+        <tr>
+            <td style="width:180px;">Company Code</td>
+            <td> : </td>
+            <td>@Model.DisplayCompanyCode</td>
+        </tr>
+        <tr>
+            <td>Planning Year Month</td>
+            <td> : </td>
+            <td>@Model.DisplayPlanYearMonth</td>
+        </tr>
+        <tr>
+            <td>Production Line</td>
+            <td> : </td>
+            <td>@Model.DisplayProdLine</td>
+        </tr>
+        <tr>
+            <td>PC1 Mother</td>
+            <td> : </td>
+            <td>@Model.DisplayPC1Mother</td>
+        </tr>
+        <tr>
+            <td>PC2 Mother</td>
+            <td> : </td>
+            <td>@Model.DisplayPC2Mother</td>
+        </tr>
+        <tr>
+            <td>Unit Weight (Mother)</td>
+            <td> : </td>
+            <td>@Model.DisplayUnitWeightMother</td>
+        </tr>
+        <tr>
+            <td>PC1 Customer</td>
+            <td> : </td>
+            <td>@Model.DisplayPC1Customer</td>
+        </tr>
+        <tr>
+            <td>PC2 Customer</td>
+            <td> : </td>
+            <td>@Model.DisplayPC2Customer</td>
+        </tr>
+        <tr>
+            <td>Unit Weight (Customer)</td>
+            <td> : </td>
+            <td>@Model.DisplayUnitWeightCustomer</td>
+        </tr>
+        <tr>
+            <td>Lot No</td>
+            <td> : </td>
+            <td>@Model.DisplayLotNo</td>
+        </tr>
+        <tr>
+            <td>Lot Slit No</td>
+            <td> : </td>
+            <td>@Model.DisplayLotSlitNo</td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td> : </td>
+            <td>@Model.DisplayStatus</td>
+        </tr>
+        <tr>
+            <td>Created By</td>
+            <td> : </td>
+            <td>@Model.CreatedBy</td>
+        </tr>
+        <tr>
+            <td>Created Date</td>
+            <td> : </td>
+            <td>@(Model.CreatedDate.HasValue ? Model.CreatedDate.Value.ToString("dd/MM/yyyy HH:mm:ss") : "")</td>
+        </tr>
+        <tr>
+            <td>Updated By</td>
+            <td> : </td>
+            <td>@Model.UpdatedBy</td>
+        </tr>
+        <tr>
+            <td>Updated Date</td>
+            <td> : </td>
+            <td>@(Model.UpdatedDate.HasValue ? Model.UpdatedDate.Value.ToString("dd/MM/yyyy HH:mm:ss") : "")</td>
+        </tr>
+    </table>
+}
+
+@if (Model.Action == BasePageModel.EnumAction.Delete)
+{
+    <form method="post" asp-page-handler="Delete">
+        <partial name="_Controller" />
+    </form>
+}
+else if (Model.Action == BasePageModel.EnumAction.View)
+{
+    <partial name="_Controller" />
+}
+
+@if (!string.IsNullOrEmpty(Model.StartupScript))
+{
+    <script>@Html.Raw(Model.StartupScript)</script>
+}

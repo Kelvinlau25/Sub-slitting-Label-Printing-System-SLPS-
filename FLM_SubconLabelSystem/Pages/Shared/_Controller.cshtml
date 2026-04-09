@@ -1,0 +1,74 @@
+@* Partial: _Controller – replaces App_Module/Controller.ascx *@
+@{
+    string action = ViewData["Action"] as string ?? "None";
+    string cancelUrl = ViewData["CancelUrl"] as string ?? "";
+    string historyUrl = ViewData["HistoryUrl"] as string ?? "";
+    string editUrl = ViewData["EditUrl"] as string ?? "";
+    bool showSubmit = ViewData["ShowSubmit"] != null ? (bool)ViewData["ShowSubmit"] : true;
+    bool showDelete = ViewData["ShowDelete"] != null ? (bool)ViewData["ShowDelete"] : false;
+    bool showReset = ViewData["ShowReset"] != null ? (bool)ViewData["ShowReset"] : true;
+    bool showHistory = ViewData["ShowHistory"] != null ? (bool)ViewData["ShowHistory"] : true;
+    bool showInfo = ViewData["ShowInfo"] != null ? (bool)ViewData["ShowInfo"] : false;
+    bool showConfirmation = ViewData["ShowConfirmation"] != null ? (bool)ViewData["ShowConfirmation"] : false;
+    string createdBy = ViewData["CreatedBy"] as string ?? "";
+    string createdDate = ViewData["CreatedDate"] as string ?? "";
+    string updatedBy = ViewData["UpdatedBy"] as string ?? "";
+    string updatedDate = ViewData["UpdatedDate"] as string ?? "";
+    string submitText = action == "View" ? "Edit" : "Submit";
+}
+@if (showInfo)
+{
+<div class="createdpanel">
+    <table class="loginfo">
+        <tr><td class="label">Created By</td><td class="value">@createdBy</td></tr>
+        <tr><td class="label">Created Date</td><td class="value">@createdDate</td></tr>
+        <tr><td class="label">Updated By</td><td class="value">@updatedBy</td></tr>
+        <tr><td class="label">Updated Date</td><td class="value">@updatedDate</td></tr>
+    </table>
+</div>
+}
+@if (showConfirmation)
+{
+<script type="text/javascript">
+    function ValidationChecked(sender, args) {
+        args.IsValid = document.getElementById('rbyes').checked;
+    }
+</script>
+<table class="deleteInfo">
+    <tr>
+        <td class="label">Delete the record ?</td>
+        <td class="value">
+            <label><input type="radio" id="rbyes" name="confirm" value="yes" /> Yes</label>
+            <label><input type="radio" name="confirm" value="no" checked /> No</label>
+        </td>
+    </tr>
+</table>
+}
+<div class="clear"></div>
+<div class="ControllerAdditionalBtn" style="float:left;"></div>
+<div style="float:left;">
+    @if (showSubmit)
+    {
+        if (action == "View")
+        {
+            <a href="@editUrl" class="control">Edit</a>
+        }
+        else
+        {
+            <button type="submit" name="handler" value="Submit" class="control">@submitText</button>
+        }
+    }
+    @if (showDelete)
+    {
+        <button type="submit" name="handler" value="Delete" onclick="return confirm('Are you sure you want to delete the record?')">Delete</button>
+    }
+    @if (showReset)
+    {
+        <button type="submit" name="handler" value="Reset">Reset</button>
+    }
+    <a href="@cancelUrl">Cancel</a>
+    @if (showHistory && !string.IsNullOrEmpty(historyUrl))
+    {
+        <text>&nbsp;</text><a href="@historyUrl" target="_blank">View History</a>
+    }
+</div>

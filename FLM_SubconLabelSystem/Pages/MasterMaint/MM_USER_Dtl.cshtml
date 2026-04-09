@@ -1,0 +1,199 @@
+@page
+@model PFRLabelIssuing.Pages.MasterMaint.MM_USER_DtlModel
+@{
+    ViewData["PageTitle"] = Model.PageTitle;
+}
+<partial name="_Title" />
+<partial name="_Error" />
+
+@if (Model.Action == BasePageModel.EnumAction.View || Model.Action == BasePageModel.EnumAction.Delete)
+{
+    <table class="detailinfo">
+        <tr>
+            <td style="width:180px;">Company Name</td>
+            <td> : </td>
+            <td>@Model.DisplayCompanyName</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td> : </td>
+            <td>@Model.DisplayName</td>
+        </tr>
+        <tr>
+            <td>User ID</td>
+            <td> : </td>
+            <td>@Model.DisplayUserID</td>
+        </tr>
+        <tr>
+            <td>Department</td>
+            <td> : </td>
+            <td>@Model.DisplayDepartment</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td> : </td>
+            <td>@Model.DisplayEmail</td>
+        </tr>
+        <tr>
+            <td>Level</td>
+            <td> : </td>
+            <td>@Model.DisplayLevel</td>
+        </tr>
+        <tr>
+            <td>Account Status</td>
+            <td> : </td>
+            <td>@Model.DisplayAccStatus</td>
+        </tr>
+        <tr>
+            <td>Created By</td>
+            <td> : </td>
+            <td>@Model.CreatedBy</td>
+        </tr>
+        <tr>
+            <td>Created Date</td>
+            <td> : </td>
+            <td>@(Model.CreatedDate.HasValue ? Model.CreatedDate.Value.ToString("dd/MM/yyyy HH:mm:ss") : "")</td>
+        </tr>
+        <tr>
+            <td>Updated By</td>
+            <td> : </td>
+            <td>@Model.UpdatedBy</td>
+        </tr>
+        <tr>
+            <td>Updated Date</td>
+            <td> : </td>
+            <td>@(Model.UpdatedDate.HasValue ? Model.UpdatedDate.Value.ToString("dd/MM/yyyy HH:mm:ss") : "")</td>
+        </tr>
+    </table>
+}
+
+@if (Model.Action == BasePageModel.EnumAction.Add || Model.Action == BasePageModel.EnumAction.Edit)
+{
+    <form method="post">
+        <table class="detailinfo">
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td style="width:180px;">Company</td>
+                <td> : </td>
+                <td>
+                    @if (Model.IsLevel2Readonly)
+                    {
+                        <span>@Model.DisplayCompanyNameForEdit</span>
+                        <input type="hidden" asp-for="CompanyId" />
+                    }
+                    else
+                    {
+                        <select asp-for="CompanyId" asp-items="Model.CompanyList" style="width:200px;">
+                            <option value="">-- Select --</option>
+                        </select>
+                    }
+                    <span asp-validation-for="CompanyId" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Name</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="Name" style="width:300px;" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>User ID</td>
+                <td> : </td>
+                <td>
+                    @if (Model.Action == BasePageModel.EnumAction.Edit)
+                    {
+                        <span>@Model.UserID</span>
+                        <input type="hidden" asp-for="UserID" />
+                    }
+                    else
+                    {
+                        <input type="text" asp-for="UserID" style="width:200px;" />
+                    }
+                    <span asp-validation-for="UserID" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Department</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="Department" style="width:200px;" />
+                    <span asp-validation-for="Department" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Email</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="Email" style="width:300px;" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Level</td>
+                <td> : </td>
+                <td>
+                    <label><input type="radio" asp-for="Level" value="1" /> System Administrator</label>
+                    <label><input type="radio" asp-for="Level" value="2" /> User</label>
+                    <label><input type="radio" asp-for="Level" value="3" /> Vendor</label>
+                    <span asp-validation-for="Level" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Account Status</td>
+                <td> : </td>
+                <td>
+                    @if (Model.IsAccStatusReadonly)
+                    {
+                        <span>@Model.AccStatus</span>
+                        <input type="hidden" asp-for="AccStatus" />
+                    }
+                    else
+                    {
+                        <select asp-for="AccStatus" style="width:200px;">
+                            <option value="Normal">Normal</option>
+                            <option value="Locked">Locked</option>
+                        </select>
+                    }
+                </td>
+            </tr>
+            @if (Model.Action == BasePageModel.EnumAction.Add)
+            {
+                <tr>
+                    <td><span class="text-danger">*</span></td>
+                    <td>Password</td>
+                    <td> : </td>
+                    <td>
+                        <input type="password" asp-for="Password" style="width:200px;" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </td>
+                </tr>
+            }
+        </table>
+        <partial name="_Controller" />
+    </form>
+}
+
+@if (Model.Action == BasePageModel.EnumAction.View || Model.Action == BasePageModel.EnumAction.Delete)
+{
+    <partial name="_Controller" />
+}
+
+@if (Model.Action == BasePageModel.EnumAction.Edit && Model.ShowResetPassword)
+{
+    <form method="post" asp-page-handler="ResetPassword" style="display:inline;">
+        <button type="submit" class="btn btn-warning btn-sm" onclick="return confirm('Are you sure you want to reset the password?');">Reset Password</button>
+    </form>
+}
+
+@if (!string.IsNullOrEmpty(Model.StartupScript))
+{
+    <script>@Html.Raw(Model.StartupScript)</script>
+}

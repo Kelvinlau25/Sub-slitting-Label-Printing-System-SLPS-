@@ -1,0 +1,58 @@
+@page
+@model PFRLabelIssuing.Pages.MasterMaint.MM_PC2Model
+@{
+    ViewData["PageTitle"] = Model.PageTitle;
+}
+<partial name="_Title" />
+<partial name="_Search" />
+@{
+    ViewData["ShowAdd"] = Model.AddControl;
+    ViewData["AddUrl"] = Model.GetUrl(BasePageModel.EnumAction.Add);
+    ViewData["ShowPrint"] = Model.PrintControl;
+}
+<partial name="_GridHeader" />
+<table width="100%">
+<tr><td>
+    <table width="100%" class="table">
+        <thead class="title_bar">
+            <tr>
+                <th style="width:60%; text-align:left; vertical-align:middle;">PC2</th>
+                <th style="width:6%; text-align:left; vertical-align:middle;">Grade</th>
+                <th style="width:6%; text-align:left; vertical-align:middle;">Packing Code</th>
+                <th style="width:6%; text-align:left; vertical-align:middle;">Core Code</th>
+                <th style="width:6%; text-align:left; vertical-align:middle;">Unit Weight</th>
+                <th style="width:6%; text-align:center; vertical-align:middle;">Record Type</th>
+            </tr>
+        </thead>
+        <tbody>
+        @if (Model.GridData != null && Model.GridData.Rows.Count > 0)
+        {
+            @foreach (DataRow row in Model.GridData.Rows)
+            {
+                <tr onmouseover="Highlight(this)" onmouseout="UnHighlight(this)">
+                    <td style="text-align:left; vertical-align:middle;">
+                        <a href="@Model.GetUrl(BasePageModel.EnumAction.Edit, row["ID_MM_PC2"].ToString())">@row["PC2"]</a>
+                    </td>
+                    <td style="text-align:left; vertical-align:middle;">@row["GRADE"]</td>
+                    <td style="text-align:left; vertical-align:middle;">@row["PACKCODE"]</td>
+                    <td style="text-align:left; vertical-align:middle;">@row["CORECODE"]</td>
+                    <td style="text-align:left; vertical-align:middle;">@row["UNITWEIGHT"]</td>
+                    <td style="text-align:center; vertical-align:middle;">@row["RECTYPE"]</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr><td colspan="6" class="text-center text-danger fw-bold">Record Not Found</td></tr>
+        }
+        </tbody>
+    </table>
+</td></tr>
+</table>
+@{
+    ViewData["TotalRecords"] = Model.TotalRecords;
+    ViewData["TotalPages"] = Model.TotalPages;
+    ViewData["CurrentPage"] = Model.PageNo;
+    ViewData["BaseListUrl"] = Model.GenerateList;
+}
+<partial name="_GridFooter" />

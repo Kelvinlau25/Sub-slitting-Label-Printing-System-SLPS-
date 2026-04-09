@@ -1,0 +1,374 @@
+@page
+@model PFRLabelIssuing.Pages.MasterMaint.PRINT_ALIGN_INIT_DtlModel
+@{
+    ViewData["PageTitle"] = Model.PageTitle;
+}
+<partial name="_Title" />
+<partial name="_Error" />
+
+@if (Model.Action == BasePageModel.EnumAction.View || Model.Action == BasePageModel.EnumAction.Delete)
+{
+    <table class="detailinfo">
+        <tr>
+            <td style="width:180px;">Printer Name</td>
+            <td> : </td>
+            <td>@Model.DisplayPrinterName</td>
+        </tr>
+        <tr>
+            <td>Company Code</td>
+            <td> : </td>
+            <td>@Model.DisplayCompanyCode</td>
+        </tr>
+        <tr>
+            <td>Text Font</td>
+            <td> : </td>
+            <td>@Model.DisplayTextFont</td>
+        </tr>
+        <tr>
+            <td>Text Font Size</td>
+            <td> : </td>
+            <td>@Model.DisplayTextFontSize</td>
+        </tr>
+        <tr>
+            <td>Barcode Font</td>
+            <td> : </td>
+            <td>@Model.DisplayBarcodeFont</td>
+        </tr>
+        <tr>
+            <td>Barcode Font Size</td>
+            <td> : </td>
+            <td>@Model.DisplayBarcodeFontSize</td>
+        </tr>
+        <tr>
+            <td>Width (X, Y)</td>
+            <td> : </td>
+            <td>@Model.DisplayWidthX, @Model.DisplayWidthY</td>
+        </tr>
+        <tr>
+            <td>Length Header (X, Y)</td>
+            <td> : </td>
+            <td>@Model.DisplayLengthHeaderX, @Model.DisplayLengthHeaderY</td>
+        </tr>
+        <tr>
+            <td>Pack Code (X, Y)</td>
+            <td> : </td>
+            <td>@Model.DisplayPackCodeX, @Model.DisplayPackCodeY</td>
+        </tr>
+        <tr>
+            <td>Unit Weight (X, Y)</td>
+            <td> : </td>
+            <td>@Model.DisplayUnitWeightX, @Model.DisplayUnitWeightY</td>
+        </tr>
+        <tr>
+            <td>Num Per Pack (X, Y)</td>
+            <td> : </td>
+            <td>@Model.DisplayNumPerPackX, @Model.DisplayNumPerPackY</td>
+        </tr>
+        <tr>
+            <td>Slit Lot No (X, Y)</td>
+            <td> : </td>
+            <td>@Model.DisplaySlitLotNoX, @Model.DisplaySlitLotNoY</td>
+        </tr>
+        <tr>
+            <td>PC1 (X, Y)</td>
+            <td> : </td>
+            <td>@Model.DisplayPC1X, @Model.DisplayPC1Y</td>
+        </tr>
+        <tr>
+            <td>Grade (X, Y)</td>
+            <td> : </td>
+            <td>@Model.DisplayGradeX, @Model.DisplayGradeY</td>
+        </tr>
+        <tr>
+            <td>Length (X, Y)</td>
+            <td> : </td>
+            <td>@Model.DisplayLengthX, @Model.DisplayLengthY</td>
+        </tr>
+        <tr>
+            <td>Core Code (X, Y)</td>
+            <td> : </td>
+            <td>@Model.DisplayCoreCodeX, @Model.DisplayCoreCodeY</td>
+        </tr>
+        <tr>
+            <td>Thickness (X, Y)</td>
+            <td> : </td>
+            <td>@Model.DisplayThicknessX, @Model.DisplayThicknessY</td>
+        </tr>
+        <tr>
+            <td>Barcode (X, Y)</td>
+            <td> : </td>
+            <td>@Model.DisplayBarcodeX, @Model.DisplayBarcodeY</td>
+        </tr>
+        <tr>
+            <td>Type (X, Y)</td>
+            <td> : </td>
+            <td>@Model.DisplayTypeX, @Model.DisplayTypeY</td>
+        </tr>
+        <tr>
+            <td>Default Printer</td>
+            <td> : </td>
+            <td>@(Model.DisplayDefaultYes == "1" ? "Yes" : "No")</td>
+        </tr>
+        <tr>
+            <td>Created By</td>
+            <td> : </td>
+            <td>@Model.CreatedBy</td>
+        </tr>
+        <tr>
+            <td>Created Date</td>
+            <td> : </td>
+            <td>@(Model.CreatedDate.HasValue ? Model.CreatedDate.Value.ToString("dd/MM/yyyy HH:mm:ss") : "")</td>
+        </tr>
+        <tr>
+            <td>Updated By</td>
+            <td> : </td>
+            <td>@Model.UpdatedBy</td>
+        </tr>
+        <tr>
+            <td>Updated Date</td>
+            <td> : </td>
+            <td>@(Model.UpdatedDate.HasValue ? Model.UpdatedDate.Value.ToString("dd/MM/yyyy HH:mm:ss") : "")</td>
+        </tr>
+    </table>
+}
+
+@if (Model.Action == BasePageModel.EnumAction.Add || Model.Action == BasePageModel.EnumAction.Edit)
+{
+    <form method="post">
+        <table class="detailinfo">
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td style="width:180px;">Printer Name</td>
+                <td> : </td>
+                <td>
+                    @if (Model.Action == BasePageModel.EnumAction.Edit)
+                    {
+                        <span>@Model.PrinterName</span>
+                        <input type="hidden" asp-for="PrinterName" />
+                    }
+                    else
+                    {
+                        <input type="text" asp-for="PrinterName" style="width:200px;" />
+                    }
+                    <span asp-validation-for="PrinterName" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Company Code</td>
+                <td> : </td>
+                <td>
+                    @if (Model.Action == BasePageModel.EnumAction.Edit)
+                    {
+                        <span>@Model.CompanyCode</span>
+                        <input type="hidden" asp-for="CompanyCode" />
+                    }
+                    else
+                    {
+                        <input type="text" asp-for="CompanyCode" style="width:200px;" />
+                    }
+                    <span asp-validation-for="CompanyCode" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Text Font</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="TextFont" style="width:200px;" />
+                    <span asp-validation-for="TextFont" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Text Font Size</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="TextFontSize" style="width:100px;" />
+                    <span asp-validation-for="TextFontSize" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Barcode Font</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="BarcodeFont" style="width:200px;" />
+                    <span asp-validation-for="BarcodeFont" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Barcode Font Size</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="BarcodeFontSize" style="width:100px;" />
+                    <span asp-validation-for="BarcodeFontSize" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Width (X, Y)</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="WidthX" style="width:80px;" />
+                    <input type="text" asp-for="WidthY" style="width:80px;" />
+                    <span asp-validation-for="WidthX" class="text-danger"></span>
+                    <span asp-validation-for="WidthY" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Length Header (X, Y)</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="LengthHeaderX" style="width:80px;" />
+                    <input type="text" asp-for="LengthHeaderY" style="width:80px;" />
+                    <span asp-validation-for="LengthHeaderX" class="text-danger"></span>
+                    <span asp-validation-for="LengthHeaderY" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Pack Code (X, Y)</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="PackCodeX" style="width:80px;" />
+                    <input type="text" asp-for="PackCodeY" style="width:80px;" />
+                    <span asp-validation-for="PackCodeX" class="text-danger"></span>
+                    <span asp-validation-for="PackCodeY" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Unit Weight (X, Y)</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="UnitWeightX" style="width:80px;" />
+                    <input type="text" asp-for="UnitWeightY" style="width:80px;" />
+                    <span asp-validation-for="UnitWeightX" class="text-danger"></span>
+                    <span asp-validation-for="UnitWeightY" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Num Per Pack (X, Y)</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="NumPerPackX" style="width:80px;" />
+                    <input type="text" asp-for="NumPerPackY" style="width:80px;" />
+                    <span asp-validation-for="NumPerPackX" class="text-danger"></span>
+                    <span asp-validation-for="NumPerPackY" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Slit Lot No (X, Y)</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="SlitLotNoX" style="width:80px;" />
+                    <input type="text" asp-for="SlitLotNoY" style="width:80px;" />
+                    <span asp-validation-for="SlitLotNoX" class="text-danger"></span>
+                    <span asp-validation-for="SlitLotNoY" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>PC1 (X, Y)</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="PC1X" style="width:80px;" />
+                    <input type="text" asp-for="PC1Y" style="width:80px;" />
+                    <span asp-validation-for="PC1X" class="text-danger"></span>
+                    <span asp-validation-for="PC1Y" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Grade (X, Y)</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="GradeX" style="width:80px;" />
+                    <input type="text" asp-for="GradeY" style="width:80px;" />
+                    <span asp-validation-for="GradeX" class="text-danger"></span>
+                    <span asp-validation-for="GradeY" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Length (X, Y)</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="LengthX" style="width:80px;" />
+                    <input type="text" asp-for="LengthY" style="width:80px;" />
+                    <span asp-validation-for="LengthX" class="text-danger"></span>
+                    <span asp-validation-for="LengthY" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Core Code (X, Y)</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="CoreCodeX" style="width:80px;" />
+                    <input type="text" asp-for="CoreCodeY" style="width:80px;" />
+                    <span asp-validation-for="CoreCodeX" class="text-danger"></span>
+                    <span asp-validation-for="CoreCodeY" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Thickness (X, Y)</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="ThicknessX" style="width:80px;" />
+                    <input type="text" asp-for="ThicknessY" style="width:80px;" />
+                    <span asp-validation-for="ThicknessX" class="text-danger"></span>
+                    <span asp-validation-for="ThicknessY" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Barcode (X, Y)</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="BarcodeX" style="width:80px;" />
+                    <input type="text" asp-for="BarcodeY" style="width:80px;" />
+                    <span asp-validation-for="BarcodeX" class="text-danger"></span>
+                    <span asp-validation-for="BarcodeY" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Type (X, Y)</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="TypeX" style="width:80px;" />
+                    <input type="text" asp-for="TypeY" style="width:80px;" />
+                    <span asp-validation-for="TypeX" class="text-danger"></span>
+                    <span asp-validation-for="TypeY" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Default Printer</td>
+                <td> : </td>
+                <td>
+                    <label><input type="radio" asp-for="DefaultPrinter" value="Yes" /> Yes</label>
+                    <label><input type="radio" asp-for="DefaultPrinter" value="No" /> No</label>
+                </td>
+            </tr>
+        </table>
+        <partial name="_Controller" />
+    </form>
+}
+
+@if (Model.Action == BasePageModel.EnumAction.View || Model.Action == BasePageModel.EnumAction.Delete)
+{
+    <partial name="_Controller" />
+}
+
+@if (!string.IsNullOrEmpty(Model.StartupScript))
+{
+    <script>@Html.Raw(Model.StartupScript)</script>
+}

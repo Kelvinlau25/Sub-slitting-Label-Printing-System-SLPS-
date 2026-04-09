@@ -1,0 +1,93 @@
+@page
+@model PFRLabelIssuing.Pages.MasterMaint.LabelPlanModel
+@{
+    ViewData["PageTitle"] = Model.PageTitle;
+}
+<partial name="_Title" />
+<partial name="_Search" />
+@{
+    ViewData["ShowAdd"] = Model.AddControl;
+    ViewData["AddUrl"] = Model.GetUrl(BasePageModel.EnumAction.Add);
+    ViewData["ShowPrint"] = Model.PrintControl;
+}
+<partial name="_GridHeader" />
+
+<form method="post" asp-page-handler="Export">
+    <div style="margin-bottom:5px; text-align:right;">
+        <button type="submit" class="btn btn-sm btn-primary">Export CSV</button>
+    </div>
+</form>
+
+<table width="100%">
+<tr><td>
+    <table width="100%" class="table">
+        <thead class="title_bar">
+            <tr>
+                <th colspan="6" style="text-align:center; vertical-align:middle; border-bottom:1px solid #ccc;">BEFORE</th>
+                <th colspan="4" style="text-align:center; vertical-align:middle; border-bottom:1px solid #ccc;">AFTER</th>
+                <th rowspan="2" style="width:8%; text-align:center; vertical-align:middle;">Slit Lot No</th>
+                <th rowspan="2" style="width:6%; text-align:center; vertical-align:middle;">Record Type</th>
+                <th rowspan="2" style="width:6%; text-align:center; vertical-align:middle;">Print Status</th>
+                <th rowspan="2" style="width:6%; text-align:center; vertical-align:middle;">Print</th>
+            </tr>
+            <tr>
+                <th style="width:8%; text-align:left; vertical-align:middle;">Ref No</th>
+                <th style="width:8%; text-align:left; vertical-align:middle;">Company Code</th>
+                <th style="width:6%; text-align:left; vertical-align:middle;">Production Line</th>
+                <th style="width:8%; text-align:left; vertical-align:middle;">PC1 Mother</th>
+                <th style="width:8%; text-align:left; vertical-align:middle;">PC2 Mother</th>
+                <th style="width:6%; text-align:left; vertical-align:middle;">Unit Weight</th>
+                <th style="width:8%; text-align:left; vertical-align:middle;">Lot No</th>
+                <th style="width:8%; text-align:left; vertical-align:middle;">PC1 Customer</th>
+                <th style="width:8%; text-align:left; vertical-align:middle;">PC2 Customer</th>
+                <th style="width:6%; text-align:left; vertical-align:middle;">Unit Weight</th>
+            </tr>
+        </thead>
+        <tbody>
+        @if (Model.GridData != null && Model.GridData.Rows.Count > 0)
+        {
+            @foreach (DataRow row in Model.GridData.Rows)
+            {
+                string slitLotNo = row["SLITLOTNO"].ToString();
+                bool isSelected = Model.SelectedSlitLotNos.Contains(slitLotNo);
+                <tr onmouseover="Highlight(this)" onmouseout="UnHighlight(this)">
+                    <td style="text-align:left; vertical-align:middle;">@row["REFNO"]</td>
+                    <td style="text-align:left; vertical-align:middle;">@row["COMPANYCODE"]</td>
+                    <td style="text-align:left; vertical-align:middle;">@row["PRODLINE"]</td>
+                    <td style="text-align:left; vertical-align:middle;">@row["PC1_MOTHER"]</td>
+                    <td style="text-align:left; vertical-align:middle;">@row["PC2_MOTHER"]</td>
+                    <td style="text-align:left; vertical-align:middle;">@row["UNITWEIGHT_BEFORE"]</td>
+                    <td style="text-align:left; vertical-align:middle;">@row["LOTNO"]</td>
+                    <td style="text-align:left; vertical-align:middle;">@row["PC1_CUSTOMER"]</td>
+                    <td style="text-align:left; vertical-align:middle;">@row["PC2_CUSTOMER"]</td>
+                    <td style="text-align:left; vertical-align:middle;">@row["UNITWEIGHT_AFTER"]</td>
+                    <td style="text-align:center; vertical-align:middle;">
+                        <a href="@Model.GetUrl(BasePageModel.EnumAction.Edit, row["ID_LOT_SLITTING_SERIES"].ToString())">@slitLotNo</a>
+                    </td>
+                    <td style="text-align:center; vertical-align:middle;">@row["RECTYPE"]</td>
+                    <td style="text-align:center; vertical-align:middle;">@row["PRINTSTATUS"]</td>
+                    <td style="text-align:center; vertical-align:middle;">
+                        <form method="post" asp-page-handler="ToggleCheckbox" style="display:inline;">
+                            <input type="hidden" name="slitLotNo" value="@slitLotNo" />
+                            <input type="hidden" name="isChecked" value="@(!isSelected ? "true" : "false")" />
+                            <input type="checkbox" @(isSelected ? "checked" : "") onchange="this.form.submit();" />
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr><td colspan="14" class="text-center text-danger fw-bold">Record Not Found</td></tr>
+        }
+        </tbody>
+    </table>
+</td></tr>
+</table>
+@{
+    ViewData["TotalRecords"] = Model.TotalRecords;
+    ViewData["TotalPages"] = Model.TotalPages;
+    ViewData["CurrentPage"] = Model.PageNo;
+    ViewData["BaseListUrl"] = Model.GenerateList;
+}
+<partial name="_GridFooter" />

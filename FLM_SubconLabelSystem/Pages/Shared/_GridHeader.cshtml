@@ -1,0 +1,23 @@
+@* Partial: _GridHeader – replaces App_Module/GridHeader.ascx *@
+<script type="text/javascript">
+    function Highlight(row) { row.style.backgroundColor = '#DDFFEE'; }
+    function UnHighlight(row) { row.style.backgroundColor = '#FFFFFF'; }
+</script>
+<table width="100%" class="navigatorbar">
+    <tr>
+        <th valign="middle" align="right">
+            @if (ViewData["ShowPrint"] != null && (bool)ViewData["ShowPrint"])
+            {
+                <select id="ddlAction" onchange="if(this.value=='PRINT'){this.selectedIndex=0;/* print handler */}">
+                    <option value="-">-</option>
+                    <option value="PRINT">Print</option>
+                </select>
+                <text>&nbsp;| &nbsp;</text>
+            }
+            @if (ViewData["ShowAdd"] != null && (bool)ViewData["ShowAdd"])
+            {
+                <a href="@ViewData["AddUrl"]" tabindex="13">Add Item</a>
+            }
+        </th>
+    </tr>
+</table>
