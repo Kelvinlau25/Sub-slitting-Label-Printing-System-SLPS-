@@ -1,0 +1,76 @@
+@using Microsoft.AspNetCore.Mvc.Rendering
+@* Partial: _Search – replaces App_Module/Search.ascx *@
+@{
+    var searchFields = ViewData["SearchFields"] as List<SelectListItem> ?? new List<SelectListItem>();
+    string searchFieldValue = ViewData["SearchFieldValue"] as string ?? "";
+    string searchTextValue = ViewData["SearchTextValue"] as string ?? "";
+    bool showDeleted = ViewData["ShowDeleted"] != null && (bool)ViewData["ShowDeleted"];
+    bool showDeletedControl = ViewData["ShowDeletedControl"] != null && (bool)ViewData["ShowDeletedControl"];
+    string searchType = ViewData["SearchType"] as string ?? "B";
+    string formAction = ViewData["FormAction"] as string ?? "";
+}
+<style>
+input[type=submit]{background-color:#2779aa; color:White;}
+</style>
+<div id='searchMsg'>
+    <h3>@(searchType == "A" ? "Advance Search" : "Basic Search")</h3>
+    @if (searchType != "A")
+    {
+        <script type="text/javascript">
+            function BasicSearchChecker() {
+                if ($.trim($(".basicsearch").val()).length == 0) {
+                    if (confirm('Continue without search?') == false) { $(".basicsearch").focus(); return false; } else { return true; }
+                };
+                if ($.trim($(".bcddlsearch").val()) == '-') { alert('Please select the search selection!'); $(".bcddlsearch").focus(); return false }
+                var value = $(".basicsearch").val();
+                if (/'/.test(value) == true) { alert('Invalid Character in the search value!'); $(".basicsearch").focus(); return false }
+                return true;
+            };
+        </script>
+        <form method="post" asp-page-handler="BasicSearch">
+        <table width="640" border="0" cellspacing="0" cellpadding="2">
+            <tr>
+                <td>
+                    <select name="ddlSearch" class="bcddlsearch">
+                        @foreach (var item in searchFields)
+                        {
+                            if (item.Value == searchFieldValue)
+                            {
+                                <option value="@item.Value" selected="selected">@item.Text</option>
+                            }
+                            else
+                            {
+                                <option value="@item.Value">@item.Text</option>
+                            }
+                        }
+                    </select>
+                </td>
+                <td width="120">
+                    <input type="text" name="txtSearch" class="basicsearch" style="width:150px" value="@searchTextValue" />
+                </td>
+                <td>
+                    <input type="submit" value="Search" onclick="return BasicSearchChecker();" style="width:74px;background-color:#2779aa;color:White;" />
+                </td>
+                <td width="305">
+                    <a href="?searchType=A">Advance Search</a>
+                </td>
+            </tr>
+        </table>
+        </form>
+    }
+    else
+    {
+        <p><a href="?searchType=B">Basic Search</a></p>
+    }
+    @if (showDeletedControl)
+    {
+        <table><tr><td>
+            <form method="post" asp-page-handler="ToggleDeleted">
+                <label>
+                    <input type="checkbox" name="showDeleted" value="true" @(showDeleted ? "checked" : "") onchange="this.form.submit()" />
+                    Show Deleted Records
+                </label>
+            </form>
+        </td></tr></table>
+    }
+</div>
