@@ -9,6 +9,8 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>disable</Nullable>
+    <!-- Exclude Library subproject source files; they are consumed via ProjectReference -->
+    <DefaultItemExcludes>$(DefaultItemExcludes);Library\**\*</DefaultItemExcludes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +18,8 @@
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
     <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="23.6.1" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.8" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,14 +30,6 @@
     <ProjectReference Include="Library\Library.Root\Library.Root.csproj" />
     <ProjectReference Include="Library\Library.SQLServer\Library.SQLServer.csproj" />
     <ProjectReference Include="Library\WIP_Process\WIP_Process.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="css\**" />
-    <Content Include="image\**" />
-    <Content Include="images\**" />
-    <Content Include="js\**" />
-    <Content Include="resources\**" />
   </ItemGroup>
 
 </Project>
