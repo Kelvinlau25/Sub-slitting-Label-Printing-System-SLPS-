@@ -1,0 +1,68 @@
+@page
+@model PFRLabelIssuing.Pages.MasterMaint.MM_PRODLINEModel
+@{
+    ViewData["PageTitle"] = Model.PageTitle;
+}
+<partial name="_Title" />
+<partial name="_Search" />
+@{
+    ViewData["ShowAdd"] = Model.AddControl;
+    ViewData["AddUrl"] = Model.GetUrl(BasePageModel.EnumAction.Add);
+    ViewData["ShowPrint"] = Model.PrintControl;
+}
+<partial name="_GridHeader" />
+<table width="100%">
+<tr><td>
+    <table width="100%" class="table">
+        <thead class="title_bar">
+            <tr>
+                <th style="width:8%; text-align:left; vertical-align:middle;">Line</th>
+                <th style="width:20%; text-align:left; vertical-align:middle;">Description</th>
+                <th style="width:10%; text-align:left; vertical-align:middle;">Created By</th>
+                <th style="width:17%; text-align:left; vertical-align:middle;">Created Date</th>
+                <th style="width:10%; text-align:left; vertical-align:middle;">Updated By</th>
+                <th style="width:17%; text-align:left; vertical-align:middle;">Updated Date</th>
+                <th style="width:8%; text-align:center; vertical-align:middle;">Record Type</th>
+            </tr>
+        </thead>
+        <tbody>
+        @if (Model.GridData != null && Model.GridData.Rows.Count > 0)
+        {
+            @foreach (DataRow row in Model.GridData.Rows)
+            {
+                <tr onmouseover="Highlight(this)" onmouseout="UnHighlight(this)">
+                    <td style="text-align:left; vertical-align:middle;">
+                        <a href="@Model.GetUrl(BasePageModel.EnumAction.Edit, row["ID_MM_PRODLINE"].ToString())">@row["PRODLINE_NO"]</a>
+                    </td>
+                    <td style="text-align:left; vertical-align:middle;">@row["DESCRIPTION"]</td>
+                    <td style="text-align:left; vertical-align:middle;">@row["CREATED_BY"]</td>
+                    <td style="text-align:left; vertical-align:middle;">
+                        @(row["CREATED_DATE"] != DBNull.Value
+                            ? Convert.ToDateTime(row["CREATED_DATE"]).ToString("dd/MM/yyyy h:mm:ss tt")
+                            : "")
+                    </td>
+                    <td style="text-align:left; vertical-align:middle;">@row["UPDATED_BY"]</td>
+                    <td style="text-align:left; vertical-align:middle;">
+                        @(row["UPDATED_DATE"] != DBNull.Value
+                            ? Convert.ToDateTime(row["UPDATED_DATE"]).ToString("dd/MM/yyyy h:mm:ss tt")
+                            : "")
+                    </td>
+                    <td style="text-align:center; vertical-align:middle;">@row["RECTYPE"]</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr><td colspan="7" class="text-center text-danger fw-bold">Record Not Found</td></tr>
+        }
+        </tbody>
+    </table>
+</td></tr>
+</table>
+@{
+    ViewData["TotalRecords"] = Model.TotalRecords;
+    ViewData["TotalPages"] = Model.TotalPages;
+    ViewData["CurrentPage"] = Model.PageNo;
+    ViewData["BaseListUrl"] = Model.GenerateList;
+}
+<partial name="_GridFooter" />
