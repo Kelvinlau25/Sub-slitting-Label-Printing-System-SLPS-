@@ -1,114 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{55AE13FA-8E18-493E-9BFB-5130A9BF3DB5}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>Library.Database</RootNamespace>
     <AssemblyName>Library.Database</AssemblyName>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <TargetFrameworkProfile />
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>Library.Database.xml</DocumentationFile>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>Library.Database.xml</DocumentationFile>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Desktop\DLL Version\DDL 11G\Oracle.DataAccess.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.configuration" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="23.6.1" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.1" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="BLL\Company.cs" />
-    <Compile Include="BLL\CHANGE_PASSWORD.cs" />
-    <Compile Include="BLL\CHECK_LOTNO_DUP.cs" />
-    <Compile Include="BLL\HouseKeep.cs" />
-    <Compile Include="BLL\MenuListing.cs" />
-    <Compile Include="BLL\MM_PRODLINE.cs" />
-    <Compile Include="BLL\LotSlitting.cs" />
-    <Compile Include="BLL\PrintAlignInit.cs" />
-    <Compile Include="BLL\PC2.cs" />
-    <Compile Include="BLL\PC2Mother.cs" />
-    <Compile Include="BLL\PC1.cs" />
-    <Compile Include="BLL\LogService.cs" />
-    <Compile Include="BLL\SlitSeries.cs" />
-    <Compile Include="BLL\SubSlitRequest.cs" />
-    <Compile Include="BLL\user.cs" />
-    <Compile Include="BLL\Log.cs" />
-    <Compile Include="BLL\MM_LABEL_ISSUING.cs" />
-    <Compile Include="BLL\MM_PRINT_ALIGN_INIT.cs" />
-    <Compile Include="BLL\USER_LOGIN.cs" />
-    <Compile Include="DAL\CHANGE_PASSWORD.cs" />
-    <Compile Include="DAL\Company.cs" />
-    <Compile Include="DAL\CHECK_LOTNO_DUP.cs" />
-    <Compile Include="DAL\HouseKeep.cs" />
-    <Compile Include="DAL\MenuListing.cs" />
-    <Compile Include="DAL\MM_PRODLINE.cs" />
-    <Compile Include="DAL\LotSlitting.cs" />
-    <Compile Include="DAL\PrintAlignInit.cs" />
-    <Compile Include="DAL\PC2.cs" />
-    <Compile Include="DAL\PC2Mother.cs" />
-    <Compile Include="DAL\PC1.cs" />
-    <Compile Include="DAL\SlitSeries.cs" />
-    <Compile Include="DAL\SubSlitRequest.cs" />
-    <Compile Include="DAL\user.cs" />
-    <Compile Include="DAL\Log.cs" />
-    <Compile Include="DAL\MM_PRINT_ALIGN_INIT.cs" />
-    <Compile Include="DAL\MM_LABEL_ISSUING.cs" />
-    <Compile Include="DAL\USER_LOGIN.cs" />
-    <Compile Include="Others\Encryption.cs" />
-    <Compile Include="Others\ListCollection.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <ProjectReference Include="..\Library.Root\Library.Root.csproj" />
+    <ProjectReference Include="..\Library.SQLServer\Library.SQLServer.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Library.Root\Library.Root.csproj">
-      <Project>{8aa16f5a-5199-4552-9d10-44a74f06d853}</Project>
-      <Name>Library.Root</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Library.SQLServer\Library.SQLServer.csproj">
-      <Project>{0a1f849f-46bc-4255-a499-7d1f76055d36}</Project>
-      <Name>Library.SQLServer</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
 </Project>
