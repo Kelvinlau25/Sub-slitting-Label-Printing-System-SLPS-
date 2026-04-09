@@ -24,7 +24,8 @@ public partial class MasterMaint_MM_COMPANY : Control.Base
     {
         GridView = grdResult;
 
-        if (Session["ULEVEL"].ToString() == "3" || Session["ULEVEL"].ToString() == "2")
+        if (Session["ULEVEL"] != null &&
+            (Session["ULEVEL"].ToString() == "3" || Session["ULEVEL"].ToString() == "2"))
         {
             DeleteControl = false;
         }
@@ -36,7 +37,8 @@ public partial class MasterMaint_MM_COMPANY : Control.Base
 
     public override void BindData()
     {
-        if (Session["ULEVEL"].ToString() == "3" || Session["ULEVEL"].ToString() == "2")
+        if (Session["ULEVEL"] != null &&
+            (Session["ULEVEL"].ToString() == "3" || Session["ULEVEL"].ToString() == "2"))
         {
             _list = Library.Database.BLL.Company.List(
                 "MM_COMPANY_func('" + Session["COMPANYCODE"] + "')",

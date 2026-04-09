@@ -83,7 +83,7 @@ namespace Library.Database.DAL
             base._cmd.CommandType = CommandType.StoredProcedure;
             base._cmd.CommandTimeout = 0;
             base._cmd.Parameters.Clear();
-            base._cmd.Parameters.Add(new SqlParameter("@pID", 0)).Direction = ParameterDirection.Input;
+            base._cmd.Parameters.Add(new SqlParameter("@pID", "0")).Direction = ParameterDirection.Input;
 
             base._rdr = base._cmd.ExecuteReader();
             result.Load(base._rdr);

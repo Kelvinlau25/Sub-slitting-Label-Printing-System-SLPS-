@@ -23,9 +23,17 @@ public partial class MasterMaint_MM_PC2_Dtl : Control.Base
         rfUnitWeight.ErrorMessage = string.Format(Resources.Message.FieldEmpty, "Unit Weight");
         reUnitWeight.ErrorMessage = "Invalid Format.Unit Weight Only Accepted numeric with or without decimal value.";
         reUnitWeight.ValidationExpression = @"^[0-9]\d{0,9}(\.\d{1,3})?%?$";
+
+        UCAction.DisplayMode += UCAction_DisplayMode;
+        UCAction.ModifyMode += UCAction_ModifyMode;
+        UCAction.AddAction += UCAction_AddAction;
+        UCAction.EditAction += UCAction_AddAction;
+        UCAction.AddResetAction += UCAction_AddResetAction;
+        UCAction.EditResetAction += UCAction_AddResetAction;
+        UCAction.DeleteAction += UCAction_DeleteAction;
     }
 
-    protected void UCAction_DisplayMode(object sender, EventArgs e)
+    protected void UCAction_DisplayMode()
     {
         Cdisplay.Visible = true;
         Cmodify.Visible = false;
@@ -67,7 +75,7 @@ public partial class MasterMaint_MM_PC2_Dtl : Control.Base
         UCAction.EditMode = _datatable.Rows[0]["REC_TYPE"].ToString() != "5";
     }
 
-    protected void UCAction_ModifyMode(object sender, EventArgs e)
+    protected void UCAction_ModifyMode()
     {
         Cdisplay.Visible = false;
         Cmodify.Visible = true;
@@ -152,10 +160,7 @@ public partial class MasterMaint_MM_PC2_Dtl : Control.Base
         }
     }
 
-    /// <summary>
-    /// Handler the add Submit Function
-    /// </summary>
-    protected void UCAction_AddAction(object sender, EventArgs e)
+    protected void UCAction_AddAction()
     {
         string Comp_Code = Session["COMPANYCODE"].ToString();
         txtPC2.Text = txtThickness.Text.ToUpper() + "-" + txtType.Text.ToUpper() + "-" + txtWidth.Text.ToUpper() + "x" + txtLength.Text.ToUpper()
@@ -182,15 +187,12 @@ public partial class MasterMaint_MM_PC2_Dtl : Control.Base
         }
     }
 
-    protected void UCAction_AddResetAction(object sender, EventArgs e)
+    protected void UCAction_AddResetAction()
     {
         Response.Redirect(Request.RawUrl);
     }
 
-    /// <summary>
-    /// Delete Action
-    /// </summary>
-    protected void UCAction_DeleteAction(object sender, EventArgs e)
+    protected void UCAction_DeleteAction()
     {
         string Company_Code = Session["COMPANYCODE"].ToString();
         string _temp = Library.Database.BLL.PC2.Maint(Key, Company_Code, lblPC2.Text, txtThickness.Text, txtType.Text, txtWidth.Text,

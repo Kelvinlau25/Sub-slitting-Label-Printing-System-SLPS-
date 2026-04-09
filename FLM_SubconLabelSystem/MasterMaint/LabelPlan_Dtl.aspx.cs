@@ -15,9 +15,13 @@ public partial class MasterMaint_LabelPlan_Dtl : Control.Base
 
     protected void Page_Init(object sender, EventArgs e)
     {
+        UCAction.DisplayMode += UCAction_DisplayMode;
+        UCAction.AddResetAction += UCAction_AddResetAction;
+        UCAction.EditResetAction += UCAction_EditResetAction;
+        UCAction.DeleteAction += UCAction_DeleteAction;
     }
 
-    protected void UCAction_DisplayMode(object sender, EventArgs e)
+    protected void UCAction_DisplayMode()
     {
         Cdisplay.Visible = true;
 
@@ -90,12 +94,12 @@ public partial class MasterMaint_LabelPlan_Dtl : Control.Base
         hpLink.Visible = false;
     }
 
-    protected void UCAction_AddResetAction(object sender, EventArgs e)
+    protected void UCAction_AddResetAction()
     {
         Response.Redirect(Request.RawUrl);
     }
 
-    protected void UCAction_EditResetAction(object sender, EventArgs e)
+    protected void UCAction_EditResetAction()
     {
         Response.Redirect(Request.RawUrl);
     }
@@ -103,7 +107,7 @@ public partial class MasterMaint_LabelPlan_Dtl : Control.Base
     /// <summary>
     /// Delete Action
     /// </summary>
-    protected void UCAction_DeleteAction(object sender, EventArgs e)
+    protected void UCAction_DeleteAction()
     {
         string _temp = Library.Database.BLL.LotSlitting.Maint(Key, lblLotNo.Text, "", "", "",
                                                                "", "", "", "",

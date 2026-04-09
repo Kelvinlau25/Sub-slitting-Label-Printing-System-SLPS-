@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Project\\Sub-slitting-Label-Printing-System-SLPS-\\FLM_SubconLabelSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1A351CD7-6B4D-4119-8F13-8FAF661ED26F}|C:\\Project\\Sub-slitting-Label-Printing-System-SLPS-\\FLM_SubconLabelSystem|c:\\project\\sub-slitting-label-printing-system-slps-\\flm_subconlabelsystem\\menu.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A351CD7-6B4D-4119-8F13-8FAF661ED26F}|C:\\Project\\Sub-slitting-Label-Printing-System-SLPS-\\FLM_SubconLabelSystem|solutionrelative:menu.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1A351CD7-6B4D-4119-8F13-8FAF661ED26F}|C:\\Project\\Sub-slitting-Label-Printing-System-SLPS-\\FLM_SubconLabelSystem|c:\\project\\sub-slitting-label-printing-system-slps-\\flm_subconlabelsystem\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{1A351CD7-6B4D-4119-8F13-8FAF661ED26F}|C:\\Project\\Sub-slitting-Label-Printing-System-SLPS-\\FLM_SubconLabelSystem|solutionrelative:default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A351CD7-6B4D-4119-8F13-8FAF661ED26F}|C:\\Project\\Sub-slitting-Label-Printing-System-SLPS-\\FLM_SubconLabelSystem|c:\\project\\sub-slitting-label-printing-system-slps-\\flm_subconlabelsystem\\mastermaint\\labelplan_dtl.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A351CD7-6B4D-4119-8F13-8FAF661ED26F}|C:\\Project\\Sub-slitting-Label-Printing-System-SLPS-\\FLM_SubconLabelSystem|solutionrelative:mastermaint\\labelplan_dtl.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,15 +66,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Menu.aspx.cs",
-              "DocumentMoniker": "C:\\Project\\Sub-slitting-Label-Printing-System-SLPS-\\FLM_SubconLabelSystem\\Menu.aspx.cs",
-              "RelativeDocumentMoniker": "Menu.aspx.cs",
-              "ToolTip": "C:\\Project\\Sub-slitting-Label-Printing-System-SLPS-\\FLM_SubconLabelSystem\\Menu.aspx.cs",
-              "RelativeToolTip": "Menu.aspx.cs",
-              "ViewState": "AgIAAHkAAAAAAAAAAAAkwIgAAAAlAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "LabelPlan_Dtl.aspx.cs",
+              "DocumentMoniker": "C:\\Project\\Sub-slitting-Label-Printing-System-SLPS-\\FLM_SubconLabelSystem\\MasterMaint\\LabelPlan_Dtl.aspx.cs",
+              "RelativeDocumentMoniker": "MasterMaint\\LabelPlan_Dtl.aspx.cs",
+              "ToolTip": "C:\\Project\\Sub-slitting-Label-Printing-System-SLPS-\\FLM_SubconLabelSystem\\MasterMaint\\LabelPlan_Dtl.aspx.cs",
+              "RelativeToolTip": "MasterMaint\\LabelPlan_Dtl.aspx.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAYwGwAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-09T01:59:10.318Z",
+              "WhenOpened": "2026-04-09T03:28:01.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Default.aspx",
+              "DocumentMoniker": "C:\\Project\\Sub-slitting-Label-Printing-System-SLPS-\\FLM_SubconLabelSystem\\Default.aspx",
+              "RelativeDocumentMoniker": "Default.aspx",
+              "ToolTip": "C:\\Project\\Sub-slitting-Label-Printing-System-SLPS-\\FLM_SubconLabelSystem\\Default.aspx",
+              "RelativeToolTip": "Default.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-04-09T03:25:47.865Z",
               "EditorCaption": ""
             }
           ]

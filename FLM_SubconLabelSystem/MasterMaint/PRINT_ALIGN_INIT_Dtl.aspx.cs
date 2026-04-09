@@ -131,9 +131,17 @@ public partial class MasterMaint_PRINT_ALIGN_INIT_Dtl : Control.Base
         reTypeY.ValidationExpression = "^(0|[1-9][0-9]*)$";
 
         RadioButton2.Checked = true;
+
+        UCAction.DisplayMode += UCAction_DisplayMode;
+        UCAction.ModifyMode += UCAction_ModifyMode;
+        UCAction.AddAction += UCAction_AddAction;
+        UCAction.EditAction += UCAction_AddAction;
+        UCAction.AddResetAction += UCAction_AddResetAction;
+        UCAction.EditResetAction += UCAction_AddResetAction;
+        UCAction.DeleteAction += UCAction_DeleteAction;
     }
 
-    protected void UCAction_DisplayMode(object sender, EventArgs e)
+    protected void UCAction_DisplayMode()
     {
         Cdisplay.Visible = true;
         Cmodify.Visible = false;
@@ -208,7 +216,7 @@ public partial class MasterMaint_PRINT_ALIGN_INIT_Dtl : Control.Base
         UCAction.EditMode = _datatable.Rows[0]["REC_TYPE"].ToString() != "5";
     }
 
-    protected void UCAction_ModifyMode(object sender, EventArgs e)
+    protected void UCAction_ModifyMode()
     {
         Cdisplay.Visible = false;
         Cmodify.Visible = true;
@@ -302,10 +310,7 @@ public partial class MasterMaint_PRINT_ALIGN_INIT_Dtl : Control.Base
         }
     }
 
-    /// <summary>
-    /// Handler the add Submit Function
-    /// </summary>
-    protected void UCAction_AddAction(object sender, EventArgs e)
+    protected void UCAction_AddAction()
     {
         string Company_Code = Session["COMPANYCODE"].ToString().Trim();
 
@@ -330,15 +335,12 @@ public partial class MasterMaint_PRINT_ALIGN_INIT_Dtl : Control.Base
         }
     }
 
-    protected void UCAction_AddResetAction(object sender, EventArgs e)
+    protected void UCAction_AddResetAction()
     {
         Response.Redirect(Request.RawUrl);
     }
 
-    /// <summary>
-    /// Delete Action
-    /// </summary>
-    protected void UCAction_DeleteAction(object sender, EventArgs e)
+    protected void UCAction_DeleteAction()
     {
         string _temp = Library.Database.BLL.PrintAlignInit.Maint(Key, txtPrinterName.Text, txtTextFont.Text, txtWidthX.Text, txtTextFontSize.Text,
                                                                   txtWidthY.Text, txtBarcodeFont.Text, txtLengthHeaderX.Text, txtBarcodeFontSize.Text,

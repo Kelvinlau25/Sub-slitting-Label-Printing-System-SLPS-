@@ -28,6 +28,14 @@ public partial class Transaction_SlitSeries_Dtl : Control.Base
         rfLotNo.ErrorMessage = string.Format(Resources.Message.FieldEmpty, "Lot Number");
         rftxtyeardate.ErrorMessage = string.Format(Resources.Message.FieldEmpty, "Year/Month");
         rfrdPos.ErrorMessage = string.Format(Resources.Message.FieldEmpty, "Matrix Position");
+
+        UCAction.DisplayMode += UCAction_DisplayMode;
+        UCAction.ModifyMode += UCAction_ModifyMode;
+        UCAction.AddAction += UCAction_AddAction;
+        UCAction.EditAction += UCAction_AddAction;
+        UCAction.AddResetAction += UCAction_AddResetAction;
+        UCAction.EditResetAction += UCAction_AddResetAction;
+        UCAction.DeleteAction += UCAction_DeleteAction;
     }
 
     protected void Page_Load(object sender, EventArgs e)

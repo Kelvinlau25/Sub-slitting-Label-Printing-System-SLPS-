@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" enableEventValidation="true" AutoEventWireup="false" CodeFile="MM_COMPANY_Dtl.aspx.cs" Inherits="MasterMaint_MM_COMPANY_Dtl" title="MM_COMPANY_Dtl" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" enableEventValidation="true" AutoEventWireup="true" CodeFile="MM_COMPANY_Dtl.aspx.cs" Inherits="MasterMaint_MM_COMPANY_Dtl" title="MM_COMPANY_Dtl" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 
@@ -9,15 +9,15 @@
         }
     </style>
     <script type="text/javascript">
-    function isDecimal(evt, element) {
-                var charCode = (evt.which) ? evt.which : event.keyCode
-                if (
-                    (charCode != 45 || $(element).val().indexOf('-') != -1) &&
-                    (charCode != 46 || $(element).val().indexOf('.') != -1) &&
-                    (charCode < 48 || charCode > 57))
-                    return false;
-                    return true;
-                }
+        function isDecimal(evt, element) {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (
+                (charCode != 45 || $(element).val().indexOf('-') != -1) &&
+                (charCode != 46 || $(element).val().indexOf('.') != -1) &&
+                (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
     </script>
 
 </asp:Content>
