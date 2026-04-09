@@ -1,0 +1,225 @@
+@page
+@model PFRLabelIssuing.Pages.MasterMaint.MM_PC2_MOTHER_DtlModel
+@{
+    ViewData["PageTitle"] = Model.PageTitle;
+}
+<partial name="_Title" />
+<partial name="_Error" />
+
+@if (Model.Action == BasePageModel.EnumAction.View || Model.Action == BasePageModel.EnumAction.Delete)
+{
+    <table class="detailinfo">
+        <tr>
+            <td style="width:180px;">PC2</td>
+            <td> : </td>
+            <td>@Model.DisplayPC2M</td>
+        </tr>
+        <tr>
+            <td>Thickness</td>
+            <td> : </td>
+            <td>@Model.DisplayThickness</td>
+        </tr>
+        <tr>
+            <td>Type</td>
+            <td> : </td>
+            <td>@Model.DisplayType</td>
+        </tr>
+        <tr>
+            <td>Width</td>
+            <td> : </td>
+            <td>@Model.DisplayWidth</td>
+        </tr>
+        <tr>
+            <td>Length</td>
+            <td> : </td>
+            <td>@Model.DisplayLength</td>
+        </tr>
+        <tr>
+            <td>Pack Code</td>
+            <td> : </td>
+            <td>@Model.DisplayPackCode</td>
+        </tr>
+        <tr>
+            <td>Grade</td>
+            <td> : </td>
+            <td>@Model.DisplayGrade</td>
+        </tr>
+        <tr>
+            <td>Core Code</td>
+            <td> : </td>
+            <td>@Model.DisplayCoreCode</td>
+        </tr>
+        <tr>
+            <td>Machine</td>
+            <td> : </td>
+            <td>@Model.DisplayMachine</td>
+        </tr>
+        <tr>
+            <td>Unit Weight</td>
+            <td> : </td>
+            <td>@Model.DisplayUnitWeight</td>
+        </tr>
+        <tr>
+            <td>No. Per Pack</td>
+            <td> : </td>
+            <td>@Model.DisplayNumPerPack</td>
+        </tr>
+        <tr>
+            <td>Remarks</td>
+            <td> : </td>
+            <td>@Model.DisplayRemarks</td>
+        </tr>
+        <tr>
+            <td>Created By</td>
+            <td> : </td>
+            <td>@Model.CreatedBy</td>
+        </tr>
+        <tr>
+            <td>Created Date</td>
+            <td> : </td>
+            <td>@(Model.CreatedDate.HasValue ? Model.CreatedDate.Value.ToString("dd/MM/yyyy HH:mm:ss") : "")</td>
+        </tr>
+        <tr>
+            <td>Updated By</td>
+            <td> : </td>
+            <td>@Model.UpdatedBy</td>
+        </tr>
+        <tr>
+            <td>Updated Date</td>
+            <td> : </td>
+            <td>@(Model.UpdatedDate.HasValue ? Model.UpdatedDate.Value.ToString("dd/MM/yyyy HH:mm:ss") : "")</td>
+        </tr>
+    </table>
+}
+
+@if (Model.Action == BasePageModel.EnumAction.Add || Model.Action == BasePageModel.EnumAction.Edit)
+{
+    <form method="post">
+        <table class="detailinfo">
+            <tr>
+                <td></td>
+                <td style="width:180px;">PC2</td>
+                <td> : </td>
+                <td>
+                    @if (Model.Action == BasePageModel.EnumAction.Edit)
+                    {
+                        <span>@Model.TxtPC2</span>
+                        <input type="hidden" asp-for="TxtPC2" />
+                    }
+                    else
+                    {
+                        <span id="lblPC2">@Model.GeneratedPC2</span>
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Thickness</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="Thickness" style="width:200px;" />
+                    <span asp-validation-for="Thickness" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Type</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="Type" style="width:200px;" />
+                    <span asp-validation-for="Type" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Width</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="Width" style="width:200px;" />
+                    <span asp-validation-for="Width" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Length</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="Length" style="width:200px;" />
+                    <span asp-validation-for="Length" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Pack Code</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="PackCode" style="width:200px;" />
+                    <span asp-validation-for="PackCode" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Grade</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="Grade" style="width:200px;" />
+                    <span asp-validation-for="Grade" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Core Code</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="CoreCode" style="width:200px;" />
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Machine</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="Machine" style="width:200px;" />
+                    <span asp-validation-for="Machine" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>Unit Weight</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="UnitWeight" style="width:200px;" />
+                    <span asp-validation-for="UnitWeight" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="text-danger">*</span></td>
+                <td>No. Per Pack</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="NumPack" style="width:200px;" />
+                    <span asp-validation-for="NumPack" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Remarks</td>
+                <td> : </td>
+                <td>
+                    <input type="text" asp-for="Remarks" style="width:300px;" />
+                </td>
+            </tr>
+        </table>
+        <partial name="_Controller" />
+    </form>
+}
+
+@if (Model.Action == BasePageModel.EnumAction.View || Model.Action == BasePageModel.EnumAction.Delete)
+{
+    <partial name="_Controller" />
+}
+
+@if (!string.IsNullOrEmpty(Model.StartupScript))
+{
+    <script>@Html.Raw(Model.StartupScript)</script>
+}
