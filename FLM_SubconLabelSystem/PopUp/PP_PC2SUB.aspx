@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" MasterPageFile="~/master/Main.master" AutoEventWireup="false" CodeFile="PP_PC2SUB.aspx.vb" Inherits="PopUp_PP_PC2SUB" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeFile="PP_PC2SUB.aspx.cs" Inherits="PopUp_PP_PC2SUB" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -8,9 +8,9 @@
     <script type="text/javascript">
         function passvalue(pc2mother, lblpc2mother) { 
      
-            window.opener.$('.<%= me.pc2mother %>').val(pc2mother);
-            window.opener.$('.<%= me.lblpc2mother %>').val(lblpc2mother);
-            if ('<%= me.pc2mother %>'=='pc2mother') {
+            window.opener.$('.<%= this.pc2mother %>').val(pc2mother);
+            window.opener.$('.<%= this.lblpc2mother %>').val(lblpc2mother);
+            if ('<%= this.pc2mother %>'=='pc2mother') {
             window.opener.$('.btnpc2').click();}
             else 
             {

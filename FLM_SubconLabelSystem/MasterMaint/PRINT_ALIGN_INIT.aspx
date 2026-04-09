@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" Async="true" MasterPageFile="~/master/Main.master" AutoEventWireup="false" CodeFile="PRINT_ALIGN_INIT.aspx.vb" Inherits="MasterMaint_PRINT_ALIGN_INIT" title="PRINT_ALIGN_INIT" %>
+﻿<%@ Page Language="C#" Async="true" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeFile="PRINT_ALIGN_INIT.aspx.cs" Inherits="MasterMaint_PRINT_ALIGN_INIT" title="PRINT_ALIGN_INIT" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 
@@ -25,7 +25,7 @@
                       <asp:TemplateField HeaderStyle-Width="18%" HeaderText="Printer Name" HeaderStyle-HorizontalAlign="Left" SortExpression="Printer_Name">
                             <ItemStyle VerticalAlign="Middle" HorizontalAlign="Left"></ItemStyle>
                             <ItemTemplate>
-                                <a target="_self" href="<%# MyBase.GetUrl(EnumAction.View, Eval("ID_Print_Align_Init")) %>"><%#Eval("Printer_Name")%></a>
+                                <a target="_self" href="<%# GetUrl(Library.Root.Control.Base.EnumAction.View, Eval("ID_Print_Align_Init").ToString()) %>"><%#Eval("Printer_Name")%></a>
                             </ItemTemplate>
                       </asp:TemplateField> 
                       <asp:TemplateField HeaderStyle-Width="12%" HeaderText="Created By" HeaderStyle-HorizontalAlign="Left" SortExpression="Created_By">
@@ -79,8 +79,8 @@
             <td>
             
                 <asp:Label ID="Label2" runat="server" Text="Text2">1. For first time installation, please download</asp:Label>
-               &nbsp;<asp:LinkButton ID="herebutton" runat="server">here</asp:LinkButton> 
-            &nbsp;and settings <asp:LinkButton ID="hereButton1" runat="server">here</asp:LinkButton> 
+               &nbsp;<asp:LinkButton ID="herebutton" runat="server" OnClick="herebutton_Click">here</asp:LinkButton> 
+            &nbsp;and settings <asp:LinkButton ID="hereButton1" runat="server" OnClick="hereButton1_Click">here</asp:LinkButton> 
         
             </td>
            
@@ -122,4 +122,3 @@
     
   
 </asp:Content>
-

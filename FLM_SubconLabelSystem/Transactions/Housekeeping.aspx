@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" MasterPageFile="~/master/Main.master" AutoEventWireup="false" CodeFile="Housekeeping.aspx.vb" Inherits="Transactions_Housekeeping" title="House_Keeping" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeFile="Housekeeping.aspx.cs" Inherits="Transactions_Housekeeping" Title="House_Keeping" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
         <style type="text/css" >
@@ -103,10 +103,10 @@
                             <tr>
                                 
                                 <td class="style3"></td>
-                                <td class="style2">&nbsp;<asp:Button ID="btnupdate" runat="server" onclientclick="return confirm('Do you confirm to purge all record before this date?');"
+                                <td class="style2">&nbsp;<asp:Button ID="btnupdate" runat="server" OnClick="btnupdate_Click" OnClientClick="return confirm('Do you confirm to purge all record before this date?');"
                                         Text="OK" ValidationGroup="login" Width="107px" />
                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:Button ID="btnreset" runat="server" Text="Cancel" Width="106px" />&nbsp;
+                                <asp:Button ID="btnreset" runat="server" OnClick="btnreset_Click" Text="Cancel" Width="106px" />&nbsp;
                               </td>
                             </tr>
                         </table>

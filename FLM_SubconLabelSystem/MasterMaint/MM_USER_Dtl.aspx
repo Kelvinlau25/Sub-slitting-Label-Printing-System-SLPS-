@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" MasterPageFile="~/master/Main.master" enableEventValidation="true" AutoEventWireup="false" CodeFile="MM_USER_Dtl.aspx.vb" Inherits="MasterMaint_MM_USER_Dtl" title="MM_USER_Dtl" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" enableEventValidation="true" AutoEventWireup="true" CodeFile="MM_USER_Dtl.aspx.cs" Inherits="MasterMaint_MM_USER_Dtl" title="MM_USER_Dtl" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 
@@ -17,8 +17,8 @@
             function isDecimal(evt, element) {
                         var charCode = (evt.which) ? evt.which : event.keyCode
                         if (
-                            (charCode != 45 || $(element).val().indexOf('-') != -1) &&      // “-” CHECK MINUS, AND ONLY ONE.
-                            (charCode != 46 || $(element).val().indexOf('.') != -1) &&      // “.” CHECK DOT, AND ONLY ONE.
+                            (charCode != 45 || $(element).val().indexOf('-') != -1) &&      // "-" CHECK MINUS, AND ONLY ONE.
+                            (charCode != 46 || $(element).val().indexOf('.') != -1) &&      // "." CHECK DOT, AND ONLY ONE.
                             (charCode < 48 || charCode > 57))
                         return false;
                         return true;
@@ -99,7 +99,7 @@
             <td style="width:180px;"><asp:Label ID="Label14" runat="server" Text="Company Name "></asp:Label></td>
             <td><asp:Label ID="Label33" runat="server" Text=" : "></asp:Label></td>
             <td><asp:Label ID="lbCompName" runat="server" Text=""></asp:Label>
-                <asp:DropDownList ID="ddlCompName" runat="server" Width="205" AutoPostBack="true"></asp:DropDownList>
+                <asp:DropDownList ID="ddlCompName" runat="server" Width="205" AutoPostBack="true" OnSelectedIndexChanged="ddlCompName_SelectedIndexChanged"></asp:DropDownList>
                 <asp:RequiredFieldValidator ID="rfCompName" runat="server" ControlToValidate="ddlCompName" ValidationGroup="Group1" Display="None"></asp:RequiredFieldValidator></td>  
          </tr>
          <tr>
@@ -136,7 +136,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><asp:RadioButton ID="RBLevel1" runat="server" Text="System Administrator" AutoPostBack="true" />
+            <td><asp:RadioButton ID="RBLevel1" runat="server" Text="System Administrator" AutoPostBack="true" OnCheckedChanged="RBLevel1_CheckedChanged" />
                 <asp:TextBox ID="TextBox1" runat="server" style="display:none"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfRB" runat="server" ControlToValidate="TextBox1" ValidationGroup="Group1" Display="None"></asp:RequiredFieldValidator></td>
          </tr>
@@ -144,13 +144,13 @@
             <td><asp:Label ID="Label27" runat="server" Text="*" ForeColor="Red"></asp:Label></td>
             <td><asp:Label ID="Label28" runat="server" Text="Level "></asp:Label></td>
             <td><asp:Label ID="Label29" runat="server" Text=" : "></asp:Label></td>
-            <td><asp:RadioButton ID="RBLevel2" runat="server" Text="User" AutoPostBack="true"/></td>  
+            <td><asp:RadioButton ID="RBLevel2" runat="server" Text="User" AutoPostBack="true" OnCheckedChanged="RBLevel2_CheckedChanged"/></td>  
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td></td>
-            <td><asp:RadioButton ID="RBLevel3" runat="server" Text="Vendor" AutoPostBack="true" /></td> 
+            <td><asp:RadioButton ID="RBLevel3" runat="server" Text="Vendor" AutoPostBack="true" OnCheckedChanged="RBLevel3_CheckedChanged" /></td> 
         </tr>             
         <tr>
             <td><asp:Label ID="Label34" runat="server" Text="*" ForeColor="Red"></asp:Label></td>
@@ -183,7 +183,7 @@
     <table>
     <tr>
         <td>
-        <asp:LinkButton ID="resetlnk" runat="server" data-confirm="Are you sure you want to reset the password?">Reset Password</asp:LinkButton>
+        <asp:LinkButton ID="resetlnk" runat="server" data-confirm="Are you sure you want to reset the password?" OnClick="resetlnk_Click">Reset Password</asp:LinkButton>
         </td>
     </tr>
     </table>    
@@ -191,10 +191,16 @@
     <table>
     <tr>
         <td>
-         <control:Controller ID="UCAction" DateTimeFormat="dd/MM/yyyy hh:mm:ss tt" ValidationGroup="Group1" runat="server" AuditTrailDisplayType="FUll"/>
+         <control:Controller ID="UCAction" DateTimeFormat="dd/MM/yyyy hh:mm:ss tt" ValidationGroup="Group1" runat="server" AuditTrailDisplayType="FUll"
+             OnDisplayMode="UCAction_DisplayMode"
+             OnModifyMode="UCAction_ModifyMode"
+             OnAddAction="UCAction_AddAction"
+             OnEditAction="UCAction_AddAction"
+             OnAddResetAction="UCAction_AddResetAction"
+             OnEditResetAction="UCAction_AddResetAction"
+             OnDeleteAction="UCAction_DeleteAction"/>
         </td>
     </tr>
     </table>
    
 </asp:Content>
-

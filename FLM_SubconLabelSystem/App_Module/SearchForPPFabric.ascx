@@ -1,4 +1,4 @@
-﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="SearchForPPFabric.ascx.vb" Inherits="App_Module_SearchForPPFabric" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="SearchForPPFabric.ascx.cs" Inherits="App_Module_SearchForPPFabric" %>
 <style>
 input[type=submit]{background-color:#2779aa; color:White;}
 </style>
@@ -39,10 +39,10 @@ input[type=submit]{background-color:#2779aa; color:White;}
                     <asp:TextBox ID="txtSearch" CssClass="basicsearch" runat="server" TabIndex="2" Width="150px"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:Button ID="btnSubmit" runat="server" Text="Search" OnClientClick="return BasicSearchChecker();" Width="74px" />
+                    <asp:Button ID="btnSubmit" runat="server" Text="Search" OnClientClick="return BasicSearchChecker();" Width="74px" OnClick="btnSubmit_Click" />
                 </td>
                 <td width="305">
-                    <asp:LinkButton ID="lbAdvSearch" runat="server">Advance Search</asp:LinkButton>
+                    <asp:LinkButton ID="lbAdvSearch" runat="server" OnClick="lbAdvSearch_Click">Advance Search</asp:LinkButton>
                 </td>
             </tr>
         </table>
@@ -136,7 +136,7 @@ input[type=submit]{background-color:#2779aa; color:White;}
                     </asp:DropDownList>
                 </td>
                 <td>
-                    <asp:Button ID="btnPlus" runat="server" OnClientClick="return AddConditionCheck();" Text="+" />
+                    <asp:Button ID="btnPlus" runat="server" OnClientClick="return AddConditionCheck();" Text="+" OnClick="btnPlus_Click" />
                 </td>
             </tr>
             <tr>
@@ -147,16 +147,16 @@ input[type=submit]{background-color:#2779aa; color:White;}
                     <asp:ListBox ID="searchCriteria" class="searchCriteria" runat="server" Width="377px" />
                 </td>
                 <td>
-                    <asp:Button ID="btnMinus" runat="server" Text="-" />
+                    <asp:Button ID="btnMinus" runat="server" Text="-" OnClick="btnMinus_Click" />
                 </td>
                 <td>
-                    <asp:Button ID="btnSubmit2" runat="server" Text="Submit Query" OnClientClick="return AdvSearchChecker();" />
+                    <asp:Button ID="btnSubmit2" runat="server" Text="Submit Query" OnClientClick="return AdvSearchChecker();" OnClick="btnSubmit2_Click" />
                 </td>
                 <td>
-                    <asp:Button ID="btnReset" runat="server" Text="Reset" OnClientClick="return confirm('Are you going to delete all the search contidion?')" />
+                    <asp:Button ID="btnReset" runat="server" Text="Reset" OnClientClick="return confirm('Are you going to delete all the search contidion?')" OnClick="btnReset_Click" />
                 </td>
                 <td>
-                    <asp:LinkButton ID="lbBasicSearch" runat="server">Basic Search</asp:LinkButton>
+                    <asp:LinkButton ID="lbBasicSearch" runat="server" OnClick="lbBasicSearch_Click">Basic Search</asp:LinkButton>
                 </td>
             </tr>
         </table>
@@ -164,9 +164,8 @@ input[type=submit]{background-color:#2779aa; color:White;}
     <table>
         <tr>
             <td>
-                <asp:CheckBox ID="chkDeleted" runat="server" Text="Show Deleted Records " AutoPostBack="true" Width="345px" />
+                <asp:CheckBox ID="chkDeleted" runat="server" Text="Show Deleted Records " AutoPostBack="true" Width="345px" OnCheckedChanged="chkDeleted_CheckedChanged" />
             </td>
         </tr>
     </table>
 </div>
-

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" MasterPageFile="~/master/Main.master" enableEventValidation="true" AutoEventWireup="false" CodeFile="PRINT_ALIGN_INIT_Dtl.aspx.vb" Inherits="MasterMaint_PRINT_ALIGN_INIT_Dtl" title="PRINT_ALIGN_INIT_Dtl" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" enableEventValidation="true" AutoEventWireup="true" CodeFile="PRINT_ALIGN_INIT_Dtl.aspx.cs" Inherits="MasterMaint_PRINT_ALIGN_INIT_Dtl" title="PRINT_ALIGN_INIT_Dtl" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 
@@ -82,8 +82,8 @@
             function isDecimal(evt, element) {
                         var charCode = (evt.which) ? evt.which : event.keyCode
                         if (
-                            (charCode != 45 || $(element).val().indexOf('-') != -1) &&      // “-” CHECK MINUS, AND ONLY ONE.
-                            (charCode != 46 || $(element).val().indexOf('.') != -1) &&      // “.” CHECK DOT, AND ONLY ONE.
+                            (charCode != 45 || $(element).val().indexOf('-') != -1) &&      // "-" CHECK MINUS, AND ONLY ONE.
+                            (charCode != 46 || $(element).val().indexOf('.') != -1) &&      // "." CHECK DOT, AND ONLY ONE.
                             (charCode < 48 || charCode > 57))
                         return false;
                         return true;
@@ -726,9 +726,9 @@
                   <asp:Label ID="Label127" runat="server" Text=" : "></asp:Label></td>
              <td>
                  <asp:RadioButton ID="RadioButton1" runat="server" AutoPostBack="true" 
-                     Text="Yes" />
+                     Text="Yes" OnCheckedChanged="RadioButton1_CheckedChanged" />
                  <asp:RadioButton ID="RadioButton2" runat="server" AutoPostBack="true" 
-                     Text="No" />
+                     Text="No" OnCheckedChanged="RadioButton2_CheckedChanged" />
              </td>
          </tr>
          <tr>
@@ -754,4 +754,3 @@
     <control:Controller ID="UCAction" DateTimeFormat="dd/MM/yyyy hh:mm:ss tt" ValidationGroup="Group1" runat="server" AuditTrailDisplayType="FUll"/>
     
 </asp:Content>
-

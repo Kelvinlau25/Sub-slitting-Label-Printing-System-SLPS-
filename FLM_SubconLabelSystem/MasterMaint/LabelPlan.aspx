@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" MasterPageFile="~/master/Main.master" AutoEventWireup="false" CodeFile="LabelPlan.aspx.vb" Inherits="MasterMaint_LabelPlan" title="Label_Plan" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeFile="LabelPlan.aspx.cs" Inherits="MasterMaint_LabelPlan" title="Label_Plan" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 
@@ -24,7 +24,7 @@
         
          function redirect(){
             
-            var re = '<%= Session("ChkAll") %>';
+            var re = '<%= Session["ChkAll"] %>';
             var chk = 0;
             
             $('#' + gvID + ' tr input[type="checkbox"]').each(
@@ -48,8 +48,6 @@
 
 </script>
     
-   
-   
 <style type="text/css">
     
     .style5
@@ -75,7 +73,7 @@
        <tr><td style="background-color:#91B3DD" >&nbsp;</td></tr>
        <tr>
            <td> 
-                <asp:GridView ID="grdResult" DataKeyNames="SLIT_LOT_NO" EnableViewState="false" HeaderStyle-CssClass="title_bar" Width="100%" runat="server" OnRowCreated="grdResult_RowCreated" AutoGenerateColumns="False" AllowSorting="True" AllowPaging="True">
+                <asp:GridView ID="grdResult" DataKeyNames="SLIT_LOT_NO" EnableViewState="false" HeaderStyle-CssClass="title_bar" Width="100%" runat="server" OnRowCreated="grdResult_RowCreated" OnRowDataBound="grdResult_RowDataBound" AutoGenerateColumns="False" AllowSorting="True" AllowPaging="True">
                 <PagerSettings Visible="False" />
                     <Columns>
                     
@@ -164,7 +162,7 @@
                             <HeaderStyle HorizontalAlign="Left" Width="8%"></HeaderStyle>
                             <ItemStyle VerticalAlign="Middle" HorizontalAlign="Left"></ItemStyle>
                             <ItemTemplate>
-                                <a id="Slit_Lot_No" target="_self" href="<%# MyBase.GetUrl(EnumAction.View, Eval("SLIT_LOT_NO")) %>"><%#Eval("SLIT_LOT_NO")%></a>
+                                <a id="Slit_Lot_No" target="_self" href="<%# GetUrl(EnumAction.View, Eval("SLIT_LOT_NO").ToString()) %>"><%#Eval("SLIT_LOT_NO")%></a>
                             </ItemTemplate>
                        </asp:TemplateField>
                             
@@ -188,10 +186,10 @@
                       
                        <asp:TemplateField HeaderStyle-Width="6%" HeaderText="Print" HeaderStyle-HorizontalAlign="Left" SortExpression="">
                             <HeaderStyle HorizontalAlign="Left" Width="6%"></HeaderStyle>
-                            <HeaderTemplate><asp:CheckBox ID="cbSelectAll" runat="server" Text="Print" oncheckedchanged="PrintChkBoxAll_CheckedChanged" AutoPostBack="True"/></HeaderTemplate>
+                            <HeaderTemplate><asp:CheckBox ID="cbSelectAll" runat="server" Text="Print" OnCheckedChanged="PrintChkBoxAll_CheckedChanged" AutoPostBack="True"/></HeaderTemplate>
                             <ItemStyle VerticalAlign="Middle" HorizontalAlign="Left"></ItemStyle>
                             <ItemTemplate>
-                                <asp:CheckBox ID="PrintChkBox" runat="server"  oncheckedchanged="PrintChkBox_CheckedChanged" AutoPostBack="True"></asp:CheckBox>   
+                                <asp:CheckBox ID="PrintChkBox" runat="server" OnCheckedChanged="PrintChkBox_CheckedChanged" AutoPostBack="True"></asp:CheckBox>   
                             </ItemTemplate>
                        </asp:TemplateField> 
                           
@@ -219,12 +217,9 @@
      <td width="10%" class="style5"></td>
      <td width="10%" class="style5"></td>
      <td width="10%" class="style5"></td>
-     <td width="15%" class="style5"><asp:Button ID="btnExport" style="float: right;" runat="server" Text="Export" BorderStyle="Solid" OnClientClick="redirect()" /></td>
+     <td width="15%" class="style5"><asp:Button ID="btnExport" style="float: right;" runat="server" Text="Export" BorderStyle="Solid" OnClientClick="redirect()" OnClick="btnExport_Click" /></td>
      <td width="5%" class="style5"></td>
     </tr>
   </table>
   
 </asp:Content>
-
-
-

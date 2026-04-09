@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" MasterPageFile="~/master/Main.master" EnableEventValidation="true" AutoEventWireup="false" CodeFile="SSR_VIEW.aspx.vb" Inherits="Transactions_SSR_VIEW" title="SSR_VIEW" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" EnableEventValidation="true" AutoEventWireup="true" CodeFile="SSR_VIEW.aspx.cs" Inherits="Transactions_SSR_VIEW" title="SSR_VIEW" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <style type="text/css" >
         html,body {
@@ -22,9 +22,9 @@
         {
             width: 610px;
         }
-        .style10
-        {
-            width: 8%;
+        .style10        
+        {       
+            width: 8%;  
         }
         .style11
         {

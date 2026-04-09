@@ -1,12 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36811.4 d17.14
+VisualStudioVersion = 17.14.36811.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FLM_SubconLabelSystem", ".", "{1A351CD7-6B4D-4119-8F13-8FAF661ED26F}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
-		ProjectReferences = "{55ae13fa-8e18-493e-9bfb-5130a9bf3db5}|Library.Database.dll;{0A1F849F-46BC-4255-A499-7D1F76055D36}|Library.SQLServer.dll;{d4618a4b-aaee-415b-af2c-0874920e87c3}|Library.Control.Base.dll;{1322656d-2faa-4f49-a511-3696dfc1d29c}|Library.common.dll;{88f0907b-957b-4389-8cee-08eb846ef8ba}|cls_DB.dll;{8aa16f5a-5199-4552-9d10-44a74f06d853}|Library.Root.dll;{4e690125-74a9-489f-a748-0d47e83331c8}|WIP_Process.dll;"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		ProjectReferences = "{88f0907b-957b-4389-8cee-08eb846ef8ba}|cls_DB.dll;{1322656d-2faa-4f49-a511-3696dfc1d29c}|Library.common.dll;{0A1F849F-46BC-4255-A499-7D1F76055D36}|Library.SQLServer.dll;{d4618a4b-aaee-415b-af2c-0874920e87c3}|Library.Control.Base.dll;{55ae13fa-8e18-493e-9bfb-5130a9bf3db5}|Library.Database.dll;{8AA16F5A-5199-4552-9D10-44A74F06D853}|Library.Root.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_53036"
 		Debug.AspNetCompiler.PhysicalPath = "..\FLM_SubconLabelSystem\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53036\"
@@ -25,19 +25,19 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FLM_SubconLabelSystem", "."
 		SlnRelativePath = "..\FLM_SubconLabelSystem\"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00A05F709F98}") = "Library.Common", "Library\Library.Common\Library.Common.csproj", "{1322656D-2FAA-4F49-A511-3696DFC1D29C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Common", "Library\Library.Common\Library.Common.csproj", "{1322656D-2FAA-4F49-A511-3696DFC1D29C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00A05F709F98}") = "Library.Control.Base", "Library\Library.Control.Base\Library.Control.Base.csproj", "{D4618A4B-AAEE-415B-AF2C-0874920E87C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Control.Base", "Library\Library.Control.Base\Library.Control.Base.csproj", "{D4618A4B-AAEE-415B-AF2C-0874920E87C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00A05F709F98}") = "Library.Database", "Library\Library.Database\Library.Database.csproj", "{55AE13FA-8E18-493E-9BFB-5130A9BF3DB5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.SQLServer", "Library\Library.SQLServer\Library.SQLServer.csproj", "{0A1F849F-46BC-4255-A499-7D1F76055D36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00A05F709F98}") = "Library.Root", "Library\Library.Root\Library.Root.csproj", "{8AA16F5A-5199-4552-9D10-44A74F06D853}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cls_DB", "Library\cls_DB\cls_DB.csproj", "{88F0907B-957B-4389-8CEE-08EB846EF8BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00A05F709F98}") = "Library.SQLServer", "Library\Library.SQLServer\Library.SQLServer.csproj", "{0A1F849F-46BC-4255-A499-7D1F76055D36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WIP_Process", "Library\WIP_Process\WIP_Process.csproj", "{4E690125-74A9-489F-A748-0D47E83331C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00A05F709F98}") = "WIP_Process", "Library\WIP_Process\WIP_Process.csproj", "{4E690125-74A9-489F-A748-0D47E83331C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Database", "Library\Library.Database\Library.Database.csproj", "{55AE13FA-8E18-493E-9BFB-5130A9BF3DB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00A05F709F98}") = "cls_DB", "Library\cls_DB\cls_DB.csproj", "{88F0907B-957B-4389-8CEE-08EB846EF8BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Root", "Library\Library.Root\Library.Root.csproj", "{8AA16F5A-5199-4552-9D10-44A74F06D853}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +57,18 @@ Global
 		{D4618A4B-AAEE-415B-AF2C-0874920E87C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4618A4B-AAEE-415B-AF2C-0874920E87C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4618A4B-AAEE-415B-AF2C-0874920E87C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A1F849F-46BC-4255-A499-7D1F76055D36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A1F849F-46BC-4255-A499-7D1F76055D36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A1F849F-46BC-4255-A499-7D1F76055D36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A1F849F-46BC-4255-A499-7D1F76055D36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88F0907B-957B-4389-8CEE-08EB846EF8BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88F0907B-957B-4389-8CEE-08EB846EF8BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88F0907B-957B-4389-8CEE-08EB846EF8BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88F0907B-957B-4389-8CEE-08EB846EF8BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E690125-74A9-489F-A748-0D47E83331C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E690125-74A9-489F-A748-0D47E83331C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E690125-74A9-489F-A748-0D47E83331C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E690125-74A9-489F-A748-0D47E83331C8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{55AE13FA-8E18-493E-9BFB-5130A9BF3DB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{55AE13FA-8E18-493E-9BFB-5130A9BF3DB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55AE13FA-8E18-493E-9BFB-5130A9BF3DB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -65,18 +77,6 @@ Global
 		{8AA16F5A-5199-4552-9D10-44A74F06D853}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AA16F5A-5199-4552-9D10-44A74F06D853}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AA16F5A-5199-4552-9D10-44A74F06D853}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0A1F849F-46BC-4255-A499-7D1F76055D36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A1F849F-46BC-4255-A499-7D1F76055D36}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0A1F849F-46BC-4255-A499-7D1F76055D36}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0A1F849F-46BC-4255-A499-7D1F76055D36}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4E690125-74A9-489F-A748-0D47E83331C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4E690125-74A9-489F-A748-0D47E83331C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4E690125-74A9-489F-A748-0D47E83331C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4E690125-74A9-489F-A748-0D47E83331C8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{88F0907B-957B-4389-8CEE-08EB846EF8BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{88F0907B-957B-4389-8CEE-08EB846EF8BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{88F0907B-957B-4389-8CEE-08EB846EF8BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{88F0907B-957B-4389-8CEE-08EB846EF8BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

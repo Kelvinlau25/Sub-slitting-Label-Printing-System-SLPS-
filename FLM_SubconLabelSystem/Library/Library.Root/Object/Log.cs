@@ -1,4 +1,4 @@
-namespace Library.Root.Object
+namespace Library.Root.Objects
 {
     public class Log
     {

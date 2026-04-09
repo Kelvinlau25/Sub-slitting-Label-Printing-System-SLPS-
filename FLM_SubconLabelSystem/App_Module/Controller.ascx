@@ -1,4 +1,4 @@
-﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="Controller.ascx.vb" Inherits="App_Module_Controller" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Controller.ascx.cs" Inherits="App_Module_Controller" %>
 <asp:Panel ID="pninfo" runat="server">
 <div class="createdpanel">
     <table class="loginfo">
@@ -40,7 +40,7 @@
 <asp:Panel ID="pnconfirmation" runat="server">
     <script type="text/javascript">
         function ValidationChecked(sender, args) {
-            args.IsValid = $('#<%= rbyes.clientid() %>').is(":checked");
+            args.IsValid = $('#<%= rbyes.ClientID %>').is(":checked");
         }
     </script>
     <table class="deleteInfo">
@@ -48,18 +48,18 @@
             <td class="label">Delete the record ?</td>
             <td class="value">
                 <asp:RadioButton ID="rbyes" Text="Yes" GroupName="confirm" runat="server" />
-                <asp:RadioButton ID="rbno" Text="No" GroupName="confirm" Checked runat="server" />
+                <asp:RadioButton ID="rbno" Text="No" GroupName="confirm" Checked="true" runat="server" />
                 <asp:CustomValidator ID="cvdeleteyes" EnableClientScript="true" ClientValidationFunction="ValidationChecked" Display="None" runat="server"></asp:CustomValidator>
             </td>
         </tr>
     </table>
 </asp:Panel>
 <div class="clear"></div>
-<div class="ControllerAdditionalBtn" style=" float:left;"></div>
-<div style=" float:left;">
-<asp:Button ID="btnSubmit" CssClass="control" runat="server" Text="Submit"  />
-<asp:Button ID="btnDelete" runat="server" OnClientClick="return confirm('Are you sure you want to delete the record?')" Text="Delete" />
-<asp:Button ID="btnReset" runat="server" Text="Reset" />
-<asp:Button ID="btnCancel" runat="server" Text="Cancel" />
+<div class="ControllerAdditionalBtn" style="float:left;"></div>
+<div style="float:left;">
+<asp:Button ID="btnSubmit" CssClass="control" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
+<asp:Button ID="btnDelete" runat="server" OnClientClick="return confirm('Are you sure you want to delete the record?')" Text="Delete" OnClick="btnDelete_Click" />
+<asp:Button ID="btnReset" runat="server" Text="Reset" OnClick="btnReset_Click" />
+<asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
 <asp:HyperLink ID="hpLink" Target="_blank" runat="server">View History</asp:HyperLink>
 </div>

@@ -1,5 +1,5 @@
-﻿<%@ Page Language="VB" MasterPageFile="~/master/Main.master" EnableEventValidation="true"
-    AutoEventWireup="false" CodeFile="SLIT_SERIES_Dtl.aspx.vb" Inherits="Transaction_SlitSeries_Dtl"
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" EnableEventValidation="true"
+    AutoEventWireup="true" CodeFile="SLIT_SERIES_Dtl.aspx.cs" Inherits="Transaction_SlitSeries_Dtl"
     Title="SlitSeries_Dtl" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
@@ -106,8 +106,8 @@
         function isDecimal(evt, element) {
             var charCode = (evt.which) ? evt.which : event.keyCode
             if (
-                (charCode != 45 || $(element).val().indexOf('-') != -1) &&      // “-” CHECK MINUS, AND ONLY ONE.
-                (charCode != 46 || $(element).val().indexOf('.') != -1) &&      // “.” CHECK DOT, AND ONLY ONE.
+                (charCode != 45 || $(element).val().indexOf('-') != -1) &&
+                (charCode != 46 || $(element).val().indexOf('.') != -1) &&
                 (charCode < 48 || charCode > 57))
             return false;
             return true;
@@ -145,17 +145,9 @@
             
             window.open('<%= ResolveUrl("../PopUp/PP_PC2_Cust.aspx") %>?itm1=' + pc2cust + '&itm2=' + lblpc2cust + '&itm3=' + refno + '&itm4=' + _str_ProdLine + '&itm5=' + _str_PC1Mother + '&itm6=' + _str_PC2Mother + '&itm7=' + _str_PC1Customer  + '&itm8=' + _str_buttonName + '&itm9=' + _str_hdn_PC2_Customer + '&itm10=' + _str_hdn_UnitWeightCustomer, 'PopUp', 'directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=800,height=600');
         }
-        
-    
 
             function showDialogue(){
-//                 var x = confirm("This Lot No. is already existed. Do you want to continue to create slitting series?"); 
                  var control = '<%=inpHide.ClientID%>'; 
-//                     if (x == true) { 
-//                         document.getElementById(control).value = "1";              
-//                     }else{ 
-//                        document.getElementById(control).value = "0"; 
-//                     } 
                  document.getElementById(control).value = "1";  
                  document.getElementById('<%=Button1.ClientID%>').click(); 
             }
@@ -166,25 +158,22 @@
                     document.getElementById('<%=txtNoOfSlit.ClientID%>').focus();
                  }
                  var key;
-                 if (window.event){ key = window.event.keyCode;} // Internet Explorer
+                 if (window.event){ key = window.event.keyCode;}
                  else {key = e.which};
 
                  return (key != 13);
             }
                        
-    
             function rbValidation(oSrouce, args){
                 var matrixRB = document.getElementById('<%= rdMatrix.ClientID %>');
                 var txtPosition = document.getElementById('<%= rdPos.ClientID %>');
                 
                 if(matrixRB.checked){
-
                     if(txtPosition.value=="" || txtPosition.value==null)
                         args.IsValid = false;
                     else
                         args.IsValid = true;
                 }
-
             }
             
            function rbValidation2(oSrouce, args){
@@ -192,13 +181,11 @@
                 var txtPosition = document.getElementById('<%= rdPos.ClientID %>');
                 
                 if(matrixRB.checked){
-
                     if(txtPosition.value == 0)
                         args.IsValid = false;
                     else
                         args.IsValid = true;
                 }
-
             }
             
           function rbValidation3(oSrouce, args){
@@ -208,13 +195,9 @@
               var evenRB = document.getElementById('<%= rdEven.ClientID %>');
           
               if(matrixRB.checked || seqRB.checked || oddRB.checked || evenRB.checked){
-              
-              args.IsValid = true;
-              
+                  args.IsValid = true;
               }else{
-              
-              args.IsValid = false;
-          
+                  args.IsValid = false;
               } 
           } 
             
@@ -456,7 +439,8 @@
                     <asp:Label ID="Label22" runat="server" Text=":"></asp:Label>
                 </td>
                 <td>
-                    <asp:DropDownList ID="ddlProdLine" runat="server" AutoPostBack="True">
+                    <asp:DropDownList ID="ddlProdLine" runat="server" AutoPostBack="True"
+                        OnSelectedIndexChanged="ddlProdLine_SelectedIndexChanged">
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator ID="rfddlProdLine" runat="server" ControlToValidate="ddlProdLine"
                         Display="None" ValidationGroup="Group1"></asp:RequiredFieldValidator>
@@ -471,7 +455,8 @@
                     <asp:Label ID="Label23" runat="server" Text=":"></asp:Label>
                 </td>
                 <td>
-                    <asp:DropDownList ID="ddlPC1Mother" runat="server" AutoPostBack="True">
+                    <asp:DropDownList ID="ddlPC1Mother" runat="server" AutoPostBack="True"
+                        OnSelectedIndexChanged="ddlPC1Mother_SelectedIndexChanged">
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator ID="rfddlPC1Mother" runat="server" ControlToValidate="ddlPC1Mother"
                         Display="None" ValidationGroup="Group1"></asp:RequiredFieldValidator>
@@ -486,8 +471,6 @@
                     <asp:Label ID="Label24" runat="server" Text=":"></asp:Label>
                 </td>
                 <td class="style28">
-
-                   
                     <asp:TextBox ID="txtPC2Mother" style="width:20%;" runat="server"  
                         CssClass="pc2mother" ReadOnly="True"></asp:TextBox>    
                     <input id="btnPC2Mother" runat="server" onclick="popupwindow('pc2mother','lblpc2mother', 'txtRefno2');"
@@ -531,7 +514,8 @@
                     <asp:Label ID="Label26" runat="server" Text=":"></asp:Label>
                 </td>
                 <td>
-                    <asp:DropDownList ID="ddlPC1Customer" runat="server" AutoPostBack="True">
+                    <asp:DropDownList ID="ddlPC1Customer" runat="server" AutoPostBack="True"
+                        OnSelectedIndexChanged="ddlPC1Customer_SelectedIndexChanged">
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator ID="rfddlPC1Customer" runat="server" ControlToValidate="ddlPC1Customer"
                         Display="None" ValidationGroup="Group1"></asp:RequiredFieldValidator>
@@ -546,10 +530,8 @@
                     <asp:Label ID="Label27" runat="server" Text=":"></asp:Label>
                 </td>
                 <td>
-             
                     <asp:TextBox ID="txtPC2Customer" style="width:20%" runat="server" 
                         CssClass="pc2cust" ReadOnly="True"></asp:TextBox>
-                   
                     <input id="btnPC2Customer" runat="server" onclick="popupwindow1('pc2cust','lblpc2cust');"
                         type="button" value="..." />
                 </td>
@@ -563,7 +545,6 @@
                 </td>
                 <td>
                    <asp:TextBox ID="txtUnitWeightCustomer" runat="server" CssClass="lblpc2cust" ReadOnly="True"></asp:TextBox>
-                   
                 </td>
             </tr>
             <tr>
@@ -627,7 +608,7 @@
                 </td>
                 <td>
                     <input id="inpHide" runat="server" type="hidden" />
-                    <asp:Button ID="Button1" runat="server" Style="display: none;" Text="hide" />
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Style="display: none;" Text="hide" />
                     <asp:Label ID="lbLotSlitStatus" runat="server" Text=""></asp:Label>
                 </td>
             </tr>
@@ -638,8 +619,7 @@
             <asp:TextBox ID="txtPC2CustomerID" runat="server" CssClass="lblpc2cust"></asp:TextBox>
         </div>
         
-        
-        <asp:Button ID="Button2" runat="server" Text="Button" style="display:none;" />
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Button" style="display:none;" />
         <asp:HiddenField ID="hdn_PC2_Mother" runat="server" />
         <asp:HiddenField ID="hdn_Unit_Weight_Mother" runat="server" />
         <asp:HiddenField ID="hdn_PC2_Customer" runat="server" />

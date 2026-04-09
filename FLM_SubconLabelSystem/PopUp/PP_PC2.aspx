@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" MasterPageFile="~/master/Main.master" AutoEventWireup="false" CodeFile="PP_PC2.aspx.vb" Inherits="PopUp_PP_PC2" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeFile="PP_PC2.aspx.cs" Inherits="PopUp_PP_PC2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -8,12 +8,12 @@
     <script type="text/javascript">
         function passvalue(pc2mother, lblpc2mother) {  
      
-            window.opener.$('.<%= me.pc2mother %>').val(pc2mother);
-            window.opener.$('.<%= me.lblpc2mother %>').val(lblpc2mother);
-            window.opener.document.getElementById('<%= me.str_hdn_PC2_Mother %>').value = pc2mother;
-            window.opener.document.getElementById('<%= me.str_hdn_Unit_Weight_Mother %>').value = lblpc2mother;
+            window.opener.$('.<%= this.pc2mother %>').val(pc2mother);
+            window.opener.$('.<%= this.lblpc2mother %>').val(lblpc2mother);
+            window.opener.document.getElementById('<%= this.str_hdn_PC2_Mother %>').value = pc2mother;
+            window.opener.document.getElementById('<%= this.str_hdn_Unit_Weight_Mother %>').value = lblpc2mother;
             
-            window.opener.document.getElementById('<%= me.str_BtnName %>').click();
+            window.opener.document.getElementById('<%= this.str_BtnName %>').click();
          
             window.close();
         }

@@ -15,7 +15,7 @@ namespace Library.Database.BLL
 
         public static DataTable GetUserData(string ID)
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.GetUserData(ID);
             }
@@ -23,7 +23,7 @@ namespace Library.Database.BLL
 
         public static DataTable GetDLLData(string Value, string ID)
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.GetDLLData(Value, ID);
             }
@@ -31,7 +31,7 @@ namespace Library.Database.BLL
 
         public static DataTable GetPC2Data(string ID)
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.GetPC2Data(ID);
             }
@@ -39,7 +39,7 @@ namespace Library.Database.BLL
 
         public static DataTable GetProdlineIDData(string ID)
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.GetProdlineIDData(ID);
             }
@@ -47,7 +47,7 @@ namespace Library.Database.BLL
 
         public static DataTable GetPC1IDData(string ID)
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.GetPC1IDData(ID);
             }
@@ -55,7 +55,7 @@ namespace Library.Database.BLL
 
         public static DataTable GetPC2IDData(string ID)
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.GetPC2IDData(ID);
             }
@@ -63,7 +63,7 @@ namespace Library.Database.BLL
 
         public static DataTable chkRefNo(string RefNo)
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.chkRefNo(RefNo);
             }
@@ -71,7 +71,7 @@ namespace Library.Database.BLL
 
         public static DataTable chkPC2Mother(string IDSubSlitReq, string PC2Mother, string ProdLine, string PC1Mother)
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.chkPC2Mother(IDSubSlitReq, PC2Mother, ProdLine, PC1Mother);
             }
@@ -79,7 +79,7 @@ namespace Library.Database.BLL
 
         public static DataTable GetIDSSR(string Refno, int RevCount)
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.GetIDSSR(Refno, RevCount);
             }
@@ -87,7 +87,7 @@ namespace Library.Database.BLL
 
         public static DataTable GetMotherSeq(int IDSSR, string SeqMother)
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.GetMotherSeq(IDSSR, SeqMother);
             }
@@ -95,7 +95,7 @@ namespace Library.Database.BLL
 
         public static DataTable chkPC2Child(string IDSubSlitReq, string PC2Mother, string PC2Child)
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.chkPC2Child(IDSubSlitReq, PC2Mother, PC2Child);
             }
@@ -103,7 +103,7 @@ namespace Library.Database.BLL
 
         public static string SubSlitMaint(string ID, string pCompFrom, string pCompTo, string pRefNo, string pRev, string pDateReq, string pReqStat, string pVenStat, int RecType)
         {
-            using (var _Dal = new DAL.SubSlitRequest())
+            using (var _Dal = new Library.Database.DAL.SubSlitRequest())
             {
                 string str = System.Web.HttpContext.Current.Session["gstrUserID"].ToString();
                 string cc = System.Web.HttpContext.Current.Session["gstrUserComp"].ToString();
@@ -123,7 +123,7 @@ namespace Library.Database.BLL
 
         public static string SubSlitDup(string ID, string pCompFrom, string pCompTo, string pRefNo, int pRev, string pDateReq, string pReqStat, string pVenStat, int RecType)
         {
-            using (var _Dal = new DAL.SubSlitRequest())
+            using (var _Dal = new Library.Database.DAL.SubSlitRequest())
             {
                 string str = System.Web.HttpContext.Current.Session["gstrUserID"].ToString();
                 string cc = System.Web.HttpContext.Current.Session["gstrUserComp"].ToString();
@@ -145,7 +145,7 @@ namespace Library.Database.BLL
                                                  string pProdLine, string pQty, string pMWeight, string pMTotWeight,
                                                  string pSubWaste, string pETD, string pETA, int RecType)
         {
-            using (var _Dal = new DAL.SubSlitRequest())
+            using (var _Dal = new Library.Database.DAL.SubSlitRequest())
             {
                 string str = System.Web.HttpContext.Current.Session["gstrUserID"].ToString();
                 string cc = System.Web.HttpContext.Current.Session["gstrUserComp"].ToString();
@@ -167,7 +167,7 @@ namespace Library.Database.BLL
                                                string pProdLine, string pQty, string pMWeight, string pMTotWeight,
                                                string pSubWaste, string pETD, string pETA, int RecType)
         {
-            using (var _Dal = new DAL.SubSlitRequest())
+            using (var _Dal = new Library.Database.DAL.SubSlitRequest())
             {
                 string str = System.Web.HttpContext.Current.Session["gstrUserID"].ToString();
                 string cc = System.Web.HttpContext.Current.Session["gstrUserComp"].ToString();
@@ -187,7 +187,7 @@ namespace Library.Database.BLL
 
         public static string SubSlitChildDel(string pRefNo, string pIdSubMomReq, string pPC2Mother, int RecType)
         {
-            using (var _Dal = new DAL.SubSlitRequest())
+            using (var _Dal = new Library.Database.DAL.SubSlitRequest())
             {
                 string str = System.Web.HttpContext.Current.Session["gstrUserID"].ToString();
                 string cc = System.Web.HttpContext.Current.Session["gstrUserComp"].ToString();
@@ -207,7 +207,7 @@ namespace Library.Database.BLL
 
         public static string SubSlitChildDelFrList(string pIdSubMomReq, string pPC2Mother, string pPC1Mother, string pProdLineNo, string pSeqMother, int RecType)
         {
-            using (var _Dal = new DAL.SubSlitRequest())
+            using (var _Dal = new Library.Database.DAL.SubSlitRequest())
             {
                 string str = System.Web.HttpContext.Current.Session["gstrUserID"].ToString();
                 string cc = System.Web.HttpContext.Current.Session["gstrUserComp"].ToString();
@@ -227,7 +227,7 @@ namespace Library.Database.BLL
 
         public static string SubSlitMotherDel(string pIdSubMomReq, string pPC2Mother, string pPC1Mother, string pProdLineNo, string pSeqMother, int RecType)
         {
-            using (var _Dal = new DAL.SubSlitRequest())
+            using (var _Dal = new Library.Database.DAL.SubSlitRequest())
             {
                 string str = System.Web.HttpContext.Current.Session["gstrUserID"].ToString();
                 string cc = System.Web.HttpContext.Current.Session["gstrUserComp"].ToString();
@@ -247,7 +247,7 @@ namespace Library.Database.BLL
 
         public static string SubSlitChildMaint(string ID, string pIdSubMomReq, string pPC1Cust, string pPC2Cust, string pCQty, string pCUnitWeight, string pCTotWeight, string pRemark, string pPC2Mother, string pProdLineNo, string pPC1Mother, int RecType)
         {
-            using (var _Dal = new DAL.SubSlitRequest())
+            using (var _Dal = new Library.Database.DAL.SubSlitRequest())
             {
                 string str = System.Web.HttpContext.Current.Session["gstrUserID"].ToString();
                 string cc = System.Web.HttpContext.Current.Session["gstrUserComp"].ToString();
@@ -267,7 +267,7 @@ namespace Library.Database.BLL
 
         public static string SubSlitChildDup(int ID, string pIdSubMomReq, string pPC1Cust, string pPC2Cust, string pCQty, string pCUnitWeight, string pCTotWeight, string pRemark, string pPC2Mother, int RecType)
         {
-            using (var _Dal = new DAL.SubSlitRequest())
+            using (var _Dal = new Library.Database.DAL.SubSlitRequest())
             {
                 string str = System.Web.HttpContext.Current.Session["gstrUserID"].ToString();
                 string cc = System.Web.HttpContext.Current.Session["gstrUserComp"].ToString();
@@ -287,7 +287,7 @@ namespace Library.Database.BLL
 
         public static string UpdateReq(string RefNo, int Revision)
         {
-            using (var _Dal = new DAL.SubSlitRequest())
+            using (var _Dal = new Library.Database.DAL.SubSlitRequest())
             {
                 string str = System.Web.HttpContext.Current.Session["gstrUserID"].ToString();
                 string result = _Dal.UpdateReq(RefNo, Revision, str, System.Web.HttpContext.Current.Request.UserHostAddress.ToString());
@@ -306,7 +306,7 @@ namespace Library.Database.BLL
 
         public static string SSRUpdateStat(string RefNo, int ID_SSR, string Req_Status, string Vend_Status)
         {
-            using (var _Dal = new DAL.SubSlitRequest())
+            using (var _Dal = new Library.Database.DAL.SubSlitRequest())
             {
                 string str = System.Web.HttpContext.Current.Session["gstrUserID"].ToString();
                 string result = _Dal.SSRUpdateStat(RefNo, ID_SSR, Req_Status, Vend_Status, str, System.Web.HttpContext.Current.Request.UserHostAddress.ToString());
@@ -325,7 +325,7 @@ namespace Library.Database.BLL
 
         public static DataTable SSRListExist(string pRefNo, int pID_SubSlit_Req)
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.SSRListExist(pRefNo, pID_SubSlit_Req);
             }
@@ -333,7 +333,7 @@ namespace Library.Database.BLL
 
         public static DataTable SSRList(string pRefNo, string pSeqMother)
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.SSRList(pRefNo, pSeqMother);
             }
@@ -341,7 +341,7 @@ namespace Library.Database.BLL
 
         public static DataTable SSRList_02(string pRefNo, string pPC2_Mother, string pstr_ProLine)
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.SSRList_02(pRefNo, pPC2_Mother, pstr_ProLine);
             }
@@ -349,7 +349,7 @@ namespace Library.Database.BLL
 
         public static DataTable GetProdLineID(string pProdLineNo)
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.GetProdLineID(pProdLineNo);
             }
@@ -357,7 +357,7 @@ namespace Library.Database.BLL
 
         public static DataTable GetPC1ID(string pPC1Mother)
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.GetPC1ID(pPC1Mother);
             }
@@ -365,7 +365,7 @@ namespace Library.Database.BLL
 
         public static DataTable GetPC2ID(string pPC2Mother)
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.GetPC2ID(pPC2Mother);
             }
@@ -373,7 +373,7 @@ namespace Library.Database.BLL
 
         public static DataTable CHECK_SUBMITTED_REQ(string RefNo, int Revision)
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.CHECK_SUBMITTED_REQ(RefNo, Revision);
             }
@@ -381,7 +381,7 @@ namespace Library.Database.BLL
 
         public static DataTable GetSSR_INFO(string RefNo, int IDSSR)
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.GetSSR_INFO(RefNo, IDSSR);
             }
@@ -389,7 +389,7 @@ namespace Library.Database.BLL
 
         public static DataTable chkPC2Mom(string ID, string pRefNo)
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.chkPC2Mom(ID, pRefNo);
             }
@@ -398,7 +398,7 @@ namespace Library.Database.BLL
         public static ListCollection List(string Table, string TableID, string SearchField, string SearchValue, string SortField, int Direction,
                                           int Page, int Deleted)
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 if (Direction != 1)
                 {
@@ -410,7 +410,7 @@ namespace Library.Database.BLL
 
         public static DataTable GetASRDDL(string CompanyCode)
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.GetASRDDL(CompanyCode);
             }
@@ -418,7 +418,7 @@ namespace Library.Database.BLL
 
         public static DataTable GetASRDDL2()
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.GetASRDDL2();
             }
@@ -431,7 +431,7 @@ namespace Library.Database.BLL
             DataTable _obj_dt_1;
             DataTable _obj_dt_2;
 
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 _obj_dt = _dal.SSRListExist(pRefNo, pID_SubSlit_Req);
                 _obj_dt_1 = _dal.GetUserData(pUserID);
@@ -628,7 +628,7 @@ namespace Library.Database.BLL
             DataTable _obj_dt;
             DataTable _obj_dt_1;
 
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 _obj_dt = _dal.SSRListExist(pRefNo, pID_SubSlit_Req);
                 _obj_dt_1 = _dal.GetUserData(pUserID);
@@ -660,7 +660,7 @@ namespace Library.Database.BLL
             _obj_sb.AppendLine("<td></td>");
             _obj_sb.AppendLine("<td width='130px'>Date</td>");
             _obj_sb.AppendLine("<td width='10px'>:</td>");
-            _obj_sb.AppendLine("<td width='280px' align='left' style='mso-number-format:\"Short Date\";'>" + _obj_dt.Rows[0]["DATEREQ"].ToString().Trim() + "</td>");
+            _obj_sb.AppendLine(@"<td width='280px' align='left' style='mso-number-format:""Short Date"";'>" + _obj_dt.Rows[0]["DATEREQ"].ToString().Trim() + "</td>");
             _obj_sb.AppendLine("</tr>");
 
             _obj_sb.AppendLine("<tr>");
@@ -716,13 +716,13 @@ namespace Library.Database.BLL
                 _obj_sb.AppendLine("<td align='center'>" + pobj_data.Rows[_int_iResult]["PC1_MOTHER"].ToString().Trim() + "</td>");
                 _obj_sb.AppendLine("<td align='center'>" + pobj_data.Rows[_int_iResult]["PC2_MOTHER"].ToString().Trim() + "</td>");
                 _obj_sb.AppendLine("<td align='center'>" + pobj_data.Rows[_int_iResult]["QTY"].ToString().Trim() + "</td>");
-                _obj_sb.AppendLine("<td align='center' style='mso-number-format:\"\#\,\#\#0\.0\";'>" + pobj_data.Rows[_int_iResult]["M_WEIGHT"].ToString().Trim() + "</td>");
-                _obj_sb.AppendLine("<td align='center' style='mso-number-format:\"\#\,\#\#0\.0\";'>" + pobj_data.Rows[_int_iResult]["M_TOTAL_WEIGHT"].ToString().Trim() + "</td>");
+                _obj_sb.AppendLine(@"<td align='center' style='mso-number-format:""\#\,\#\#0\.0"";'>" + pobj_data.Rows[_int_iResult]["M_WEIGHT"].ToString().Trim() + "</td>");
+                _obj_sb.AppendLine(@"<td align='center' style='mso-number-format:""\#\,\#\#0\.0"";'>" + pobj_data.Rows[_int_iResult]["M_TOTAL_WEIGHT"].ToString().Trim() + "</td>");
                 _obj_sb.AppendLine("<td align='center'>" + pobj_data.Rows[_int_iResult]["PC1_CUST"].ToString().Trim() + "</td>");
                 _obj_sb.AppendLine("<td align='center'>" + pobj_data.Rows[_int_iResult]["PC2_CUST"].ToString().Trim() + "</td>");
                 _obj_sb.AppendLine("<td align='center'>" + pobj_data.Rows[_int_iResult]["C_QTY"].ToString().Trim() + "</td>");
-                _obj_sb.AppendLine("<td align='center' style='mso-number-format:\"\#\,\#\#0\.0\";'>" + pobj_data.Rows[_int_iResult]["C_WEIGHT"].ToString().Trim() + "</td>");
-                _obj_sb.AppendLine("<td align='center' style='mso-number-format:\"\#\,\#\#0\.0\";'>" + pobj_data.Rows[_int_iResult]["C_TOTAL_WEIGHT"].ToString().Trim() + "</td>");
+                _obj_sb.AppendLine(@"<td align='center' style='mso-number-format:""\#\,\#\#0\.0"";'>" + pobj_data.Rows[_int_iResult]["C_WEIGHT"].ToString().Trim() + "</td>");
+                _obj_sb.AppendLine(@"<td align='center' style='mso-number-format:""\#\,\#\#0\.0"";'>" + pobj_data.Rows[_int_iResult]["C_TOTAL_WEIGHT"].ToString().Trim() + "</td>");
                 _obj_sb.AppendLine("<td align='center'>" + pobj_data.Rows[_int_iResult]["SUBSLIT_WASTE"].ToString().Trim() + "</td>");
                 _obj_sb.AppendLine("<td align='center'>" + pobj_data.Rows[_int_iResult]["ETD"].ToString().Trim() + "</td>");
                 _obj_sb.AppendLine("<td align='center'>" + pobj_data.Rows[_int_iResult]["ETA"].ToString().Trim() + "</td>");
@@ -736,12 +736,12 @@ namespace Library.Database.BLL
             _obj_sb.AppendLine("<td align='center'>Total</td>");
             _obj_sb.AppendLine("<td align='center'>" + M_Qty.ToString() + "</td>");
             _obj_sb.AppendLine("<td align='center'>&nbsp</td>");
-            _obj_sb.AppendLine("<td align='center' style='mso-number-format:\"\#\,\#\#0\.0\";'>" + M_Total_Weight.ToString() + "</td>");
+            _obj_sb.AppendLine(@"<td align='center' style='mso-number-format:""\#\,\#\#0\.0"";'>" + M_Total_Weight.ToString() + "</td>");
             _obj_sb.AppendLine("<td align='center'>&nbsp</td>");
             _obj_sb.AppendLine("<td align='center'>&nbsp</td>");
             _obj_sb.AppendLine("<td align='center'>" + C_Qty.ToString() + "</td>");
             _obj_sb.AppendLine("<td align='center'>&nbsp</td>");
-            _obj_sb.AppendLine("<td align='center' style='mso-number-format:\"\#\,\#\#0\.0\";'>" + C_Total_Weight.ToString() + "</td>");
+            _obj_sb.AppendLine(@"<td align='center' style='mso-number-format:""\#\,\#\#0\.0"";'>" + C_Total_Weight.ToString() + "</td>");
             _obj_sb.AppendLine("<td align='center'>" + SubSlitWaste.ToString() + "</td>");
             _obj_sb.AppendLine("<td align='center'>&nbsp</td>");
             _obj_sb.AppendLine("<td align='center'>_&nbsp</td>");
@@ -756,7 +756,7 @@ namespace Library.Database.BLL
         {
             DataTable _obj_dt;
 
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 _obj_dt = _dal.ASRList(pRefNo);
             }
@@ -774,10 +774,10 @@ namespace Library.Database.BLL
             _str_detail += string.Format("<td>_obj5</td>", q);
             _str_detail += string.Format("<td align={0}left{0}>_obj6</td>", q);
             _str_detail += string.Format("<td>_obj7</td>", q);
-            _str_detail += string.Format("<td style={0}mso-number-format:\@;{0}>_obj8</td>", q);
+            _str_detail += string.Format("<td style={0}mso-number-format:\\@;{0}>_obj8</td>", q);
             _str_detail += string.Format("<td align={0}left{0}>_obj9</td>", q);
             _str_detail += string.Format("<td>_obj_10</td>", q);
-            _str_detail += string.Format("<td style={0}mso-number-format:\@;{0}>_obj_11</td>", q);
+            _str_detail += string.Format("<td style={0}mso-number-format:\\@;{0}>_obj_11</td>", q);
             _str_detail += string.Format("<td>_obj_12</td>", q);
             _str_detail += string.Format("<td>_obj_13</td></tr>", q);
 
@@ -836,7 +836,7 @@ namespace Library.Database.BLL
         {
             DataTable _obj_dt;
 
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 _obj_dt = _dal.ASRListALL();
             }
@@ -854,10 +854,10 @@ namespace Library.Database.BLL
             _str_detail += string.Format("<td>_obj5</td>", q);
             _str_detail += string.Format("<td align={0}left{0}>_obj6</td>", q);
             _str_detail += string.Format("<td>_obj7</td>", q);
-            _str_detail += string.Format("<td style={0}mso-number-format:\@;{0}>_obj8</td>", q);
+            _str_detail += string.Format("<td style={0}mso-number-format:\\@;{0}>_obj8</td>", q);
             _str_detail += string.Format("<td align={0}left{0}>_obj9</td>", q);
             _str_detail += string.Format("<td>_obj_10</td>", q);
-            _str_detail += string.Format("<td style={0}mso-number-format:\@;{0}>_obj_11</td>", q);
+            _str_detail += string.Format("<td style={0}mso-number-format:\\@;{0}>_obj_11</td>", q);
             _str_detail += string.Format("<td>_obj_12</td>", q);
             _str_detail += string.Format("<td>_obj_13</td></tr>", q);
 
@@ -914,7 +914,7 @@ namespace Library.Database.BLL
 
         public static DataTable GetRefNoList()
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.GetRefNoList();
             }
@@ -922,7 +922,7 @@ namespace Library.Database.BLL
 
         public static string Chk_next(string ProdLine, string PC1)
         {
-            using (var _Dal = new DAL.SubSlitRequest())
+            using (var _Dal = new Library.Database.DAL.SubSlitRequest())
             {
                 string result = _Dal.Chk_next(ProdLine, PC1);
 
@@ -940,7 +940,7 @@ namespace Library.Database.BLL
 
         public static DataTable Chk_label(string ind, string ProdLine, string pc1, string pc2)
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.Chk_label(ind, ProdLine, pc1, pc2);
             }
@@ -948,7 +948,7 @@ namespace Library.Database.BLL
 
         public static DataTable Chk_final(string pRefNo)
         {
-            using (var _dal = new DAL.SubSlitRequest())
+            using (var _dal = new Library.Database.DAL.SubSlitRequest())
             {
                 return _dal.Chk_final(pRefNo);
             }

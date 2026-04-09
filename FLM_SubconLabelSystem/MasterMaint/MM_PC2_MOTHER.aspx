@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" MasterPageFile="~/master/Main.master" AutoEventWireup="false" CodeFile="MM_PC2_MOTHER.aspx.vb" Inherits="MasterMaint_MM_PC2_MOTHER" title="MM_PC2_MOTHER" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeFile="MM_PC2_MOTHER.aspx.cs" Inherits="MasterMaint_MM_PC2_MOTHER" title="MM_PC2_MOTHER" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 
@@ -18,7 +18,7 @@
                        <asp:TemplateField HeaderStyle-Width="10%" HeaderText="PC2" HeaderStyle-HorizontalAlign="Left" SortExpression="PC2M">
                             <ItemStyle VerticalAlign="Middle" HorizontalAlign="Left"></ItemStyle>
                             <ItemTemplate>
-                                 <a target="_self" href="<%# MyBase.GetUrl(EnumAction.View, Eval("ID_MM_PC2_MOTHER")) %>"><%#Eval("PC2M")%></a>
+                                 <a target="_self" href="<%# GetUrl(EnumAction.View, Eval("ID_MM_PC2_MOTHER").ToString()) %>"><%#Eval("PC2M")%></a>
                             </ItemTemplate>
                        </asp:TemplateField> 
                        <asp:TemplateField HeaderStyle-Width="15%" HeaderText="Unit Weight" HeaderStyle-HorizontalAlign="Left" SortExpression="UNIT_WEIGHT">
@@ -73,4 +73,3 @@
     <control:Footer ID="UCFooter" runat="server" />
 
 </asp:Content>
-

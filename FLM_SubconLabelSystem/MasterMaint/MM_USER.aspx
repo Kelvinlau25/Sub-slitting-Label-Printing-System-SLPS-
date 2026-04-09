@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" MasterPageFile="~/master/Main.master" AutoEventWireup="false" CodeFile="MM_USER.aspx.vb" Inherits="MasterMaint_MM_USER" title="MM_USER" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeFile="MM_USER.aspx.cs" Inherits="MasterMaint_MM_USER" title="MM_USER" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 
@@ -18,7 +18,7 @@
                        <asp:TemplateField HeaderStyle-Width="8%" HeaderText="UserID" HeaderStyle-HorizontalAlign="Left" SortExpression="USERID">
                             <ItemStyle VerticalAlign="Middle" HorizontalAlign="Left"></ItemStyle>
                             <ItemTemplate>
-                                <a target="_self" href="<%# MyBase.GetUrl(EnumAction.View, Eval("ID_MM_USERID")) %>"><%#Eval("USERID")%></a>
+                                <a target="_self" href="<%# GetUrl(Library.Root.Control.Base.EnumAction.View, Eval("ID_MM_USERID").ToString()) %>"><%#Eval("USERID")%></a>
                             </ItemTemplate>
                        </asp:TemplateField> 
                        <asp:TemplateField HeaderStyle-Width="18%" HeaderText="Name" HeaderStyle-HorizontalAlign="Left" SortExpression="NAME">
@@ -68,4 +68,3 @@
     <control:Footer ID="UCFooter" runat="server" />
 
 </asp:Content>
-

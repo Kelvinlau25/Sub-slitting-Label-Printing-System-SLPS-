@@ -54,11 +54,5 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Library.Root\Library.Root.csproj">
-      <Project>{8AA16F5A-5199-4552-9D10-44A74F06D853}</Project>
-      <Name>Library.Root</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

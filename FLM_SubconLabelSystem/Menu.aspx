@@ -1,11 +1,11 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Menu.aspx.vb" Inherits="Menu" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Menu.aspx.cs" Inherits="Menu" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head id="Head1" runat="server">
-    <title><%=ConfigurationManager.AppSettings("title")%></title>
+    <title><%=ConfigurationManager.AppSettings["title"]%></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <link href="css/ext-all.css" rel="stylesheet" type="text/css" />
@@ -108,7 +108,7 @@
 		}
 		
 		$(document).ready(function(){
-        var pswexpired = '<%=Session("pswexpired")%>';
+        var pswexpired = '<%=Session["pswexpired"]%>';
         if (pswexpired == 1){window.open('MasterMaint/ChangePassword.aspx', '_self');
         var links = document.getElementsByTagName('a');
         for(var i=0, max=links.length; i<max; i++) {
@@ -122,7 +122,7 @@
         
 //        var content_start_loading = function() {
 //        
-//        var pswexpired = '<%=Session("pswexpired")%>';
+//        var pswexpired = '<%=Session["pswexpired"]%>';
 //        var location = document.getElementById("frContent").contentWindow.location.pathname.split('/').slice(-1);
 //        
 //        if (pswexpired == 1){
@@ -151,19 +151,19 @@
         <div align="left" class="title"><h1></h1></div></td>
         <td align=right>
         <div>
-            <span><%=Me._words%>, <%= Session("gettemp") %> </span>
+            <span><%=this._words%>, <%= Session["gettemp"] %> </span>
         </div>
         <br />
         <div class="time">
-            <span>Date : <%=Session("LoginHis")%> </span>
+            <span>Date : <%=Session["LoginHis"]%> </span>
         </div>
         <br />
         <div class="home" id="trhome" runat="server">  
-            <a id="sobutton" target="_parent" href='<%= Me.SignOutURL() %>'>Log Out</a>           
-            <a id="hobutton" target="_parent" href='<%= Me.HomeURL() %>'>Home</a>         
+            <a id="sobutton" target="_parent" href='<%= this.SignOutURL %>'>Log Out</a>           
+            <a id="hobutton" target="_parent" href='<%= this.HomeURL %>'>Home</a>         
         </div>
         <div class="home" id="resetpwd" runat="server">
-            <a class="changepwd" target="page" href='<%= Me.ResetURL() %>'>Please Update Your Password !</a>  
+            <a class="changepwd" target="page" href='<%= this.ResetURL %>'>Please Update Your Password !</a>  
         </div>
         </td></tr></table>
         <div class="clear"></div>
@@ -173,4 +173,3 @@
   
 </body>
 </html>
-

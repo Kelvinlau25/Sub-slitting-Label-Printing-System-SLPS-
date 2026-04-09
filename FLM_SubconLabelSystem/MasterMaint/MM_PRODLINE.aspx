@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" MasterPageFile="~/master/Main.master" AutoEventWireup="false" CodeFile="MM_PRODLINE.aspx.vb" Inherits="MasterMaint_MM_PRODLINE" title="MM_PRODLINE" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeFile="MM_PRODLINE.aspx.cs" Inherits="MasterMaint_MM_PRODLINE" title="MM_PRODLINE" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 
@@ -18,7 +18,7 @@
                        <asp:TemplateField HeaderStyle-Width="8%" HeaderText="Line" HeaderStyle-HorizontalAlign="Left" SortExpression="PRODLINE_NO">
                             <ItemStyle VerticalAlign="Middle" HorizontalAlign="Left"></ItemStyle>
                             <ItemTemplate>
-                                <a target="_self" href="<%# MyBase.GetUrl(EnumAction.View, Eval("ID_MM_PRODLINE")) %>"><%#Eval("PRODLINE_NO")%></a>
+                                <a target="_self" href="<%# GetUrl(EnumAction.View, Eval("ID_MM_PRODLINE").ToString()) %>"><%#Eval("PRODLINE_NO")%></a>
                             </ItemTemplate>
                        </asp:TemplateField> 
                        <asp:TemplateField HeaderStyle-Width="20%" HeaderText="Description" HeaderStyle-HorizontalAlign="Left" SortExpression="DESCRIPTION">

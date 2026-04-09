@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" MasterPageFile="~/master/Main.master" AutoEventWireup="false" CodeFile="ChangePassword.aspx.vb" Inherits="ChangePassword" title="Change_Password" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeFile="ChangePassword.aspx.cs" Inherits="ChangePassword" title="Change_Password" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 
@@ -11,7 +11,7 @@
         
         
 		$(document).ready(function(){
-        var pswexpired = '<%=Session("pswexpired")%>';
+        var pswexpired = '<%=Session["pswexpired"]%>';
 
         if (pswexpired == 1){
         alert('Password exceeded validity period. Please change password now.');
@@ -69,11 +69,11 @@
                     <tr>
                         <td></td>
                         <td></td>
-                            <td><asp:Button ID="btnupdate" runat="server" Text="Change Password" ValidationGroup="login" />&nbsp;<asp:Button ID="btnreset" runat="server" Text="Reset" />&nbsp;<asp:Button ID="btnBack" runat="server" Text="Cancel" AutoPostBack="true"/>
+                            <td><asp:Button ID="btnupdate" runat="server" Text="Change Password" ValidationGroup="login" OnClick="btnupdate_Click" />&nbsp;<asp:Button ID="btnreset" runat="server" Text="Reset" OnClick="btnreset_Click" />&nbsp;<asp:Button ID="btnBack" runat="server" Text="Cancel" AutoPostBack="true" OnClick="btnBack_Click" />
                             <asp:ValidationSummary ID="vssummary" runat="server" ValidationGroup="login" ShowMessageBox="true" DisplayMode="BulletList" ShowSummary="false" /></td>
                     </tr>
                     <tr>
-                    <td colspan="4"><br /><span style="color:Red;">* Passwords Must Contain at least 1 Alphabet and 1 Number.</span><br /><span style="color:Red;">* Passwords Must Contain a Minimum of 9 Characters.</span><br /><span style="color:Red;">* Passwords will expire after <%=Convert.ToString(System.Configuration.ConfigurationManager.AppSettings("Max_Password_Age"))%> days.</span><br /><span style="color:Red;">* Users are not allow to reuse any of their previous 5 passwords.</span></td>
+                    <td colspan="4"><br /><span style="color:Red;">* Passwords Must Contain at least 1 Alphabet and 1 Number.</span><br /><span style="color:Red;">* Passwords Must Contain a Minimum of 9 Characters.</span><br /><span style="color:Red;">* Passwords will expire after <%=Convert.ToString(System.Configuration.ConfigurationManager.AppSettings["Max_Password_Age"])%> days.</span><br /><span style="color:Red;">* Users are not allow to reuse any of their previous 5 passwords.</span></td>
                     </tr>
             </table>
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" MasterPageFile="~/master/Main.master" AutoEventWireup="false" CodeFile="ASR_SEARCH.aspx.vb" Inherits="Transactions_ASR_SEARCH" title="After Slitting Report" EnableEventValidation = "false"%>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeFile="ASR_SEARCH.aspx.cs" Inherits="Transactions_ASR_SEARCH" Title="After Slitting Report" EnableEventValidation="false" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
@@ -73,7 +73,7 @@
                     </td> 
                     <td>
                     <div>
-                       <asp:Button ID="btnGenerate" runat="server" Text="Generate" Font-Bold="True"/>
+                       <asp:Button ID="btnGenerate" runat="server" Text="Generate" Font-Bold="True" OnClick="btnGenerate_Click"/>
                    </div>
                     </td>      
                 </tr>

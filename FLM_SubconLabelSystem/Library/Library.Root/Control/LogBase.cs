@@ -1,12 +1,14 @@
 using System;
 using System.Web;
 using System.Web.UI;
+using Library.Root.Other;
+using Library.Root.Objects;
 
 namespace Library.Root.Control
 {
     public abstract class LogBase : Page
     {
-        protected Other.GenericCollection<Object.Log> _list;
+        protected GenericCollection<Log> _list;
 
         protected override void OnInit(EventArgs e)
         {
@@ -35,7 +37,8 @@ namespace Library.Root.Control
                             this._setupKey = Request.QueryString["key"];
                             break;
                         case "page":
-                            if (int.TryParse(Request.QueryString["page"], out int parsedPage))
+                            int parsedPage;
+                            if (int.TryParse(Request.QueryString["page"], out parsedPage))
                             {
                                 this._Pageno = parsedPage;
                             }

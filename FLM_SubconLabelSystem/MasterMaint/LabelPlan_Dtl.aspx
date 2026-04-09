@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" MasterPageFile="~/master/Main.master" enableEventValidation="true" AutoEventWireup="false" CodeFile="LabelPlan_Dtl.aspx.vb" Inherits="MasterMaint_LabelPlan_Dtl" title="LabelPlan_Dtl" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" EnableEventValidation="true" AutoEventWireup="true" CodeFile="LabelPlan_Dtl.aspx.cs" Inherits="MasterMaint_LabelPlan_Dtl" Title="LabelPlan_Dtl" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
@@ -37,8 +37,8 @@
         function isDecimal(evt, element) {
                     var charCode = (evt.which) ? evt.which : event.keyCode
                     if (
-                        (charCode != 45 || $(element).val().indexOf('-') != -1) &&      // “-” CHECK MINUS, AND ONLY ONE.
-                        (charCode != 46 || $(element).val().indexOf('.') != -1) &&      // “.” CHECK DOT, AND ONLY ONE.
+                        (charCode != 45 || $(element).val().indexOf('-') != -1) &&      // "-" CHECK MINUS, AND ONLY ONE.
+                        (charCode != 46 || $(element).val().indexOf('.') != -1) &&      // "." CHECK DOT, AND ONLY ONE.
                         (charCode < 48 || charCode > 57))
                     return false;
                     return true;
@@ -133,5 +133,3 @@
     <control:Controller ID="UCAction" DateTimeFormat="dd/MM/yyyy hh:mm:ss tt" ValidationGroup="Group1" runat="server" AuditTrailDisplayType="FUll"/>
     
 </asp:Content>
-
-

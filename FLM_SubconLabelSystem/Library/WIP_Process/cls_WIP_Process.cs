@@ -1572,9 +1572,9 @@ namespace WIP_Process
             try
             {
                 _ReaderAPI.Connect();
-                _ReaderAPI.Config.GPO(1).PortState = GPOs.GPO_PORT_STATE.FALSE;
-                _ReaderAPI.Config.GPO(2).PortState = GPOs.GPO_PORT_STATE.FALSE;
-                _ReaderAPI.Config.GPO(3).PortState = GPOs.GPO_PORT_STATE.FALSE;
+                _ReaderAPI.Config.GPO[1].PortState = GPOs.GPO_PORT_STATE.FALSE;
+                _ReaderAPI.Config.GPO[2].PortState = GPOs.GPO_PORT_STATE.FALSE;
+                _ReaderAPI.Config.GPO[3].PortState = GPOs.GPO_PORT_STATE.FALSE;
                 _ReaderAPI.Disconnect();
                 _ReaderAPI.Dispose();
                 flag = true;

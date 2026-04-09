@@ -1,0 +1,7 @@
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.SQLServer\bin\Debug\Library.SQLServer.dll
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.SQLServer\bin\Debug\Library.SQLServer.pdb
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.SQLServer\bin\Debug\Library.SQLServer.xml
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.SQLServer\obj\Debug\Library.SQLServer.csproj.AssemblyReference.cache
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.SQLServer\obj\Debug\Library.SQLServer.csproj.CoreCompileInputs.cache
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.SQLServer\obj\Debug\Library.SQLServer.dll
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.SQLServer\obj\Debug\Library.SQLServer.pdb

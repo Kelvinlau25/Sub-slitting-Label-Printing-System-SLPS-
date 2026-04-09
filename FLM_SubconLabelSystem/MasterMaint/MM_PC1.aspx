@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" MasterPageFile="~/master/Main.master" AutoEventWireup="false" CodeFile="MM_PC1.aspx.vb" Inherits="MasterMaint_MM_PC1" title="MM_PC1" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeFile="MM_PC1.aspx.cs" Inherits="MasterMaint_MM_PC1" title="MM_PC1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 
@@ -17,16 +17,16 @@
                        <asp:TemplateField HeaderStyle-Width="10%" HeaderText="PC1" HeaderStyle-HorizontalAlign="Left" SortExpression="PC1">
                             <ItemStyle VerticalAlign="Middle" HorizontalAlign="Left"></ItemStyle>
                             <ItemTemplate>
-                               <a target="_self" href="<%# MyBase.GetUrl(EnumAction.View, Eval("ID_MM_PC1")) %>"><%#Eval("PC1")%></a>
+                               <a target="_self" href="<%# GetUrl(EnumAction.View, Eval("ID_MM_PC1").ToString()) %>"><%# Eval("PC1") %></a>
                             </ItemTemplate>
-                       </asp:TemplateField> 
+                       </asp:TemplateField>
                        <asp:TemplateField HeaderStyle-Width="60%" HeaderText="Description" HeaderStyle-HorizontalAlign="Left" SortExpression="DESCRIPTION">
                             <ItemStyle VerticalAlign="Middle" HorizontalAlign="Left"></ItemStyle>
                             <ItemTemplate>
-                               <%#Eval("DESCRIPTION").ToString.ToUpper%>
+                               <%# Eval("DESCRIPTION").ToString().ToUpper() %>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:BoundField HeaderStyle-Width="15%" HeaderText="Record Type" DataField="REC_TYPE"> 
+                        <asp:BoundField HeaderStyle-Width="15%" HeaderText="Record Type" DataField="REC_TYPE">
                             <HeaderStyle HorizontalAlign="center" VerticalAlign="Middle"></HeaderStyle>
                             <ItemStyle HorizontalAlign="center" VerticalAlign="Middle" />
                         </asp:BoundField>
@@ -42,4 +42,3 @@
     <control:Footer ID="UCFooter" runat="server" />
 
 </asp:Content>
-

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" MasterPageFile="~/master/Main.master" EnableEventValidation="true" AutoEventWireup="false" CodeFile="SSR_SEARCH_Dtl.aspx.vb" Inherits="Transactions_SSR_SEARCH_Dtl" title="SSR_SEARCH_Dtl" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" EnableEventValidation="true" AutoEventWireup="true" CodeFile="SSR_SEARCH_Dtl.aspx.cs" Inherits="Transactions_SSR_SEARCH_Dtl" title="SSR_SEARCH_Dtl" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 
     <style type="text/css" >
@@ -129,7 +129,7 @@
     <tr>
         <td><asp:Label ID="Label13" runat="server" Text="Requestor Status"></asp:Label></td>
         <td><asp:Label ID="Label14" runat="server" Text=":"></asp:Label></td>
-        <td ><asp:DropDownList ID="ddlReqStat" runat="server" AutoPostBack="true"></asp:DropDownList>
+        <td><asp:DropDownList ID="ddlReqStat" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlReqStat_SelectedIndexChanged"></asp:DropDownList>
             <asp:Label ID="lblrequest" runat="server"></asp:Label></td>
         <td><asp:Label ID="Label15" runat="server" Text="Vendor Status"></asp:Label></td>
         <td><asp:Label ID="Label16" runat="server" Text=":"></asp:Label></td>
@@ -245,8 +245,8 @@
                 <td width="7.5%"></td>
                 </tr>
      </table>
-     </br>
-     </br>
+     <br />
+     <br />
     </asp:Panel>
     
     <table id="viewonly" width="90%" style="height:100%;" border="0" >
@@ -257,22 +257,17 @@
                 <td width="10%"></td>
                 <td width="10%"></td>
                 <td width="10%"></td>
-                <td width="10%" align = "center">
-                     <asp:Button ID="UpdStat_Button" runat="server" Text="Update Status" Width="99px" /></td>
-                           
-                    
-                <td width="10%" align = "center">
+                <td width="10%" align="center">
+                     <asp:Button ID="UpdStat_Button" runat="server" Text="Update Status" Width="99px" OnClick="UpdStat_Button_Click" /></td>
+                <td width="10%" align="center">
                     <asp:Button ID="NewRev_Button" runat="server" Text="New Revision" Width="99px" 
-                        onclientclick="return confirm('Are you sure you want to create a new revision?');" /></td>
-              
-                   
-                <td width="10%" align = "center">
-                    <asp:Button ID="Export_Button" runat="server" Text="Export" Width="99px" /></td>
-                
-                <td width="10%" align = "center"> 
-                    <asp:Button ID="Cancel_Button" runat="server" Text="Cancel" Width="99px" /></td>
+                        OnClientClick="return confirm('Are you sure you want to create a new revision?');"
+                        OnClick="NewRev_Button_Click" /></td>
+                <td width="10%" align="center">
+                    <asp:Button ID="Export_Button" runat="server" Text="Export" Width="99px" OnClick="Export_Button_Click" /></td>
+                <td width="10%" align="center"> 
+                    <asp:Button ID="Cancel_Button" runat="server" Text="Cancel" Width="99px" OnClick="Cancel_Button_Click" /></td>
             </tr>
-           
         </table>
 
 <asp:Panel ID="pninfo" runat="server">
@@ -303,25 +298,23 @@
 </asp:Panel>
 
 <asp:Panel ID="pnconfirmation" runat="server">
-
     <table ID="pnconfirmation1" class="deleteInfo" width="100%">
         <tr>
             <td class="label">Delete the record ?</td>
             <td class="value">
-                <asp:RadioButton ID="rbyes" Text="Yes" GroupName="confirm"  runat="server" />
+                <asp:RadioButton ID="rbyes" Text="Yes" GroupName="confirm" runat="server" />
                 <asp:RadioButton ID="rbno" Text="No" GroupName="confirm" Checked="True" runat="server" />
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 </td>
         </tr>
     </table>
-    
 </asp:Panel>
 
 <div class="clear"></div>
-<div class="ControllerAdditionalBtn" style=" float:left;"></div>
+<div class="ControllerAdditionalBtn" style="float:left;"></div>
 <div style="float:left;">
-<asp:Button ID="btnSubmit" CssClass="control" runat="server" Text="Submit"  />
-<asp:Button ID="btnCancel" runat="server" Text="Cancel" />
+<asp:Button ID="btnSubmit" CssClass="control" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
+<asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
 </div>
        
 </asp:Content>

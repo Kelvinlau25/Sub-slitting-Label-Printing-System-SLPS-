@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="VB"  AutoEventWireup="false" CodeFile="Log.aspx.vb" Inherits="Log" %>
+﻿<%@ Page Title="" Language="C#" AutoEventWireup="true" CodeFile="Log.aspx.cs" Inherits="Log" %>
 
 <%@ Register src="App_Module/Title.ascx" tagname="Title" tagprefix="uc1" %>
 <%@ Register src="App_Module/GridFooter.ascx" tagname="GridFooter" tagprefix="uc2" %>
@@ -7,12 +7,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title></title>
-    <link href="<% Response.Write(ResolveUrl("~/css/Detail.css")) %>" rel="stylesheet" type="text/css" />
-    <link href="<% Response.Write(ResolveUrl("~/css/PenGroup.css")) %>" rel="stylesheet" type="text/css" />
-    <link href="<% Response.Write(ResolveUrl("~/css/prodSystem.css")) %>" rel="stylesheet" type="text/css" />
-    <link href="<% Response.Write(ResolveUrl("~/css/stylesheetmsdn.css")) %>" rel="stylesheet" type="text/css" />
-    <link href="<% Response.Write(ResolveUrl("~/css/ui-lightness/DatePicker.css")) %>" rel="stylesheet" type="text/css" />
-    <link href="<% Response.Write(ResolveUrl("~/css/ui-lightness/jquery-ui-1.8.19.custom.css")) %>" rel="Stylesheet" type="text/css" media="screen" />
+    <link href="<% Response.Write(ResolveUrl("~/css/Detail.css")); %>" rel="stylesheet" type="text/css" />
+    <link href="<% Response.Write(ResolveUrl("~/css/PenGroup.css")); %>" rel="stylesheet" type="text/css" />
+    <link href="<% Response.Write(ResolveUrl("~/css/prodSystem.css")); %>" rel="stylesheet" type="text/css" />
+    <link href="<% Response.Write(ResolveUrl("~/css/stylesheetmsdn.css")); %>" rel="stylesheet" type="text/css" />
+    <link href="<% Response.Write(ResolveUrl("~/css/ui-lightness/DatePicker.css")); %>" rel="stylesheet" type="text/css" />
+    <link href="<% Response.Write(ResolveUrl("~/css/ui-lightness/jquery-ui-1.8.19.custom.css")); %>" rel="Stylesheet" type="text/css" media="screen" />
 </head>
 <body>
     <form id="form1" runat="server">

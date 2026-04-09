@@ -1,0 +1,7 @@
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Root\bin\Debug\Library.Root.dll
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Root\bin\Debug\Library.Root.pdb
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Root\bin\Debug\Library.Root.xml
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Root\obj\Debug\Library.Root.csproj.AssemblyReference.cache
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Root\obj\Debug\Library.Root.csproj.CoreCompileInputs.cache
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Root\obj\Debug\Library.Root.dll
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Root\obj\Debug\Library.Root.pdb

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" MasterPageFile="~/master/Main.master"  AutoEventWireup="false" CodeFile="SLIT_SERIES.aspx.vb" Inherits="Transactions_SlitSeries" title="Slit_Series" EnableEventValidation = "false"%>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeFile="SLIT_SERIES.aspx.cs" Inherits="Transactions_SlitSeries" Title="Slit_Series" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 
@@ -47,7 +47,7 @@
                         <asp:TemplateField HeaderStyle-Width="10%" HeaderText="Lot No" HeaderStyle-HorizontalAlign="Left" SortExpression="LOTNO">
                             <ItemStyle VerticalAlign="Middle" HorizontalAlign="Left"></ItemStyle>
                             <ItemTemplate>
-                                <a target="_self" href="<%# MyBase.GetUrl(EnumAction.View, Eval("ID_PC2_LOTNO")) %>"><%#Eval("LOTNO")%></a>
+                                <a target="_self" href="<%# GetUrl(EnumAction.View, Eval("ID_PC2_LOTNO").ToString()) %>"><%#Eval("LOTNO")%></a>
                             </ItemTemplate>
                         </asp:TemplateField> 
                                         
@@ -101,7 +101,7 @@
                      <asp:TemplateField HeaderStyle-Width="8%" HeaderText="Lot Slitting Status" HeaderStyle-HorizontalAlign="Left" SortExpression="STATUS">
                             <ItemStyle VerticalAlign="Middle" HorizontalAlign="Left"></ItemStyle>
                             <ItemTemplate>
-                                <asp:Label ID="Label2" runat="server" Text='<%# IIF(Eval("STATUS").ToString="Create","<a href=" & Eval("Create_URL") & ">Create</a>",Eval("STATUS") )%>'></asp:Label> 
+                                <asp:Label ID="Label2" runat="server" Text='<%# Eval("STATUS").ToString() == "Create" ? "<a href=" + Eval("Create_URL") + ">Create</a>" : Eval("STATUS").ToString() %>'></asp:Label> 
                             </ItemTemplate>
                      </asp:TemplateField> 
                         
@@ -130,7 +130,3 @@
     <asp:HiddenField ID="hdn_LotID" runat="server" />
    
 </asp:Content>
-
-
-
-

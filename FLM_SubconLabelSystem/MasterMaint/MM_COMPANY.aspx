@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" MasterPageFile="~/master/Main.master"  AutoEventWireup="false" CodeFile="MM_COMPANY.aspx.vb" Inherits="MasterMaint_MM_COMPANY" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="false" CodeFile="MM_COMPANY.aspx.cs" Inherits="MasterMaint_MM_COMPANY" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 
@@ -18,40 +18,40 @@
                        <asp:TemplateField HeaderStyle-Width="15%" HeaderText="Company Code" HeaderStyle-HorizontalAlign="Left" SortExpression="COMPANYCODE">
                             <ItemStyle VerticalAlign="Middle" HorizontalAlign="Left"></ItemStyle>
                             <ItemTemplate>
-                               <a target="_self" href="<%# MyBase.GetUrl(EnumAction.View, Eval("ID_MM_COMPANY")) %>"><%#Eval("COMPANYCODE")%></a>
+                               <a target="_self" href="<%# GetUrl(EnumAction.View, Eval("ID_MM_COMPANY").ToString()) %>"><%# Eval("COMPANYCODE") %></a>
                             </ItemTemplate>
-                       </asp:TemplateField> 
+                       </asp:TemplateField>
                        <asp:TemplateField HeaderStyle-Width="20%" HeaderText="Company Name" HeaderStyle-HorizontalAlign="Left" SortExpression="COMPANYNAME">
                             <ItemStyle VerticalAlign="Middle" HorizontalAlign="Left"></ItemStyle>
                             <ItemTemplate>
-                               <%#Eval("COMPANYNAME").ToString.ToUpper%>
+                               <%# Eval("COMPANYNAME").ToString().ToUpper() %>
                             </ItemTemplate>
                        </asp:TemplateField>
                        <asp:TemplateField HeaderStyle-Width="6%" HeaderText="Slit Code" HeaderStyle-HorizontalAlign="Left" SortExpression="SLIT_CODE">
                             <ItemStyle VerticalAlign="Middle" HorizontalAlign="Left"></ItemStyle>
                             <ItemTemplate>
-                                <%#Eval("SLIT_CODE")%>
+                                <%# Eval("SLIT_CODE") %>
                             </ItemTemplate>
-                        </asp:TemplateField> 
+                        </asp:TemplateField>
                         <asp:TemplateField HeaderStyle-Width="25%" HeaderText="Address" HeaderStyle-HorizontalAlign="Left" SortExpression="ADDRESS">
                             <ItemStyle VerticalAlign="Middle" HorizontalAlign="Left"></ItemStyle>
                             <ItemTemplate>
-                                <%#Eval("ADDRESS").ToString.ToUpper%>
+                                <%# Eval("ADDRESS").ToString().ToUpper() %>
                             </ItemTemplate>
-                        </asp:TemplateField> 
+                        </asp:TemplateField>
                         <asp:TemplateField HeaderStyle-Width="8%" HeaderText="Telephone" HeaderStyle-HorizontalAlign="Left" SortExpression="TELEPHONE">
                             <ItemStyle VerticalAlign="Middle" HorizontalAlign="Left"></ItemStyle>
                             <ItemTemplate>
-                                <%#Eval("TELEPHONE")%>
+                                <%# Eval("TELEPHONE") %>
                             </ItemTemplate>
-                        </asp:TemplateField> 
+                        </asp:TemplateField>
                         <asp:TemplateField HeaderStyle-Width="12%" HeaderText="Email" HeaderStyle-HorizontalAlign="Left" SortExpression="EMAIL">
                             <ItemStyle VerticalAlign="Middle" HorizontalAlign="Left"></ItemStyle>
                             <ItemTemplate>
-                                <%#Eval("EMAIL")%>
+                                <%# Eval("EMAIL") %>
                             </ItemTemplate>
-                        </asp:TemplateField> 
-                        <asp:BoundField HeaderStyle-Width="8%" HeaderText="Record Type" DataField="REC_TYPE"> 
+                        </asp:TemplateField>
+                        <asp:BoundField HeaderStyle-Width="8%" HeaderText="Record Type" DataField="REC_TYPE">
                             <HeaderStyle HorizontalAlign="center" VerticalAlign="Middle"></HeaderStyle>
                             <ItemStyle HorizontalAlign="center" VerticalAlign="Middle" />
                         </asp:BoundField>
@@ -67,5 +67,3 @@
     <control:Footer ID="UCFooter" runat="server" />
 
 </asp:Content>
-
-

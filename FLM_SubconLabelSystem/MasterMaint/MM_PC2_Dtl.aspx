@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" MasterPageFile="~/master/Main.master" enableEventValidation="true" AutoEventWireup="false" CodeFile="MM_PC2_Dtl.aspx.vb" Inherits="MasterMaint_MM_PC2_Dtl" title="MM_PC2_Dtl" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" enableEventValidation="true" AutoEventWireup="true" CodeFile="MM_PC2_Dtl.aspx.cs" Inherits="MasterMaint_MM_PC2_Dtl" title="MM_PC2_Dtl" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 
@@ -23,8 +23,8 @@
         function isDecimal(evt, element) {
                     var charCode = (evt.which) ? evt.which : event.keyCode
                     if (
-                        (charCode != 45 || $(element).val().indexOf('-') != -1) &&      // “-” CHECK MINUS, AND ONLY ONE.
-                        (charCode != 46 || $(element).val().indexOf('.') != -1) &&      // “.” CHECK DOT, AND ONLY ONE.
+                        (charCode != 45 || $(element).val().indexOf('-') != -1) &&      // "-" CHECK MINUS, AND ONLY ONE.
+                        (charCode != 46 || $(element).val().indexOf('.') != -1) &&      // "." CHECK DOT, AND ONLY ONE.
                         (charCode < 48 || charCode > 57))
                     return false;
                     return true;
@@ -181,7 +181,6 @@
           <tr><td></td></tr>
          
         <tr>
-        
             <td class="style5">
                 <asp:Label ID="Label38" runat="server" Text="* " ForeColor="Red"></asp:Label>
                 <asp:Label ID="Label39" runat="server" Text="Grade "></asp:Label></td>
@@ -190,7 +189,6 @@
                 <asp:TextBox ID="txtGrade" runat="server" Width="93px" Height="25px" MaxLength="5"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfGrade" runat="server" ControlToValidate="txtGrade" ValidationGroup="Group1" Display="None"></asp:RequiredFieldValidator></td>   
         </tr>
-        
         
            <tr><td></td></tr>
         
@@ -208,7 +206,7 @@
         
         <tr>        
             <td class="style5">
-                <asp:Label ID="Label37"  Text="* " runat="server" ForeColor="White"></asp:Label>
+                <asp:Label ID="Label37" Text="* " runat="server" ForeColor="White"></asp:Label>
                 <asp:Label ID="Label42" runat="server" Text="Core Code "></asp:Label></td>
             <td><asp:Label ID="LabelCoreCode" runat="server" Text=" : "></asp:Label></td>
             <td><asp:Label ID="lbCoreCode" runat="server"></asp:Label>
@@ -246,4 +244,3 @@
     <control:Controller ID="UCAction" DateTimeFormat="dd/MM/yyyy hh:mm:ss tt" ValidationGroup="Group1" runat="server" AuditTrailDisplayType="FUll"/>
     
 </asp:Content>
-

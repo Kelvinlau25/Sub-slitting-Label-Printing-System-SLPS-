@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" MasterPageFile="~/master/Main.master" AutoEventWireup="false" CodeFile="SSR_SEARCH.aspx.vb" Inherits="Transactions_SUBSLITREQSEARCH" title="SUBSLITREQSEARCH" EnableEventValidation = "false"%>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeFile="SSR_SEARCH.aspx.cs" Inherits="Transactions_SUBSLITREQSEARCH" title="SUBSLITREQSEARCH" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 
@@ -28,10 +28,11 @@
     </div>
     
     <table width="100%">
-       <tr><td align="right" style="color:blue"><asp:LinkButton ID="Add_Button" runat="server">Add</asp:LinkButton></td></tr>
+       <tr><td align="right" style="color:blue"><asp:LinkButton ID="Add_Button" runat="server" OnClick="Add_Button_Click">Add</asp:LinkButton></td></tr>
     <tr>
         <td>
-            <asp:GridView ID="grdResult" DataKeyNames="ID_SUBSLIT_REQUEST" EnableViewState="false" HeaderStyle-CssClass="title_bar" Width="100%" runat="server" AutoGenerateColumns="False" AllowSorting="True" AllowPaging="True">
+            <asp:GridView ID="grdResult" DataKeyNames="ID_SUBSLIT_REQUEST" EnableViewState="false" HeaderStyle-CssClass="title_bar" Width="100%" runat="server" AutoGenerateColumns="False" AllowSorting="True" AllowPaging="True"
+                OnRowDataBound="grdResult_RowDataBound" OnSelectedIndexChanged="grdResult_SelectedIndexChanged">
                 <PagerSettings Visible="False" />
                     <Columns>
                        <asp:TemplateField HeaderStyle-Width="12%" HeaderText="Company Code" HeaderStyle-HorizontalAlign="Left" SortExpression="COMPANYTO">
@@ -95,7 +96,7 @@
                             <ItemStyle HorizontalAlign="center" VerticalAlign="Middle" />
                         </asp:BoundField>
                         
-                         <asp:BoundField HeaderStyle-Width="6%" HeaderText="hRefno" DataField="REFNO" 
+                        <asp:BoundField HeaderStyle-Width="6%" HeaderText="hRefno" DataField="REFNO" 
                             HeaderStyle-CssClass="hide" ItemStyle-CssClass="hide" FooterStyle-CssClass="hide"> 
                             <HeaderStyle HorizontalAlign="center" VerticalAlign="Middle"></HeaderStyle>
                             <ItemStyle HorizontalAlign="center" VerticalAlign="Middle" />
@@ -127,4 +128,3 @@
     <control:Footer ID="UCFooter" runat="server" />
 
 </asp:Content>
-

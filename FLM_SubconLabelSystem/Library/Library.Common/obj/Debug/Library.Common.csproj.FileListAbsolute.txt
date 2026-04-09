@@ -1,0 +1,8 @@
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Common\bin\Debug\Library.common.dll
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Common\bin\Debug\Library.common.pdb
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Common\bin\Debug\Library.common.xml
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Common\obj\Debug\Library.Common.csproj.AssemblyReference.cache
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Common\obj\Debug\Library.Common.csproj.CoreCompileInputs.cache
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Common\obj\Debug\Library..28B89756.Up2Date
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Common\obj\Debug\Library.common.dll
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Common\obj\Debug\Library.common.pdb

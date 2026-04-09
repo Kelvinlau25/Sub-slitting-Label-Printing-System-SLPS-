@@ -1,7 +1,7 @@
 using System;
 using System.Web;
 
-namespace Library.Root.Object
+namespace Library.Root.Objects
 {
     /// <summary>
     /// Must Inheritance Common Object

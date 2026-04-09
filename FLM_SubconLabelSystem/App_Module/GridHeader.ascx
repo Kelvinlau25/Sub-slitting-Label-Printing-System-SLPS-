@@ -1,6 +1,6 @@
-﻿<%@ Control Language="VB" ClassName="GridHeader" AutoEventWireup="false" CodeFile="GridHeader.ascx.vb" Inherits="UserControl_GridHeader" %>
+﻿<%@ Control Language="C#" ClassName="GridHeader" AutoEventWireup="true" CodeFile="GridHeader.ascx.cs" Inherits="UserControl_GridHeader" %>
 
-<script type ="text/javascript"  language="javascript">
+<script type="text/javascript" language="javascript">
     function Highlight(row) {
         row.style.backgroundColor = '#DDFFEE';
     }
@@ -13,7 +13,7 @@
 <table width="100%" class="navigatorbar">
     <tr>
         <th valign="middle" align="right">
-            <asp:DropDownList ID="ddlAction" runat="server" AutoPostBack="true">
+            <asp:DropDownList ID="ddlAction" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlAction_SelectedIndexChanged">
                 <asp:ListItem Value="-" Text="-" />
                 <asp:ListItem Value="PRINT" Text="Print" />
             </asp:DropDownList>

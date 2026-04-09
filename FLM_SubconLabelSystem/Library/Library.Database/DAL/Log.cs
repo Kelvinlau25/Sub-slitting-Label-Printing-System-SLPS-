@@ -39,6 +39,7 @@ namespace Library.Database.DAL
             base._cmd.CommandText = "SP_GET_GROUPNO";
             base._cmd.CommandType = CommandType.StoredProcedure;
             base._cmd.CommandTimeout = 0;
+            base._cmd.Parameters.Clear();  // Added: prevents stale parameters from prior calls
 
             base._rdr = base._cmd.ExecuteReader();
             result.Load(base._rdr);

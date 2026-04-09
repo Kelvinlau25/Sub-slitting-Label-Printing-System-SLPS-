@@ -1,10 +1,10 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeFile="Default.aspx.vb" Inherits="_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-      <title><%=ConfigurationManager.AppSettings("title")%></title>
+      <title><%=ConfigurationManager.AppSettings["title"]%></title>
       <link href="css/SignIn.css" rel="stylesheet" type="text/css" />
       <style type="text/css">
           .style1
@@ -68,10 +68,10 @@
                                                                      <tr>
                                                                         <td class="style1">
                                                                             <asp:Button ID="LoginButton" runat="server" Text="Login" Width="83px" 
-                                                                                Height="27px" ValidationGroup="login" />                                               
+                                                                                Height="27px" ValidationGroup="login" OnClick="LoginButton_Click" />                                               
                                                                             &nbsp 
                                                                            <asp:Button ID="ClearButton" runat="server" Text="Clear" Width="80px" 
-                                                                                Height="27px" /> 
+                                                                                Height="27px" OnClick="ClearButton_Click" /> 
                                                                          </td>
                                                                     </tr>
                                                                 </table>
