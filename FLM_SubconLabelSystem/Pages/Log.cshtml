@@ -1,0 +1,77 @@
+@page
+@model PFRLabelIssuing.Pages.LogModel
+@{
+    Layout = null;
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="@Url.Content("~/css/Detail.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/css/PenGroup.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/css/prodSystem.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/css/stylesheetmsdn.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/css/ui-lightness/DatePicker.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/css/ui-lightness/jquery-ui-1.8.19.custom.css")" rel="Stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+    <form method="post">
+        <div>
+            @{
+                ViewData["PageTitle"] = Model.DisplayTitle;
+            }
+            <partial name="_Title" />
+
+            <div id="divDesc"></div><br />
+            <table width="100%">
+                <tr>
+                    <td>
+                        <table class="title_bar" width="100%" style="border-collapse:collapse;">
+                            <thead>
+                                <tr>
+                                    <th style="width:20%; text-align:left; vertical-align:middle;">Field</th>
+                                    <th style="width:20%; text-align:left; vertical-align:middle;">Old Value</th>
+                                    <th style="width:20%; text-align:left; vertical-align:middle;">New Value</th>
+                                    <th style="width:20%; text-align:left; vertical-align:middle;">User</th>
+                                    <th style="text-align:left; vertical-align:middle;">Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model.GridData != null)
+                                {
+                                    foreach (System.Data.DataRow row in Model.GridData.Rows)
+                                    {
+                                        <tr class="content">
+                                            <td class="content" style="text-align:left; vertical-align:middle;">@row["FIELD_NAME"]</td>
+                                            <td class="content" style="text-align:left; vertical-align:middle;">@row["B4_UPDATE"]</td>
+                                            <td class="content" style="text-align:left; vertical-align:middle;">@row["AF_UPDATE"]</td>
+                                            <td class="content" style="text-align:left; vertical-align:middle;">@row["UPDATED_BY"]</td>
+                                            <td class="content" style="text-align:left; vertical-align:middle;">
+                                                @(row["UPDATED_DATE"] != DBNull.Value
+                                                    ? Convert.ToDateTime(row["UPDATED_DATE"]).ToString("dd/MM/yyyy h:mm:ss tt")
+                                                    : "")
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            @{
+                ViewData["TotalRecords"] = Model.TotalRecords;
+                ViewData["TotalPages"] = Model.TotalPages;
+                ViewData["CurrentPage"] = Model.PageNo;
+                ViewData["BaseListUrl"] = Model.GenerateList;
+            }
+            <partial name="_GridFooter" />
+
+            <div style="width:100%;text-align:center">
+                <button type="button" onclick="self.close()">Close</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

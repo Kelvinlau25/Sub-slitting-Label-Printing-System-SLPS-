@@ -1,0 +1,103 @@
+@page
+@model PFRLabelIssuing.Pages.IndexModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@Model.PageTitle</title>
+    <link href="@Url.Content("~/css/SignIn.css")" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 247px;
+        }
+    </style>
+</head>
+<body>
+    <table width="100%" style="height:100%;" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td>
+                <table style="margin:auto;height:500px;" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <form method="post">
+                                @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+                                {
+                                    <script type="text/javascript">
+                                        alert('@Html.Raw(Model.ErrorMessage.Replace("'", "\\'"))');
+                                    </script>
+                                }
+                                <div class="centered">
+                                    <table>
+                                        <tr>
+                                            <td class="form">
+                                                <div>
+                                                    <table>
+                                                        <tr>
+                                                            <td colspan="2" class="header"><img class="banner" src="@Url.Content("~/image/LoginScreenWords_png.PNG")" alt="" /></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="2">
+                                                                <table class="login">
+                                                                    <tr>
+                                                                        <td class="style1">
+                                                                            <span style="color:red">*</span>User ID :
+                                                                            <input type="text" id="txtuserID" name="txtuserID" maxlength="50" class="value"
+                                                                                   style="height:27px" autocomplete="off" value="@Model.txtuserID" />
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="style1">&nbsp;</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="style1">
+                                                                            <span style="color:red">*</span>Password :
+                                                                            <input type="password" id="txtpassword" name="txtpassword" maxlength="15"
+                                                                                   class="value" style="height:27px" autocomplete="off" />
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="style1">&nbsp;</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="style1">
+                                                                            <span style="color:red">*</span>Captcha :
+                                                                            <img style="width:120px; height:32px" alt="" src="@Url.Content("~/Captcha")" />
+                                                                            <input type="text" id="txtCaptcha" name="txtCaptcha" maxlength="15"
+                                                                                   class="value" style="height:27px" autocomplete="off" value="@Model.txtCaptcha" />
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="style1">&nbsp;</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="style1">
+                                                                            <button type="submit" asp-page-handler="Login" style="width:83px;height:27px">Login</button>
+                                                                            &nbsp;
+                                                                            <button type="submit" asp-page-handler="Clear" style="width:80px;height:27px">Clear</button>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script type="text/javascript">
+        document.getElementById('txtuserID').focus();
+    </script>
+</body>
+</html>

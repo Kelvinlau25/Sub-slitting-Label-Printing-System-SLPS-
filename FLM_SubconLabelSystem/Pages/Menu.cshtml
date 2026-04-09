@@ -1,0 +1,158 @@
+@page
+@model PFRLabelIssuing.Pages.MenuModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@Model.PageTitle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <link href="@Url.Content("~/css/ext-all.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/css/Header.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/css/Menu.css")" rel="stylesheet" type="text/css" />
+
+    <script src="@Url.Content("~/js/jquery-3.4.1.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/js/ext-base.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/js/ext-all.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        function change_vs(obj) {
+            var vs_id = obj.checked;
+            if (vs_id)
+                Ext.get(obj.id + "-vs").setStyle('display', 'list-item');
+            else
+                Ext.get(obj.id + "-vs").setStyle('display', 'none');
+        }
+
+        Ext.onReady(function () {
+            Ext.state.Manager.setProvider(new Ext.state.CookieProvider());
+
+            var viewport = new Ext.Viewport({
+                layout: 'border',
+                items: [
+                    new Ext.BoxComponent({
+                        region: 'north',
+                        el: 'north',
+                        height: 100
+                    }),
+                    {
+                        region: 'west',
+                        id: 'west-panel',
+                        title: 'Menu',
+                        split: true,
+                        width: 200,
+                        minSize: 175,
+                        maxSize: 300,
+                        collapsible: true,
+                        margins: '0 0 0 5',
+                        layout: 'accordion',
+                        layoutConfig: {
+                            animate: true
+                        },
+                        items: @Html.Raw(Model.MenuListJson)
+                    },
+                    {
+                        region: 'center',
+                        margins: '0',
+                        layout: 'column',
+                        autoScroll: true,
+                        items: [{
+                            columnWidth: 1,
+                            title: 'Page',
+                            contentEl: 'main-div'
+                        }]
+                    }
+                ]
+            });
+        });
+    </script>
+    <style type="text/css">
+        div#ext-gen9 { overflow-y: auto; }
+        div.home a { color: #FFFFFF }
+
+        .title
+        {
+            color: #FFFFFF;
+            font-size: 25px;
+            font-family: Arial;
+        }
+    </style>
+    <script type="text/javascript">
+        function setIframeHeight(iframeName) {
+            var iframeEl = document.getElementById ? document.getElementById(iframeName) : document.all ? document.all[iframeName] : null;
+            if (iframeEl) {
+                iframeEl.style.height = "auto";
+                var h = alertSize();
+                var new_h = (h - 148);
+                iframeEl.style.height = new_h + "px";
+            }
+        }
+
+        function alertSize() {
+            var myHeight = 0;
+            if (typeof (window.innerWidth) == 'number') {
+                myHeight = window.innerHeight;
+            } else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+                myHeight = document.documentElement.clientHeight;
+            } else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
+                myHeight = document.body.clientHeight;
+            }
+            return myHeight;
+        }
+
+        $(document).ready(function () {
+            var pswexpired = '@(HttpContext.Session.GetString("pswexpired") ?? "")';
+            if (pswexpired == '1') {
+                window.open('MasterMaint/ChangePassword.aspx', '_self');
+                var links = document.getElementsByTagName('a');
+                for (var i = 0, max = links.length; i < max; i++) {
+                    links[i].setAttribute('disabled', 'disabled');
+                }
+                document.getElementById('sobutton').removeAttribute('disabled');
+            }
+        });
+    </script>
+</head>
+<body onload="setIframeHeight('frContent');" onresize="setIframeHeight('frContent');">
+    @Html.Raw(Model.MenuItemsHtml)
+    <div class="remark" id="main-div">
+        <iframe scrolling="auto" name="page" frameborder="0" width="100%" id="frContent"></iframe>
+    </div>
+    <div id="north">
+        <div id="divinfo">
+            <table width="100%">
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td>
+                        <div align="left" class="title"><h1></h1></div>
+                    </td>
+                    <td align="right">
+                        <div>
+                            <span>@Model.Greeting, @(HttpContext.Session.GetString("gettemp")) </span>
+                        </div>
+                        <br />
+                        <div class="time">
+                            <span>Date : @(HttpContext.Session.GetString("LoginHis")) </span>
+                        </div>
+                        <br />
+                        <div class="home" id="trhome">
+                            <a id="sobutton" target="_parent" href="@Model.SignOutURL">Log Out</a>
+                            <a id="hobutton" target="_parent" href="@Model.HomeURL">Home</a>
+                        </div>
+                        @if (Model.ShowResetPassword)
+                        {
+                            <div class="home" id="resetpwd" style="font-weight:900;">
+                                <a class="changepwd" target="page" href="@Model.ResetURL">Please Update Your Password !</a>
+                            </div>
+                        }
+                    </td>
+                </tr>
+            </table>
+            <div class="clear"></div>
+        </div>
+        <img class="imgheader" src="@Url.Content("~/image/header2x.jpg")" />
+    </div>
+</body>
+</html>
