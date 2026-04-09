@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Error.ascx.cs" Inherits="App_Module_ErrorReport" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Error.ascx.cs" Inherits="App_Module_ErrorReport" %>
 <!--[if IE 6]>
 <style>
     .errors{height:80px; overflow-y:auto;}

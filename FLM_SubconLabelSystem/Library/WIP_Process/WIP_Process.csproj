@@ -11,6 +11,8 @@
 		<AssemblyName>WIP_Process</AssemblyName>
 		<TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
 		<FileAlignment>512</FileAlignment>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 		<DebugSymbols>true</DebugSymbols>

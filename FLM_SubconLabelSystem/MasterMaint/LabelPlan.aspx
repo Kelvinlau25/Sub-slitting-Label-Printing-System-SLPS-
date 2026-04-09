@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeFile="LabelPlan.aspx.cs" Inherits="MasterMaint_LabelPlan" title="Label_Plan" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeBehind="LabelPlan.aspx.cs" Inherits="MasterMaint_LabelPlan" title="Label_Plan" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 

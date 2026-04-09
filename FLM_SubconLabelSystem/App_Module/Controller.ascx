@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Controller.ascx.cs" Inherits="App_Module_Controller" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Controller.ascx.cs" Inherits="App_Module_Controller" %>
 <asp:Panel ID="pninfo" runat="server">
 <div class="createdpanel">
     <table class="loginfo">

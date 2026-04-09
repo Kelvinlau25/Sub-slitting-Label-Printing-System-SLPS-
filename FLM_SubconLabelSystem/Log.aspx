@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" AutoEventWireup="true" CodeFile="Log.aspx.cs" Inherits="Log" %>
+﻿<%@ Page Title="" Language="C#" AutoEventWireup="true" CodeBehind="Log.aspx.cs" Inherits="Log" %>
 
 <%@ Register src="App_Module/Title.ascx" tagname="Title" tagprefix="uc1" %>
 <%@ Register src="App_Module/GridFooter.ascx" tagname="GridFooter" tagprefix="uc2" %>

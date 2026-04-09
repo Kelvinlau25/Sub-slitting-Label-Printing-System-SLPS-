@@ -1,7 +1,14 @@
 C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Root\bin\Debug\Library.Root.dll
 C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Root\bin\Debug\Library.Root.pdb
 C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Root\bin\Debug\Library.Root.xml
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Root\bin\Debug\Library.common.dll
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Root\bin\Debug\Library.Control.Base.dll
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Root\bin\Debug\Library.common.pdb
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Root\bin\Debug\Library.common.xml
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Root\bin\Debug\Library.Control.Base.pdb
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Root\bin\Debug\Library.Control.Base.xml
 C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Root\obj\Debug\Library.Root.csproj.AssemblyReference.cache
 C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Root\obj\Debug\Library.Root.csproj.CoreCompileInputs.cache
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Root\obj\Debug\Library..0E1005CC.Up2Date
 C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Root\obj\Debug\Library.Root.dll
 C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Root\obj\Debug\Library.Root.pdb

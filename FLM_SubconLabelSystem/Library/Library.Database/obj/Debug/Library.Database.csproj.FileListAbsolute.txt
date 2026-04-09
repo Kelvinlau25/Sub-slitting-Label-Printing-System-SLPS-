@@ -3,10 +3,13 @@ C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Librar
 C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Database\bin\Debug\Library.Database.xml
 C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Database\bin\Debug\Library.Root.dll
 C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Database\bin\Debug\Library.SQLServer.dll
-C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Database\bin\Debug\Library.SQLServer.pdb
-C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Database\bin\Debug\Library.SQLServer.xml
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Database\bin\Debug\Library.Control.Base.dll
 C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Database\bin\Debug\Library.Root.pdb
 C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Database\bin\Debug\Library.Root.xml
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Database\bin\Debug\Library.SQLServer.pdb
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Database\bin\Debug\Library.SQLServer.xml
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Database\bin\Debug\Library.Control.Base.pdb
+C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Database\bin\Debug\Library.Control.Base.xml
 C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Database\obj\Debug\Library.Database.csproj.AssemblyReference.cache
 C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Database\obj\Debug\Library.Database.csproj.CoreCompileInputs.cache
 C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\Library.Database\obj\Debug\Library..747CB0E2.Up2Date

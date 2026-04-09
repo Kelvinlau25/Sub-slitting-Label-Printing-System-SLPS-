@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeFile="ASR_SEARCH.aspx.cs" Inherits="Transactions_ASR_SEARCH" Title="After Slitting Report" EnableEventValidation="false" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeBehind="ASR_SEARCH.aspx.cs" Inherits="Transactions_ASR_SEARCH" Title="After Slitting Report" EnableEventValidation="false" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">

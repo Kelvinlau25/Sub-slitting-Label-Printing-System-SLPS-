@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeFile="SSR_SEARCH.aspx.cs" Inherits="Transactions_SUBSLITREQSEARCH" title="SUBSLITREQSEARCH" EnableEventValidation="false" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeBehind="SSR_SEARCH.aspx.cs" Inherits="Transactions_SUBSLITREQSEARCH" title="SUBSLITREQSEARCH" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 

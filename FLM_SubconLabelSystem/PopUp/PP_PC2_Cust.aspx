@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeFile="PP_PC2_Cust.aspx.cs" Inherits="PopUp_PP_PC2_Cust" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeBehind="PP_PC2_Cust.aspx.cs" Inherits="PopUp_PP_PC2_Cust" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>

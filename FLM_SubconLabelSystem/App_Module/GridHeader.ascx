@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" ClassName="GridHeader" AutoEventWireup="true" CodeFile="GridHeader.ascx.cs" Inherits="UserControl_GridHeader" %>
+﻿<%@ Control Language="C#" ClassName="GridHeader" AutoEventWireup="true" CodeBehind="GridHeader.ascx.cs" Inherits="UserControl_GridHeader" %>
 
 <script type="text/javascript" language="javascript">
     function Highlight(row) {

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeFile="SLIT_SERIES.aspx.cs" Inherits="Transactions_SlitSeries" Title="Slit_Series" EnableEventValidation="false" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeBehind="SLIT_SERIES.aspx.cs" Inherits="Transactions_SlitSeries" Title="Slit_Series" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" EnableEventValidation="true" AutoEventWireup="true" CodeFile="LabelPlan_Dtl.aspx.cs" Inherits="MasterMaint_LabelPlan_Dtl" Title="LabelPlan_Dtl" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" EnableEventValidation="true" AutoEventWireup="true" CodeBehind="LabelPlan_Dtl.aspx.cs" Inherits="MasterMaint_LabelPlan_Dtl" Title="LabelPlan_Dtl" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">

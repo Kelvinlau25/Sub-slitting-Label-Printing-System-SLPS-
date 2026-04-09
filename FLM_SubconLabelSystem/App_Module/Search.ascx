@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" ClassName="Search" AutoEventWireup="true" CodeFile="Search.ascx.cs" EnableViewState="true" Inherits="Search" %>
+﻿<%@ Control Language="C#" ClassName="Search" AutoEventWireup="true" CodeBehind="Search.ascx.cs" EnableViewState="true" Inherits="Search" %>
 <style>
 input[type=submit]{background-color:#2779aa; color:White;}
 </style>

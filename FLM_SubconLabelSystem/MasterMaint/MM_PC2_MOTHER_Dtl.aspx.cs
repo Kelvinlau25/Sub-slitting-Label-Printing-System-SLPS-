@@ -5,7 +5,7 @@ public partial class MasterMaint_MM_PC2_MOTHER_Dtl : Control.Base
 {
     public MasterMaint_MM_PC2_MOTHER_Dtl()
     {
-        SetupKey = "MM_PC2_MOTHER";
+        SetupKey = "MM_PC2_MOTHER"; 
     }
 
     public override void BindData()

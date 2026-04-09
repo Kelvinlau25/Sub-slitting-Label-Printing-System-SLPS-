@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" EnableEventValidation="true"
-    AutoEventWireup="true" CodeFile="SLIT_SERIES_Dtl.aspx.cs" Inherits="Transaction_SlitSeries_Dtl"
+    AutoEventWireup="true" CodeBehind="SLIT_SERIES_Dtl.aspx.cs" Inherits="Transaction_SlitSeries_Dtl"
     Title="SlitSeries_Dtl" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">

@@ -6,7 +6,7 @@ namespace Library.Root.Control
 {
     public class MessageCenter
     {
-        public static void ShowAJAXMessageBox(Page msg_page, string ajax_msg)
+        public static void ShowAJAXMessageBox(System.Web.UI.Page msg_page, string ajax_msg)
         {
             if (ajax_msg == null)
             {
@@ -18,12 +18,12 @@ namespace Library.Root.Control
             ScriptManager.RegisterStartupScript(msg_page, msg_page.GetType(), "Msg", Msg, true);
         }
 
-        public static void ShowJqueryMessageBox(Page currentpage, string Str)
+        public static void ShowJqueryMessageBox(System.Web.UI.Page currentpage, string Str)
         {
             Str = HttpContext.Current.Server.HtmlEncode(Str.Replace("'", "\""));
             string prompt = "<script>$(document).ready(function(){{$.prompt('{0}!');}});</script>";
             string message = string.Format(prompt, Str);
-            currentpage.ClientScript.RegisterStartupScript(typeof(Page), "alert", message);
+            currentpage.ClientScript.RegisterStartupScript(typeof(System.Web.UI.Page), "alert", message);
         }
     }
 }

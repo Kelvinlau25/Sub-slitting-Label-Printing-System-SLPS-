@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeFile="MM_PRODLINE.aspx.cs" Inherits="MasterMaint_MM_PRODLINE" title="MM_PRODLINE" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeBehind="MM_PRODLINE.aspx.cs" Inherits="MasterMaint_MM_PRODLINE" title="MM_PRODLINE" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 

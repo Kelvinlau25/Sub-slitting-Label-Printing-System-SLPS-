@@ -4,7 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Web.UI;
 
-public partial class Master_Default : Page
+public partial class Master_ExportAll : System.Web.UI.Page
 {
     private string searchField = string.Empty;
     private string searchValue = string.Empty;
@@ -31,7 +31,7 @@ public partial class Master_Default : Page
 
         if (!upd_stat.Equals("1"))
         {
-            Library.Root.Control.MessageCenter.ShowAJAXMessageBox(this.Page, upd_stat);
+            Library.Root.Control.MessageCenter.ShowAJAXMessageBox((Page)this.Page, upd_stat);
         }
     }
 
@@ -101,7 +101,7 @@ public partial class Master_Default : Page
 
         if (!upd_stat.Equals("1"))
         {
-            Library.Root.Control.MessageCenter.ShowAJAXMessageBox(this.Page, upd_stat);
+            Library.Root.Control.MessageCenter.ShowAJAXMessageBox((Page)this.Page, upd_stat);
         }
     }
 }

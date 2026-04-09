@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="false" CodeFile="SUBSLIT_REQ_.aspx.cs" Inherits="Transactions_SubSlitRequest" title="Sub_Slitting_Request" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" AutoEventWireup="false" CodeBehind="SUBSLIT_REQ_.aspx.cs" Inherits="Transactions_SubSlitRequest" title="Sub_Slitting_Request" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 

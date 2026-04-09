@@ -1,7 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="_Default" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
       <title><%=ConfigurationManager.AppSettings["title"]%></title>
@@ -14,8 +13,7 @@
       </style>
 </head>
 <body>
-    
-   <table width="100%" style="height:100%;" border="0" cellspacing="0" cellpadding="0">
+    <table width="100%" style="height:100%;" border="0" cellspacing="0" cellpadding="0">
             <tr>
                 <td>
                     <table style="margin:auto;height:500px;" border="0" cellpadding="0" cellspacing="0" >
@@ -69,7 +67,7 @@
                                                                         <td class="style1">
                                                                             <asp:Button ID="LoginButton" runat="server" Text="Login" Width="83px" 
                                                                                 Height="27px" ValidationGroup="login" OnClick="LoginButton_Click" />                                               
-                                                                            &nbsp 
+                                                                            &nbsp;
                                                                            <asp:Button ID="ClearButton" runat="server" Text="Clear" Width="80px" 
                                                                                 Height="27px" OnClick="ClearButton_Click" /> 
                                                                          </td>
@@ -89,6 +87,6 @@
                     </table>
                 </td>
             </tr>
-   </table>
+    </table>
 </body>
 </html>

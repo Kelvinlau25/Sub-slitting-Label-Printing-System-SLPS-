@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Project\\Sub-slitting-Label-Printing-System-SLPS-\\FLM_SubconLabelSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1A351CD7-6B4D-4119-8F13-8FAF661ED26F}|C:\\Project\\Sub-slitting-Label-Printing-System-SLPS-\\FLM_SubconLabelSystem|c:\\project\\sub-slitting-label-printing-system-slps-\\flm_subconlabelsystem\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{1A351CD7-6B4D-4119-8F13-8FAF661ED26F}|C:\\Project\\Sub-slitting-Label-Printing-System-SLPS-\\FLM_SubconLabelSystem|solutionrelative:default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{5FBD3E22-92E8-4DD2-B0C9-1F3931C40D1D}|PFRLabelIssuing.csproj|c:\\project\\sub-slitting-label-printing-system-slps-\\flm_subconlabelsystem\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{5FBD3E22-92E8-4DD2-B0C9-1F3931C40D1D}|PFRLabelIssuing.csproj|solutionrelative:default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A351CD7-6B4D-4119-8F13-8FAF661ED26F}|C:\\Project\\Sub-slitting-Label-Printing-System-SLPS-\\FLM_SubconLabelSystem|c:\\project\\sub-slitting-label-printing-system-slps-\\flm_subconlabelsystem\\mastermaint\\labelplan_dtl.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A351CD7-6B4D-4119-8F13-8FAF661ED26F}|C:\\Project\\Sub-slitting-Label-Printing-System-SLPS-\\FLM_SubconLabelSystem|solutionrelative:mastermaint\\labelplan_dtl.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5FBD3E22-92E8-4DD2-B0C9-1F3931C40D1D}|PFRLabelIssuing.csproj|c:\\project\\sub-slitting-label-printing-system-slps-\\flm_subconlabelsystem\\app_module\\controller.ascx||{F390D63C-F7D8-4E74-AA04-57C1ECF53D4D}",
+      "RelativeMoniker": "D:0:0:{5FBD3E22-92E8-4DD2-B0C9-1F3931C40D1D}|PFRLabelIssuing.csproj|solutionrelative:app_module\\controller.ascx||{F390D63C-F7D8-4E74-AA04-57C1ECF53D4D}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FBD3E22-92E8-4DD2-B0C9-1F3931C40D1D}|PFRLabelIssuing.csproj|c:\\project\\sub-slitting-label-printing-system-slps-\\flm_subconlabelsystem\\mastermaint\\mm_user_dtl.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FBD3E22-92E8-4DD2-B0C9-1F3931C40D1D}|PFRLabelIssuing.csproj|solutionrelative:mastermaint\\mm_user_dtl.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,10 +50,6 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
@@ -67,14 +67,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "LabelPlan_Dtl.aspx.cs",
-              "DocumentMoniker": "C:\\Project\\Sub-slitting-Label-Printing-System-SLPS-\\FLM_SubconLabelSystem\\MasterMaint\\LabelPlan_Dtl.aspx.cs",
-              "RelativeDocumentMoniker": "MasterMaint\\LabelPlan_Dtl.aspx.cs",
-              "ToolTip": "C:\\Project\\Sub-slitting-Label-Printing-System-SLPS-\\FLM_SubconLabelSystem\\MasterMaint\\LabelPlan_Dtl.aspx.cs",
-              "RelativeToolTip": "MasterMaint\\LabelPlan_Dtl.aspx.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAYwGwAAAASAAAAAAAAAA==",
+              "Title": "Controller.ascx",
+              "DocumentMoniker": "C:\\Project\\Sub-slitting-Label-Printing-System-SLPS-\\FLM_SubconLabelSystem\\App_Module\\Controller.ascx",
+              "RelativeDocumentMoniker": "App_Module\\Controller.ascx",
+              "ToolTip": "C:\\Project\\Sub-slitting-Label-Printing-System-SLPS-\\FLM_SubconLabelSystem\\App_Module\\Controller.ascx",
+              "RelativeToolTip": "App_Module\\Controller.ascx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003302|",
+              "WhenOpened": "2026-04-09T06:42:25.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MM_USER_Dtl.aspx.cs",
+              "DocumentMoniker": "C:\\Project\\Sub-slitting-Label-Printing-System-SLPS-\\FLM_SubconLabelSystem\\MasterMaint\\MM_USER_Dtl.aspx.cs",
+              "RelativeDocumentMoniker": "MasterMaint\\MM_USER_Dtl.aspx.cs",
+              "ToolTip": "C:\\Project\\Sub-slitting-Label-Printing-System-SLPS-\\FLM_SubconLabelSystem\\MasterMaint\\MM_USER_Dtl.aspx.cs",
+              "RelativeToolTip": "MasterMaint\\MM_USER_Dtl.aspx.cs",
+              "ViewState": "AgIAAOUAAAAAAAAAAAAYwPUAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-09T03:28:01.005Z",
+              "WhenOpened": "2026-04-09T06:38:26.588Z",
               "EditorCaption": ""
             },
             {
@@ -87,7 +100,7 @@
               "RelativeToolTip": "Default.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-04-09T03:25:47.865Z",
+              "WhenOpened": "2026-04-09T06:35:39.957Z",
               "EditorCaption": ""
             }
           ]

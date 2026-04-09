@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" enableEventValidation="true" AutoEventWireup="true" CodeFile="MM_COMPANY_Dtl.aspx.cs" Inherits="MasterMaint_MM_COMPANY_Dtl" title="MM_COMPANY_Dtl" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" enableEventValidation="true" AutoEventWireup="true" CodeBehind="MM_COMPANY_Dtl.aspx.cs" Inherits="MasterMaint_MM_COMPANY_Dtl" title="MM_COMPANY_Dtl" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 

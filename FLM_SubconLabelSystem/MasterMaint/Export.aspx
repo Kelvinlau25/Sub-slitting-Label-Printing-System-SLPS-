@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Master/FrontPage.master" AutoEventWireup="true" CodeFile="Export.aspx.cs" Inherits="Master_Default" title="Export" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Master/FrontPage.master" AutoEventWireup="true" CodeBehind="Export.aspx.cs" Inherits="Master_Default" title="Export" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>

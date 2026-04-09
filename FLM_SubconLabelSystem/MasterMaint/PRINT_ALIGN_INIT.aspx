@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" Async="true" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeFile="PRINT_ALIGN_INIT.aspx.cs" Inherits="MasterMaint_PRINT_ALIGN_INIT" title="PRINT_ALIGN_INIT" %>
+﻿<%@ Page Language="C#" Async="true" MasterPageFile="~/master/Main.master" AutoEventWireup="true" CodeBehind="PRINT_ALIGN_INIT.aspx.cs" Inherits="MasterMaint_PRINT_ALIGN_INIT" title="PRINT_ALIGN_INIT" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 

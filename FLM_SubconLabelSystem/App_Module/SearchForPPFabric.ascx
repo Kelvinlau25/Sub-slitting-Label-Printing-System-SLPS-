@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="SearchForPPFabric.ascx.cs" Inherits="App_Module_SearchForPPFabric" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SearchForPPFabric.ascx.cs" Inherits="App_Module_SearchForPPFabric" %>
 <style>
 input[type=submit]{background-color:#2779aa; color:White;}
 </style>

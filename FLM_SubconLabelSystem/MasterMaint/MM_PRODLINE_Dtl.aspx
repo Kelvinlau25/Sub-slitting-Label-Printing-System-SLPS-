@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" enableEventValidation="true" AutoEventWireup="true" CodeFile="MM_PRODLINE_Dtl.aspx.cs" Inherits="MasterMaint_MM_PRODLINE_Dtl" title="MM_PRODLINE_Dtl" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" enableEventValidation="true" AutoEventWireup="true" CodeBehind="MM_PRODLINE_Dtl.aspx.cs" Inherits="MasterMaint_MM_PRODLINE_Dtl" title="MM_PRODLINE_Dtl" %>
 
 <script runat="server">
     

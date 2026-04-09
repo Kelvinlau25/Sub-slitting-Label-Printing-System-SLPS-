@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" EnableEventValidation="true" AutoEventWireup="true" CodeFile="SSR_SEARCH_Dtl.aspx.cs" Inherits="Transactions_SSR_SEARCH_Dtl" title="SSR_SEARCH_Dtl" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master/Main.master" EnableEventValidation="true" AutoEventWireup="true" CodeBehind="SSR_SEARCH_Dtl.aspx.cs" Inherits="Transactions_SSR_SEARCH_Dtl" title="SSR_SEARCH_Dtl" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 
     <style type="text/css" >

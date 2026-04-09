@@ -1,73 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<PropertyGroup>
-		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-		<ProductVersion>9.0.30729</ProductVersion>
-		<SchemaVersion>2.0</SchemaVersion>
-		<ProjectGuid>{8AA16F5A-5199-4552-9D10-44A74F06D853}</ProjectGuid>
-		<OutputType>Library</OutputType>
-		<RootNamespace>Library.Root</RootNamespace>
-		<AssemblyName>Library.Root</AssemblyName>
-		<FileAlignment>512</FileAlignment>
-		<TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-		<TargetFrameworkProfile />
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-		<DebugSymbols>true</DebugSymbols>
-		<DebugType>full</DebugType>
-		<DefineConstants>DEBUG;TRACE</DefineConstants>
-		<OutputPath>bin\Debug\</OutputPath>
-		<DocumentationFile>Library.Root.xml</DocumentationFile>
-		<Prefer32Bit>false</Prefer32Bit>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-		<DebugType>pdbonly</DebugType>
-		<DefineConstants>TRACE</DefineConstants>
-		<Optimize>true</Optimize>
-		<OutputPath>bin\Release\</OutputPath>
-		<DocumentationFile>Library.Root.xml</DocumentationFile>
-		<Prefer32Bit>false</Prefer32Bit>
-	</PropertyGroup>
-	<ItemGroup>
-		<Reference Include="System" />
-		<Reference Include="System.Configuration" />
-		<Reference Include="System.Core">
-			<RequiredTargetFramework>3.5</RequiredTargetFramework>
-		</Reference>
-		<Reference Include="System.Data" />
-		<Reference Include="System.Data.DataSetExtensions">
-			<RequiredTargetFramework>3.5</RequiredTargetFramework>
-		</Reference>
-		<Reference Include="System.Web" />
-		<Reference Include="System.Web.Extensions">
-			<RequiredTargetFramework>3.5</RequiredTargetFramework>
-		</Reference>
-		<Reference Include="System.Xml" />
-		<Reference Include="System.Xml.Linq">
-			<RequiredTargetFramework>3.5</RequiredTargetFramework>
-		</Reference>
-	</ItemGroup>
-	<ItemGroup>
-		<Compile Include="Control\Base.cs">
-			<SubType>ASPXCodeBehind</SubType>
-		</Compile>
-		<Compile Include="Control\Convertion.cs" />
-		<Compile Include="Control\GenericCollection.cs" />
-		<Compile Include="Control\LogBase.cs">
-			<SubType>ASPXCodeBehind</SubType>
-		</Compile>
-		<Compile Include="Control\MessageCenter.cs" />
-		<Compile Include="Object\Base.cs" />
-		<Compile Include="Object\Binder.cs" />
-		<Compile Include="Object\Log.cs" />
-		<Compile Include="Other\BusinessLogicBase.cs" />
-		<Compile Include="Properties\AssemblyInfo.cs" />
-		<Compile Include="TemplateField\checkboxfield.cs" />
-		<Compile Include="TemplateField\deletefield.cs" />
-		<Compile Include="TemplateField\historyfield.cs" />
-		<Compile Include="TemplateField\radiobuttonfield.cs" />
-		<Compile Include="TemplateField\viewfield.cs" />
-	</ItemGroup>
-	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8AA16F5A-5199-4552-9D10-44A74F06D853}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Library.Root</RootNamespace>
+    <AssemblyName>Library.Root</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Library.Root.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Library.Root.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control\Base.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Control\Convertion.cs" />
+    <Compile Include="Control\GenericCollection.cs" />
+    <Compile Include="Control\LogBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Control\MessageCenter.cs" />
+    <Compile Include="Object\Base.cs" />
+    <Compile Include="Object\Binder.cs" />
+    <Compile Include="Object\Log.cs" />
+    <Compile Include="Other\BusinessLogicBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TemplateField\checkboxfield.cs" />
+    <Compile Include="TemplateField\deletefield.cs" />
+    <Compile Include="TemplateField\historyfield.cs" />
+    <Compile Include="TemplateField\radiobuttonfield.cs" />
+    <Compile Include="TemplateField\viewfield.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Library.Common\Library.Common.csproj">
+      <Project>{1322656d-2faa-4f49-a511-3696dfc1d29c}</Project>
+      <Name>Library.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library.Control.Base\Library.Control.Base.csproj">
+      <Project>{d4618a4b-aaee-415b-af2c-0874920e87c3}</Project>
+      <Name>Library.Control.Base</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
