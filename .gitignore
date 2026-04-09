@@ -1,0 +1,40 @@
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.csproj.user
+
+# NuGet
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nupkg
+**/project.lock.json
+**/project.fragment.lock.json
+
+# Build output
+*.dll
+*.exe
+*.pdb
+*.xml
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+~$*
+
+# OS generated
+.DS_Store
+Thumbs.db
