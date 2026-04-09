@@ -1,7 +1,0 @@
-C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\cls_DB\bin\Debug\cls_DB.dll
-C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\cls_DB\bin\Debug\cls_DB.pdb
-C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\cls_DB\bin\Debug\cls_DB.xml
-C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\cls_DB\obj\Debug\cls_DB.csproj.AssemblyReference.cache
-C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\cls_DB\obj\Debug\cls_DB.csproj.CoreCompileInputs.cache
-C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\cls_DB\obj\Debug\cls_DB.dll
-C:\Project\Sub-slitting-Label-Printing-System-SLPS-\FLM_SubconLabelSystem\Library\cls_DB\obj\Debug\cls_DB.pdb
