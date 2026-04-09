@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Text;
 using System.IO;
+using System.Security.Cryptography;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -42,10 +43,9 @@ namespace PFRLabelIssuing.Pages
             char[] sep = { ',' };
             string[] arr = allowedChars.Split(sep);
             string passwordString = "";
-            Random rand = new Random();
             for (int i = 0; i < 6; i++)
             {
-                passwordString += arr[rand.Next(0, arr.Length)];
+                passwordString += arr[RandomNumberGenerator.GetInt32(0, arr.Length)];
             }
             return passwordString;
         }

@@ -26,9 +26,10 @@
                             <form method="post">
                                 @if (!string.IsNullOrEmpty(Model.ErrorMessage))
                                 {
-                                    <script type="text/javascript">
-                                        alert('@Html.Raw(Model.ErrorMessage.Replace("'", "\\'"))');
+                                <script type="text/javascript">
+                                        alert(document.getElementById('__errorMsg').textContent);
                                     </script>
+                                    <span id="__errorMsg" style="display:none">@Model.ErrorMessage</span>
                                 }
                                 <div class="centered">
                                     <table>
