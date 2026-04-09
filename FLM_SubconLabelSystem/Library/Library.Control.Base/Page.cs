@@ -17,7 +17,7 @@ public abstract class Page : System.Web.UI.Page
     }
 
     private short _Action;
-    public short Action
+    public new short Action
     {
         get { return _Action; }
         set { _Action = value; }

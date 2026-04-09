@@ -1,29 +1,42 @@
 using System;
-using System.Web;
-using System.Web.UI;
+using System.Collections.Generic;
+using System.Net;
 
 namespace Library.Root.Control
 {
     public class MessageCenter
     {
-        public static void ShowAJAXMessageBox(System.Web.UI.Page msg_page, string ajax_msg)
+        [ThreadStatic]
+        private static List<string> _pendingScripts;
+
+        public static List<string> PendingScripts
+        {
+            get
+            {
+                if (_pendingScripts == null)
+                    _pendingScripts = new List<string>();
+                return _pendingScripts;
+            }
+        }
+
+        public static void ShowAJAXMessageBox(object msg_page, string ajax_msg)
         {
             if (ajax_msg == null)
             {
                 ajax_msg = "";
             }
-            ajax_msg = HttpContext.Current.Server.HtmlEncode(ajax_msg.Replace("'", "\""));
+            ajax_msg = WebUtility.HtmlEncode(ajax_msg.Replace("'", "\""));
 
             string Msg = string.Format("alert('" + ajax_msg.Replace("||", "\\n") + "');");
-            ScriptManager.RegisterStartupScript(msg_page, msg_page.GetType(), "Msg", Msg, true);
+            PendingScripts.Add(Msg);
         }
 
-        public static void ShowJqueryMessageBox(System.Web.UI.Page currentpage, string Str)
+        public static void ShowJqueryMessageBox(object currentpage, string Str)
         {
-            Str = HttpContext.Current.Server.HtmlEncode(Str.Replace("'", "\""));
+            Str = WebUtility.HtmlEncode(Str.Replace("'", "\""));
             string prompt = "<script>$(document).ready(function(){{$.prompt('{0}!');}});</script>";
             string message = string.Format(prompt, Str);
-            currentpage.ClientScript.RegisterStartupScript(typeof(System.Web.UI.Page), "alert", message);
+            PendingScripts.Add(message);
         }
     }
 }

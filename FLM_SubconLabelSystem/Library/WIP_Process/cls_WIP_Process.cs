@@ -1,8 +1,9 @@
-using ACL;
-using ACL.Object;
-using ACL.OracleClass;
+// ACL and Symbol.RFID3 libraries are not available in .NET 8; references removed.
+// using ACL;
+// using ACL.Object;
+// using ACL.OracleClass;
 using cls_DB;
-using Symbol.RFID3;
+// using Symbol.RFID3;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -1567,23 +1568,8 @@ namespace WIP_Process
 
         public bool Reset_RFID_Reader(string pstr_IPAddr)
         {
-            bool flag;
-            RFIDReader _ReaderAPI = new RFIDReader(pstr_IPAddr, 5084, 0);
-            try
-            {
-                _ReaderAPI.Connect();
-                _ReaderAPI.Config.GPO[1].PortState = GPOs.GPO_PORT_STATE.FALSE;
-                _ReaderAPI.Config.GPO[2].PortState = GPOs.GPO_PORT_STATE.FALSE;
-                _ReaderAPI.Config.GPO[3].PortState = GPOs.GPO_PORT_STATE.FALSE;
-                _ReaderAPI.Disconnect();
-                _ReaderAPI.Dispose();
-                flag = true;
-            }
-            catch (System.Exception)
-            {
-                flag = false;
-            }
-            return flag;
+            // Symbol.RFID3 library not available in .NET 8 - stubbed out
+            throw new NotSupportedException("Symbol.RFID3 library is not available in the .NET 8 build. Reset_RFID_Reader is not supported.");
         }
 
         public string Resolve_HostName_2_IP(string pStr_hostname)
@@ -1717,40 +1703,14 @@ namespace WIP_Process
 
         public string User_ACL_AccessRight(string pStr_UserID)
         {
-            string str;
-            List<ACL.Object.Resource>.Enumerator enumerator = new List<ACL.Object.Resource>.Enumerator();
-            string SystemID = "0";
-            string _list = "";
-            SystemID = ACL.OracleClass.Resource.RetrieveApplicationIDByName(ConfigurationManager.ConnectionStrings["ORCL_ACL"].ConnectionString, "WIP RFID HANDHELD").ToString();
-            ACL.OracleClass.Resource _aclResource = new ACL.OracleClass.Resource(ConfigurationManager.ConnectionStrings["ORCL_ACL"].ConnectionString);
-            List<ACL.Object.Resource> _sourcelist = _aclResource.RetrieveResource(Convert.ToInt32(pStr_UserID), Convert.ToInt32(SystemID));
-            try
-            {
-                enumerator = Search.GetParent(_sourcelist, Convert.ToInt32(SystemID)).GetEnumerator();
-                while (enumerator.MoveNext())
-                {
-                    ACL.Object.Resource itm = enumerator.Current;
-                    _list = String.Concat(_list, "@", itm.ResouceDesc);
-                }
-            }
-            finally
-            {
-                ((IDisposable)enumerator).Dispose();
-            }
-            str = string.Compare(_list, "", StringComparison.Ordinal) == 0 ? "Acess Fail" : _list;
-            return str;
+            // ACL library not available in .NET 8 - stubbed out
+            throw new NotSupportedException("ACL library is not available in the .NET 8 build. User_ACL_AccessRight is not supported.");
         }
 
         public string User_ACL_Login(string pStr_UserName, string pStr_Password)
         {
-            string str;
-            string SystemID = "0";
-            SystemID = ACL.OracleClass.Resource.RetrieveApplicationIDByName(ConfigurationManager.ConnectionStrings["ORCL_ACL"].ConnectionString, "WIP RFID HANDHELD").ToString();
-            ACL.OracleClass.User _aclUser = new ACL.OracleClass.User(ConfigurationManager.ConnectionStrings["ORCL_ACL"].ConnectionString);
-            ACL.Object.User userobj = new ACL.Object.User();
-            userobj = _aclUser.validateWithRetrieveUser(pStr_UserName.Trim(), pStr_Password.Trim(), Convert.ToInt32(SystemID));
-            str = string.Compare(userobj.UserID, "", StringComparison.Ordinal) == 0 ? "Login Fail" : userobj.UserID;
-            return str;
+            // ACL library not available in .NET 8 - stubbed out
+            throw new NotSupportedException("ACL library is not available in the .NET 8 build. User_ACL_Login is not supported.");
         }
 
         public string user_login(string pStr_UserName, string pStr_Password)

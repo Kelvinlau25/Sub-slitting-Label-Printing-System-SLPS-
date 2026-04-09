@@ -14,7 +14,8 @@ namespace Control
     {
         public static void BindDropDownListResource(DropDownList ddl, string resourceName, string text = "", string value = "")
         {
-            var resource = HttpContext.GetGlobalResourceObject("SearchSource", resourceName);
+            // GetGlobalResourceObject is not available in .NET 8; return empty list as fallback
+            object resource = null;
             ddl.DataSource = Library.Root.Control.Convertion<Binder>.Deserializer(resource != null ? resource.ToString() : string.Empty);
             ddl.DataTextField = "Text";
             ddl.DataValueField = "Value";

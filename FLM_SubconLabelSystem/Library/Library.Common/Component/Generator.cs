@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
-using System.Web.UI;
 
 namespace Library.common
 {
@@ -49,40 +48,50 @@ public class Generator : ICollection<FieldSet>
     }
 
     /// <summary>
-    /// Generate the HTML
+    /// Generate the HTML table from the DataTable
     /// </summary>
     public override string ToString()
     {
         using (StringWriter _sw = new StringWriter())
         {
-            using (HtmlTextWriter _htw = new HtmlTextWriter(_sw))
+            int _counter = -1;
+
+            foreach (FieldSet Itm in this._setting)
             {
-                System.Web.UI.WebControls.DataGrid _dg = new System.Web.UI.WebControls.DataGrid();
-                int _counter = -1;
-
-                // Field setting
-                foreach (FieldSet Itm in this._setting)
-                {
-                    _counter += 1;
-                    this._data.Columns[Itm.Field].SetOrdinal(_counter);
-                    this._data.Columns[Itm.Field].AllowDBNull = true;
-                    this._data.Columns[Itm.Field].ColumnName = Itm.Title;
-                }
-
-                // Remove unwanted column
                 _counter += 1;
-                short _totalColumnCount = (short)(this.Data.Columns.Count - 1);
-                for (int temp = _counter; temp <= _totalColumnCount; temp++)
-                {
-                    this.Data.Columns.RemoveAt(_counter);
-                }
-
-                _dg.DataSource = this.Data;
-                _dg.DataBind();
-                _dg.RenderControl(_htw);
-
-                return _sw.ToString();
+                this._data.Columns[Itm.Field].SetOrdinal(_counter);
+                this._data.Columns[Itm.Field].AllowDBNull = true;
+                this._data.Columns[Itm.Field].ColumnName = Itm.Title;
             }
+
+            _counter += 1;
+            short _totalColumnCount = (short)(this.Data.Columns.Count - 1);
+            for (int temp = _counter; temp <= _totalColumnCount; temp++)
+            {
+                this.Data.Columns.RemoveAt(_counter);
+            }
+
+            // Render as simple HTML table
+            _sw.Write("<table>");
+            _sw.Write("<tr>");
+            foreach (DataColumn col in this.Data.Columns)
+            {
+                _sw.Write("<td>" + System.Net.WebUtility.HtmlEncode(col.ColumnName) + "</td>");
+            }
+            _sw.Write("</tr>");
+            foreach (DataRow row in this.Data.Rows)
+            {
+                _sw.Write("<tr>");
+                foreach (DataColumn col in this.Data.Columns)
+                {
+                    string val = row[col] == null ? string.Empty : row[col].ToString();
+                    _sw.Write("<td>" + System.Net.WebUtility.HtmlEncode(val) + "</td>");
+                }
+                _sw.Write("</tr>");
+            }
+            _sw.Write("</table>");
+
+            return _sw.ToString();
         }
     }
 

@@ -8,8 +8,8 @@ public class GlobalFunctions
 
     public static string Encrypt(string plaintext)
     {
-        using (var aes = new RijndaelManaged())
-        using (var sha256 = new SHA256Cng())
+        using (var aes = Aes.Create())
+        using (var sha256 = SHA256.Create())
         {
             try
             {
@@ -31,8 +31,8 @@ public class GlobalFunctions
 
     public static string Decrypt(string ciphertext)
     {
-        using (var aes = new RijndaelManaged())
-        using (var sha256 = new SHA256Cng())
+        using (var aes = Aes.Create())
+        using (var sha256 = SHA256.Create())
         {
             try
             {
@@ -59,8 +59,8 @@ public class GlobalFunctions
 
     public static string RetrieveIV(string ciphertext)
     {
-        using (var aes = new RijndaelManaged())
-        using (var sha256 = new SHA256Cng())
+        using (var aes = Aes.Create())
+        using (var sha256 = SHA256.Create())
         {
             try
             {
@@ -90,8 +90,8 @@ public class GlobalFunctions
 
     public static string EncryptIV(string plaintext, string iv)
     {
-        using (var aes = new RijndaelManaged())
-        using (var sha256 = new SHA256Cng())
+        using (var aes = Aes.Create())
+        using (var sha256 = SHA256.Create())
         {
             try
             {
