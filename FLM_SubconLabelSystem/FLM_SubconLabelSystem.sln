@@ -3,27 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36811.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FLM_SubconLabelSystem", ".", "{1A351CD7-6B4D-4119-8F13-8FAF661ED26F}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
-		ProjectReferences = "{88f0907b-957b-4389-8cee-08eb846ef8ba}|cls_DB.dll;{1322656d-2faa-4f49-a511-3696dfc1d29c}|Library.common.dll;{0A1F849F-46BC-4255-A499-7D1F76055D36}|Library.SQLServer.dll;{d4618a4b-aaee-415b-af2c-0874920e87c3}|Library.Control.Base.dll;{55ae13fa-8e18-493e-9bfb-5130a9bf3db5}|Library.Database.dll;{8AA16F5A-5199-4552-9D10-44A74F06D853}|Library.Root.dll;"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_53036"
-		Debug.AspNetCompiler.PhysicalPath = "..\FLM_SubconLabelSystem\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53036\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_53036"
-		Release.AspNetCompiler.PhysicalPath = "..\FLM_SubconLabelSystem\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53036\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "53036"
-		SlnRelativePath = "..\FLM_SubconLabelSystem\"
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PFRLabelIssuing", "PFRLabelIssuing.csproj", "{5FBD3E22-92E8-4DD2-B0C9-1F3931C40D1D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Common", "Library\Library.Common\Library.Common.csproj", "{1322656D-2FAA-4F49-A511-3696DFC1D29C}"
 EndProject
@@ -45,10 +25,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1A351CD7-6B4D-4119-8F13-8FAF661ED26F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1A351CD7-6B4D-4119-8F13-8FAF661ED26F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1A351CD7-6B4D-4119-8F13-8FAF661ED26F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{1A351CD7-6B4D-4119-8F13-8FAF661ED26F}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{5FBD3E22-92E8-4DD2-B0C9-1F3931C40D1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FBD3E22-92E8-4DD2-B0C9-1F3931C40D1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FBD3E22-92E8-4DD2-B0C9-1F3931C40D1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FBD3E22-92E8-4DD2-B0C9-1F3931C40D1D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1322656D-2FAA-4F49-A511-3696DFC1D29C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1322656D-2FAA-4F49-A511-3696DFC1D29C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1322656D-2FAA-4F49-A511-3696DFC1D29C}.Release|Any CPU.ActiveCfg = Release|Any CPU
