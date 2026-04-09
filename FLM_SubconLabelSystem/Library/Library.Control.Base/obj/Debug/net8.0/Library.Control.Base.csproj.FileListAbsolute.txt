@@ -1,0 +1,15 @@
+/home/runner/work/Sub-slitting-Label-Printing-System-SLPS-/Sub-slitting-Label-Printing-System-SLPS-/FLM_SubconLabelSystem/Library/Library.Control.Base/bin/Debug/net8.0/Library.Control.Base.deps.json
+/home/runner/work/Sub-slitting-Label-Printing-System-SLPS-/Sub-slitting-Label-Printing-System-SLPS-/FLM_SubconLabelSystem/Library/Library.Control.Base/bin/Debug/net8.0/Library.Control.Base.dll
+/home/runner/work/Sub-slitting-Label-Printing-System-SLPS-/Sub-slitting-Label-Printing-System-SLPS-/FLM_SubconLabelSystem/Library/Library.Control.Base/bin/Debug/net8.0/Library.Control.Base.pdb
+/home/runner/work/Sub-slitting-Label-Printing-System-SLPS-/Sub-slitting-Label-Printing-System-SLPS-/FLM_SubconLabelSystem/Library/Library.Control.Base/bin/Debug/net8.0/Library.Control.Base.xml
+/home/runner/work/Sub-slitting-Label-Printing-System-SLPS-/Sub-slitting-Label-Printing-System-SLPS-/FLM_SubconLabelSystem/Library/Library.Control.Base/obj/Debug/net8.0/Library.Control.Base.csproj.AssemblyReference.cache
+/home/runner/work/Sub-slitting-Label-Printing-System-SLPS-/Sub-slitting-Label-Printing-System-SLPS-/FLM_SubconLabelSystem/Library/Library.Control.Base/obj/Debug/net8.0/Library.Control.Base.My_Project.Resources.resources
+/home/runner/work/Sub-slitting-Label-Printing-System-SLPS-/Sub-slitting-Label-Printing-System-SLPS-/FLM_SubconLabelSystem/Library/Library.Control.Base/obj/Debug/net8.0/Library.Control.Base.csproj.GenerateResource.cache
+/home/runner/work/Sub-slitting-Label-Printing-System-SLPS-/Sub-slitting-Label-Printing-System-SLPS-/FLM_SubconLabelSystem/Library/Library.Control.Base/obj/Debug/net8.0/Library.Control.Base.GeneratedMSBuildEditorConfig.editorconfig
+/home/runner/work/Sub-slitting-Label-Printing-System-SLPS-/Sub-slitting-Label-Printing-System-SLPS-/FLM_SubconLabelSystem/Library/Library.Control.Base/obj/Debug/net8.0/Library.Control.Base.csproj.CoreCompileInputs.cache
+/home/runner/work/Sub-slitting-Label-Printing-System-SLPS-/Sub-slitting-Label-Printing-System-SLPS-/FLM_SubconLabelSystem/Library/Library.Control.Base/obj/Debug/net8.0/Library.Control.Base.sourcelink.json
+/home/runner/work/Sub-slitting-Label-Printing-System-SLPS-/Sub-slitting-Label-Printing-System-SLPS-/FLM_SubconLabelSystem/Library/Library.Control.Base/obj/Debug/net8.0/Library.Control.Base.dll
+/home/runner/work/Sub-slitting-Label-Printing-System-SLPS-/Sub-slitting-Label-Printing-System-SLPS-/FLM_SubconLabelSystem/Library/Library.Control.Base/obj/Debug/net8.0/refint/Library.Control.Base.dll
+/home/runner/work/Sub-slitting-Label-Printing-System-SLPS-/Sub-slitting-Label-Printing-System-SLPS-/FLM_SubconLabelSystem/Library/Library.Control.Base/obj/Debug/net8.0/Library.Control.Base.xml
+/home/runner/work/Sub-slitting-Label-Printing-System-SLPS-/Sub-slitting-Label-Printing-System-SLPS-/FLM_SubconLabelSystem/Library/Library.Control.Base/obj/Debug/net8.0/Library.Control.Base.pdb
+/home/runner/work/Sub-slitting-Label-Printing-System-SLPS-/Sub-slitting-Label-Printing-System-SLPS-/FLM_SubconLabelSystem/Library/Library.Control.Base/obj/Debug/net8.0/ref/Library.Control.Base.dll

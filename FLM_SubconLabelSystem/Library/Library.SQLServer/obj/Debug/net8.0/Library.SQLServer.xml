@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Library.SQLServer</name>
+    </assembly>
+    <members>
+        <member name="T:Library.SQLServer.Connection">
+            <summary>
+            Handler the SQL Server Connection Class
+            -------------------------------------------
+            C.C.Yeon    25 April 2011   Initial Version
+            </summary>
+        </member>
+        <member name="M:Library.SQLServer.Connection.Commit">
+            <summary>
+            Commit all the transaction
+            </summary>
+        </member>
+        <member name="M:Library.SQLServer.Connection.Rollback">
+            <summary>
+            Rollback all the transaction
+            </summary>
+        </member>
+    </members>
+</doc>
