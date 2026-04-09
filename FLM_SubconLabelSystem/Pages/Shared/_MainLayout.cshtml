@@ -1,0 +1,55 @@
+@using Microsoft.AspNetCore.Http
+@{
+    /* Replaces Main.master – session gate + shared CSS/JS */
+    var userId = Context.Session.GetString("gstrUserID");
+
+    /* Handle encrypted user-id / company-id passed via query string */
+    if (Context.Request.Query.ContainsKey("eid"))
+    {
+        Context.Session.SetString("gstrUserID",
+            ACL.Security.Encryption.Decrypt(Context.Request.Query["eid"]));
+    }
+    if (Context.Request.Query.ContainsKey("cid"))
+    {
+        Context.Session.SetString("gstrUserCom", Context.Request.Query["cid"]);
+    }
+    if (string.IsNullOrEmpty(Context.Session.GetString("gstrUserID")))
+    {
+        Context.Response.Redirect(Url.Content("~/SessionExpired"));
+        return;
+    }
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <title>@ViewData["Title"]</title>
+
+    <link href="@Url.Content("~/css/Detail.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/css/PenGroup.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/css/prodSystem.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/css/stylesheetmsdn.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/js/common.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/js/commonsearch.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/css/jquery-ui-1.10.3.custom.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/js/jquery-3.4.1.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/js/jquery-ui-1.10.3.custom.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/aef--jquery.filthypillow-3f6c43f/moment-with-locales.min.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/aef--jquery.filthypillow-3f6c43f/jquery.filthypillow.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/aef--jquery.filthypillow-3f6c43f/jquery.filthypillow.min.js")" type="text/javascript"></script>
+
+    <style type="text/css">
+        .noborder { border: 0px; }
+    </style>
+
+    @await RenderSectionAsync("Head", required: false)
+</head>
+<body>
+    <form method="post">
+        <div>
+            @RenderBody()
+        </div>
+    </form>
+</body>
+</html>

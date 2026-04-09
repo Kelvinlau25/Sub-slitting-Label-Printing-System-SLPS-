@@ -13,7 +13,7 @@
 input[type=submit]{background-color:#2779aa; color:White;}
 </style>
 <div id='searchMsg'>
-    <h3>@(searchType == "A" ? "Advance Search" : "Basic Search")</h3>
+    <h3>@(searchType == "A" ? "Advanced Search" : "Basic Search")</h3>
     @if (searchType != "A")
     {
         <script type="text/javascript">
@@ -52,7 +52,7 @@ input[type=submit]{background-color:#2779aa; color:White;}
                     <input type="submit" value="Search" onclick="return BasicSearchChecker();" style="width:74px;background-color:#2779aa;color:White;" />
                 </td>
                 <td width="305">
-                    <a href="?searchType=A">Advance Search</a>
+                    <a href="?searchType=A">Advanced Search</a>
                 </td>
             </tr>
         </table>
