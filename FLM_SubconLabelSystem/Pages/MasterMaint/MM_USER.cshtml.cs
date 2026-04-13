@@ -26,7 +26,7 @@ namespace PFRLabelIssuing.Pages.MasterMaint
 
             if (ulevel == "3" || ulevel == "2")
             {
-                DeleteControl = true;
+                DeleteControl = false;
                 list = Library.Database.BLL.user.List(
                     "MM_USER_func('" + companyCode + "')",
                     "ID_MM_USERID",
@@ -36,7 +36,7 @@ namespace PFRLabelIssuing.Pages.MasterMaint
             }
             else
             {
-                DeleteControl = false;
+                DeleteControl = true;
                 list = Library.Database.BLL.user.List(
                     "PV_MM_USER",
                     "ID_MM_USERID",

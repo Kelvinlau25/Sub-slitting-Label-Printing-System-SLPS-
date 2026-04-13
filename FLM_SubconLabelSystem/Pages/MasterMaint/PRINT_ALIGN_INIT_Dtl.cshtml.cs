@@ -170,40 +170,40 @@ namespace PFRLabelIssuing.Pages.MasterMaint
             if (dt != null && dt.Rows.Count > 0)
             {
                 DataRow r = dt.Rows[0];
-                DisplayPrinterName = r["PRINTERNAME"].ToString();
-                DisplayCompanyCode = r["COMPANYCODE"].ToString();
-                DisplayTextFont = r["TEXTFONT"].ToString();
-                DisplayTextFontSize = r["TEXTFONTSIZE"].ToString();
-                DisplayBarcodeFont = r["BARCODEFONT"].ToString();
-                DisplayBarcodeFontSize = r["BARCODEFONTSIZE"].ToString();
-                DisplayWidthX = r["WIDTHX"].ToString();
-                DisplayWidthY = r["WIDTHY"].ToString();
-                DisplayLengthHeaderX = r["LENGTHHEADERX"].ToString();
-                DisplayLengthHeaderY = r["LENGTHHEADERY"].ToString();
-                DisplayPackCodeX = r["PACKCODEX"].ToString();
-                DisplayPackCodeY = r["PACKCODEY"].ToString();
-                DisplayUnitWeightX = r["UNITWEIGHTX"].ToString();
-                DisplayUnitWeightY = r["UNITWEIGHTY"].ToString();
-                DisplayNumPerPackX = r["NUMPERPACKX"].ToString();
-                DisplayNumPerPackY = r["NUMPERPACKY"].ToString();
-                DisplaySlitLotNoX = r["SLITLOTNOX"].ToString();
-                DisplaySlitLotNoY = r["SLITLOTNOY"].ToString();
-                DisplayPC1X = r["PC1X"].ToString();
-                DisplayPC1Y = r["PC1Y"].ToString();
-                DisplayGradeX = r["GRADEX"].ToString();
-                DisplayGradeY = r["GRADEY"].ToString();
-                DisplayLengthX = r["LENGTHX"].ToString();
-                DisplayLengthY = r["LENGTHY"].ToString();
-                DisplayCoreCodeX = r["CORECODEX"].ToString();
-                DisplayCoreCodeY = r["CORECODEY"].ToString();
-                DisplayThicknessX = r["THICKNESSX"].ToString();
-                DisplayThicknessY = r["THICKNESSY"].ToString();
-                DisplayBarcodeX = r["BARCODEX"].ToString();
-                DisplayBarcodeY = r["BARCODEY"].ToString();
-                DisplayTypeX = r["TYPEX"].ToString();
-                DisplayTypeY = r["TYPEY"].ToString();
-                DisplayDefaultYes = r["DEFAULTYES"].ToString();
-                DisplayDefaultNo = r["DEFAULTNO"].ToString();
+                DisplayPrinterName = r["Printer_Name"].ToString();
+                DisplayCompanyCode = r["CompanyCode"].ToString();
+                DisplayTextFont = r["Text_Font"].ToString();
+                DisplayTextFontSize = r["Text_Font_Size"].ToString();
+                DisplayBarcodeFont = r["Barcode_Font"].ToString();
+                DisplayBarcodeFontSize = r["Barcode_Font_Size"].ToString();
+                DisplayWidthX = r["Width_X"].ToString();
+                DisplayWidthY = r["Width_Y"].ToString();
+                DisplayLengthHeaderX = r["Length_Header_X"].ToString();
+                DisplayLengthHeaderY = r["Length_Header_Y"].ToString();
+                DisplayPackCodeX = r["Pack_Code_X"].ToString();
+                DisplayPackCodeY = r["Pack_Code_Y"].ToString();
+                DisplayUnitWeightX = r["Unit_Weight_X"].ToString();
+                DisplayUnitWeightY = r["Unit_Weight_Y"].ToString();
+                DisplayNumPerPackX = r["Num_Per_Pack_X"].ToString();
+                DisplayNumPerPackY = r["Num_Per_Pack_Y"].ToString();
+                DisplaySlitLotNoX = r["Slit_Lot_No_X"].ToString();
+                DisplaySlitLotNoY = r["Slit_Lot_No_Y"].ToString();
+                DisplayPC1X = r["PC1_X"].ToString();
+                DisplayPC1Y = r["PC1_Y"].ToString();
+                DisplayGradeX = r["Grade_X"].ToString();
+                DisplayGradeY = r["Grade_Y"].ToString();
+                DisplayLengthX = r["Length_X"].ToString();
+                DisplayLengthY = r["Length_Y"].ToString();
+                DisplayCoreCodeX = r["Core_Code_X"].ToString();
+                DisplayCoreCodeY = r["Core_Code_Y"].ToString();
+                DisplayThicknessX = r["Thickness_X"].ToString();
+                DisplayThicknessY = r["Thickness_Y"].ToString();
+                DisplayBarcodeX = r["Barcode_X"].ToString();
+                DisplayBarcodeY = r["Barcode_Y"].ToString();
+                DisplayTypeX = r["Type_X"].ToString();
+                DisplayTypeY = r["Type_Y"].ToString();
+                DisplayDefaultYes = Convert.ToBoolean(r["Default_Printer"]) ? "1" : "0";
+                DisplayDefaultNo = Convert.ToBoolean(r["Default_Printer"]) ? "0" : "1";
                 CreatedBy = r["CREATED_BY"].ToString();
                 CreatedDate = r["CREATED_DATE"] != DBNull.Value ? Convert.ToDateTime(r["CREATED_DATE"]) : (DateTime?)null;
                 UpdatedBy = r["UPDATED_BY"].ToString();
@@ -217,39 +217,39 @@ namespace PFRLabelIssuing.Pages.MasterMaint
             if (dt != null && dt.Rows.Count > 0)
             {
                 DataRow r = dt.Rows[0];
-                PrinterName = r["PRINTERNAME"].ToString();
-                CompanyCode = r["COMPANYCODE"].ToString();
-                TextFont = r["TEXTFONT"].ToString();
-                TextFontSize = r["TEXTFONTSIZE"].ToString();
-                BarcodeFont = r["BARCODEFONT"].ToString();
-                BarcodeFontSize = r["BARCODEFONTSIZE"].ToString();
-                WidthX = r["WIDTHX"].ToString();
-                WidthY = r["WIDTHY"].ToString();
-                LengthHeaderX = r["LENGTHHEADERX"].ToString();
-                LengthHeaderY = r["LENGTHHEADERY"].ToString();
-                PackCodeX = r["PACKCODEX"].ToString();
-                PackCodeY = r["PACKCODEY"].ToString();
-                UnitWeightX = r["UNITWEIGHTX"].ToString();
-                UnitWeightY = r["UNITWEIGHTY"].ToString();
-                NumPerPackX = r["NUMPERPACKX"].ToString();
-                NumPerPackY = r["NUMPERPACKY"].ToString();
-                SlitLotNoX = r["SLITLOTNOX"].ToString();
-                SlitLotNoY = r["SLITLOTNOY"].ToString();
-                PC1X = r["PC1X"].ToString();
-                PC1Y = r["PC1Y"].ToString();
-                GradeX = r["GRADEX"].ToString();
-                GradeY = r["GRADEY"].ToString();
-                LengthX = r["LENGTHX"].ToString();
-                LengthY = r["LENGTHY"].ToString();
-                CoreCodeX = r["CORECODEX"].ToString();
-                CoreCodeY = r["CORECODEY"].ToString();
-                ThicknessX = r["THICKNESSX"].ToString();
-                ThicknessY = r["THICKNESSY"].ToString();
-                BarcodeX = r["BARCODEX"].ToString();
-                BarcodeY = r["BARCODEY"].ToString();
-                TypeX = r["TYPEX"].ToString();
-                TypeY = r["TYPEY"].ToString();
-                string defYes = r["DEFAULTYES"].ToString();
+                PrinterName = r["Printer_Name"].ToString();
+                CompanyCode = r["CompanyCode"].ToString();
+                TextFont = r["Text_Font"].ToString();
+                TextFontSize = r["Text_Font_Size"].ToString();
+                BarcodeFont = r["Barcode_Font"].ToString();
+                BarcodeFontSize = r["Barcode_Font_Size"].ToString();
+                WidthX = r["Width_X"].ToString();
+                WidthY = r["Width_Y"].ToString();
+                LengthHeaderX = r["Length_Header_X"].ToString();
+                LengthHeaderY = r["Length_Header_Y"].ToString();
+                PackCodeX = r["Pack_Code_X"].ToString();
+                PackCodeY = r["Pack_Code_Y"].ToString();
+                UnitWeightX = r["Unit_Weight_X"].ToString();
+                UnitWeightY = r["Unit_Weight_Y"].ToString();
+                NumPerPackX = r["Num_Per_Pack_X"].ToString();
+                NumPerPackY = r["Num_Per_Pack_Y"].ToString();
+                SlitLotNoX = r["Slit_Lot_No_X"].ToString();
+                SlitLotNoY = r["Slit_Lot_No_Y"].ToString();
+                PC1X = r["PC1_X"].ToString();
+                PC1Y = r["PC1_Y"].ToString();
+                GradeX = r["Grade_X"].ToString();
+                GradeY = r["Grade_Y"].ToString();
+                LengthX = r["Length_X"].ToString();
+                LengthY = r["Length_Y"].ToString();
+                CoreCodeX = r["Core_Code_X"].ToString();
+                CoreCodeY = r["Core_Code_Y"].ToString();
+                ThicknessX = r["Thickness_X"].ToString();
+                ThicknessY = r["Thickness_Y"].ToString();
+                BarcodeX = r["Barcode_X"].ToString();
+                BarcodeY = r["Barcode_Y"].ToString();
+                TypeX = r["Type_X"].ToString();
+                TypeY = r["Type_Y"].ToString();
+                string defYes = Convert.ToBoolean(r["Default_Printer"]) ? "1" : "0";
                 DefaultPrinter = defYes == "1" ? "Yes" : "No";
                 CreatedBy = r["CREATED_BY"].ToString();
                 CreatedDate = r["CREATED_DATE"] != DBNull.Value ? Convert.ToDateTime(r["CREATED_DATE"]) : (DateTime?)null;
@@ -272,9 +272,9 @@ namespace PFRLabelIssuing.Pages.MasterMaint
 
             string result = "0";
             if (Action == EnumAction.Edit)
-                result = Library.Database.BLL.PrintAlignInit.Maint(Key, PrinterName, TextFont, WidthX, TextFontSize, WidthY, BarcodeFont, LengthHeaderX, BarcodeFontSize, LengthHeaderY, PackCodeX, UnitWeightX, PackCodeY, UnitWeightY, NumPerPackX, SlitLotNoX, NumPerPackY, SlitLotNoY, PC1X, GradeX, PC1Y, GradeY, LengthX, CoreCodeX, LengthY, CoreCodeY, ThicknessX, BarcodeX, ThicknessY, BarcodeY, TypeX, TypeY, defaultYes, defaultNo, CompanyCode, (int)EnumAction.Edit);
+                result = Library.Database.BLL.PrintAlignInit.Maint(Key, PrinterName, TextFont, WidthX, TextFontSize, WidthY, BarcodeFont, LengthHeaderX, BarcodeFontSize, LengthHeaderY, PackCodeX, UnitWeightX, PackCodeY, UnitWeightY, NumPerPackX, SlitLotNoX, NumPerPackY, SlitLotNoY, PC1X, GradeX, PC1Y, GradeY, LengthX, CoreCodeX, LengthY, CoreCodeY, ThicknessX, BarcodeX, ThicknessY, BarcodeY, TypeX, TypeY, defaultYes == "1", defaultNo == "1", CompanyCode, ((int)EnumAction.Edit).ToString());
             else if (Action == EnumAction.Add)
-                result = Library.Database.BLL.PrintAlignInit.Maint(Key, PrinterName, TextFont, WidthX, TextFontSize, WidthY, BarcodeFont, LengthHeaderX, BarcodeFontSize, LengthHeaderY, PackCodeX, UnitWeightX, PackCodeY, UnitWeightY, NumPerPackX, SlitLotNoX, NumPerPackY, SlitLotNoY, PC1X, GradeX, PC1Y, GradeY, LengthX, CoreCodeX, LengthY, CoreCodeY, ThicknessX, BarcodeX, ThicknessY, BarcodeY, TypeX, TypeY, defaultYes, defaultNo, CompanyCode, (int)EnumAction.Add);
+                result = Library.Database.BLL.PrintAlignInit.Maint(Key, PrinterName, TextFont, WidthX, TextFontSize, WidthY, BarcodeFont, LengthHeaderX, BarcodeFontSize, LengthHeaderY, PackCodeX, UnitWeightX, PackCodeY, UnitWeightY, NumPerPackX, SlitLotNoX, NumPerPackY, SlitLotNoY, PC1X, GradeX, PC1Y, GradeY, LengthX, CoreCodeX, LengthY, CoreCodeY, ThicknessX, BarcodeX, ThicknessY, BarcodeY, TypeX, TypeY, defaultYes == "1", defaultNo == "1", CompanyCode, ((int)EnumAction.Add).ToString());
 
             if (result == "1")
                 return Redirect(GetUrl(EnumAction.None));
@@ -289,7 +289,7 @@ namespace PFRLabelIssuing.Pages.MasterMaint
             ParseQueryString();
             LoadDisplayData();
 
-            string result = Library.Database.BLL.PrintAlignInit.Maint(Key, DisplayPrinterName, DisplayTextFont, DisplayWidthX, DisplayTextFontSize, DisplayWidthY, DisplayBarcodeFont, DisplayLengthHeaderX, DisplayBarcodeFontSize, DisplayLengthHeaderY, DisplayPackCodeX, DisplayUnitWeightX, DisplayPackCodeY, DisplayUnitWeightY, DisplayNumPerPackX, DisplaySlitLotNoX, DisplayNumPerPackY, DisplaySlitLotNoY, DisplayPC1X, DisplayGradeX, DisplayPC1Y, DisplayGradeY, DisplayLengthX, DisplayCoreCodeX, DisplayLengthY, DisplayCoreCodeY, DisplayThicknessX, DisplayBarcodeX, DisplayThicknessY, DisplayBarcodeY, DisplayTypeX, DisplayTypeY, DisplayDefaultYes, DisplayDefaultNo, DisplayCompanyCode, (int)EnumAction.Delete);
+            string result = Library.Database.BLL.PrintAlignInit.Maint(Key, DisplayPrinterName, DisplayTextFont, DisplayWidthX, DisplayTextFontSize, DisplayWidthY, DisplayBarcodeFont, DisplayLengthHeaderX, DisplayBarcodeFontSize, DisplayLengthHeaderY, DisplayPackCodeX, DisplayUnitWeightX, DisplayPackCodeY, DisplayUnitWeightY, DisplayNumPerPackX, DisplaySlitLotNoX, DisplayNumPerPackY, DisplaySlitLotNoY, DisplayPC1X, DisplayGradeX, DisplayPC1Y, DisplayGradeY, DisplayLengthX, DisplayCoreCodeX, DisplayLengthY, DisplayCoreCodeY, DisplayThicknessX, DisplayBarcodeX, DisplayThicknessY, DisplayBarcodeY, DisplayTypeX, DisplayTypeY, DisplayDefaultYes == "1", DisplayDefaultNo == "1", DisplayCompanyCode, ((int)EnumAction.Delete).ToString());
             if (result == "1")
                 return Redirect(GetUrl(EnumAction.None));
 

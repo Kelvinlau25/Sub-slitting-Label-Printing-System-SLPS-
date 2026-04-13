@@ -1,0 +1,25 @@
+@page
+@model PFRLabelIssuing.Pages.Transactions.testModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Page</title>
+</head>
+<body>
+    <form method="post">
+        Password :
+        <input type="text" name="Password" style="width:200px" value="@Model.Password" />
+        <button type="submit" asp-page-handler="Encrypt">Encrypt</button>
+        <span>@Model.EncryptedResult</span><br />
+        <button type="submit" asp-page-handler="Decrypt">Decrypt</button>
+        <span>@Model.DecryptedResult</span><br />
+        CipherPass :
+        <input type="text" name="CipherText" style="width:200px" value="@Model.CipherText" />
+        <button type="submit" asp-page-handler="DecryptCipher">Decrypt</button>
+        <span>@Model.DecryptedCipherResult</span>
+    </form>
+</body>
+</html>

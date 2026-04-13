@@ -124,12 +124,12 @@ namespace PFRLabelIssuing.Pages.MasterMaint
                 DisplayType = dt.Rows[0]["TYPE"].ToString();
                 DisplayWidth = dt.Rows[0]["WIDTH"].ToString();
                 DisplayLength = dt.Rows[0]["LENGTH"].ToString();
-                DisplayPackCode = dt.Rows[0]["PACKCODE"].ToString();
+                DisplayPackCode = dt.Rows[0]["PACK_CODE"].ToString();
                 DisplayGrade = dt.Rows[0]["GRADE"].ToString();
-                DisplayCoreCode = dt.Rows[0]["CORECODE"].ToString();
+                DisplayCoreCode = dt.Rows[0]["CORE_CODE"].ToString();
                 DisplayMachine = dt.Rows[0]["MACHINE"].ToString();
-                DisplayUnitWeight = dt.Rows[0]["UNITWEIGHT"].ToString();
-                DisplayNumPerPack = dt.Rows[0]["NUMPERPACK"].ToString();
+                DisplayUnitWeight = dt.Rows[0]["UNIT_WEIGHT"].ToString();
+                DisplayNumPerPack = dt.Rows[0]["NUM_PER_PACK"].ToString();
                 DisplayRemarks = dt.Rows[0]["REMARKS"].ToString();
                 CreatedBy = dt.Rows[0]["CREATED_BY"].ToString();
                 CreatedDate = dt.Rows[0]["CREATED_DATE"] != DBNull.Value ? Convert.ToDateTime(dt.Rows[0]["CREATED_DATE"]) : (DateTime?)null;
@@ -148,12 +148,12 @@ namespace PFRLabelIssuing.Pages.MasterMaint
                 Type = dt.Rows[0]["TYPE"].ToString();
                 Width = dt.Rows[0]["WIDTH"].ToString();
                 Length = dt.Rows[0]["LENGTH"].ToString();
-                PackCode = dt.Rows[0]["PACKCODE"].ToString();
+                PackCode = dt.Rows[0]["PACK_CODE"].ToString();
                 Grade = dt.Rows[0]["GRADE"].ToString();
-                CoreCode = dt.Rows[0]["CORECODE"].ToString();
+                CoreCode = dt.Rows[0]["CORE_CODE"].ToString();
                 Machine = dt.Rows[0]["MACHINE"].ToString();
-                UnitWeight = dt.Rows[0]["UNITWEIGHT"].ToString();
-                NumPack = dt.Rows[0]["NUMPERPACK"].ToString();
+                UnitWeight = dt.Rows[0]["UNIT_WEIGHT"].ToString();
+                NumPack = dt.Rows[0]["NUM_PER_PACK"].ToString();
                 Remarks = dt.Rows[0]["REMARKS"].ToString();
                 CreatedBy = dt.Rows[0]["CREATED_BY"].ToString();
                 CreatedDate = dt.Rows[0]["CREATED_DATE"] != DBNull.Value ? Convert.ToDateTime(dt.Rows[0]["CREATED_DATE"]) : (DateTime?)null;
@@ -175,9 +175,9 @@ namespace PFRLabelIssuing.Pages.MasterMaint
 
             string result = "0";
             if (Action == EnumAction.Edit)
-                result = Library.Database.BLL.PC2Mother.Maint(Key, pc2, Thickness, Type, Width, Length, PackCode, Grade, CoreCode ?? "", Machine, UnitWeight, NumPack, Remarks ?? "", (int)EnumAction.Edit);
+                result = Library.Database.BLL.PC2Mother.Maint(Key, pc2, Thickness, Type, Width, Length, PackCode, Grade, CoreCode ?? "", Machine, UnitWeight, NumPack, Remarks ?? "", ((int)EnumAction.Edit).ToString());
             else if (Action == EnumAction.Add)
-                result = Library.Database.BLL.PC2Mother.Maint(Key, pc2, Thickness, Type, Width, Length, PackCode, Grade, CoreCode ?? "", Machine, UnitWeight, NumPack, Remarks ?? "", (int)EnumAction.Add);
+                result = Library.Database.BLL.PC2Mother.Maint(Key, pc2, Thickness, Type, Width, Length, PackCode, Grade, CoreCode ?? "", Machine, UnitWeight, NumPack, Remarks ?? "", ((int)EnumAction.Add).ToString());
 
             if (result == "1")
                 return Redirect(GetUrl(EnumAction.None));
@@ -192,7 +192,7 @@ namespace PFRLabelIssuing.Pages.MasterMaint
             ParseQueryString();
             LoadDisplayData();
 
-            string result = Library.Database.BLL.PC2Mother.Maint(Key, DisplayPC2M, DisplayThickness, DisplayType, DisplayWidth, DisplayLength, DisplayPackCode, DisplayGrade, DisplayCoreCode, DisplayMachine, DisplayUnitWeight, DisplayNumPerPack, DisplayRemarks, (int)EnumAction.Delete);
+            string result = Library.Database.BLL.PC2Mother.Maint(Key, DisplayPC2M, DisplayThickness, DisplayType, DisplayWidth, DisplayLength, DisplayPackCode, DisplayGrade, DisplayCoreCode, DisplayMachine, DisplayUnitWeight, DisplayNumPerPack, DisplayRemarks, ((int)EnumAction.Delete).ToString());
             if (result == "1")
                 return Redirect(GetUrl(EnumAction.None));
 

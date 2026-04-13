@@ -26,8 +26,12 @@ namespace PFRLabelIssuing.Pages.MasterMaint
         public override void BindData()
         {
             string ulevel = SessionGet("ULEVEL") ?? "";
-            string companyCode = SessionGet("ESSION") ?? "";
+            string companyCode = SessionGet("COMPANYCODE") ?? "";
             string lotID = Item1 ?? "";
+            DeleteControl = ulevel != "2";
+
+            if (string.IsNullOrEmpty(SortField))
+                SortField = DefaultSort;
 
             Library.Database.ListCollection list;
 
@@ -36,8 +40,8 @@ namespace PFRLabelIssuing.Pages.MasterMaint
                 if (!string.IsNullOrEmpty(lotID))
                 {
                     list = Library.Database.BLL.LotSlitting.List(
-                        "VIEW_LOT_SLITTING_SERIES_func('" + companyCode + "','" + lotID + "')",
-                        "ID_LOT_SLITTING_SERIES",
+                        "LabelPlan_ReDir_func('" + companyCode + "', '" + lotID + "')",
+                        "CREATED_DATE",
                         SearchField, SearchValue, SortField,
                         int.Parse(SortDirection), PageNo,
                         ShowDeleted ? 1 : 0);
@@ -45,29 +49,8 @@ namespace PFRLabelIssuing.Pages.MasterMaint
                 else
                 {
                     list = Library.Database.BLL.LotSlitting.List(
-                        "VIEW_LOT_SLITTING_SERIES_func('" + companyCode + "','')",
-                        "ID_LOT_SLITTING_SERIES",
-                        SearchField, SearchValue, SortField,
-                        int.Parse(SortDirection), PageNo,
-                        ShowDeleted ? 1 : 0);
-                }
-            }
-            else if (ulevel == "2")
-            {
-                if (!string.IsNullOrEmpty(lotID))
-                {
-                    list = Library.Database.BLL.LotSlitting.List(
-                        "VIEW_LOT_SLITTING_SERIES_func('" + companyCode + "','" + lotID + "')",
-                        "ID_LOT_SLITTING_SERIES",
-                        SearchField, SearchValue, SortField,
-                        int.Parse(SortDirection), PageNo,
-                        ShowDeleted ? 1 : 0);
-                }
-                else
-                {
-                    list = Library.Database.BLL.LotSlitting.List(
-                        "VIEW_LOT_SLITTING_SERIES_func('" + companyCode + "','')",
-                        "ID_LOT_SLITTING_SERIES",
+                        "LabelPlan_func('" + companyCode + "')",
+                        "CREATED_DATE",
                         SearchField, SearchValue, SortField,
                         int.Parse(SortDirection), PageNo,
                         ShowDeleted ? 1 : 0);
@@ -75,12 +58,24 @@ namespace PFRLabelIssuing.Pages.MasterMaint
             }
             else
             {
-                list = Library.Database.BLL.LotSlitting.List(
-                    "PV_VIEW_LOT_SLITTING_SERIES",
-                    "ID_LOT_SLITTING_SERIES",
-                    SearchField, SearchValue, SortField,
-                    int.Parse(SortDirection), PageNo,
-                    ShowDeleted ? 1 : 0);
+                if (!string.IsNullOrEmpty(lotID))
+                {
+                    list = Library.Database.BLL.LotSlitting.List(
+                        "LabelPlan_ReDir_All_func('" + lotID + "')",
+                        "CREATED_DATE",
+                        SearchField, SearchValue, SortField,
+                        int.Parse(SortDirection), PageNo,
+                        ShowDeleted ? 1 : 0);
+                }
+                else
+                {
+                    list = Library.Database.BLL.LotSlitting.List(
+                        "LabelPlan_All_func('" + companyCode + "')",
+                        "CREATED_DATE",
+                        SearchField, SearchValue, SortField,
+                        int.Parse(SortDirection), PageNo,
+                        ShowDeleted ? 1 : 0);
+                }
             }
 
             GridData = list.Data;
@@ -102,6 +97,7 @@ namespace PFRLabelIssuing.Pages.MasterMaint
                 return Redirect(GenerateList);
 
             BindData();
+            PopulateSearchViewData();
             return Page();
         }
 
@@ -125,6 +121,7 @@ namespace PFRLabelIssuing.Pages.MasterMaint
             SelectedSlitLotNos = selected;
 
             BindData();
+            PopulateSearchViewData();
             return Page();
         }
 
@@ -135,42 +132,64 @@ namespace PFRLabelIssuing.Pages.MasterMaint
             string saved = SessionGet("LabelPlan_Selected") ?? "";
             var selected = new List<string>(saved.Split(',', StringSplitOptions.RemoveEmptyEntries));
 
-            // Rebind to get data for export
-            BindData();
+            string userId = SessionGet("USERID") ?? "";
+            string clientIp = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "";
 
-            if (GridData == null || GridData.Rows.Count == 0)
+            // Mark selected records as PRINT_SEL = 1 (same as original Export.aspx)
+            foreach (string slitLotNo in selected)
+            {
+                Library.Database.BLL.LotSlitting.UpdPrintSel(slitLotNo, true, "Update", userId, clientIp);
+            }
+
+            // Query all columns from VIEW_LOT_SLITTING_SERIES where PRINT_SEL = 1
+            DataTable dt = Library.Database.BLL.LotSlitting.GetExportData();
+
+            if (dt == null || dt.Rows.Count == 0)
+            {
+                BindData();
+                PopulateSearchViewData();
                 return Page();
+            }
 
             var sb = new StringBuilder();
 
-            // CSV header
-            sb.AppendLine("Ref No,Company Code,Production Line,PC1 Mother,PC2 Mother,Unit Weight (Before)," +
-                          "Lot No,PC1 Customer,PC2 Customer,Unit Weight (After),Slit Lot No,Record Type,Print Status");
-
-            foreach (DataRow row in GridData.Rows)
+            // CSV header - all column names from the view
+            foreach (DataColumn column in dt.Columns)
             {
-                string slitLotNo = row["SLITLOTNO"].ToString();
-                if (selected.Count > 0 && !selected.Contains(slitLotNo))
-                    continue;
+                sb.Append(column.ColumnName + ",");
+            }
+            sb.AppendLine();
 
-                sb.AppendLine(
-                    "\"" + row["REFNO"] + "\"," +
-                    "\"" + row["COMPANYCODE"] + "\"," +
-                    "\"" + row["PRODLINE"] + "\"," +
-                    "\"" + row["PC1_MOTHER"] + "\"," +
-                    "\"" + row["PC2_MOTHER"] + "\"," +
-                    "\"" + row["UNITWEIGHT_BEFORE"] + "\"," +
-                    "\"" + row["LOTNO"] + "\"," +
-                    "\"" + row["PC1_CUSTOMER"] + "\"," +
-                    "\"" + row["PC2_CUSTOMER"] + "\"," +
-                    "\"" + row["UNITWEIGHT_AFTER"] + "\"," +
-                    "\"" + slitLotNo + "\"," +
-                    "\"" + row["RECTYPE"] + "\"," +
-                    "\"" + row["PRINTSTATUS"] + "\"");
+            // CSV data rows
+            foreach (DataRow row in dt.Rows)
+            {
+                foreach (DataColumn column in dt.Columns)
+                {
+                    string val = row[column.ColumnName].ToString().Replace(",", ";");
+                    // Append "A" suffix to LOTNO and SLIT_LOT_NO (same as original)
+                    if (column.ColumnName == "LOTNO" || column.ColumnName == "SLIT_LOT_NO")
+                    {
+                        sb.Append(val + "A,");
+                    }
+                    else
+                    {
+                        sb.Append(val + ",");
+                    }
+                }
+                sb.AppendLine();
             }
 
+            // Reset PRINT_SEL (Init) for selected records
+            foreach (string slitLotNo in selected)
+            {
+                Library.Database.BLL.LotSlitting.UpdPrintSel(slitLotNo, true, "Init", userId, clientIp);
+            }
+
+            // Clear selection after export
+            SessionSet("LabelPlan_Selected", "");
+
             byte[] bytes = Encoding.UTF8.GetBytes(sb.ToString());
-            return File(bytes, "text/csv", "LabelPlan_Export.csv");
+            return File(bytes, "application/text", "printlabel.csv");
         }
     }
 }

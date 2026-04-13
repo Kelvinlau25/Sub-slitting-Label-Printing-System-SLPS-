@@ -60,7 +60,7 @@ namespace PFRLabelIssuing.Pages
             try
             {
                 var rm = new System.Resources.ResourceManager(
-                    "Resources." + section,
+                    "PFRLabelIssuing.App_GlobalResources." + section,
                     typeof(LogBasePageModel).Assembly);
                 return rm.GetString(key) ?? string.Empty;
             }

@@ -55,16 +55,16 @@ namespace PFRLabelIssuing.Pages.MasterMaint
             {
                 DataRow r = dt.Rows[0];
                 DisplayCompanyCode = r["COMPANYCODE"].ToString();
-                DisplayPlanYearMonth = r["PLANYEARMONTH"].ToString();
-                DisplayProdLine = r["PRODLINE"].ToString();
-                DisplayPC1Mother = r["PC1MOTHER"].ToString();
-                DisplayPC2Mother = r["PC2MOTHER"].ToString();
-                DisplayUnitWeightMother = r["UNITWEIGHTMOTHER"].ToString();
-                DisplayPC1Customer = r["PC1CUSTOMER"].ToString();
-                DisplayPC2Customer = r["PC2CUSTOMER"].ToString();
-                DisplayUnitWeightCustomer = r["UNITWEIGHTCUSTOMER"].ToString();
+                DisplayPlanYearMonth = r["PLAN_YEAR_MONTH"].ToString();
+                DisplayProdLine = r["PRODLINE_NO"].ToString();
+                DisplayPC1Mother = r["PC1_MOTHER"].ToString();
+                DisplayPC2Mother = r["PC2_MOTHER"].ToString();
+                DisplayUnitWeightMother = r["M_UNITWEIGHT"].ToString();
+                DisplayPC1Customer = r["PC1_CUST"].ToString();
+                DisplayPC2Customer = r["PC2_CUST"].ToString();
+                DisplayUnitWeightCustomer = r["C_UNITWEIGHT"].ToString();
                 DisplayLotNo = r["LOTNO"].ToString();
-                DisplayLotSlitNo = r["LOTSLITNO"].ToString();
+                DisplayLotSlitNo = r["SLIT_LOT_NO"].ToString();
                 DisplayStatus = r["STATUS"].ToString();
                 CreatedBy = r["CREATED_BY"].ToString();
                 CreatedDate = r["CREATED_DATE"] != DBNull.Value ? Convert.ToDateTime(r["CREATED_DATE"]) : (DateTime?)null;
@@ -78,7 +78,7 @@ namespace PFRLabelIssuing.Pages.MasterMaint
             ParseQueryString();
             LoadDisplayData();
 
-            string result = Library.Database.BLL.LotSlitting.Maint(Key, DisplayLotNo, "", "", "", "", "", "", "", "", "", "", "", (int)EnumAction.Delete);
+            string result = Library.Database.BLL.LotSlitting.Maint(Key, DisplayLotNo, "", "", "", "", "", "", "", "", "", "", "", ((int)EnumAction.Delete).ToString());
             if (result == "1")
                 return Redirect(GetUrl(EnumAction.None));
 

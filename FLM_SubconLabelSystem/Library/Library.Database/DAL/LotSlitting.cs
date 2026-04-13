@@ -120,6 +120,18 @@ namespace Library.Database.DAL
             return result;
         }
 
+        internal DataTable GetExportData()
+        {
+            DataTable result = new DataTable();
+            base._cmd.CommandText = "select a.* from VIEW_LOT_SLITTING_SERIES a Inner join LOT_SLITTING b on a.SLIT_LOT_NO = b.SLIT_LOT_NO AND a.ID_LOT_SLITTING = b.ID_LOT_SLITTING where (b.PRINT_SEL = 1) And (a.REC_TYPE = 1 OR a.REC_TYPE = 3)";
+            base._cmd.CommandType = CommandType.Text;
+            base._cmd.CommandTimeout = 0;
+            base._cmd.Parameters.Clear();
+            base._rdr = base._cmd.ExecuteReader();
+            result.Load(base._rdr);
+            return result;
+        }
+
         internal string UpdPrintSelAll(bool PrintSel, string RecUpd, string filter, string filterField, string addCondition, string passType, string UpdatedBy, string UpdatedLoc)
         {
             string result = "1";

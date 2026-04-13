@@ -1,9 +1,12 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Data;
 using System.Net;
+using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Http;
 
 namespace PFRLabelIssuing.Pages
@@ -187,7 +190,7 @@ namespace PFRLabelIssuing.Pages
                     tempurl = Url.Content(DetailPage + "?action=" + (int)EnumAction.View + "&id=" + k);
                     break;
                 case EnumAction.History:
-                    tempurl = Url.Content(LogPage + "?id=" + k + "&key=" + SetupKey + "&act=" + Action + "&page=1");
+                    tempurl = Url.Content(LogPage + "?id=" + k + "&key=" + SetupKey + "&act=" + (int)Action + "&page=1");
                     break;
                 default:
                     tempurl = Url.Content(ListPage ?? string.Empty);
@@ -250,17 +253,54 @@ namespace PFRLabelIssuing.Pages
             if (qs.ContainsKey("dlt") && bool.TryParse(qs["dlt"], out bool d)) ShowDeleted = d;
             if (qs.ContainsKey("id")) Key = qs["id"];
 
-            // Parse action
+            // Parse action from query string
             if (qs.ContainsKey("action") && int.TryParse(qs["action"], out int a))
             {
-                switch (a)
+                SetActionFromInt(a);
+            }
+
+            // On POST, also check hidden form fields as fallback
+            // when the form does not preserve query-string parameters in its action URL.
+            if (Request.Method == "POST" && Request.HasFormContentType)
+            {
+                var form = Request.Form;
+                if (Action == EnumAction.None && form.ContainsKey("qsAction")
+                    && int.TryParse(form["qsAction"], out int fa))
                 {
-                    case 1: Action = EnumAction.Add; break;
-                    case 3: Action = EnumAction.Edit; break;
-                    case 5: Action = EnumAction.Delete; break;
-                    case 7: Action = EnumAction.View; break;
-                    default: Action = EnumAction.None; break;
+                    SetActionFromInt(fa);
                 }
+                if (string.IsNullOrEmpty(Key) && form.ContainsKey("qsId"))
+                {
+                    Key = form["qsId"];
+                }
+
+                // Preserve itm1-itm12 and type from hidden form fields
+                // when they are not present in the query string (e.g. search form POST).
+                if (string.IsNullOrEmpty(Item1) && form.ContainsKey("itm1")) Item1 = WebUtility.UrlDecode(form["itm1"]);
+                if (string.IsNullOrEmpty(Item2) && form.ContainsKey("itm2")) Item2 = form["itm2"];
+                if (string.IsNullOrEmpty(Item3) && form.ContainsKey("itm3")) Item3 = form["itm3"];
+                if (string.IsNullOrEmpty(Item4) && form.ContainsKey("itm4")) Item4 = form["itm4"];
+                if (string.IsNullOrEmpty(Item5) && form.ContainsKey("itm5")) Item5 = form["itm5"];
+                if (string.IsNullOrEmpty(Item6) && form.ContainsKey("itm6")) Item6 = form["itm6"];
+                if (string.IsNullOrEmpty(Item7) && form.ContainsKey("itm7")) Item7 = form["itm7"];
+                if (string.IsNullOrEmpty(Item8) && form.ContainsKey("itm8")) Item8 = form["itm8"];
+                if (string.IsNullOrEmpty(Item9) && form.ContainsKey("itm9")) Item9 = form["itm9"];
+                if (string.IsNullOrEmpty(Item10) && form.ContainsKey("itm10")) Item10 = form["itm10"];
+                if (string.IsNullOrEmpty(Item11) && form.ContainsKey("itm11")) Item11 = form["itm11"];
+                if (string.IsNullOrEmpty(Item12) && form.ContainsKey("itm12")) Item12 = form["itm12"];
+                if (string.IsNullOrEmpty(Type) && form.ContainsKey("type")) Type = form["type"];
+            }
+        }
+
+        private void SetActionFromInt(int a)
+        {
+            switch (a)
+            {
+                case 1: Action = EnumAction.Add; break;
+                case 3: Action = EnumAction.Edit; break;
+                case 5: Action = EnumAction.Delete; break;
+                case 7: Action = EnumAction.View; break;
+                default: Action = EnumAction.None; break;
             }
         }
 
@@ -277,7 +317,117 @@ namespace PFRLabelIssuing.Pages
                 return Redirect(GenerateList);
 
             BindData();
+            PopulateSearchViewData();
             return Page();
+        }
+
+        /// <summary>
+        /// Handles the Basic Search form submission from the _Search partial.
+        /// Reads the selected field and search text, then redirects to the list
+        /// URL with the search parameters in the query string – same behaviour
+        /// as the old WebForms Search.ascx btnSubmit_Click.
+        /// </summary>
+        public virtual IActionResult OnPostBasicSearch()
+        {
+            ParseQueryString();
+
+            if (Request.HasFormContentType)
+            {
+                string ddl = Request.Form.ContainsKey("ddlSearch") ? Request.Form["ddlSearch"].ToString().Trim() : "";
+                string txt = Request.Form.ContainsKey("txtSearch") ? Request.Form["txtSearch"].ToString().Trim() : "";
+
+                if (!string.IsNullOrEmpty(ddl) && ddl != "-")
+                {
+                    SearchField = ddl;
+                    SearchValue = txt;
+                }
+                else
+                {
+                    SearchField = string.Empty;
+                    SearchValue = string.Empty;
+                }
+            }
+
+            PageNo = 1;
+            return Redirect(GenerateList);
+        }
+
+        /// <summary>
+        /// Handles the "Show Deleted Records" toggle from the _Search partial.
+        /// </summary>
+        public virtual IActionResult OnPostToggleDeleted()
+        {
+            ParseQueryString();
+
+            ShowDeleted = Request.HasFormContentType
+                && Request.Form.ContainsKey("showDeleted")
+                && Request.Form["showDeleted"].ToString() == "true";
+
+            PageNo = 1;
+            return Redirect(GenerateList);
+        }
+
+        // ── Search ViewData helper (replaces Search.ascx BindDDL) ─────────
+        /// <summary>
+        /// Reads the search-field definitions from SearchSource.resx for the
+        /// current SetupKey, deserializes the JSON, and populates ViewData
+        /// entries consumed by the _Search partial view.
+        /// </summary>
+        protected void PopulateSearchViewData()
+        {
+            var items = new List<SelectListItem>();
+            items.Add(new SelectListItem("-", "-"));
+
+            if (!string.IsNullOrEmpty(SetupKey))
+            {
+                string json = GetGlobalResource("SearchSource", SetupKey);
+                if (!string.IsNullOrEmpty(json))
+                {
+                    try
+                    {
+                        var binders = JsonSerializer.Deserialize<List<Library.Root.Objects.Binder>>(json);
+                        if (binders != null)
+                        {
+                            foreach (var b in binders)
+                                items.Add(new SelectListItem(b.Text, b.Value));
+                        }
+                    }
+                    catch { }
+                }
+            }
+
+            ViewData["SearchFields"] = items;
+            ViewData["SearchFieldValue"] = SearchField ?? "";
+            ViewData["SearchTextValue"] = SearchValue ?? "";
+            ViewData["ShowDeleted"] = ShowDeleted;
+            ViewData["ShowDeletedControl"] = DeleteControl && ShowDeletedControl;
+
+            // Grid header: Print and Add Item controls
+            ViewData["ShowPrint"] = PrintControl;
+
+            bool showAdd = AddControl;
+            string setKey = HttpContext.Session.GetString("Setkey") ?? SetupKey ?? "";
+            int uLevel = int.TryParse(SessionGet("ULEVEL"), out int ul) ? ul : 0;
+
+            if (setKey == "PC2_LOTNO" || setKey == "VIEW_LOT_SLITTING_SERIES" || setKey == "PRINT_ALIGN_INIT")
+            {
+                showAdd = uLevel == 3 || uLevel == 1;
+            }
+            else
+            {
+                if (uLevel == 3 || uLevel == 2)
+                {
+                    showAdd = uLevel == 2 && setKey == "MM_PC2";
+                }
+                else
+                {
+                    showAdd = true;
+                }
+            }
+
+            ViewData["ShowAdd"] = showAdd;
+            string addUrl = GetUrl(EnumAction.Add);
+            ViewData["AddUrl"] = !string.IsNullOrEmpty(addUrl) ? addUrl : "";
         }
 
         // ── Resource helper (replaces GetGlobalResourceObject) ─────────────
@@ -285,8 +435,10 @@ namespace PFRLabelIssuing.Pages
         {
             try
             {
+                // SDK-style projects embed .resx from App_GlobalResources as
+                // {RootNamespace}.App_GlobalResources.{FileName}.resources
                 var rm = new System.Resources.ResourceManager(
-                    "Resources." + section,
+                    "PFRLabelIssuing.App_GlobalResources." + section,
                     typeof(BasePageModel).Assembly);
                 return rm.GetString(key) ?? string.Empty;
             }
@@ -295,6 +447,12 @@ namespace PFRLabelIssuing.Pages
                 return string.Empty;
             }
         }
+
+        // ── ACL access right helpers ───────────────────────────────────────
+        public bool CanView   => (SessionGet("ACL_CAN_VIEW")   ?? "FALSE").Equals("TRUE", StringComparison.OrdinalIgnoreCase);
+        public bool CanAdd    => (SessionGet("ACL_CAN_ADD")    ?? "FALSE").Equals("TRUE", StringComparison.OrdinalIgnoreCase);
+        public bool CanEdit   => (SessionGet("ACL_CAN_EDIT")   ?? "FALSE").Equals("TRUE", StringComparison.OrdinalIgnoreCase);
+        public bool CanDelete => (SessionGet("ACL_CAN_DELETE") ?? "FALSE").Equals("TRUE", StringComparison.OrdinalIgnoreCase);
 
         // ── Session helpers ────────────────────────────────────────────────
         protected string SessionGet(string key)

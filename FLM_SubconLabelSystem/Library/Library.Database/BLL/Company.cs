@@ -49,5 +49,24 @@ namespace Library.Database.BLL
                 return result;
             }
         }
+
+        public static string Maint(string ID, string CompanyCode, string CompanyName, string SlitCode, string Address, string Telephone,
+                                    string Email, string RecType, string userID, string userHostAddress)
+        {
+            using (var _Dal = new DAL.Company())
+            {
+                string result = _Dal.Maint(ID, CompanyCode, CompanyName, SlitCode, Address, Telephone, Email, RecType, userID, userHostAddress);
+
+                if (result == "1")
+                {
+                    _Dal.Commit();
+                }
+                else
+                {
+                    _Dal.Rollback();
+                }
+                return result;
+            }
+        }
     }
 }

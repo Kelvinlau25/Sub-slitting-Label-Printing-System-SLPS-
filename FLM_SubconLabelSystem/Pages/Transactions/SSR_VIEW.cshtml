@@ -1,0 +1,141 @@
+@page
+@model PFRLabelIssuing.Pages.Transactions.SSR_VIEWModel
+@{
+    ViewData["PageTitle"] = "SSR View";
+}
+
+<h3>Sub-Slitting Request - View</h3>
+<br />
+
+<form method="post">
+    <table width="100%" border="0">
+        <tr>
+            <td style="width:130px;">To</td><td style="width:10px;">:</td>
+            <td style="width:610px;">@Model.CompCode</td>
+            <td style="width:130px;">Ref No</td><td style="width:10px;">:</td>
+            <td>
+                <input type="text" name="RefNo" value="@Model.RefNo" class="txtRefNoA" />
+                <input type="hidden" name="SubReqId" value="@Model.SubReqId" />
+            </td>
+        </tr>
+        <tr>
+            <td>Department</td><td>:</td><td>@Model.Dept</td>
+            <td>Date</td><td>:</td><td>@Model.DateReq</td>
+        </tr>
+        <tr>
+            <td>By</td><td>:</td><td>@Model.ByName</td>
+            <td>Rev</td><td>:</td><td>@Model.Rev</td>
+        </tr>
+        <tr>
+            <td>Requestor Status</td><td>:</td>
+            <td>
+                <select name="ReqStatSelected" @(Model.ReqStatEnabled ? "" : "disabled")>
+                    <option value="Submitted" selected="@(Model.ReqStatSelected == "Submitted")">Submitted</option>
+                    <option value="Cancel" selected="@(Model.ReqStatSelected == "Cancel")">Cancel</option>
+                </select>
+                @if (!Model.ReqStatEnabled)
+                {
+                    <input type="hidden" name="ReqStatSelected" value="@Model.ReqStatSelected" />
+                }
+            </td>
+            <td>Vendor Status</td><td>:</td>
+            <td>
+                <select name="VenStatSelected" @(Model.VenStatEnabled ? "" : "disabled")>
+                    <option value="N/A" selected="@(Model.VenStatSelected == "N/A")">N/A</option>
+                    <option value="Received" selected="@(Model.VenStatSelected == "Received")">Received</option>
+                    <option value="In Production" selected="@(Model.VenStatSelected == "In Production")">In Production</option>
+                    <option value="Complete" selected="@(Model.VenStatSelected == "Complete")">Complete</option>
+                </select>
+                @if (!Model.VenStatEnabled)
+                {
+                    <input type="hidden" name="VenStatSelected" value="@Model.VenStatSelected" />
+                }
+            </td>
+        </tr>
+    </table>
+
+    <br />
+    <table width="100%"><tr><td style="background-color:#91B3DD">&nbsp;</td></tr></table>
+    <br />
+
+    @if (Model.GridData != null && Model.GridData.Rows.Count > 0)
+    {
+        <table width="100%" class="table">
+            <thead class="title_bar">
+                <tr>
+                    <th>PRODUCTION LINE</th><th>PC1 MOTHER</th><th>PC2 MOTHER</th>
+                    <th>QTY (ROLL)</th><th>UNIT WEIGHT (KG)</th><th>TOTAL WEIGHT (KG)</th>
+                    <th>PC1 CUSTOMER</th><th>PC2 CUSTOMER</th>
+                    <th>QTY (ROLL)</th><th>UNIT WEIGHT (KG)</th><th>TOTAL WEIGHT (KG)</th>
+                    <th>SUB-SLIT WASTE (KG)</th><th>ETD PFR</th><th>ETA SUBSLIT CONTRACTOR</th>
+                    <th>REMARK</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (DataRow row in Model.GridData.Rows)
+                {
+                    <tr>
+                        <td style="text-align:center;">@row["PRODLINE_NO"]</td>
+                        <td style="text-align:center;">@row["PC1_MOTHER"]</td>
+                        <td style="text-align:center;">@row["PC2_MOTHER"]</td>
+                        <td style="text-align:center;">@row["QTY"]</td>
+                        <td style="text-align:center;">@row["M_WEIGHT"]</td>
+                        <td style="text-align:center;">@row["M_TOTAL_WEIGHT"]</td>
+                        <td style="text-align:center;">@row["PC1_CUST"]</td>
+                        <td style="text-align:center;">@row["PC2_CUST"]</td>
+                        <td style="text-align:center;">@row["C_QTY"]</td>
+                        <td style="text-align:center;">@row["C_WEIGHT"]</td>
+                        <td style="text-align:center;">@row["C_TOTAL_WEIGHT"]</td>
+                        <td style="text-align:center;">@row["SUBSLIT_WASTE"]</td>
+                        <td style="text-align:center;">@row["ETD"]</td>
+                        <td style="text-align:center;">@row["ETA"]</td>
+                        <td style="text-align:center;">@row["REMARK"]</td>
+                    </tr>
+                }
+                <tr style="background-color:AliceBlue; text-align:center;">
+                    <td colspan="2"></td><td>Total</td>
+                    <td>@Model.MQty</td><td></td><td>@Model.MTotalWeight</td>
+                    <td colspan="2"></td>
+                    <td>@Model.CQty</td><td></td><td>@Model.CTotalWeight</td>
+                    <td>@Model.SubSlitWaste</td><td colspan="3"></td>
+                </tr>
+            </tbody>
+        </table>
+    }
+
+    <table width="90%" border="0">
+        <tr>
+            <td width="60%"></td>
+            @if (Model.ShowUpdStatButton)
+            {
+                <td width="10%" align="center"><button type="submit" asp-page-handler="UpdateStatus" style="width:99px;">Update Status</button></td>
+            }
+            @if (Model.ShowNewRevButton)
+            {
+                <td width="10%" align="center"><button type="submit" asp-page-handler="NewRevision" onclick="return confirm('Are you sure you want to create a new revision?');" style="width:99px;">New Revision</button></td>
+            }
+            @if (Model.ShowExportButton)
+            {
+                <td width="10%" align="center"><button type="submit" asp-page-handler="Export" style="width:99px;">Export</button></td>
+            }
+            @if (Model.ShowCancelButton)
+            {
+                <td width="10%" align="center"><button type="submit" asp-page-handler="Cancel" style="width:99px;">Cancel</button></td>
+            }
+        </tr>
+    </table>
+
+    <button type="submit" style="width:100px;">Search</button>
+</form>
+
+<script type="text/javascript">
+    $(function () {
+        var refNos = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.RefNoList));
+        $(".txtRefNoA").autocomplete({ source: refNos });
+    });
+</script>
+
+@if (!string.IsNullOrEmpty(Model.StartupScript))
+{
+    <script>@Html.Raw(Model.StartupScript)</script>
+}

@@ -1,5 +1,6 @@
 @page
 @model PFRLabelIssuing.Pages.MasterMaint.PRINT_ALIGN_INITModel
+@using System.Globalization
 @{
     ViewData["PageTitle"] = Model.PageTitle;
 }
@@ -13,9 +14,13 @@
 <partial name="_GridHeader" />
 <table width="100%">
 <tr><td>
-    <table width="100%" class="table">
+    <table width="100%" class="gvGeneral">
         <thead class="title_bar">
             <tr>
+                @if (Model.DeleteControl)
+                {
+                    <th style="text-align:center; vertical-align:middle;">Del.</th>
+                }
                 <th style="width:15%; text-align:left; vertical-align:middle;">Company Code</th>
                 <th style="width:18%; text-align:left; vertical-align:middle;">Printer Name</th>
                 <th style="width:12%; text-align:left; vertical-align:middle;">Created By</th>
@@ -23,6 +28,10 @@
                 <th style="width:12%; text-align:left; vertical-align:middle;">Updated By</th>
                 <th style="width:18%; text-align:left; vertical-align:middle;">Updated Date</th>
                 <th style="width:8%; text-align:center; vertical-align:middle;">Default</th>
+                @if (Model.ViewHistoryControl)
+                {
+                    <th style="text-align:center; vertical-align:middle;">Audit Trail</th>
+                }
             </tr>
         </thead>
         <tbody>
@@ -31,29 +40,43 @@
             @foreach (DataRow row in Model.GridData.Rows)
             {
                 <tr onmouseover="Highlight(this)" onmouseout="UnHighlight(this)">
-                    <td style="text-align:left; vertical-align:middle;">@row["COMPANY_CODE"]</td>
+                    @if (Model.DeleteControl)
+                    {
+                        <td style="text-align:center; vertical-align:middle;">
+                            <a href="@Model.GetUrl(BasePageModel.EnumAction.Delete, row["ID_Print_Align_Init"].ToString())">
+                                <img src="@Url.Content("~/image/delete1.gif")" alt="Delete" border="0" />
+                            </a>
+                        </td>
+                    }
+                    <td style="text-align:left; vertical-align:middle;">@row["CompanyCode"]</td>
                     <td style="text-align:left; vertical-align:middle;">
-                        <a href="@Model.GetUrl(BasePageModel.EnumAction.Edit, row["ID_Print_Align_Init"].ToString())">@row["PRINTERNAME"]</a>
+                        <a href="@Model.GetUrl(BasePageModel.EnumAction.View, row["ID_Print_Align_Init"].ToString())">@row["Printer_Name"]</a>
                     </td>
                     <td style="text-align:left; vertical-align:middle;">@row["CREATED_BY"]</td>
                     <td style="text-align:left; vertical-align:middle;">
                         @(row["CREATED_DATE"] != DBNull.Value
-                            ? Convert.ToDateTime(row["CREATED_DATE"]).ToString("dd/MM/yyyy h:mm:ss tt")
+                            ? DateTime.Parse(row["CREATED_DATE"].ToString(), new CultureInfo("en-AU")).ToString("dd/MM/yyyy h:mm:ss tt")
                             : "")
                     </td>
                     <td style="text-align:left; vertical-align:middle;">@row["UPDATED_BY"]</td>
                     <td style="text-align:left; vertical-align:middle;">
                         @(row["UPDATED_DATE"] != DBNull.Value
-                            ? Convert.ToDateTime(row["UPDATED_DATE"]).ToString("dd/MM/yyyy h:mm:ss tt")
+                            ? DateTime.Parse(row["UPDATED_DATE"].ToString(), new CultureInfo("en-AU")).ToString("dd/MM/yyyy h:mm:ss tt")
                             : "")
                     </td>
-                    <td style="text-align:center; vertical-align:middle;">@row["ISDEFAULT"]</td>
+                    <td style="text-align:center; vertical-align:middle;">@row["Default_Printer"]</td>
+                    @if (Model.ViewHistoryControl)
+                    {
+                        <td style="text-align:center; vertical-align:middle;">
+                            <a href="@Model.GetUrl(BasePageModel.EnumAction.History, row["ID_Print_Align_Init"].ToString())" target="_blank">View</a>
+                        </td>
+                    }
                 </tr>
             }
         }
         else
         {
-            <tr><td colspan="7" class="text-center text-danger fw-bold">Record Not Found</td></tr>
+            <tr><td colspan="@(7 + (Model.DeleteControl ? 1 : 0) + (Model.ViewHistoryControl ? 1 : 0))" style="text-align:center; color:red; font-weight:bold;">Record Not Found</td></tr>
         }
         </tbody>
     </table>
@@ -67,11 +90,29 @@
 }
 <partial name="_GridFooter" />
 
-<div style="margin-top:10px;">
-    <h4>Setup Instructions</h4>
-    <p>Please download the printer driver and configuration tool below:</p>
-    <ul>
-        <li><a href="@Url.Content("~/resources/PrinterDriver.zip")">Download Printer Driver</a></li>
-        <li><a href="@Url.Content("~/resources/PrinterConfig.pdf")">Download Configuration Guide</a></li>
-    </ul>
-</div>
+<table style="width: 636px">
+    <tr>
+        <td>First Time Setup :</td>
+    </tr>
+    <tr>
+        <td>
+            1. For first time installation, please download&nbsp;<a href="@Url.Page("PRINT_ALIGN_INIT", "DownloadExe")">here</a>
+            &nbsp;and settings <a href="@Url.Page("PRINT_ALIGN_INIT", "DownloadSettings")">here</a>
+        </td>
+    </tr>
+    <tr>
+        <td>2. Go to directory D:\ and create a folder named 'subconlabelprinter'</td>
+    </tr>
+    <tr>
+        <td>3. Unzip the file and move all the downloaded files to D:\subconlabelprinter</td>
+    </tr>
+    <tr>
+        <td>4. Create shortcut for executable (*.exe) file</td>
+    </tr>
+    <tr>
+        <td>5. Move the shortcut icon to C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup</td>
+    </tr>
+    <tr>
+        <td>6. Double click the icon to start and your printer is ready to print</td>
+    </tr>
+</table>

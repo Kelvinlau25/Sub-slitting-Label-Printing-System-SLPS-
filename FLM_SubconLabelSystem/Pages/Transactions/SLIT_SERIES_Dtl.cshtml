@@ -1,0 +1,297 @@
+@page
+@model PFRLabelIssuing.Pages.Transactions.SLIT_SERIES_DtlModel
+@{
+    ViewData["PageTitle"] = Model.PageTitle;
+}
+
+@section Head {
+    <script type="text/javascript">
+        $(function () {
+            $(".txtDate").datepicker({
+                showOn: 'button',
+                buttonImageOnly: true,
+                buttonImage: '@Url.Content("~/image/icon_cal.png")',
+                numberOfMonths: 1,
+                dateFormat: 'dd/mm/yy'
+            });
+        });
+
+        function openPC2MotherLookup() {
+            var refno = $('select[name="SelectedRefNo"]').val() || '';
+            var prodline = $('select[name="SelectedProdLine"]').val() || '';
+            var pc1mother = $('select[name="SelectedPC1Mother"]').val() || '';
+
+            if (!refno) { alert('Please select the reference no.'); return; }
+            if (!prodline) { alert('Please select the Production Line.'); return; }
+            if (!pc1mother) { alert('Please select the PC 1 Mother.'); return; }
+
+            var url = '@Url.Page("/PopUp/PP_PC2")' +
+                '?sort=ID_MM_PC2&dic=0&page=1&fld=&vl=&type=' +
+                '&itm1=pc2mother&itm2=lblpc2mother' +
+                '&itm3=' + encodeURIComponent(refno) +
+                '&itm4=' + encodeURIComponent(prodline) +
+                '&itm5=' + encodeURIComponent(pc1mother) +
+                '&itm6=btnPC2MotherPostback' +
+                '&itm7=hdnPC2Mother' +
+                '&itm8=hdnUnitWeightMother' +
+                '&itm9=&itm10=&itm11=&itm12=&dlt=False';
+
+            window.open(url, 'PopUp',
+                'directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=800,height=600');
+        }
+
+        function openPC2CustomerLookup() {
+            var refno = $('select[name="SelectedRefNo"]').val() || '';
+            var prodline = $('select[name="SelectedProdLine"]').val() || '';
+            var pc1mother = $('select[name="SelectedPC1Mother"]').val() || '';
+            var pc2mother = $('input[name="PC2Mother"]').val() || '';
+            var pc1cust = $('select[name="SelectedPC1Customer"]').val() || '';
+
+            if (!refno) { alert('Please select the reference no.'); return; }
+            if (!prodline) { alert('Please select the Production Line.'); return; }
+            if (!pc1mother) { alert('Please select the PC 1 Mother.'); return; }
+            if (!pc2mother) { alert('Please select the PC2 Mother.'); return; }
+            if (!pc1cust) { alert('Please select the PC1 Customer.'); return; }
+
+            var url = '@Url.Page("/PopUp/PP_PC2_Cust")' +
+                '?sort=ID_MM_PC2&dic=0&page=1&fld=&vl=&type=' +
+                '&itm1=pc2cust&itm2=lblpc2cust' +
+                '&itm3=' + encodeURIComponent(refno) +
+                '&itm4=' + encodeURIComponent(prodline) +
+                '&itm5=' + encodeURIComponent(pc1mother) +
+                '&itm6=' + encodeURIComponent(pc2mother) +
+                '&itm7=' + encodeURIComponent(pc1cust) +
+                '&itm8=btnPC2CustPostback' +
+                '&itm9=hdnPC2Customer' +
+                '&itm10=hdnUnitWeightCustomer' +
+                '&itm11=&itm12=&dlt=False';
+
+            window.open(url, 'PopUp',
+                'directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=800,height=600');
+        }
+
+        function onPC2MotherSelected() {
+            var pc2 = document.getElementById('hdnPC2Mother').value;
+            var uw = document.getElementById('hdnUnitWeightMother').value;
+            $('input[name="PC2Mother"]').val(pc2);
+            $('input[name="UnitWeightMother"]').val(uw);
+        }
+
+        function onPC2CustomerSelected() {
+            var pc2 = document.getElementById('hdnPC2Customer').value;
+            var uw = document.getElementById('hdnUnitWeightCustomer').value;
+            $('input[name="PC2Customer"]').val(pc2);
+            $('input[name="UnitWeightCustomer"]').val(uw);
+        }
+    </script>
+}
+
+<partial name="_Title" />
+<partial name="_Error" />
+
+@if (Model.IsDisplayMode)
+{
+    <table class="detailinfo">
+        <tr><td style="width:24%;">Company Code</td><td style="width:3px;">:</td><td>@Model.DisplayCompCode</td></tr>
+        <tr><td>Ref.No</td><td>:</td><td>@Model.DisplayRefNo</td></tr>
+        <tr><td>Planning Year Month</td><td>:</td><td>@Model.DisplayPlanYrMth</td></tr>
+        <tr><td>Production Line</td><td>:</td><td>@Model.DisplayProdLine</td></tr>
+        <tr><td>PC1 Mother</td><td>:</td><td>@Model.DisplayPC1Mother</td></tr>
+        <tr><td>PC2 Mother</td><td>:</td><td>@Model.DisplayPC2Mother</td></tr>
+        <tr><td>Unit Weight Mother</td><td>:</td><td>@Model.DisplayUnitWeightMthr</td></tr>
+        <tr><td>Lot No</td><td>:</td><td>@Model.DisplayLotNo</td></tr>
+    </table>
+    <table style="background:#ddeeff;padding:20px 20px 20px 0;width:100%;">
+        <tr><td style="width:255px;">PC1 Customer</td><td style="width:18px;">:</td><td>@Model.DisplayPC1Customer</td></tr>
+        <tr><td>PC2 Customer</td><td>:</td><td>@Model.DisplayPC2Customer</td></tr>
+        <tr><td>Unit Weight Customer</td><td>:</td><td>@Model.DisplayUnitWeightCust</td></tr>
+        <tr><td>Number Of Slit</td><td>:</td><td>@Model.DisplayNumOfSlit</td></tr>
+        <tr><td>Type Of Slit</td><td>:</td><td>@Model.DisplayTypeOfSlit</td></tr>
+        <tr><td>Lot Slit Status</td><td>:</td><td>@Model.DisplayLotSlitStatus</td></tr>
+    </table>
+}
+
+@if (Model.IsDisplayMode)
+{
+    ViewData["Action"] = Model.Action == BasePageModel.EnumAction.View ? "View" : "Delete";
+    ViewData["ShowSubmit"] = Model.EditMode;
+    ViewData["ShowDelete"] = true;
+    ViewData["ShowReset"] = false;
+    ViewData["ShowHistory"] = false;
+    ViewData["ShowInfo"] = true;
+    ViewData["ShowConfirmation"] = Model.Action == BasePageModel.EnumAction.Delete;
+    ViewData["CancelUrl"] = Model.GetUrl(BasePageModel.EnumAction.None);
+    ViewData["EditUrl"] = Model.GetUrl(BasePageModel.EnumAction.Edit);
+    ViewData["CreatedBy"] = string.IsNullOrEmpty(Model.CreatedBy) ? "N/A" : "ID : " + Model.CreatedBy;
+    ViewData["CreatedDate"] = Model.CreatedDate.HasValue ? Model.CreatedDate.Value.ToString("dd/MM/yyyy hh:mm:ss tt") : "";
+    ViewData["UpdatedBy"] = string.IsNullOrEmpty(Model.UpdatedBy) ? "N/A" : "ID : " + Model.UpdatedBy;
+    ViewData["UpdatedDate"] = Model.UpdatedDate.HasValue ? Model.UpdatedDate.Value.ToString("dd/MM/yyyy hh:mm:ss tt") : "";
+    <form method="post">
+        <partial name="_Controller" />
+    </form>
+}
+
+@if (Model.IsModifyMode)
+{
+    <form method="post">
+        <input type="hidden" name="qsAction" value="@((int)Model.Action)" />
+        <input type="hidden" name="qsId" value="@Model.Key" />
+        <input type="hidden" id="hdnPC2Mother" value="" />
+        <input type="hidden" id="hdnUnitWeightMother" value="" />
+        <input type="hidden" id="hdnPC2Customer" value="" />
+        <input type="hidden" id="hdnUnitWeightCustomer" value="" />
+        <input type="button" id="btnPC2MotherPostback" style="display:none;" onclick="onPC2MotherSelected()" />
+        <input type="button" id="btnPC2CustPostback" style="display:none;" onclick="onPC2CustomerSelected()" />
+        <table style="width:100%;">
+            <tr>
+                <td style="width:158px;">&nbsp;&nbsp;Company Code</td>
+                <td style="width:10px;">:</td>
+                <td><input type="text" name="CompanyCode" value="@Model.CompanyCode" readonly /></td>
+            </tr>
+            <tr>
+                <td><span style="color:Red;">*</span> Ref.No:</td>
+                <td>:</td>
+                <td>
+                    <select name="SelectedRefNo">
+                        <option value="">--Select--</option>
+                        @if (Model.RefNoList != null)
+                        {
+                            @foreach (DataRow r in Model.RefNoList.Rows)
+                            {
+                                <option value="@r["REFNO"]" selected="@(r["REFNO"].ToString() == Model.SelectedRefNo)">@r["REFNO"]</option>
+                            }
+                        }
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><span style="color:Red;">*</span> Planning Year Month:</td>
+                <td>:</td>
+                <td><input type="text" name="PlanDate" value="@Model.PlanDate" class="txtDate" style="width:75px;" /></td>
+            </tr>
+            <tr>
+                <td><span style="color:Red;">*</span> Production Line</td>
+                <td>:</td>
+                <td>
+                    <select name="SelectedProdLine">
+                        <option value="">--Select--</option>
+                        @if (Model.ProdLineList != null)
+                        {
+                            @foreach (DataRow r in Model.ProdLineList.Rows)
+                            {
+                                <option value="@r["PRODLINE_NO"]" selected="@(r["PRODLINE_NO"].ToString() == Model.SelectedProdLine)">@r["PRODLINE_NO"]</option>
+                            }
+                        }
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><span style="color:Red;">*</span> PC1 Mother</td>
+                <td>:</td>
+                <td>
+                    <select name="SelectedPC1Mother">
+                        <option value="">--Select--</option>
+                        @if (Model.PC1MotherList != null)
+                        {
+                            @foreach (DataRow r in Model.PC1MotherList.Rows)
+                            {
+                                <option value="@r["PC1_MOTHER"]" selected="@(r["PC1_MOTHER"].ToString() == Model.SelectedPC1Mother)">@r["PC1_MOTHER"]</option>
+                            }
+                        }
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><span style="color:Red;">*</span> PC2 Mother</td>
+                <td>:</td>
+                <td><input type="text" name="PC2Mother" value="@Model.PC2Mother" style="width:20%;" readonly />&nbsp;<input type="button" value="..." onclick="openPC2MotherLookup()" style="width:25px;" /></td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;Unit Weight Mother</td>
+                <td>:</td>
+                <td><input type="text" name="UnitWeightMother" value="@Model.UnitWeightMother" readonly /></td>
+            </tr>
+            <tr>
+                <td><span style="color:Red;">*</span> Lot No</td>
+                <td>:</td>
+                <td>
+                    @if (Model.Action == BasePageModel.EnumAction.Edit)
+                    {
+                        <span>@Model.LotNo</span>
+                        <input type="hidden" name="LotNo" value="@Model.LotNo" />
+                    }
+                    else
+                    {
+                        <input type="text" name="LotNo" value="@Model.LotNo" />
+                    }
+                </td>
+            </tr>
+        </table>
+        <table style="background:#ddeeff;padding:20px 20px 20px 0;width:100%;">
+            <tr>
+                <td style="width:158px;"><span style="color:Red;">*</span> PC1 Customer</td>
+                <td style="width:10px;">:</td>
+                <td>
+                    <select name="SelectedPC1Customer">
+                        <option value="">--Select--</option>
+                        @if (Model.PC1CustomerList != null)
+                        {
+                            @foreach (DataRow r in Model.PC1CustomerList.Rows)
+                            {
+                                <option value="@r["PC1"]" selected="@(r["PC1"].ToString() == Model.SelectedPC1Customer)">@r["PC1"]</option>
+                            }
+                        }
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><span style="color:Red;">*</span> PC2 Customer</td>
+                <td>:</td>
+                <td><input type="text" name="PC2Customer" value="@Model.PC2Customer" style="width:20%;" readonly />&nbsp;<input type="button" value="..." onclick="openPC2CustomerLookup()" style="width:25px;" /></td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;Unit Weight Customer</td>
+                <td>:</td>
+                <td><input type="text" name="UnitWeightCustomer" value="@Model.UnitWeightCustomer" readonly /></td>
+            </tr>
+            <tr>
+                <td><span style="color:Red;">*</span> Number Of Slit</td>
+                <td>:</td>
+                <td><input type="text" name="NoOfSlit" value="@Model.NoOfSlit" /></td>
+            </tr>
+            <tr>
+                <td><span style="color:Red;">*</span> Type Of Slit</td>
+                <td>:</td>
+                <td>
+                    <div><input type="radio" name="TypeOfSlit" value="1" @(Model.TypeOfSlit == "1" ? "checked" : "") /> Sequence Eg.(1,2,3)</div>
+                    <div><input type="radio" name="TypeOfSlit" value="3" @(Model.TypeOfSlit == "3" ? "checked" : "") /> Odd Eg.(1,3,5)</div>
+                    <div><input type="radio" name="TypeOfSlit" value="2" @(Model.TypeOfSlit == "2" ? "checked" : "") /> Even Eg.(2,4,6)</div>
+                    <div>
+                        <input type="radio" name="TypeOfSlit" value="4" @(Model.TypeOfSlit == "4" ? "checked" : "") /> Matrix - Position:
+                        <input type="text" name="MatrixPos" value="@Model.MatrixPos" style="width:20px" />
+                        Increment: <input type="text" name="MatrixInc" value="@Model.MatrixInc" style="width:20px" />
+                    </div>
+                </td>
+            </tr>
+            @if (Model.Action == BasePageModel.EnumAction.Edit)
+            {
+                <tr>
+                    <td>&nbsp;&nbsp;Lot Slit Status</td>
+                    <td>:</td>
+                    <td>@Model.LotSlitStatus</td>
+                </tr>
+            }
+        </table>
+
+        <div style="margin-top:10px;">
+            <button type="submit" asp-page-handler="Submit">Submit</button>
+            <button type="submit" asp-page-handler="Reset">Reset</button>
+            <input type="button" value="Cancel" onclick="window.location.href='@Model.GetUrl(BasePageModel.EnumAction.None)'" />
+        </div>
+    </form>
+}
+
+@if (!string.IsNullOrEmpty(Model.StartupScript))
+{
+    <script>@Html.Raw(Model.StartupScript)</script>
+}

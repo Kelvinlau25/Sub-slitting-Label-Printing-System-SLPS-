@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 
 namespace Library.SQLServer
 {
@@ -17,6 +18,18 @@ namespace Library.SQLServer
         protected SqlTransaction _tran;
         protected SqlDataAdapter _sqladp;
 
+        private static IConfiguration _appConfiguration;
+
+        /// <summary>
+        /// Set the ASP.NET Core IConfiguration so that connection strings
+        /// defined in appsettings.json are available to the legacy DAL layer.
+        /// Call this once at application startup.
+        /// </summary>
+        public static void SetConfiguration(IConfiguration configuration)
+        {
+            _appConfiguration = configuration;
+        }
+
         private string _constr = string.Empty;
         public string ConnectionString
         {
@@ -26,7 +39,19 @@ namespace Library.SQLServer
 
         public Connection(string ConnectionStringName)
         {
-            this.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings[ConnectionStringName].ToString();
+            // Try ASP.NET Core configuration first, then fall back to ConfigurationManager
+            string connStr = null;
+            if (_appConfiguration != null)
+            {
+                connStr = _appConfiguration.GetConnectionString(ConnectionStringName);
+            }
+            if (string.IsNullOrEmpty(connStr))
+            {
+                var setting = System.Configuration.ConfigurationManager.ConnectionStrings[ConnectionStringName];
+                connStr = setting?.ToString();
+            }
+
+            this.ConnectionString = connStr ?? string.Empty;
 
             if (ConnectionString == string.Empty)
             {

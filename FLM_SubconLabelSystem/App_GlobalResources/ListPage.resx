@@ -136,7 +136,7 @@
     <value>~/acc/MstMain/RptSch.aspx?action=7</value>
   </data>
   <data name="History" xml:space="preserve">
-    <value>~/Log.aspx</value>
+    <value>~/Log</value>
   </data>
   <data name="ManualSchedule" xml:space="preserve">
     <value>~/acc/MstMain/ManualSchedule.aspx?action=1</value>
@@ -169,7 +169,7 @@
     <value>~/WIPRFID_web/Web/acc/MstMaint/MM_Equipment_Reg.aspx</value>
   </data>
   <data name="MM_USER" xml:space="preserve">
-    <value>~/MasterMaint/MM_USER.aspx</value>
+    <value>~/MasterMaint/MM_USER</value>
   </data>
   <data name="MM_RFID_LOC_AREA" xml:space="preserve">
     <value>~/WIPRFID_web/Web/acc/MstMaint/MM_RFID_LOC_AREA.aspx</value>
@@ -181,39 +181,39 @@
     <value>~/WIPRFID_web/Web/acc/MstMaint/MM_RFID_Type.aspx</value>
   </data>
   <data name="MM_PC1" xml:space="preserve">
-    <value>~/MasterMaint/MM_PC1.aspx</value>
+    <value>~/MasterMaint/MM_PC1</value>
   </data>
   <data name="MM_PC2_MOTHER" xml:space="preserve">
-    <value>~/MasterMaint/MM_PC2_MOTHER.aspx</value>
+    <value>~/MasterMaint/MM_PC2_MOTHER</value>
   </data>
   <data name="MM_PC2" xml:space="preserve">
-    <value>~/MasterMaint/MM_PC2.aspx</value>
+    <value>~/MasterMaint/MM_PC2</value>
   </data>
   <data name="PRINT_ALIGN_INIT" xml:space="preserve">
-    <value>~/MasterMaint/PRINT_ALIGN_INIT.aspx</value>
+    <value>~/MasterMaint/PRINT_ALIGN_INIT</value>
   </data>
   <data name="MM_COMPANY" xml:space="preserve">
-    <value>~/MasterMaint/MM_COMPANY.aspx</value>
+    <value>~/MasterMaint/MM_COMPANY</value>
   </data>
   <data name="VIEW_LOT_SLITTING_SERIES" xml:space="preserve">
-    <value>~/MasterMaint/LabelPlan.aspx</value>
+    <value>~/MasterMaint/LabelPlan</value>
   </data>
   <data name="MM_PRODLINE" xml:space="preserve">
-    <value>~/MasterMaint/MM_PRODLINE.aspx</value>
+    <value>~/MasterMaint/MM_PRODLINE</value>
   </data>
   <data name="PC2_LOTNO" xml:space="preserve">
-    <value>~/Transactions/SLIT_SERIES.aspx</value>
+    <value>~/Transactions/SLIT_SERIES</value>
   </data>
   <data name="PP_PC2" xml:space="preserve">
-    <value>~/PopUp/PP_PC2.aspx</value>
+    <value>~/PopUp/PP_PC2</value>
   </data>
   <data name="PP_PC2_Cust" xml:space="preserve">
-    <value>~/PopUp/PP_PC2_Cust.aspx</value>
+    <value>~/PopUp/PP_PC2_Cust</value>
   </data>
   <data name="PV_SUBSLIT_REQUEST_LIST" xml:space="preserve">
-    <value>~/Transactions/SSR_SEARCH.aspx</value>
+    <value>~/Transactions/SSR_SEARCH</value>
   </data>
   <data name="PP_PC2SUB" xml:space="preserve">
-    <value>~/PopUp/PP_PC2SUB.aspx</value>
+    <value>~/PopUp/PP_PC2SUB</value>
   </data>
 </root>

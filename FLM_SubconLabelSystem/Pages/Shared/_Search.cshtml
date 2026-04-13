@@ -8,6 +8,8 @@
     bool showDeletedControl = ViewData["ShowDeletedControl"] != null && (bool)ViewData["ShowDeletedControl"];
     string searchType = ViewData["SearchType"] as string ?? "B";
     string formAction = ViewData["FormAction"] as string ?? "";
+    var qs = Context.Request.Query;
+    string[] itmKeys = { "itm1", "itm2", "itm3", "itm4", "itm5", "itm6", "itm7", "itm8", "itm9", "itm10", "itm11", "itm12", "type" };
 }
 <style>
 input[type=submit]{background-color:#2779aa; color:White;}
@@ -28,6 +30,15 @@ input[type=submit]{background-color:#2779aa; color:White;}
             };
         </script>
         <form method="post" asp-page-handler="BasicSearch">
+        @{
+            foreach (var key in itmKeys)
+            {
+                if (qs.ContainsKey(key) && !string.IsNullOrEmpty(qs[key]))
+                {
+                    <input type="hidden" name="@key" value="@qs[key]" />
+                }
+            }
+        }
         <table width="640" border="0" cellspacing="0" cellpadding="2">
             <tr>
                 <td>
@@ -65,7 +76,16 @@ input[type=submit]{background-color:#2779aa; color:White;}
     @if (showDeletedControl)
     {
         <table><tr><td>
-            <form method="post" asp-page-handler="ToggleDeleted">
+        <form method="post" asp-page-handler="ToggleDeleted">
+                @{
+                    foreach (var key in itmKeys)
+                    {
+                        if (qs.ContainsKey(key) && !string.IsNullOrEmpty(qs[key]))
+                        {
+                            <input type="hidden" name="@key" value="@qs[key]" />
+                        }
+                    }
+                }
                 <label>
                     <input type="checkbox" name="showDeleted" value="true" @(showDeleted ? "checked" : "") onchange="this.form.submit()" />
                     Show Deleted Records

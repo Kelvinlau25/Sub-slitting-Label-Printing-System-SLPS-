@@ -69,5 +69,23 @@ namespace Library.Database.BLL
                 return result;
             }
         }
+
+        public static string Maint(string ID, string PC1, string CompanyCode, string NameDelivery, string RecType, string userId, string userIp)
+        {
+            using (var _Dal = new DAL.PC1())
+            {
+                string result = _Dal.Maint(ID, PC1, CompanyCode, NameDelivery, RecType, userId, userIp);
+
+                if (result == "1")
+                {
+                    _Dal.Commit();
+                }
+                else
+                {
+                    _Dal.Rollback();
+                }
+                return result;
+            }
+        }
     }
 }

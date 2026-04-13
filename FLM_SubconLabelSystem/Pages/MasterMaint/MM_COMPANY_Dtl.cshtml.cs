@@ -82,7 +82,7 @@ namespace PFRLabelIssuing.Pages.MasterMaint
                 DisplayAddress = dt.Rows[0]["ADDRESS"].ToString().ToUpper();
                 DisplayTelephone = dt.Rows[0]["TELEPHONE"].ToString();
                 DisplayEmail = dt.Rows[0]["EMAIL"].ToString();
-                DisplaySlitCode = dt.Rows[0]["SLITCODE"].ToString();
+                DisplaySlitCode = dt.Rows[0]["SLIT_CODE"].ToString();
                 CreatedBy = dt.Rows[0]["CREATED_BY"].ToString();
                 CreatedDate = dt.Rows[0]["CREATED_DATE"] != DBNull.Value ? Convert.ToDateTime(dt.Rows[0]["CREATED_DATE"]) : (DateTime?)null;
                 UpdatedBy = dt.Rows[0]["UPDATED_BY"].ToString();
@@ -100,7 +100,7 @@ namespace PFRLabelIssuing.Pages.MasterMaint
                 Address = dt.Rows[0]["ADDRESS"].ToString();
                 Telephone = dt.Rows[0]["TELEPHONE"].ToString();
                 Email = dt.Rows[0]["EMAIL"].ToString();
-                SlitCode = dt.Rows[0]["SLITCODE"].ToString();
+                SlitCode = dt.Rows[0]["SLIT_CODE"].ToString();
                 CreatedBy = dt.Rows[0]["CREATED_BY"].ToString();
                 CreatedDate = dt.Rows[0]["CREATED_DATE"] != DBNull.Value ? Convert.ToDateTime(dt.Rows[0]["CREATED_DATE"]) : (DateTime?)null;
                 UpdatedBy = dt.Rows[0]["UPDATED_BY"].ToString();
@@ -117,11 +117,14 @@ namespace PFRLabelIssuing.Pages.MasterMaint
                 return Page();
             }
 
+            string userID = SessionGet("gstrUserID") ?? "";
+            string userHost = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "";
+
             string result = "0";
             if (Action == EnumAction.Edit)
-                result = Library.Database.BLL.Company.Maint(Key, CompCode, CompName.ToUpper(), SlitCode, Address.ToUpper(), Telephone, Email, (int)EnumAction.Edit);
+                result = Library.Database.BLL.Company.Maint(Key, CompCode, CompName.ToUpper(), SlitCode, Address.ToUpper(), Telephone, Email, ((int)EnumAction.Edit).ToString(), userID, userHost);
             else if (Action == EnumAction.Add)
-                result = Library.Database.BLL.Company.Maint("0", CompCode, CompName.ToUpper(), SlitCode, Address.ToUpper(), Telephone, Email, (int)EnumAction.Add);
+                result = Library.Database.BLL.Company.Maint("0", CompCode, CompName.ToUpper(), SlitCode, Address.ToUpper(), Telephone, Email, ((int)EnumAction.Add).ToString(), userID, userHost);
 
             if (result == "1")
                 return Redirect(GetUrl(EnumAction.None));
@@ -136,7 +139,10 @@ namespace PFRLabelIssuing.Pages.MasterMaint
             ParseQueryString();
             LoadDisplayData();
 
-            string result = Library.Database.BLL.Company.Maint(Key, DisplayCompanyCode, DisplayCompanyName, DisplaySlitCode, DisplayAddress, DisplayTelephone, DisplayEmail, (int)EnumAction.Delete);
+            string userID = SessionGet("gstrUserID") ?? "";
+            string userHost = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "";
+
+            string result = Library.Database.BLL.Company.Maint(Key, DisplayCompanyCode, DisplayCompanyName, DisplaySlitCode, DisplayAddress, DisplayTelephone, DisplayEmail, ((int)EnumAction.Delete).ToString(), userID, userHost);
             if (result == "1")
                 return Redirect(GetUrl(EnumAction.None));
 
@@ -146,6 +152,12 @@ namespace PFRLabelIssuing.Pages.MasterMaint
 
         public IActionResult OnPostReset()
         {
+            ParseQueryString();
+            // Redirect back to the same detail page with the correct action/id
+            if (Action == EnumAction.Edit)
+                return Redirect(GetUrl(EnumAction.Edit));
+            else if (Action == EnumAction.Add)
+                return Redirect(GetUrl(EnumAction.Add));
             return Redirect(Request.Path + Request.QueryString);
         }
     }

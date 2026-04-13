@@ -3289,6 +3289,11 @@ td.x-date-mp-sep {
     position: relative; 
 }
 
+#west-panel .x-panel-body {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+
 .x-panel-bbar .x-toolbar {
     /* border:1px solid #99bbe8; */
     border-top:0 none;

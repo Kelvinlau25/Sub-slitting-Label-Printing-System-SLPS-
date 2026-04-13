@@ -6,7 +6,8 @@ namespace Library.Database.DAL
 {
     public class USER_LOGIN : Library.SQLServer.Connection
     {
-        public USER_LOGIN() : base("PFR_Label_DB") { }
+        //public USER_LOGIN() : base("PFR_Label_DB") { }
+        public USER_LOGIN() : base("ACL") { }
 
         internal string[] UserLogin(string pstr_UserID, string pstr_Password, string ip_address, string max_attempts, object stage)
         {

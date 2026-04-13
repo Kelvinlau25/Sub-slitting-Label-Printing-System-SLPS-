@@ -121,6 +121,24 @@ namespace Library.Database.BLL
             }
         }
 
+        public static string SubSlitMaint(string ID, string pCompFrom, string pCompTo, string pRefNo, string pRev, string pDateReq, string pReqStat, string pVenStat, int RecType, string userId, string userIp, string companyCode)
+        {
+            using (var _Dal = new Library.Database.DAL.SubSlitRequest())
+            {
+                string result = _Dal.SubSlitMaint(ID, pCompFrom, pCompTo, pRefNo, pRev, pDateReq, pReqStat, pVenStat, RecType, userId, userIp, companyCode);
+
+                if (result == "1")
+                {
+                    _Dal.Commit();
+                }
+                else
+                {
+                    _Dal.Rollback();
+                }
+                return result;
+            }
+        }
+
         public static string SubSlitDup(string ID, string pCompFrom, string pCompTo, string pRefNo, int pRev, string pDateReq, string pReqStat, string pVenStat, int RecType)
         {
             using (var _Dal = new Library.Database.DAL.SubSlitRequest())
@@ -128,6 +146,24 @@ namespace Library.Database.BLL
                 string str = System.Web.HttpContext.Current.Session["gstrUserID"].ToString();
                 string cc = System.Web.HttpContext.Current.Session["gstrUserComp"].ToString();
                 string result = _Dal.SubSlitDup(ID, pCompFrom, pCompTo, pRefNo, pRev, pDateReq, pReqStat, pVenStat, RecType, str, System.Web.HttpContext.Current.Request.UserHostAddress.ToString(), cc);
+
+                if (result == "1")
+                {
+                    _Dal.Commit();
+                }
+                else
+                {
+                    _Dal.Rollback();
+                }
+                return result;
+            }
+        }
+
+        public static string SubSlitDup(string ID, string pCompFrom, string pCompTo, string pRefNo, int pRev, string pDateReq, string pReqStat, string pVenStat, int RecType, string userId, string userIp, string companyCode)
+        {
+            using (var _Dal = new Library.Database.DAL.SubSlitRequest())
+            {
+                string result = _Dal.SubSlitDup(ID, pCompFrom, pCompTo, pRefNo, pRev, pDateReq, pReqStat, pVenStat, RecType, userId, userIp, companyCode);
 
                 if (result == "1")
                 {
@@ -163,6 +199,26 @@ namespace Library.Database.BLL
             }
         }
 
+        public static string SubSlitMotherMaint(string ID, string pIdSubReq, string pPC1Mom, string pPC2Mom,
+                                                 string pProdLine, string pQty, string pMWeight, string pMTotWeight,
+                                                 string pSubWaste, string pETD, string pETA, int RecType, string userId, string userIp)
+        {
+            using (var _Dal = new Library.Database.DAL.SubSlitRequest())
+            {
+                string result = _Dal.SubSlitMotherMaint(ID, pIdSubReq, pPC1Mom, pPC2Mom, pProdLine, pQty, pMWeight, pMTotWeight, pSubWaste, pETD, pETA, RecType, userId, userIp);
+
+                if (int.TryParse(result, out chkint) && result != "0")
+                {
+                    _Dal.Commit();
+                }
+                else
+                {
+                    _Dal.Rollback();
+                }
+                return result;
+            }
+        }
+
         public static string SubSlitMotherDup(string ID, string pIdSubReq, string pPC1Mom, string pPC2Mom,
                                                string pProdLine, string pQty, string pMWeight, string pMTotWeight,
                                                string pSubWaste, string pETD, string pETA, int RecType)
@@ -172,6 +228,26 @@ namespace Library.Database.BLL
                 string str = System.Web.HttpContext.Current.Session["gstrUserID"].ToString();
                 string cc = System.Web.HttpContext.Current.Session["gstrUserComp"].ToString();
                 string result = _Dal.SubSlitMotherDup(ID, pIdSubReq, pPC1Mom, pPC2Mom, pProdLine, pQty, pMWeight, pMTotWeight, pSubWaste, pETD, pETA, RecType, str, System.Web.HttpContext.Current.Request.UserHostAddress.ToString());
+
+                if (int.TryParse(result, out chkint) && result != "0")
+                {
+                    _Dal.Commit();
+                }
+                else
+                {
+                    _Dal.Rollback();
+                }
+                return result;
+            }
+        }
+
+        public static string SubSlitMotherDup(string ID, string pIdSubReq, string pPC1Mom, string pPC2Mom,
+                                               string pProdLine, string pQty, string pMWeight, string pMTotWeight,
+                                               string pSubWaste, string pETD, string pETA, int RecType, string userId, string userIp)
+        {
+            using (var _Dal = new Library.Database.DAL.SubSlitRequest())
+            {
+                string result = _Dal.SubSlitMotherDup(ID, pIdSubReq, pPC1Mom, pPC2Mom, pProdLine, pQty, pMWeight, pMTotWeight, pSubWaste, pETD, pETA, RecType, userId, userIp);
 
                 if (int.TryParse(result, out chkint) && result != "0")
                 {
@@ -205,6 +281,24 @@ namespace Library.Database.BLL
             }
         }
 
+        public static string SubSlitChildDel(string pRefNo, string pIdSubMomReq, string pPC2Mother, int RecType, string userId, string userIp)
+        {
+            using (var _Dal = new Library.Database.DAL.SubSlitRequest())
+            {
+                string result = _Dal.SubSlitChildDel(pRefNo, pIdSubMomReq, pPC2Mother, RecType, userId, userIp);
+
+                if (result == "1")
+                {
+                    _Dal.Commit();
+                }
+                else
+                {
+                    _Dal.Rollback();
+                }
+                return result;
+            }
+        }
+
         public static string SubSlitChildDelFrList(string pIdSubMomReq, string pPC2Mother, string pPC1Mother, string pProdLineNo, string pSeqMother, int RecType)
         {
             using (var _Dal = new Library.Database.DAL.SubSlitRequest())
@@ -212,6 +306,24 @@ namespace Library.Database.BLL
                 string str = System.Web.HttpContext.Current.Session["gstrUserID"].ToString();
                 string cc = System.Web.HttpContext.Current.Session["gstrUserComp"].ToString();
                 string result = _Dal.SubSlitChildDelFrList(pIdSubMomReq, pPC2Mother, pPC1Mother, pProdLineNo, pSeqMother, RecType, str, System.Web.HttpContext.Current.Request.UserHostAddress.ToString());
+
+                if (result == "1")
+                {
+                    _Dal.Commit();
+                }
+                else
+                {
+                    _Dal.Rollback();
+                }
+                return result;
+            }
+        }
+
+        public static string SubSlitChildDelFrList(string pIdSubMomReq, string pPC2Mother, string pPC1Mother, string pProdLineNo, string pSeqMother, int RecType, string userId, string userIp)
+        {
+            using (var _Dal = new Library.Database.DAL.SubSlitRequest())
+            {
+                string result = _Dal.SubSlitChildDelFrList(pIdSubMomReq, pPC2Mother, pPC1Mother, pProdLineNo, pSeqMother, RecType, userId, userIp);
 
                 if (result == "1")
                 {
@@ -245,6 +357,24 @@ namespace Library.Database.BLL
             }
         }
 
+        public static string SubSlitMotherDel(string pIdSubMomReq, string pPC2Mother, string pPC1Mother, string pProdLineNo, string pSeqMother, int RecType, string userId, string userIp)
+        {
+            using (var _Dal = new Library.Database.DAL.SubSlitRequest())
+            {
+                string result = _Dal.SubSlitMotherDel(pIdSubMomReq, pPC2Mother, pPC1Mother, pProdLineNo, pSeqMother, RecType, userId, userIp);
+
+                if (result == "1")
+                {
+                    _Dal.Commit();
+                }
+                else
+                {
+                    _Dal.Rollback();
+                }
+                return result;
+            }
+        }
+
         public static string SubSlitChildMaint(string ID, string pIdSubMomReq, string pPC1Cust, string pPC2Cust, string pCQty, string pCUnitWeight, string pCTotWeight, string pRemark, string pPC2Mother, string pProdLineNo, string pPC1Mother, int RecType)
         {
             using (var _Dal = new Library.Database.DAL.SubSlitRequest())
@@ -252,6 +382,24 @@ namespace Library.Database.BLL
                 string str = System.Web.HttpContext.Current.Session["gstrUserID"].ToString();
                 string cc = System.Web.HttpContext.Current.Session["gstrUserComp"].ToString();
                 string result = _Dal.SubSlitChildMaint(ID, pIdSubMomReq, pPC1Cust, pPC2Cust, pCQty, pCUnitWeight, pCTotWeight, pRemark, pPC2Mother, pProdLineNo, pPC1Mother, RecType, str, System.Web.HttpContext.Current.Request.UserHostAddress.ToString());
+
+                if (result == "1")
+                {
+                    _Dal.Commit();
+                }
+                else
+                {
+                    _Dal.Rollback();
+                }
+                return result;
+            }
+        }
+
+        public static string SubSlitChildMaint(string ID, string pIdSubMomReq, string pPC1Cust, string pPC2Cust, string pCQty, string pCUnitWeight, string pCTotWeight, string pRemark, string pPC2Mother, string pProdLineNo, string pPC1Mother, int RecType, string userId, string userIp)
+        {
+            using (var _Dal = new Library.Database.DAL.SubSlitRequest())
+            {
+                string result = _Dal.SubSlitChildMaint(ID, pIdSubMomReq, pPC1Cust, pPC2Cust, pCQty, pCUnitWeight, pCTotWeight, pRemark, pPC2Mother, pProdLineNo, pPC1Mother, RecType, userId, userIp);
 
                 if (result == "1")
                 {
@@ -285,6 +433,24 @@ namespace Library.Database.BLL
             }
         }
 
+        public static string SubSlitChildDup(int ID, string pIdSubMomReq, string pPC1Cust, string pPC2Cust, string pCQty, string pCUnitWeight, string pCTotWeight, string pRemark, string pPC2Mother, int RecType, string userId, string userIp)
+        {
+            using (var _Dal = new Library.Database.DAL.SubSlitRequest())
+            {
+                string result = _Dal.SubSlitChildDup(ID, pIdSubMomReq, pPC1Cust, pPC2Cust, pCQty, pCUnitWeight, pCTotWeight, pRemark, pPC2Mother, RecType, userId, userIp);
+
+                if (result == "1")
+                {
+                    _Dal.Commit();
+                }
+                else
+                {
+                    _Dal.Rollback();
+                }
+                return result;
+            }
+        }
+
         public static string UpdateReq(string RefNo, int Revision)
         {
             using (var _Dal = new Library.Database.DAL.SubSlitRequest())
@@ -304,12 +470,48 @@ namespace Library.Database.BLL
             }
         }
 
+        public static string UpdateReq(string RefNo, int Revision, string userId, string userIp)
+        {
+            using (var _Dal = new Library.Database.DAL.SubSlitRequest())
+            {
+                string result = _Dal.UpdateReq(RefNo, Revision, userId, userIp);
+
+                if (result == "1")
+                {
+                    _Dal.Commit();
+                }
+                else
+                {
+                    _Dal.Rollback();
+                }
+                return result;
+            }
+        }
+
         public static string SSRUpdateStat(string RefNo, int ID_SSR, string Req_Status, string Vend_Status)
         {
             using (var _Dal = new Library.Database.DAL.SubSlitRequest())
             {
                 string str = System.Web.HttpContext.Current.Session["gstrUserID"].ToString();
                 string result = _Dal.SSRUpdateStat(RefNo, ID_SSR, Req_Status, Vend_Status, str, System.Web.HttpContext.Current.Request.UserHostAddress.ToString());
+
+                if (result == "1")
+                {
+                    _Dal.Commit();
+                }
+                else
+                {
+                    _Dal.Rollback();
+                }
+                return result;
+            }
+        }
+
+        public static string SSRUpdateStat(string RefNo, int ID_SSR, string Req_Status, string Vend_Status, string userId, string userIp)
+        {
+            using (var _Dal = new Library.Database.DAL.SubSlitRequest())
+            {
+                string result = _Dal.SSRUpdateStat(RefNo, ID_SSR, Req_Status, Vend_Status, userId, userIp);
 
                 if (result == "1")
                 {

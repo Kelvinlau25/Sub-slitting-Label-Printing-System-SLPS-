@@ -4,11 +4,16 @@
 	margin:0px;
 }
 
-.table,.table tr td
+.table,.table tr td,.table tr th
 {
 	border:solid 1px #dccdcc;
 	padding-left:10px;
 	padding-right:10px;
+}
+
+.table
+{
+	border-collapse:collapse;
 }
 
 .SubTotal

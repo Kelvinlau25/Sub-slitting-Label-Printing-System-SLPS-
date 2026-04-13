@@ -252,7 +252,7 @@ namespace Library.Database.DAL
                 base._cmd.Parameters.Add(new SqlParameter("@pCreatedBy", UpdatedBy)).Direction = ParameterDirection.Input;
                 base._cmd.Parameters.Add(new SqlParameter("@pCreatedLoc", UpdatedLoc)).Direction = ParameterDirection.Input;
 
-                base._cmd.ExecuteReader();
+                base._cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -283,7 +283,7 @@ namespace Library.Database.DAL
                 base._cmd.Parameters.Add(new SqlParameter("@pCreatedBy", UpdatedBy)).Direction = ParameterDirection.Input;
                 base._cmd.Parameters.Add(new SqlParameter("@pCreatedLoc", UpdatedLoc)).Direction = ParameterDirection.Input;
 
-                base._cmd.ExecuteReader();
+                base._cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -320,7 +320,7 @@ namespace Library.Database.DAL
                 base._cmd.Parameters.Add(new SqlParameter("@pCreatedLoc", UpdatedLoc)).Direction = ParameterDirection.Input;
                 base._cmd.Parameters.Add(new SqlParameter("@ReturnID", SqlDbType.Int)).Direction = ParameterDirection.Output;
 
-                base._cmd.ExecuteReader();
+                base._cmd.ExecuteNonQuery();
 
                 if (base._cmd.Parameters["@ReturnID"].Value.ToString() != "")
                 {
@@ -362,7 +362,7 @@ namespace Library.Database.DAL
                 base._cmd.Parameters.Add(new SqlParameter("@pCreatedLoc", UpdatedLoc)).Direction = ParameterDirection.Input;
                 base._cmd.Parameters.Add(new SqlParameter("@ReturnID", SqlDbType.Int)).Direction = ParameterDirection.Output;
 
-                base._cmd.ExecuteReader();
+                base._cmd.ExecuteNonQuery();
 
                 if (base._cmd.Parameters["@ReturnID"].Value.ToString() != "")
                 {
@@ -402,7 +402,7 @@ namespace Library.Database.DAL
                 base._cmd.Parameters.Add(new SqlParameter("@pCreatedBy", UpdatedBy)).Direction = ParameterDirection.Input;
                 base._cmd.Parameters.Add(new SqlParameter("@pCreatedLoc", UpdatedLoc)).Direction = ParameterDirection.Input;
 
-                base._cmd.ExecuteReader();
+                base._cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -435,7 +435,7 @@ namespace Library.Database.DAL
                 base._cmd.Parameters.Add(new SqlParameter("@pCreatedBy", UpdatedBy)).Direction = ParameterDirection.Input;
                 base._cmd.Parameters.Add(new SqlParameter("@pCreatedLoc", UpdatedLoc)).Direction = ParameterDirection.Input;
 
-                base._cmd.ExecuteReader();
+                base._cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -461,7 +461,7 @@ namespace Library.Database.DAL
                 base._cmd.Parameters.Add(new SqlParameter("@pCreatedBy", UpdatedBy)).Direction = ParameterDirection.Input;
                 base._cmd.Parameters.Add(new SqlParameter("@pCreatedLoc", UpdatedLoc)).Direction = ParameterDirection.Input;
 
-                base._cmd.ExecuteReader();
+                base._cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -489,7 +489,7 @@ namespace Library.Database.DAL
                 base._cmd.Parameters.Add(new SqlParameter("@pCreatedBy", UpdatedBy)).Direction = ParameterDirection.Input;
                 base._cmd.Parameters.Add(new SqlParameter("@pCreatedLoc", UpdatedLoc)).Direction = ParameterDirection.Input;
 
-                base._cmd.ExecuteReader();
+                base._cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -517,7 +517,7 @@ namespace Library.Database.DAL
                 base._cmd.Parameters.Add(new SqlParameter("@pCreatedBy", UpdatedBy)).Direction = ParameterDirection.Input;
                 base._cmd.Parameters.Add(new SqlParameter("@pCreatedLoc", UpdatedLoc)).Direction = ParameterDirection.Input;
 
-                base._cmd.ExecuteReader();
+                base._cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -541,7 +541,7 @@ namespace Library.Database.DAL
                 base._cmd.Parameters.Add(new SqlParameter("@pCreatedBy", UpdatedBy)).Direction = ParameterDirection.Input;
                 base._cmd.Parameters.Add(new SqlParameter("@pCreatedLoc", UpdatedLoc)).Direction = ParameterDirection.Input;
 
-                base._cmd.ExecuteReader();
+                base._cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -567,7 +567,7 @@ namespace Library.Database.DAL
                 base._cmd.Parameters.Add(new SqlParameter("@pCreatedBy", UpdatedBy)).Direction = ParameterDirection.Input;
                 base._cmd.Parameters.Add(new SqlParameter("@pCreatedLoc", UpdatedLoc)).Direction = ParameterDirection.Input;
 
-                base._cmd.ExecuteReader();
+                base._cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -785,7 +785,7 @@ namespace Library.Database.DAL
                 base._cmd.Parameters.Add(new SqlParameter("@pPC1", PC1)).Direction = ParameterDirection.Input;
                 base._cmd.Parameters.Add(new SqlParameter("@ReturnID", SqlDbType.Int)).Direction = ParameterDirection.Output;
 
-                base._cmd.ExecuteReader();
+                base._cmd.ExecuteNonQuery();
 
                 if (base._cmd.Parameters["@ReturnID"].Value.ToString() != "")
                 {

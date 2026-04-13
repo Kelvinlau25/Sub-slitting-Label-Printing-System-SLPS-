@@ -16,6 +16,10 @@
     <table width="100%" class="table">
         <thead class="title_bar">
             <tr>
+                @if (Model.DeleteControl)
+                {
+                    <th style="width:30px; text-align:center; vertical-align:middle;"></th>
+                }
                 <th style="width:8%; text-align:left; vertical-align:middle;">UserID</th>
                 <th style="width:18%; text-align:left; vertical-align:middle;">Name</th>
                 <th style="width:15%; text-align:left; vertical-align:middle;">Department</th>
@@ -23,6 +27,10 @@
                 <th style="width:15%; text-align:left; vertical-align:middle;">Level</th>
                 <th style="width:9%; text-align:left; vertical-align:middle;">Company Code</th>
                 <th style="width:7%; text-align:center; vertical-align:middle;">Record Type</th>
+                @if (Model.ViewHistoryControl)
+                {
+                    <th style="width:80px; text-align:center; vertical-align:middle;">Audit Trail</th>
+                }
             </tr>
         </thead>
         <tbody>
@@ -31,21 +39,33 @@
             @foreach (DataRow row in Model.GridData.Rows)
             {
                 <tr onmouseover="Highlight(this)" onmouseout="UnHighlight(this)">
+                    @if (Model.DeleteControl)
+                    {
+                        <td style="text-align:center; vertical-align:middle;">
+                            <a target="_self" href="@Model.GetUrl(BasePageModel.EnumAction.Delete, row["ID_MM_USERID"].ToString())"><img src="@Url.Content("~/image/delete1.gif")" alt="Delete" /></a>
+                        </td>
+                    }
                     <td style="text-align:left; vertical-align:middle;">
-                        <a href="@Model.GetUrl(BasePageModel.EnumAction.Edit, row["ID_MM_USERID"].ToString())">@row["USERID"]</a>
+                        <a href="@Model.GetUrl(BasePageModel.EnumAction.View, row["ID_MM_USERID"].ToString())">@row["USERID"]</a>
                     </td>
                     <td style="text-align:left; vertical-align:middle;">@row["NAME"]</td>
                     <td style="text-align:left; vertical-align:middle;">@row["DEPARTMENT"]</td>
                     <td style="text-align:left; vertical-align:middle;">@row["EMAIL"]</td>
                     <td style="text-align:left; vertical-align:middle;">@row["ULEVEL"]</td>
                     <td style="text-align:left; vertical-align:middle;">@row["COMPANYCODE"]</td>
-                    <td style="text-align:center; vertical-align:middle;">@row["RECTYPE"]</td>
+                    <td style="text-align:center; vertical-align:middle;">@row["REC_TYPE"]</td>
+                    @if (Model.ViewHistoryControl)
+                    {
+                        <td style="text-align:center; vertical-align:middle;">
+                            <a target="_blank" href="@Model.GetUrl(BasePageModel.EnumAction.History, row["ID_MM_USERID"].ToString())">View</a>
+                        </td>
+                    }
                 </tr>
             }
         }
         else
         {
-            <tr><td colspan="7" class="text-center text-danger fw-bold">Record Not Found</td></tr>
+            <tr><td colspan="@(7 + (Model.DeleteControl ? 1 : 0) + (Model.ViewHistoryControl ? 1 : 0))" class="text-center text-danger fw-bold">Record Not Found</td></tr>
         }
         </tbody>
     </table>

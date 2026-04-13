@@ -49,5 +49,23 @@ namespace Library.Database.BLL
                 return result;
             }
         }
+
+        public static string Maint(string ID, string ProdLine, string Desc, string RecType, string updatedBy, string updatedLoc)
+        {
+            using (var _Dal = new DAL.MM_PRODLINE())
+            {
+                string result = _Dal.Maint(ID, ProdLine, Desc, RecType, updatedBy, updatedLoc);
+
+                if (result == "1")
+                {
+                    _Dal.Commit();
+                }
+                else
+                {
+                    _Dal.Rollback();
+                }
+                return result;
+            }
+        }
     }
 }

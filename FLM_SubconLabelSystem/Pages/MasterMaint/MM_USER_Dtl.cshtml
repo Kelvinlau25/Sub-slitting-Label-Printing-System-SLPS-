@@ -44,26 +44,6 @@
             <td> : </td>
             <td>@Model.DisplayAccStatus</td>
         </tr>
-        <tr>
-            <td>Created By</td>
-            <td> : </td>
-            <td>@Model.CreatedBy</td>
-        </tr>
-        <tr>
-            <td>Created Date</td>
-            <td> : </td>
-            <td>@(Model.CreatedDate.HasValue ? Model.CreatedDate.Value.ToString("dd/MM/yyyy HH:mm:ss") : "")</td>
-        </tr>
-        <tr>
-            <td>Updated By</td>
-            <td> : </td>
-            <td>@Model.UpdatedBy</td>
-        </tr>
-        <tr>
-            <td>Updated Date</td>
-            <td> : </td>
-            <td>@(Model.UpdatedDate.HasValue ? Model.UpdatedDate.Value.ToString("dd/MM/yyyy HH:mm:ss") : "")</td>
-        </tr>
     </table>
 }
 
@@ -177,18 +157,46 @@
                 </tr>
             }
         </table>
+        @{
+            ViewData["Action"] = Model.Action == BasePageModel.EnumAction.Add ? "Add" : "Edit";
+            ViewData["ShowSubmit"] = true;
+            ViewData["ShowDelete"] = false;
+            ViewData["ShowReset"] = true;
+            ViewData["ShowHistory"] = false;
+            ViewData["ShowInfo"] = false;
+            ViewData["ShowConfirmation"] = false;
+            ViewData["CancelUrl"] = Model.GetUrl(BasePageModel.EnumAction.None);
+        }
         <partial name="_Controller" />
     </form>
 }
 
 @if (Model.Action == BasePageModel.EnumAction.View || Model.Action == BasePageModel.EnumAction.Delete)
 {
-    <partial name="_Controller" />
+    ViewData["Action"] = Model.Action == BasePageModel.EnumAction.View ? "View" : "Delete";
+    ViewData["ShowSubmit"] = true;
+    ViewData["ShowDelete"] = true;
+    ViewData["ShowReset"] = false;
+    ViewData["ShowHistory"] = true;
+    ViewData["ShowInfo"] = true;
+    ViewData["ShowConfirmation"] = Model.Action == BasePageModel.EnumAction.Delete;
+    ViewData["CancelUrl"] = Model.GetUrl(BasePageModel.EnumAction.None);
+    ViewData["EditUrl"] = Model.GetUrl(BasePageModel.EnumAction.Edit);
+    ViewData["HistoryUrl"] = Model.GetUrl(BasePageModel.EnumAction.History);
+    ViewData["CreatedBy"] = string.IsNullOrEmpty(Model.CreatedBy) ? "N/A" : "ID : " + Model.CreatedBy;
+    ViewData["CreatedDate"] = Model.CreatedDate.HasValue ? Model.CreatedDate.Value.ToString("dd/MM/yyyy hh:mm:ss tt") : "";
+    ViewData["UpdatedBy"] = string.IsNullOrEmpty(Model.UpdatedBy) ? "N/A" : "ID : " + Model.UpdatedBy;
+    ViewData["UpdatedDate"] = Model.UpdatedDate.HasValue ? Model.UpdatedDate.Value.ToString("dd/MM/yyyy hh:mm:ss tt") : "";
+    <form method="post">
+        <partial name="_Controller" />
+    </form>
 }
 
 @if (Model.Action == BasePageModel.EnumAction.Edit && Model.ShowResetPassword)
 {
-    <form method="post" asp-page-handler="ResetPassword" style="display:inline;">
+    var qsAction = ViewContext.HttpContext.Request.Query["action"].ToString();
+    var qsId = ViewContext.HttpContext.Request.Query["id"].ToString();
+    <form method="post" asp-page-handler="ResetPassword" asp-route-action="@qsAction" asp-route-id="@qsId" style="display:inline;">
         <button type="submit" class="btn btn-warning btn-sm" onclick="return confirm('Are you sure you want to reset the password?');">Reset Password</button>
     </form>
 }

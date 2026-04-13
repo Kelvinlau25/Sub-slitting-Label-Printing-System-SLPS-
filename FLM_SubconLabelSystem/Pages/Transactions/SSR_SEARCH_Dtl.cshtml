@@ -1,0 +1,186 @@
+@page
+@model PFRLabelIssuing.Pages.Transactions.SSR_SEARCH_DtlModel
+@{
+    ViewData["PageTitle"] = "SSR Search Detail";
+}
+
+<h3>Sub-Slitting Request - @Model.TitleSuffix</h3>
+<br />
+
+<table width="100%" border="0">
+    <tr>
+        <td style="width:130px;">To</td><td style="width:10px;">:</td>
+        <td style="width:280px;">@Model.CompCode</td>
+        <td style="width:130px;">Ref No</td><td style="width:10px;">:</td>
+        <td style="width:280px;">@Model.RefNo</td>
+    </tr>
+    <tr>
+        <td>Department</td><td>:</td><td>@Model.Dept</td>
+        <td>Date</td><td>:</td><td>@Model.DateReq</td>
+    </tr>
+    <tr>
+        <td>By</td><td>:</td><td>@Model.By</td>
+        <td>Rev</td><td>:</td><td>@Model.Rev</td>
+    </tr>
+    <tr>
+        <td>Requestor Status</td><td>:</td>
+        <td>
+            @if (Model.ShowReqStatDdl)
+            {
+                <select name="ReqStatSelected" @(Model.ReqStatEnabled ? "" : "disabled")>
+                    <option value="Submitted" selected="@(Model.ReqStatSelected == "Submitted")">Submitted</option>
+                    <option value="Cancel" selected="@(Model.ReqStatSelected == "Cancel")">Cancel</option>
+                </select>
+                @if (!Model.ReqStatEnabled)
+                {
+                    <input type="hidden" name="ReqStatSelected" value="@Model.ReqStatSelected" />
+                }
+            }
+            else
+            {
+                @Model.ReqStatLabel
+            }
+        </td>
+        <td>Vendor Status</td><td>:</td>
+        <td>
+            @if (Model.ShowVenStatDdl)
+            {
+                <select name="VenStatSelected" @(Model.VenStatEnabled ? "" : "disabled")>
+                    <option value="N/A" selected="@(Model.VenStatSelected == "N/A")">N/A</option>
+                    <option value="Received" selected="@(Model.VenStatSelected == "Received")">Received</option>
+                    <option value="In Production" selected="@(Model.VenStatSelected == "In Production")">In Production</option>
+                    <option value="Complete" selected="@(Model.VenStatSelected == "Complete")">Complete</option>
+                </select>
+                @if (!Model.VenStatEnabled)
+                {
+                    <input type="hidden" name="VenStatSelected" value="@Model.VenStatSelected" />
+                }
+            }
+            else
+            {
+                @Model.VenStatLabel
+            }
+        </td>
+    </tr>
+</table>
+
+<br />
+<table width="100%"><tr><td style="background-color:#91B3DD">&nbsp;</td></tr></table>
+<br />
+
+@if (Model.GridData != null && Model.GridData.Rows.Count > 0)
+{
+    <table width="100%" class="table">
+        <thead class="title_bar">
+            <tr>
+                <th>PRODUCTION LINE</th><th>PC1 MOTHER</th><th>PC2 MOTHER</th>
+                <th>QTY (ROLL)</th><th>UNIT WEIGHT (KG)</th><th>TOTAL WEIGHT (KG)</th>
+                <th>PC1 CUSTOMER</th><th>PC2 CUSTOMER</th>
+                <th>QTY (ROLL)</th><th>UNIT WEIGHT (KG)</th><th>TOTAL WEIGHT (KG)</th>
+                <th>SUB-SLIT WASTE (KG)</th><th>ETD PFR</th><th>ETA SUBSLIT CONTRACTOR</th>
+                <th>REMARK</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (DataRow row in Model.GridData.Rows)
+            {
+                <tr>
+                    <td style="text-align:center;">@row["PRODLINE_NO"]</td>
+                    <td style="text-align:center;">@row["PC1_MOTHER"]</td>
+                    <td style="text-align:center;">@row["PC2_MOTHER"]</td>
+                    <td style="text-align:center;">@row["QTY"]</td>
+                    <td style="text-align:center;">@row["M_WEIGHT"]</td>
+                    <td style="text-align:center;">@row["M_TOTAL_WEIGHT"]</td>
+                    <td style="text-align:center;">@row["PC1_CUST"]</td>
+                    <td style="text-align:center;">@row["PC2_CUST"]</td>
+                    <td style="text-align:center;">@row["C_QTY"]</td>
+                    <td style="text-align:center;">@row["C_WEIGHT"]</td>
+                    <td style="text-align:center;">@row["C_TOTAL_WEIGHT"]</td>
+                    <td style="text-align:center;">@row["SUBSLIT_WASTE"]</td>
+                    <td style="text-align:center;">@row["ETD"]</td>
+                    <td style="text-align:center;">@row["ETA"]</td>
+                    <td style="text-align:center;">@row["REMARK"]</td>
+                </tr>
+            }
+            <tr style="background-color:AliceBlue; text-align:center;">
+                <td colspan="2"></td>
+                <td>Total</td>
+                <td>@Model.MQty</td><td></td><td>@Model.MTotalWeight</td>
+                <td colspan="2"></td>
+                <td>@Model.CQty</td><td></td><td>@Model.CTotalWeight</td>
+                <td>@Model.SubSlitWaste</td><td colspan="3"></td>
+            </tr>
+        </tbody>
+    </table>
+}
+
+@if (!Model.IsDeleteMode)
+{
+    <form method="post">
+        <input type="hidden" name="itm1" value="@Model.Itm1" />
+        <input type="hidden" name="itm2" value="@Model.Itm2" />
+        <table width="90%" border="0">
+            <tr>
+                <td width="60%"></td>
+                @if (Model.ShowUpdStatButton)
+                {
+                    <td width="10%" align="center">
+                        <button type="submit" asp-page-handler="UpdateStatus" style="width:99px;">Update Status</button>
+                    </td>
+                }
+                @if (Model.ShowNewRevButton)
+                {
+                    <td width="10%" align="center">
+                        <button type="submit" asp-page-handler="NewRevision" onclick="return confirm('Are you sure you want to create a new revision?');" style="width:99px;">New Revision</button>
+                    </td>
+                }
+                @if (Model.ShowExportButton)
+                {
+                    <td width="10%" align="center">
+                        <button type="submit" asp-page-handler="Export" style="width:99px;">Export</button>
+                    </td>
+                }
+                @if (Model.ShowCancelButton)
+                {
+                    <td width="10%" align="center">
+                        <button type="submit" asp-page-handler="Cancel" style="width:99px;">Cancel</button>
+                    </td>
+                }
+            </tr>
+        </table>
+    </form>
+}
+
+@if (Model.IsDeleteMode)
+{
+    <div class="createdpanel">
+        <table class="loginfo">
+            <tr><td class="label">Created By</td><td class="value">@Model.CreatedBy</td></tr>
+            <tr><td class="label">Created Date</td><td class="value">@Model.CreatedDate</td></tr>
+            <tr><td class="label">Updated By</td><td class="value">@Model.UpdatedBy</td></tr>
+            <tr><td class="label">Updated Date</td><td class="value">@Model.UpdatedDate</td></tr>
+        </table>
+    </div>
+
+    <form method="post">
+        <input type="hidden" name="id" value="@Model.Id" />
+        <table class="deleteInfo" width="100%">
+            <tr>
+                <td class="label">Delete the record ?</td>
+                <td class="value">
+                    <input type="radio" name="DeleteConfirm" value="Yes" /> Yes
+                    <input type="radio" name="DeleteConfirm" value="No" checked /> No
+                </td>
+            </tr>
+        </table>
+        <div style="float:left;">
+            <button type="submit" asp-page-handler="DeleteConfirm">Submit</button>
+            <button type="submit" asp-page-handler="Cancel">Cancel</button>
+        </div>
+    </form>
+}
+
+@if (!string.IsNullOrEmpty(Model.StartupScript))
+{
+    <script>@Html.Raw(Model.StartupScript)</script>
+}

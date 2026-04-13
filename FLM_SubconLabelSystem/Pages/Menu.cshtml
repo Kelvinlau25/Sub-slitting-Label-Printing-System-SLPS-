@@ -49,8 +49,10 @@
                         margins: '0 0 0 5',
                         layout: 'accordion',
                         layoutConfig: {
-                            animate: true
+                            animate: true,
+                            fill: false
                         },
+                        autoScroll: true,
                         items: @Html.Raw(Model.MenuListJson)
                     },
                     {
@@ -105,7 +107,7 @@
         $(document).ready(function () {
             var pswexpired = '@(HttpContext.Session.GetString("pswexpired") ?? "")';
             if (pswexpired == '1') {
-                window.open('MasterMaint/ChangePassword.aspx', '_self');
+                window.open('@Url.Content("~/MasterMaint/ChangePassword")', '_self');
                 var links = document.getElementsByTagName('a');
                 for (var i = 0, max = links.length; i < max; i++) {
                     links[i].setAttribute('disabled', 'disabled');

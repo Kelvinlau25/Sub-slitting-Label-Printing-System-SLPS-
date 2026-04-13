@@ -33,12 +33,12 @@ namespace Library.Database.BLL
         public static string Maint(string ID, string CompCode, string PC2, string Thickness, string Type, string Width,
                                     string Length, string PackCode, string Grade,
                                     string CoreCode, string UnitWeight,
-                                    string NumPerPack, string Remarks, string RecType)
+                                    string NumPerPack, string Remarks, string RecType,
+                                    string updatedBy, string updatedLoc)
         {
             using (var _Dal = new DAL.PC2())
             {
-                string str = System.Web.HttpContext.Current.Session["gstrUserID"].ToString();
-                string result = _Dal.Maint(ID, CompCode, PC2, Thickness, Type, Width, Length, PackCode, Grade, CoreCode, UnitWeight, NumPerPack, Remarks, RecType, str, System.Web.HttpContext.Current.Request.UserHostAddress.ToString());
+                string result = _Dal.Maint(ID, CompCode, PC2, Thickness, Type, Width, Length, PackCode, Grade, CoreCode, UnitWeight, NumPerPack, Remarks, RecType, updatedBy, updatedLoc);
 
                 if (result == "1")
                 {

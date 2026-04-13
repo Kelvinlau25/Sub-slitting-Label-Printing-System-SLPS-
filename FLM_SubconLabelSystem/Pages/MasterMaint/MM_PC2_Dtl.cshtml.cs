@@ -113,9 +113,9 @@ namespace PFRLabelIssuing.Pages.MasterMaint
                 DisplayWidth = dt.Rows[0]["WIDTH"].ToString();
                 DisplayLength = dt.Rows[0]["LENGTH"].ToString();
                 DisplayGrade = dt.Rows[0]["GRADE"].ToString();
-                DisplayPackCode = dt.Rows[0]["PACKCODE"].ToString();
-                DisplayCoreCode = dt.Rows[0]["CORECODE"].ToString();
-                DisplayUnitWeight = dt.Rows[0]["UNITWEIGHT"].ToString();
+                DisplayPackCode = dt.Rows[0]["PACK_CODE"].ToString();
+                DisplayCoreCode = dt.Rows[0]["CORE_CODE"].ToString();
+                DisplayUnitWeight = dt.Rows[0]["UNIT_WEIGHT"].ToString();
                 DisplayRemarks = dt.Rows[0]["REMARKS"].ToString();
                 CreatedBy = dt.Rows[0]["CREATED_BY"].ToString();
                 CreatedDate = dt.Rows[0]["CREATED_DATE"] != DBNull.Value ? Convert.ToDateTime(dt.Rows[0]["CREATED_DATE"]) : (DateTime?)null;
@@ -134,9 +134,9 @@ namespace PFRLabelIssuing.Pages.MasterMaint
                 Width = dt.Rows[0]["WIDTH"].ToString();
                 Length = dt.Rows[0]["LENGTH"].ToString();
                 Grade = dt.Rows[0]["GRADE"].ToString();
-                PackCode = dt.Rows[0]["PACKCODE"].ToString();
-                CoreCode = dt.Rows[0]["CORECODE"].ToString();
-                UnitWeight = dt.Rows[0]["UNITWEIGHT"].ToString();
+                PackCode = dt.Rows[0]["PACK_CODE"].ToString();
+                CoreCode = dt.Rows[0]["CORE_CODE"].ToString();
+                UnitWeight = dt.Rows[0]["UNIT_WEIGHT"].ToString();
                 Remarks = dt.Rows[0]["REMARKS"].ToString();
                 CreatedBy = dt.Rows[0]["CREATED_BY"].ToString();
                 CreatedDate = dt.Rows[0]["CREATED_DATE"] != DBNull.Value ? Convert.ToDateTime(dt.Rows[0]["CREATED_DATE"]) : (DateTime?)null;
@@ -156,12 +156,14 @@ namespace PFRLabelIssuing.Pages.MasterMaint
 
             string companyCode = SessionGet("COMPANYCODE") ?? "";
             string pc2 = GeneratedPC2;
+            string userID = SessionGet("gstrUserID") ?? "";
+            string userLoc = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "";
 
             string result = "0";
             if (Action == EnumAction.Edit)
-                result = Library.Database.BLL.PC2.Maint(Key, companyCode, pc2, Thickness.ToUpper(), Type.ToUpper(), Width.ToUpper(), Length.ToUpper(), PackCode.ToUpper(), Grade.ToUpper(), (CoreCode ?? "").ToUpper(), UnitWeight, "", Remarks ?? "", (int)EnumAction.Edit);
+                result = Library.Database.BLL.PC2.Maint(Key, companyCode, pc2, Thickness.ToUpper(), Type.ToUpper(), Width.ToUpper(), Length.ToUpper(), PackCode.ToUpper(), Grade.ToUpper(), (CoreCode ?? "").ToUpper(), UnitWeight, "", Remarks ?? "", ((int)EnumAction.Edit).ToString(), userID, userLoc);
             else if (Action == EnumAction.Add)
-                result = Library.Database.BLL.PC2.Maint(Key, companyCode, pc2, Thickness.ToUpper(), Type.ToUpper(), Width.ToUpper(), Length.ToUpper(), PackCode.ToUpper(), Grade.ToUpper(), (CoreCode ?? "").ToUpper(), UnitWeight, "", Remarks ?? "", (int)EnumAction.Add);
+                result = Library.Database.BLL.PC2.Maint("0", companyCode, pc2, Thickness.ToUpper(), Type.ToUpper(), Width.ToUpper(), Length.ToUpper(), PackCode.ToUpper(), Grade.ToUpper(), (CoreCode ?? "").ToUpper(), UnitWeight, "", Remarks ?? "", ((int)EnumAction.Add).ToString(), userID, userLoc);
 
             if (result == "1")
                 return Redirect(GetUrl(EnumAction.None));
@@ -177,7 +179,9 @@ namespace PFRLabelIssuing.Pages.MasterMaint
             LoadDisplayData();
 
             string companyCode = SessionGet("COMPANYCODE") ?? "";
-            string result = Library.Database.BLL.PC2.Maint(Key, companyCode, DisplayPC2, DisplayThickness, DisplayType, DisplayWidth, DisplayLength, DisplayPackCode, DisplayGrade, DisplayCoreCode, DisplayUnitWeight, "", DisplayRemarks, (int)EnumAction.Delete);
+            string userID = SessionGet("gstrUserID") ?? "";
+            string userLoc = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "";
+            string result = Library.Database.BLL.PC2.Maint(Key, companyCode, DisplayPC2, DisplayThickness, DisplayType, DisplayWidth, DisplayLength, DisplayPackCode, DisplayGrade, DisplayCoreCode, DisplayUnitWeight, "", DisplayRemarks, ((int)EnumAction.Delete).ToString(), userID, userLoc);
             if (result == "1")
                 return Redirect(GetUrl(EnumAction.None));
 

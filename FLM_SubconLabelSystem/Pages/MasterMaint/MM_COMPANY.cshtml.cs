@@ -26,7 +26,7 @@ namespace PFRLabelIssuing.Pages.MasterMaint
 
             if (ulevel == "3" || ulevel == "2")
             {
-                DeleteControl = true;
+                DeleteControl = false;
                 list = Library.Database.BLL.Company.List(
                     "MM_COMPANY_func('" + companyCode + "')",
                     "ID_MM_COMPANY",
@@ -36,7 +36,7 @@ namespace PFRLabelIssuing.Pages.MasterMaint
             }
             else
             {
-                DeleteControl = false;
+                DeleteControl = true;
                 list = Library.Database.BLL.Company.List(
                     "PV_MM_COMPANY",
                     "ID_MM_COMPANY",

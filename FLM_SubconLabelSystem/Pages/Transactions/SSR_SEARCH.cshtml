@@ -1,0 +1,79 @@
+@page
+@model PFRLabelIssuing.Pages.Transactions.SSR_SEARCHModel
+@{
+    ViewData["PageTitle"] = Model.PageTitle;
+}
+<partial name="_Title" />
+<partial name="_Search" />
+
+<table width="100%">
+    <tr>
+        <td align="right" style="color:blue">
+            @if (Model.ShowAddButton)
+            {
+                <a href="@Url.Content("~/Transactions/SUBSLIT_REQ_")">Add</a>
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table width="100%" class="table">
+                <thead class="title_bar">
+                    <tr>
+                        @if (Model.DeleteControl)
+                        {
+                            <th style="width:30px; text-align:center; vertical-align:middle;"></th>
+                        }
+                        <th style="width:18%; text-align:left;">Company Code</th>
+                        <th style="width:11%; text-align:left;">Ref No</th>
+                        <th style="width:11%; text-align:left;">Revision</th>
+                        <th style="width:11%; text-align:left;">Requestor Status</th>
+                        <th style="width:11%; text-align:left;">Vendor Status</th>
+                        <th style="width:11%; text-align:left;">Request Date</th>
+                        <th style="width:11%; text-align:left;">Updated Date</th>
+                        <th style="width:10%; text-align:center;">Record Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @if (Model.GridData != null && Model.GridData.Rows.Count > 0)
+                {
+                    @foreach (DataRow row in Model.GridData.Rows)
+                    {
+                        string refno = row["REFNO"].ToString();
+                        string idssr = row["ID_SUBSLIT_REQUEST"].ToString();
+                        string reqStatus = row["REQUEST_STATUS"].ToString();
+                        string selectUrl = Url.Page("SSR_SEARCH", "Select", new { refno, idssr, reqStatus });
+                        <tr onmouseover="Highlight(this)" onmouseout="UnHighlight(this)" onclick="window.location='@selectUrl'" style="cursor:pointer;">
+                            @if (Model.DeleteControl)
+                            {
+                                <td style="text-align:center; vertical-align:middle;">
+                                    <a target="_self" href="@Model.GetUrl(BasePageModel.EnumAction.Delete, row["ID_SUBSLIT_REQUEST"].ToString())"><img src="@Url.Content("~/image/delete1.gif")" alt="Delete" /></a>
+                                </td>
+                            }
+                            <td>@row["COMPANYTO"]</td>
+                            <td><a href="@selectUrl">@row["REFNO"]</a></td>
+                            <td>@row["REVISIONCOUNT"]</td>
+                            <td>@row["REQUEST_STATUS"]</td>
+                            <td>@row["VENDOR_STATUS"]</td>
+                            <td>@row["DATEREQ"]</td>
+                            <td>@(row["UPDATED_DATE"] != DBNull.Value ? Convert.ToDateTime(row["UPDATED_DATE"]).ToString("dd/MM/yyyy hh:mm:ss tt") : "")</td>
+                            <td style="text-align:center;">@row["REC_TYPE"]</td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr><td colspan="@(8 + (Model.DeleteControl ? 1 : 0))" class="text-center text-danger fw-bold">Record Not Found</td></tr>
+                }
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</table>
+@{
+    ViewData["TotalRecords"] = Model.TotalRecords;
+    ViewData["TotalPages"] = Model.TotalPages;
+    ViewData["CurrentPage"] = Model.PageNo;
+    ViewData["BaseListUrl"] = Model.GenerateList;
+}
+<partial name="_GridFooter" />

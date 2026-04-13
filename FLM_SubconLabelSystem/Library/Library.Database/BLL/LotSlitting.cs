@@ -52,12 +52,38 @@ namespace Library.Database.BLL
             }
         }
 
+        public static DataTable GetExportData()
+        {
+            using (var _dal = new DAL.LotSlitting())
+            {
+                return _dal.GetExportData();
+            }
+        }
+
         public static string UpdPrintSel(string SLITLOTNO, bool PrintSel, string RecUpd)
         {
             using (var _Dal = new DAL.LotSlitting())
             {
                 string str = System.Web.HttpContext.Current.Session["gstrUserID"].ToString();
                 string result = _Dal.UpdPrintSel(SLITLOTNO, PrintSel, RecUpd, str, System.Web.HttpContext.Current.Request.UserHostAddress.ToString());
+
+                if (result == "1")
+                {
+                    _Dal.Commit();
+                }
+                else
+                {
+                    _Dal.Rollback();
+                }
+                return result;
+            }
+        }
+
+        public static string UpdPrintSel(string SLITLOTNO, bool PrintSel, string RecUpd, string userId, string clientIp)
+        {
+            using (var _Dal = new DAL.LotSlitting())
+            {
+                string result = _Dal.UpdPrintSel(SLITLOTNO, PrintSel, RecUpd, userId, clientIp);
 
                 if (result == "1")
                 {

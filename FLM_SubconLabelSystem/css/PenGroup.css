@@ -19,6 +19,18 @@ table
 
 }
 
+table.table
+{
+    border-collapse:collapse;
+    border:1px solid #91B3DD;
+}
+
+table.table th,
+table.table td
+{
+    border:1px solid #91B3DD;
+}
+
 .entryTable td
 {
     font-size: 12px;

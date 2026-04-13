@@ -106,15 +106,15 @@ namespace PFRLabelIssuing.Pages.MasterMaint
 
         private void LoadCompanyDropdown()
         {
-            DataTable dt = Library.Database.BLL.user.GetDLLData();
+            DataTable dt = Library.Database.BLL.user.GetDLLData("CompanyName", "");
             if (dt != null)
             {
                 foreach (DataRow row in dt.Rows)
                 {
                     CompanyList.Add(new SelectListItem
                     {
-                        Value = row["COMPANYCODE"].ToString(),
-                        Text = row["COMPANYNAME"].ToString()
+                        Value = row["ID_MM_COMPANY"].ToString(),
+                        Text = row["CompanyName"].ToString()
                     });
                 }
             }
@@ -147,7 +147,7 @@ namespace PFRLabelIssuing.Pages.MasterMaint
                 DisplayDepartment = dt.Rows[0]["DEPARTMENT"].ToString();
                 DisplayEmail = dt.Rows[0]["EMAIL"].ToString();
                 DisplayLevel = GetLevelText(dt.Rows[0]["ULEVEL"].ToString());
-                DisplayAccStatus = GetAccStatusText(dt.Rows[0]["ACCSTATUS"].ToString());
+                DisplayAccStatus = GetAccStatusText(dt.Rows[0]["STATUS"].ToString());
                 CreatedBy = dt.Rows[0]["CREATED_BY"].ToString();
                 CreatedDate = dt.Rows[0]["CREATED_DATE"] != DBNull.Value ? Convert.ToDateTime(dt.Rows[0]["CREATED_DATE"]) : (DateTime?)null;
                 UpdatedBy = dt.Rows[0]["UPDATED_BY"].ToString();
@@ -167,7 +167,7 @@ namespace PFRLabelIssuing.Pages.MasterMaint
                 Department = dt.Rows[0]["DEPARTMENT"].ToString();
                 Email = dt.Rows[0]["EMAIL"].ToString();
                 Level = dt.Rows[0]["ULEVEL"].ToString();
-                AccStatus = dt.Rows[0]["ACCSTATUS"].ToString();
+                AccStatus = dt.Rows[0]["STATUS"].ToString();
                 CreatedBy = dt.Rows[0]["CREATED_BY"].ToString();
                 CreatedDate = dt.Rows[0]["CREATED_DATE"] != DBNull.Value ? Convert.ToDateTime(dt.Rows[0]["CREATED_DATE"]) : (DateTime?)null;
                 UpdatedBy = dt.Rows[0]["UPDATED_BY"].ToString();
@@ -196,14 +196,17 @@ namespace PFRLabelIssuing.Pages.MasterMaint
             string level2 = Level == "2" ? "1" : "0";
             string level3 = Level == "3" ? "1" : "0";
             string encryptedPassword = !string.IsNullOrEmpty(Password)
-                ? Library.Root.Other.BusinessLogicBase.Encrypt(Password)
+                ? GlobalFunctions.Encrypt(Password)
                 : "";
+
+            string userId = HttpContext.Session.GetString("gstrUserID") ?? HttpContext.Session.GetString("USERID") ?? "";
+            string userIp = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "";
 
             string result = "0";
             if (Action == EnumAction.Edit)
-                result = Library.Database.BLL.user.Maint(Key, CompanyId, Name, UserID, Department, Email, level1, level2, level3, encryptedPassword, AccStatus, (int)EnumAction.Edit);
+                result = Library.Database.BLL.user.Maint(Key, CompanyId, Name, UserID, Department, Email, level1 == "1", level2 == "1", level3 == "1", encryptedPassword, AccStatus, ((int)EnumAction.Edit).ToString(), userId, userIp);
             else if (Action == EnumAction.Add)
-                result = Library.Database.BLL.user.Maint("0", CompanyId, Name, UserID, Department, Email, level1, level2, level3, encryptedPassword, AccStatus, (int)EnumAction.Add);
+                result = Library.Database.BLL.user.Maint("0", CompanyId, Name, UserID, Department, Email, level1 == "1", level2 == "1", level3 == "1", encryptedPassword, AccStatus, ((int)EnumAction.Add).ToString(), userId, userIp);
 
             if (result == "1")
                 return Redirect(GetUrl(EnumAction.None));
@@ -219,7 +222,10 @@ namespace PFRLabelIssuing.Pages.MasterMaint
             ParseQueryString();
             LoadDisplayData();
 
-            string result = Library.Database.BLL.user.Maint(Key, "", DisplayName, DisplayUserID, DisplayDepartment, DisplayEmail, "", "", "", "", DisplayAccStatus, (int)EnumAction.Delete);
+            string userId = HttpContext.Session.GetString("gstrUserID") ?? HttpContext.Session.GetString("USERID") ?? "";
+            string userIp = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "";
+
+            string result = Library.Database.BLL.user.Maint(Key, "", DisplayName, DisplayUserID, DisplayDepartment, DisplayEmail, false, false, false, "", DisplayAccStatus, ((int)EnumAction.Delete).ToString(), userId, userIp);
             if (result == "1")
                 return Redirect(GetUrl(EnumAction.None));
 
@@ -232,7 +238,10 @@ namespace PFRLabelIssuing.Pages.MasterMaint
             ParseQueryString();
             SetupUserState();
 
-            string result = Library.Database.BLL.user.ResetPass(Key);
+            string userId = HttpContext.Session.GetString("gstrUserID") ?? HttpContext.Session.GetString("USERID") ?? "";
+            string userIp = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "";
+
+            string result = Library.Database.BLL.user.ResetPass(Key, "00YToB6QsF8IHDg0ts+HSw==XXrRKhkbJuN4oft7xknZmg==", "3", userId, userIp);
             if (result == "1")
             {
                 RegisterStartupScript("alert('Password has been reset successfully.');");

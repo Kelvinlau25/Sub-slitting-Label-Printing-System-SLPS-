@@ -89,11 +89,14 @@ namespace PFRLabelIssuing.Pages.MasterMaint
                 return Page();
             }
 
+            string userId = HttpContext.Session.GetString("gstrUserID") ?? HttpContext.Session.GetString("USERID") ?? "";
+            string userIp = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "";
+
             string result = "0";
             if (Action == EnumAction.Edit)
-                result = Library.Database.BLL.MM_PRODLINE.Maint(Key, ProdLine, Description ?? "", (int)EnumAction.Edit);
+                result = Library.Database.BLL.MM_PRODLINE.Maint(Key, ProdLine, Description ?? "", ((int)EnumAction.Edit).ToString(), userId, userIp);
             else if (Action == EnumAction.Add)
-                result = Library.Database.BLL.MM_PRODLINE.Maint(Key, ProdLine, Description ?? "", (int)EnumAction.Add);
+                result = Library.Database.BLL.MM_PRODLINE.Maint("0", ProdLine, Description ?? "", ((int)EnumAction.Add).ToString(), userId, userIp);
 
             if (result == "1")
                 return Redirect(GetUrl(EnumAction.None));
@@ -108,7 +111,10 @@ namespace PFRLabelIssuing.Pages.MasterMaint
             ParseQueryString();
             LoadDisplayData();
 
-            string result = Library.Database.BLL.MM_PRODLINE.Maint(Key, DisplayProdLine, DisplayDescription, (int)EnumAction.Delete);
+            string userId = HttpContext.Session.GetString("gstrUserID") ?? HttpContext.Session.GetString("USERID") ?? "";
+            string userIp = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "";
+
+            string result = Library.Database.BLL.MM_PRODLINE.Maint(Key, DisplayProdLine, DisplayDescription, ((int)EnumAction.Delete).ToString(), userId, userIp);
             if (result == "1")
                 return Redirect(GetUrl(EnumAction.None));
 

@@ -1,0 +1,96 @@
+@page
+@model PFRLabelIssuing.Pages.Transactions.SLIT_SERIESModel
+@{
+    ViewData["PageTitle"] = Model.PageTitle;
+}
+<partial name="_Title" />
+<partial name="_Search" />
+<partial name="_GridHeader" />
+
+<table width="100%">
+    <tr>
+        <td>
+            <table width="100%" class="table">
+                <thead class="title_bar">
+                    <tr>
+                        @if (Model.DeleteControl)
+                        {
+                            <th style="width:30px; text-align:center; vertical-align:middle;"></th>
+                        }
+                        <th style="width:8%; text-align:left;">Ref. No</th>
+                        <th style="width:6%; text-align:left;">Company Code</th>
+                        <th style="width:8%; text-align:left;">PC1 Customer</th>
+                        <th style="width:16%; text-align:left;">PC2 Mother</th>
+                        <th style="width:10%; text-align:left;">Lot No</th>
+                        <th style="width:13%; text-align:left;">PC2 Customer</th>
+                        <th style="width:5%; text-align:left;">Unit Weight</th>
+                        <th style="width:4%; text-align:left;">Line</th>
+                        <th style="width:6%; text-align:left;">Planning Year Month</th>
+                        <th style="width:6%; text-align:left;">Type Of Slit</th>
+                        <th style="width:3%; text-align:left;">No. Of Slit</th>
+                        <th style="width:6%; text-align:center;">Record Type</th>
+                        <th style="width:8%; text-align:left;">Lot Slitting Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @if (Model.GridData != null && Model.GridData.Rows.Count > 0)
+                {
+                    @foreach (DataRow row in Model.GridData.Rows)
+                    {
+                        string status = row["STATUS"].ToString();
+                        string createUrl = row.Table.Columns.Contains("Create_URL") && row["Create_URL"] != DBNull.Value
+                            ? row["Create_URL"].ToString() : "";
+                        <tr onmouseover="Highlight(this)" onmouseout="UnHighlight(this)">
+                            @if (Model.DeleteControl)
+                            {
+                                <td style="text-align:center; vertical-align:middle;">
+                                    <a target="_self" href="@Model.GetUrl(BasePageModel.EnumAction.Delete, row["ID_PC2_LOTNO"].ToString())"><img src="@Url.Content("~/image/delete1.gif")" alt="Delete" /></a>
+                                </td>
+                            }
+                            <td>@row["REFNO"]</td>
+                            <td>@row["COMPANYCODE"]</td>
+                            <td>@row["PC1_CUST"]</td>
+                            <td>@row["PC2_MOTHER"]</td>
+                            <td><a href="@Model.GetUrl(BasePageModel.EnumAction.View, row["ID_PC2_LOTNO"].ToString())">@row["LOTNO"]</a></td>
+                            <td>@row["PC2_CUST"]</td>
+                            <td>@row["UNIT_WEIGHT"]</td>
+                            <td>@row["PRODLINE_NO"]</td>
+                            <td>@row["PLAN_YEAR_MONTH"]</td>
+                            <td>@row["TYPE_OF_SLIT"]</td>
+                            <td>@row["NO_OF_SLIT"]</td>
+                            <td style="text-align:center;">@row["REC_TYPE"]</td>
+                            <td>
+                                @if (status == "Create" && !string.IsNullOrEmpty(createUrl))
+                                {
+                                    <a href="@createUrl">Create</a>
+                                }
+                                else
+                                {
+                                    @status
+                                }
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr><td colspan="@(13 + (Model.DeleteControl ? 1 : 0))" class="text-center text-danger fw-bold">Record Not Found</td></tr>
+                }
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</table>
+
+@{
+    ViewData["TotalRecords"] = Model.TotalRecords;
+    ViewData["TotalPages"] = Model.TotalPages;
+    ViewData["CurrentPage"] = Model.PageNo;
+    ViewData["BaseListUrl"] = Model.GenerateList;
+}
+<partial name="_GridFooter" />
+
+@if (!string.IsNullOrEmpty(Model.StartupScript))
+{
+    <script>@Html.Raw(Model.StartupScript)</script>
+}

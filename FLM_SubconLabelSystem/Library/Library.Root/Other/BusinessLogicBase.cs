@@ -1,5 +1,5 @@
 using System;
-using System.Configuration;
+using Microsoft.Extensions.Configuration;
 
 namespace Library.Root.Other
 {
@@ -10,6 +10,20 @@ namespace Library.Root.Other
     /// </summary>
     public abstract class BusinessLogicBase
     {
+        private static IConfiguration _configuration;
+        private static int _maxQuantityPerPage = 10; // default fallback
+
+        /// <summary>
+        /// Initialise from ASP.NET Core configuration (call once at startup).
+        /// </summary>
+        public static void SetConfiguration(IConfiguration configuration)
+        {
+            _configuration = configuration;
+            var value = _configuration["AppSettings:MaxRowPerPage"];
+            if (!string.IsNullOrEmpty(value))
+                _maxQuantityPerPage = Convert.ToInt32(value);
+        }
+
         /// <summary>
         /// Max Quantity per Page
         /// </summary>
@@ -17,7 +31,7 @@ namespace Library.Root.Other
         {
             get
             {
-                return Convert.ToInt32(ConfigurationManager.AppSettings["MaxRowPerPage"].ToString());
+                return _maxQuantityPerPage;
             }
         }
 

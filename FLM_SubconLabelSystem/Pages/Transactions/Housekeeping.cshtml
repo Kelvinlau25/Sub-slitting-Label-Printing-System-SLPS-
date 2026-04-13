@@ -1,0 +1,57 @@
+@page
+@model PFRLabelIssuing.Pages.Transactions.HousekeepingModel
+@{
+    ViewData["PageTitle"] = "Housekeeping";
+}
+
+<style type="text/css">
+    html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+</style>
+
+<table width="100%" style="height:100%;" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td align="center"><h3>HOUSEKEEPING</h3></td>
+    </tr>
+    <tr>
+        <td>
+            <form method="post">
+                <table style="width:100%; margin:50px;">
+                    <tr>
+                        <td style="width:359px;">Data Retention :</td>
+                        <td>
+                            <select name="DataRetention" onchange="this.form.submit();" asp-page-handler="CalculateDate">
+                                <option value="" selected="@(string.IsNullOrEmpty(Model.DataRetention))">-- Days --</option>
+                                <option value="90" selected="@(Model.DataRetention == "90")">90 days</option>
+                                <option value="180" selected="@(Model.DataRetention == "180")">180 days</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr><td></td></tr>
+                    <tr>
+                        <td>Purge transaction before :</td>
+                        <td>@Model.PurgeDate</td>
+                    </tr>
+                    <tr><td></td></tr>
+                    <tr><td></td></tr>
+                    <tr><td>Note: Records with updated date before the above date</td></tr>
+                    <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;will be purged except Maintenance and Setting tables</td></tr>
+                    <tr><td></td></tr>
+                    <tr>
+                        <td style="width:359px;"></td>
+                        <td>
+                            <input type="hidden" name="purgeDate" value="@Model.PurgeDate" />
+                            <button type="submit" asp-page-handler="Update" onclick="return confirm('Do you confirm to purge all record before this date?');" style="width:107px;">OK</button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="submit" asp-page-handler="Cancel" style="width:106px;">Cancel</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </td>
+    </tr>
+</table>
+
+@if (!string.IsNullOrEmpty(Model.StartupScript))
+{
+    <script>@Html.Raw(Model.StartupScript)</script>
+}

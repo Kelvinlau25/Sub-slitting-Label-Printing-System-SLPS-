@@ -1,0 +1,63 @@
+@page
+@model PFRLabelIssuing.Pages.Report.ASR_SEARCHModel
+@{
+    Layout = "_MainLayout";
+    ViewData["Title"] = "After Slitting Report";
+}
+
+<script src="@Url.Content("~/js/jquery-ui-1.8.9.custom.min.js")" type="text/javascript"></script>
+<link href="@Url.Content("~/css/overcast/jquery-ui-1.8.18.custom.css")" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+    .style1 { width: 57px; }
+    .styler { color: Red; }
+    .style2 { width: 13px; }
+</style>
+
+<script language="javascript" type="text/javascript">
+    $(document).ready(function () {
+        $('[id*=txtDateFrom]').datepicker({ dateFormat: 'dd/mm/yy' });
+        $('[id*=txtDateTo]').datepicker({ dateFormat: 'dd/mm/yy' });
+    });
+</script>
+
+<table width="100%" style="height:100%;" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td>
+        <div>
+            <table width="100%">
+                <tr>
+                    <td>
+                        <h2>After Slitting Report</h2><hr />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br />
+        <div>
+            <form method="post">
+                <table>
+                    <tr>
+                        <td class="style1">Ref No.</td>
+                        <td class="style2"><strong> : </strong></td>
+                        <td>
+                            <select asp-for="SelectedRefNo" asp-items="Model.RefNoItems" style="height:26px; width:200px;"></select>
+                        </td>
+                        <td>
+                            <div>
+                                <button type="submit" asp-page-handler="Generate"><strong>Generate</strong></button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <br />
+    </td>
+</tr>
+</table>
+
+@if (!string.IsNullOrEmpty(Model.StartupScript))
+{
+    <script>@Html.Raw(Model.StartupScript)</script>
+}

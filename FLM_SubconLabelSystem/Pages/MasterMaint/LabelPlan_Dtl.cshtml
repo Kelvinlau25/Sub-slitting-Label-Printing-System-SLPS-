@@ -69,38 +69,29 @@
             <td> : </td>
             <td>@Model.DisplayStatus</td>
         </tr>
-        <tr>
-            <td>Created By</td>
-            <td> : </td>
-            <td>@Model.CreatedBy</td>
-        </tr>
-        <tr>
-            <td>Created Date</td>
-            <td> : </td>
-            <td>@(Model.CreatedDate.HasValue ? Model.CreatedDate.Value.ToString("dd/MM/yyyy HH:mm:ss") : "")</td>
-        </tr>
-        <tr>
-            <td>Updated By</td>
-            <td> : </td>
-            <td>@Model.UpdatedBy</td>
-        </tr>
-        <tr>
-            <td>Updated Date</td>
-            <td> : </td>
-            <td>@(Model.UpdatedDate.HasValue ? Model.UpdatedDate.Value.ToString("dd/MM/yyyy HH:mm:ss") : "")</td>
-        </tr>
     </table>
 }
 
-@if (Model.Action == BasePageModel.EnumAction.Delete)
+@if (Model.Action == BasePageModel.EnumAction.View || Model.Action == BasePageModel.EnumAction.Delete)
 {
+    ViewData["Action"] = Model.Action == BasePageModel.EnumAction.View ? "View" : "Delete";
+    ViewData["ShowSubmit"] = false;
+    ViewData["ShowDelete"] = true;
+    ViewData["ShowReset"] = false;
+    ViewData["ShowHistory"] = false;
+    ViewData["ShowInfo"] = true;
+    ViewData["ShowConfirmation"] = Model.Action == BasePageModel.EnumAction.Delete;
+    ViewData["CancelUrl"] = Model.GetUrl(BasePageModel.EnumAction.None);
+    ViewData["EditUrl"] = Model.GetUrl(BasePageModel.EnumAction.Edit);
+    ViewData["CreatedBy"] = string.IsNullOrEmpty(Model.CreatedBy) ? "N/A" : "ID : " + Model.CreatedBy;
+    ViewData["CreatedDate"] = Model.CreatedDate.HasValue ? Model.CreatedDate.Value.ToString("dd/MM/yyyy hh:mm:ss tt") : "";
+    ViewData["UpdatedBy"] = string.IsNullOrEmpty(Model.UpdatedBy) ? "N/A" : "ID : " + Model.UpdatedBy;
+    ViewData["UpdatedDate"] = Model.UpdatedDate.HasValue ? Model.UpdatedDate.Value.ToString("dd/MM/yyyy hh:mm:ss tt") : "";
     <form method="post" asp-page-handler="Delete">
+        <input type="hidden" name="qsAction" value="@((int)Model.Action)" />
+        <input type="hidden" name="qsId" value="@Model.Key" />
         <partial name="_Controller" />
     </form>
-}
-else if (Model.Action == BasePageModel.EnumAction.View)
-{
-    <partial name="_Controller" />
 }
 
 @if (!string.IsNullOrEmpty(Model.StartupScript))

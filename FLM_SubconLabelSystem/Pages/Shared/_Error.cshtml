@@ -4,4 +4,4 @@
     .errors{height:80px; overflow-y:auto;}
 </style>
 <![endif]-->
-<div asp-validation-summary="All" class="errors"></div>
+<div asp-validation-summary="All" class="errors" style="@(ViewContext.ModelState.ErrorCount == 0 ? "display:none" : "")"></div>

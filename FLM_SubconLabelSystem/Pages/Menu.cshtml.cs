@@ -177,6 +177,11 @@ namespace PFRLabelIssuing.Pages
 
         public string GenerateKeywords(string URL, string ID, string Company, string Name, string SystemName)
         {
+            // Strip .aspx extension so URLs map to Razor Pages routes
+            if (!string.IsNullOrEmpty(URL) && URL.EndsWith(".aspx", StringComparison.OrdinalIgnoreCase))
+            {
+                URL = URL.Substring(0, URL.Length - ".aspx".Length);
+            }
             return global::System.Net.WebUtility.HtmlEncode(Url.Content(URL));
         }
 

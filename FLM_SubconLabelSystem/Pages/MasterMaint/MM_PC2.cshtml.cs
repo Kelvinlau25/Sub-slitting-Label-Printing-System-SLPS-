@@ -19,6 +19,9 @@ namespace PFRLabelIssuing.Pages.MasterMaint
 
         public override void BindData()
         {
+            string ulevel = SessionGet("ULEVEL") ?? "";
+            DeleteControl = ulevel != "3";
+
             var list = Library.Database.BLL.PC2.List(
                 "PV_MM_PC2",
                 "ID_MM_PC2",

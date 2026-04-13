@@ -14,6 +14,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="App_Module\**" />
+    <Compile Remove="MasterMaint\**" />
+    <Compile Remove="PopUp\**" />
+    <Compile Remove="Report\**" />
+    <Compile Remove="Transactions\**" />
+    <Content Remove="App_Module\**" />
+    <Content Remove="MasterMaint\**" />
+    <Content Remove="PopUp\**" />
+    <Content Remove="Report\**" />
+    <Content Remove="Transactions\**" />
+    <EmbeddedResource Remove="App_Module\**" />
+    <EmbeddedResource Remove="MasterMaint\**" />
+    <EmbeddedResource Remove="PopUp\**" />
+    <EmbeddedResource Remove="Report\**" />
+    <EmbeddedResource Remove="Transactions\**" />
+    <None Remove="App_Module\**" />
+    <None Remove="MasterMaint\**" />
+    <None Remove="PopUp\**" />
+    <None Remove="Report\**" />
+    <None Remove="Transactions\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SystemWebAdapters" Version="1.4.0" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
     <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="23.6.1" />
@@ -30,6 +53,14 @@
     <ProjectReference Include="Library\Library.Root\Library.Root.csproj" />
     <ProjectReference Include="Library\Library.SQLServer\Library.SQLServer.csproj" />
     <ProjectReference Include="Library\WIP_Process\WIP_Process.csproj" />
+  </ItemGroup>
+
+  <!-- Include static asset folders in publish output (no wwwroot used) -->
+  <ItemGroup>
+    <Content Include="css\**" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="image\**" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="images\**" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="resources\**" CopyToPublishDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>

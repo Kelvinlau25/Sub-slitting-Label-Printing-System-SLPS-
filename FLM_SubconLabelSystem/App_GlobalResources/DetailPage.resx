@@ -151,7 +151,7 @@
     <value>~/WIPRFID_web/Web/acc/MstMaint/MM_Equipment_Reg_Dtl.aspx</value>
   </data>
   <data name="MM_USER" xml:space="preserve">
-    <value>~/MasterMaint/MM_USER_Dtl.aspx</value>
+    <value>~/MasterMaint/MM_USER_Dtl</value>
   </data>
   <data name="MM_RFID_LOC_AREA" xml:space="preserve">
     <value>~/WIPRFID_web/Web/acc/MstMaint/MM_RFID_LOC_AREA_Dtl.aspx</value>
@@ -163,30 +163,30 @@
     <value>~/WIPRFID_web/Web/acc/MstMaint/MM_RFID_Type_Dtl.aspx</value>
   </data>
   <data name="MM_PC1" xml:space="preserve">
-    <value>~/MasterMaint/MM_PC1_Dtl.aspx</value>
+    <value>~/MasterMaint/MM_PC1_Dtl</value>
   </data>
   <data name="MM_PC2_MOTHER" xml:space="preserve">
-    <value>~/MasterMaint/MM_PC2_MOTHER_Dtl.aspx</value>
+    <value>~/MasterMaint/MM_PC2_MOTHER_Dtl</value>
   </data>
   <data name="MM_PC2" xml:space="preserve">
-    <value>~/MasterMaint/MM_PC2_Dtl.aspx</value>
+    <value>~/MasterMaint/MM_PC2_Dtl</value>
   </data>
   <data name="PRINT_ALIGN_INIT" xml:space="preserve">
-    <value>~/MasterMaint/PRINT_ALIGN_INIT_Dtl.aspx</value>
+    <value>~/MasterMaint/PRINT_ALIGN_INIT_Dtl</value>
   </data>
   <data name="MM_COMPANY" xml:space="preserve">
-    <value>~/MasterMaint/MM_COMPANY_Dtl.aspx</value>
+    <value>~/MasterMaint/MM_COMPANY_Dtl</value>
   </data>
   <data name="VIEW_LOT_SLITTING_SERIES" xml:space="preserve">
-    <value>~/MasterMaint/LabelPlan_Dtl.aspx</value>
+    <value>~/MasterMaint/LabelPlan_Dtl</value>
   </data>
   <data name="MM_PRODLINE" xml:space="preserve">
-    <value>~/MasterMaint/MM_PRODLINE_Dtl.aspx</value>
+    <value>~/MasterMaint/MM_PRODLINE_Dtl</value>
   </data>
   <data name="PC2_LOTNO" xml:space="preserve">
-    <value>~/Transactions/SLIT_SERIES_Dtl.aspx</value>
+    <value>~/Transactions/SLIT_SERIES_Dtl</value>
   </data>
   <data name="PV_SUBSLIT_REQUEST_LIST" xml:space="preserve">
-    <value>~/Transactions/SSR_SEARCH_Dtl.aspx</value>
+    <value>~/Transactions/SSR_SEARCH_Dtl</value>
   </data>
 </root>
