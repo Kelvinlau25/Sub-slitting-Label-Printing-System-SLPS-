@@ -1,4 +1,4 @@
-@page
+﻿@page
 @model PFRLabelIssuing.Pages.Transactions.SLIT_SERIES_DtlModel
 @{
     ViewData["PageTitle"] = Model.PageTitle;
@@ -83,6 +83,101 @@
             $('input[name="PC2Customer"]').val(pc2);
             $('input[name="UnitWeightCustomer"]').val(uw);
         }
+
+        // -- Cascading dropdown helpers --
+        function populateSelect(selector, items, selectedValue) {
+            var $sel = $(selector);
+            $sel.find('option:gt(0)').remove();          // keep "--Select--"
+            $.each(items, function (i, val) {
+                var opt = $('<option>').val(val).text(val);
+                if (val === selectedValue) opt.prop('selected', true);
+                $sel.append(opt);
+            });
+        }
+
+        function clearFields() {
+            var args = Array.prototype.slice.call(arguments);
+            $.each(args, function (i, sel) { $(sel).val(''); });
+        }
+
+        function clearSelect(selector) {
+            $(selector).find('option:gt(0)').remove();
+        }
+
+        $(function () {
+            // Ref No changed -> load Production Lines, reset downstream
+            $('select[name="SelectedRefNo"]').on('change', function () {
+                var refno = $(this).val();
+                clearSelect('select[name="SelectedProdLine"]');
+                clearSelect('select[name="SelectedPC1Mother"]');
+                clearSelect('select[name="SelectedPC1Customer"]');
+                clearFields('input[name="PlanDate"]', 'input[name="PC2Mother"]',
+                    'input[name="UnitWeightMother"]', 'input[name="PC2Customer"]',
+                    'input[name="UnitWeightCustomer"]', 'input[name="NoOfSlit"]',
+                    'input[name="LotNo"]');
+
+                if (!refno) return;
+                $.getJSON('?handler=ProdLines&refNo=' + encodeURIComponent(refno), function (data) {
+                    populateSelect('select[name="SelectedProdLine"]', data, '');
+                });
+            });
+
+            // Production Line changed -> load PC1 Mothers, reset downstream
+            $('select[name="SelectedProdLine"]').on('change', function () {
+                var refno = $('select[name="SelectedRefNo"]').val();
+                var prodline = $(this).val();
+                clearSelect('select[name="SelectedPC1Mother"]');
+                clearSelect('select[name="SelectedPC1Customer"]');
+                clearFields('input[name="PC2Mother"]', 'input[name="UnitWeightMother"]',
+                    'input[name="PC2Customer"]', 'input[name="UnitWeightCustomer"]',
+                    'input[name="NoOfSlit"]', 'input[name="LotNo"]',
+                    'input[name="MatrixPos"]', 'input[name="MatrixInc"]');
+
+                if (!refno || !prodline) return;
+                $.getJSON('?handler=PC1Mothers&refNo=' + encodeURIComponent(refno) +
+                    '&prodLine=' + encodeURIComponent(prodline), function (data) {
+                        populateSelect('select[name="SelectedPC1Mother"]', data, '');
+                    });
+            });
+
+            // PC1 Mother changed -> reset PC2 Mother and downstream
+            $('select[name="SelectedPC1Mother"]').on('change', function () {
+                clearSelect('select[name="SelectedPC1Customer"]');
+                clearFields('input[name="PC2Mother"]', 'input[name="UnitWeightMother"]',
+                    'input[name="PC2Customer"]', 'input[name="UnitWeightCustomer"]',
+                    'input[name="NoOfSlit"]', 'input[name="MatrixPos"]', 'input[name="MatrixInc"]');
+            });
+
+            // PC1 Customer changed -> reset PC2 Customer and downstream
+            $('select[name="SelectedPC1Customer"]').on('change', function () {
+                clearFields('input[name="PC2Customer"]', 'input[name="UnitWeightCustomer"]',
+                    'input[name="NoOfSlit"]', 'input[name="MatrixPos"]', 'input[name="MatrixInc"]');
+            });
+        });
+
+        // After PC2 Mother popup sets values, load PC1 Customers
+        var _origOnPC2MotherSelected = onPC2MotherSelected;
+        onPC2MotherSelected = function () {
+            _origOnPC2MotherSelected();
+
+            // Reset customer fields
+            clearSelect('select[name="SelectedPC1Customer"]');
+            clearFields('input[name="PC2Customer"]', 'input[name="UnitWeightCustomer"]');
+
+            var refno = $('select[name="SelectedRefNo"]').val() || '';
+            var prodline = $('select[name="SelectedProdLine"]').val() || '';
+            var pc1mother = $('select[name="SelectedPC1Mother"]').val() || '';
+            var pc2mother = $('input[name="PC2Mother"]').val() || '';
+
+            if (refno && prodline && pc1mother && pc2mother) {
+                $.getJSON('?handler=PC1Customers&refNo=' + encodeURIComponent(refno) +
+                    '&prodLine=' + encodeURIComponent(prodline) +
+                    '&pc1Mother=' + encodeURIComponent(pc1mother) +
+                    '&pc2Mother=' + encodeURIComponent(pc2mother), function (data) {
+                        populateSelect('select[name="SelectedPC1Customer"]', data, '');
+                    });
+            }
+        };
     </script>
 }
 

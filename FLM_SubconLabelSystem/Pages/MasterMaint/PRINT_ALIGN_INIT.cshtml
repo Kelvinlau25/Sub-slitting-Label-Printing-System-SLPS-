@@ -55,13 +55,13 @@
                     <td style="text-align:left; vertical-align:middle;">@row["CREATED_BY"]</td>
                     <td style="text-align:left; vertical-align:middle;">
                         @(row["CREATED_DATE"] != DBNull.Value
-                            ? DateTime.Parse(row["CREATED_DATE"].ToString(), new CultureInfo("en-AU")).ToString("dd/MM/yyyy h:mm:ss tt")
+                            ? DateTime.Parse(row["CREATED_DATE"].ToString(), CultureInfo.InvariantCulture).ToString("dd/MM/yyyy h:mm:ss tt")
                             : "")
                     </td>
                     <td style="text-align:left; vertical-align:middle;">@row["UPDATED_BY"]</td>
                     <td style="text-align:left; vertical-align:middle;">
                         @(row["UPDATED_DATE"] != DBNull.Value
-                            ? DateTime.Parse(row["UPDATED_DATE"].ToString(), new CultureInfo("en-AU")).ToString("dd/MM/yyyy h:mm:ss tt")
+                            ? DateTime.Parse(row["UPDATED_DATE"].ToString(), CultureInfo.InvariantCulture).ToString("dd/MM/yyyy h:mm:ss tt")
                             : "")
                     </td>
                     <td style="text-align:center; vertical-align:middle;">@row["Default_Printer"]</td>

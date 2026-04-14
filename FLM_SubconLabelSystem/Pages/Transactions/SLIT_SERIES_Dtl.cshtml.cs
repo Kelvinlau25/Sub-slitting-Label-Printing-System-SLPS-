@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -170,6 +172,9 @@ namespace PFRLabelIssuing.Pages.Transactions
         {
             ParseQueryString();
 
+            string userId = HttpContext.Session.GetString("gstrUserID") ?? HttpContext.Session.GetString("USERID") ?? "";
+            string userIp = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "";
+
             string cbtypeOfSlit = "";
             string matrixvariable = "0,0";
 
@@ -188,20 +193,19 @@ namespace PFRLabelIssuing.Pages.Transactions
             {
                 temp = Library.Database.BLL.SlitSeries.Maint(Key, CompanyCode.Trim(), SelectedRefNo, LotNo.Trim(),
                     SelectedPC1Mother, PC2Mother, SelectedPC1Customer, PC2Customer, SelectedProdLine,
-                    NoOfSlit.Trim(), PlanDate, cbtypeOfSlit, ((int)Action).ToString());
+                    NoOfSlit.Trim(), PlanDate, cbtypeOfSlit, ((int)Action).ToString(), userId, userIp);
             }
             else
             {
-                // Check lot no dup for add
                 string dupStatus = Library.Database.BLL.CHECK_LOTNO_DUP.check_lotno_dup(CompanyCode.Trim(), LotNo.Trim());
                 if (dupStatus == "1")
                 {
-                    // Duplicate exists - proceed anyway (same as original showDialogue flow)
+                    // duplicate exists - original flow continue
                 }
 
                 temp = Library.Database.BLL.SlitSeries.Maint("0", CompanyCode.Trim(), SelectedRefNo, LotNo.Trim(),
                     SelectedPC1Mother, PC2Mother, SelectedPC1Customer, PC2Customer, SelectedProdLine,
-                    NoOfSlit.Trim(), PlanDate, cbtypeOfSlit, ((int)Action).ToString());
+                    NoOfSlit.Trim(), PlanDate, cbtypeOfSlit, ((int)Action).ToString(), userId, userIp);
             }
 
             if (temp == "1")
@@ -215,23 +219,121 @@ namespace PFRLabelIssuing.Pages.Transactions
         public IActionResult OnPostDelete()
         {
             ParseQueryString();
+
+            // Reload display data because OnPost will not automatically keep the display fields populated
             LoadDisplayData();
 
-            string temp = Library.Database.BLL.SlitSeries.Maint(Key, DisplayCompCode, DisplayRefNo, DisplayLotNo,
-                DisplayProdLine, DisplayPC1Mother, DisplayPC2Mother, DisplayPC1Customer, DisplayPC2Customer,
-                DisplayLotNo, DisplayNumOfSlit, DisplayTypeOfSlit,
-                ((int)EnumAction.Delete).ToString());
+            string userId = HttpContext.Session.GetString("gstrUserID") ?? HttpContext.Session.GetString("USERID") ?? "";
+            string userIp = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "";
+
+            string temp = Library.Database.BLL.SlitSeries.Maint(
+                Key,
+                DisplayCompCode?.Trim() ?? "",
+                DisplayRefNo?.Trim() ?? "",
+                DisplayLotNo?.Trim() ?? "",
+                DisplayPC1Mother?.Trim() ?? "",
+                DisplayPC2Mother?.Trim() ?? "",
+                DisplayPC1Customer?.Trim() ?? "",
+                DisplayPC2Customer?.Trim() ?? "",
+                DisplayProdLine?.Trim() ?? "",
+                DisplayNumOfSlit?.Trim() ?? "",
+                DisplayPlanYrMth?.Trim() ?? "",
+                dtTypeOfSlitValue(),
+                ((int)EnumAction.Delete).ToString(),
+                userId,
+                userIp
+            );
 
             if (temp == "1")
+            {
                 return Redirect(GetUrl(EnumAction.None));
+            }
 
             StartupScript = "alert('" + (temp == "0" ? "Delete failed" : temp.Replace("'", "\\'")) + "');";
+            LoadDisplayData();
             return Page();
+        }
+
+        private string dtTypeOfSlitValue()
+        {
+            DataTable dt = Library.Database.BLL.SlitSeries.GetData(Key);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                return dt.Rows[0]["TYPE_OF_SLIT"]?.ToString() ?? "";
+            }
+
+            return "";
         }
 
         public IActionResult OnPostReset()
         {
             return Redirect(Request.Path + Request.QueryString);
+        }
+
+        // -- AJAX handlers for cascading dropdowns -----------------------
+
+        /// <summary>
+        /// Returns production lines for a given RefNo.
+        /// Called when the Ref No dropdown changes.
+        /// </summary>
+        public IActionResult OnGetProdLines(string refNo)
+        {
+            if (string.IsNullOrEmpty(refNo))
+                return new JsonResult(new List<string>());
+
+            DataTable dt = Library.Database.BLL.SlitSeries.GetPRODLINE2(refNo);
+            var items = DistinctColumnValues(dt, "PRODLINE_NO");
+            return new JsonResult(items);
+        }
+
+        /// <summary>
+        /// Returns PC1 Mother items for a given RefNo + ProdLine.
+        /// Called when the Production Line dropdown changes.
+        /// </summary>
+        public IActionResult OnGetPC1Mothers(string refNo, string prodLine)
+        {
+            if (string.IsNullOrEmpty(refNo) || string.IsNullOrEmpty(prodLine))
+                return new JsonResult(new List<string>());
+
+            DataTable dt = Library.Database.BLL.SlitSeries.GetDDLData2_Rev01(refNo, prodLine);
+            var items = DistinctColumnValues(dt, "PC1_MOTHER");
+            return new JsonResult(items);
+        }
+
+        /// <summary>
+        /// Returns PC1 Customer items for a given RefNo + ProdLine + PC1Mother + PC2Mother.
+        /// Called when the PC1 Mother dropdown changes or after PC2 Mother is selected.
+        /// </summary>
+        public IActionResult OnGetPC1Customers(string refNo, string prodLine, string pc1Mother, string pc2Mother)
+        {
+            if (string.IsNullOrEmpty(refNo) || string.IsNullOrEmpty(prodLine)
+                || string.IsNullOrEmpty(pc1Mother) || string.IsNullOrEmpty(pc2Mother))
+                return new JsonResult(new List<string>());
+
+            DataTable dtmaxRev = Library.Database.BLL.SubSlitRequest.chkRefNo(refNo);
+            string idSubSlit = dtmaxRev.Rows.Count > 0 ? dtmaxRev.Rows[0]["ID_SUBSLIT_REQUEST"].ToString() : "";
+
+            DataTable dt = Library.Database.BLL.SlitSeries.GetDDLPC1Cust_Rev01(refNo, idSubSlit, prodLine, pc1Mother, pc2Mother);
+            var items = DistinctColumnValues(dt, "PC1");
+            return new JsonResult(items);
+        }
+
+        /// <summary>
+        /// Extracts distinct, non-empty values from a DataTable column.
+        /// Mirrors the original VB filter_duplicate_value_4_list function.
+        /// </summary>
+        private static List<string> DistinctColumnValues(DataTable dt, string columnName)
+        {
+            var result = new List<string>();
+            if (dt == null || dt.Rows.Count == 0) return result;
+
+            foreach (DataRow row in dt.Rows)
+            {
+                string val = row[columnName]?.ToString()?.Trim() ?? "";
+                if (val.Length > 0 && !result.Contains(val))
+                    result.Add(val);
+            }
+            return result;
         }
     }
 }

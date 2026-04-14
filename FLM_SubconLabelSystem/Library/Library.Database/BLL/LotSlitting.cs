@@ -30,24 +30,37 @@ namespace Library.Database.BLL
             }
         }
 
-        public static string Maint(string ID, string LOTNO, string var2, string var3, string var4,
-                                    string var5, string var6, string var7,
-                                    string var8, string var9, string var10,
-                                    string var11, string var12, string RecType)
+        public static string Maint(string ID, string LOTNO, string var2, string var3, string var4, string var5,
+                                   string var6, string var7, string var8, string var9, string var10,
+                                   string var11, string var12, string RecType)
         {
-            using (var _Dal = new DAL.LotSlitting())
+            using (var _dal = new DAL.LotSlitting())
             {
                 string str = System.Web.HttpContext.Current.Session["gstrUserID"].ToString();
-                string result = _Dal.Maint(ID, LOTNO, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, RecType, str, System.Web.HttpContext.Current.Request.UserHostAddress.ToString());
+                string result = _dal.Maint(ID, LOTNO, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, RecType, str, System.Web.HttpContext.Current.Request.UserHostAddress.ToString());
 
                 if (result == "1")
-                {
-                    _Dal.Commit();
-                }
+                    _dal.Commit();
                 else
-                {
-                    _Dal.Rollback();
-                }
+                    _dal.Rollback();
+
+                return result;
+            }
+        }
+
+        public static string Maint(string ID, string LOTNO, string var2, string var3, string var4, string var5,
+                                   string var6, string var7, string var8, string var9, string var10,
+                                   string var11, string var12, string RecType, string userId, string userIp)
+        {
+            using (var _dal = new DAL.LotSlitting())
+            {
+                string result = _dal.Maint(ID, LOTNO, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, RecType, userId, userIp);
+
+                if (result == "1")
+                    _dal.Commit();
+                else
+                    _dal.Rollback();
+
                 return result;
             }
         }

@@ -82,6 +82,7 @@ namespace PFRLabelIssuing.Pages
                     HttpContext.Session.SetString("ULEVEL", ulevel);
 
                     LoadAccessRights(user.UserId, aclConnStr, systemName);
+                    HttpContext.Session.SetString("COMPANYCODE", user.CompanyCode);
                     HttpContext.Session.SetString("ABORESSION", user.CompanyCode.Replace("-", ""));
                     HttpContext.Session.SetString("gstrUserID", user.UserId);
 

@@ -150,6 +150,28 @@ namespace Library.Database.BLL
             }
         }
 
+        public static string Maint(string ID, string CompCode, string RefNo, string LotNo, string PC1_Mother, string PC2_Mother,
+                                    string PC1_Cust, string PC2_Cust, string ProdLine,
+                                    string No_Of_Slit, string Plan_Year_Mth, string Type_Of_Slit,
+                                    string RecType, string userId, string userIp)
+        {
+            using (var _Dal = new DAL.SlitSeries())
+            {
+                string result = _Dal.Maint(ID, CompCode, RefNo, LotNo, PC1_Mother, PC2_Mother, PC1_Cust, PC2_Cust,
+                    ProdLine, No_Of_Slit, Plan_Year_Mth, Type_Of_Slit, RecType, userId, userIp);
+
+                if (result == "1")
+                {
+                    _Dal.Commit();
+                }
+                else
+                {
+                    _Dal.Rollback();
+                }
+                return result;
+            }
+        }
+
         public static string CreateSlitRec(string B_Company_Code, int B_ID_PC2_LOTNO,
                                             int B_TYPE_OF_SLIT, int B_MATRIX_POS, int B_MATRIX_INC, string B_LOTNO, int B_NO_OF_SLIT, string B_User_ID)
         {

@@ -54,21 +54,21 @@ namespace PFRLabelIssuing.Pages.MasterMaint
             if (dt != null && dt.Rows.Count > 0)
             {
                 DataRow r = dt.Rows[0];
-                DisplayCompanyCode = r["COMPANYCODE"].ToString();
-                DisplayPlanYearMonth = r["PLAN_YEAR_MONTH"].ToString();
-                DisplayProdLine = r["PRODLINE_NO"].ToString();
-                DisplayPC1Mother = r["PC1_MOTHER"].ToString();
-                DisplayPC2Mother = r["PC2_MOTHER"].ToString();
-                DisplayUnitWeightMother = r["M_UNITWEIGHT"].ToString();
-                DisplayPC1Customer = r["PC1_CUST"].ToString();
-                DisplayPC2Customer = r["PC2_CUST"].ToString();
-                DisplayUnitWeightCustomer = r["C_UNITWEIGHT"].ToString();
-                DisplayLotNo = r["LOTNO"].ToString();
-                DisplayLotSlitNo = r["SLIT_LOT_NO"].ToString();
-                DisplayStatus = r["STATUS"].ToString();
-                CreatedBy = r["CREATED_BY"].ToString();
+                DisplayCompanyCode = r["COMPANYCODE"]?.ToString() ?? string.Empty;
+                DisplayPlanYearMonth = r["PLAN_YEAR_MONTH"]?.ToString() ?? string.Empty;
+                DisplayProdLine = r["PRODLINE_NO"]?.ToString() ?? string.Empty;
+                DisplayPC1Mother = r["PC1_MOTHER"]?.ToString() ?? string.Empty;
+                DisplayPC2Mother = r["PC2_MOTHER"]?.ToString() ?? string.Empty;
+                DisplayUnitWeightMother = r["M_UNITWEIGHT"]?.ToString() ?? string.Empty;
+                DisplayPC1Customer = r["PC1_CUST"]?.ToString() ?? string.Empty;
+                DisplayPC2Customer = r["PC2_CUST"]?.ToString() ?? string.Empty;
+                DisplayUnitWeightCustomer = r["C_UNITWEIGHT"]?.ToString() ?? string.Empty;
+                DisplayLotNo = r["LOTNO"]?.ToString() ?? string.Empty;
+                DisplayLotSlitNo = r["SLIT_LOT_NO"]?.ToString() ?? string.Empty;
+                DisplayStatus = r["STATUS"]?.ToString() ?? string.Empty;
+                CreatedBy = r["CREATED_BY"]?.ToString() ?? string.Empty;
                 CreatedDate = r["CREATED_DATE"] != DBNull.Value ? Convert.ToDateTime(r["CREATED_DATE"]) : (DateTime?)null;
-                UpdatedBy = r["UPDATED_BY"].ToString();
+                UpdatedBy = r["UPDATED_BY"]?.ToString() ?? string.Empty;
                 UpdatedDate = r["UPDATED_DATE"] != DBNull.Value ? Convert.ToDateTime(r["UPDATED_DATE"]) : (DateTime?)null;
             }
         }
@@ -78,11 +78,33 @@ namespace PFRLabelIssuing.Pages.MasterMaint
             ParseQueryString();
             LoadDisplayData();
 
-            string result = Library.Database.BLL.LotSlitting.Maint(Key, DisplayLotNo, "", "", "", "", "", "", "", "", "", "", "", ((int)EnumAction.Delete).ToString());
+            string userId = HttpContext.Session.GetString("gstrUserID") ?? HttpContext.Session.GetString("USERID") ?? "";
+            string userIp = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "";
+
+            string result = Library.Database.BLL.LotSlitting.Maint(
+                Key,
+                DisplayLotNo,
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ((int)EnumAction.Delete).ToString(),
+                userId,
+                userIp
+            );
+
             if (result == "1")
                 return Redirect(GetUrl(EnumAction.None));
 
             RegisterStartupScript("alert('" + (result == "0" ? "Delete failed" : result.Replace("'", "\\'")) + "');");
+            LoadDisplayData();
             return Page();
         }
 
