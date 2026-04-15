@@ -1,93 +1,132 @@
 @page
 @model PFRLabelIssuing.Pages.MasterMaint.PRINT_ALIGN_INITModel
-@using System.Globalization
+@using System.Data
+
 @{
     ViewData["PageTitle"] = Model.PageTitle;
 }
+
 <partial name="_Title" />
 <partial name="_Search" />
+
 @{
     ViewData["ShowAdd"] = Model.AddControl;
     ViewData["AddUrl"] = Model.GetUrl(BasePageModel.EnumAction.Add);
     ViewData["ShowPrint"] = Model.PrintControl;
 }
+
 <partial name="_GridHeader" />
+
 <table width="100%">
-<tr><td>
-    <table width="100%" class="gvGeneral">
-        <thead class="title_bar">
-            <tr>
-                @if (Model.DeleteControl)
-                {
-                    <th style="text-align:center; vertical-align:middle;">Del.</th>
-                }
-                <th style="width:15%; text-align:left; vertical-align:middle;">Company Code</th>
-                <th style="width:18%; text-align:left; vertical-align:middle;">Printer Name</th>
-                <th style="width:12%; text-align:left; vertical-align:middle;">Created By</th>
-                <th style="width:18%; text-align:left; vertical-align:middle;">Created Date</th>
-                <th style="width:12%; text-align:left; vertical-align:middle;">Updated By</th>
-                <th style="width:18%; text-align:left; vertical-align:middle;">Updated Date</th>
-                <th style="width:8%; text-align:center; vertical-align:middle;">Default</th>
-                @if (Model.ViewHistoryControl)
-                {
-                    <th style="text-align:center; vertical-align:middle;">Audit Trail</th>
-                }
-            </tr>
-        </thead>
-        <tbody>
-        @if (Model.GridData != null && Model.GridData.Rows.Count > 0)
-        {
-            @foreach (DataRow row in Model.GridData.Rows)
-            {
-                <tr onmouseover="Highlight(this)" onmouseout="UnHighlight(this)">
-                    @if (Model.DeleteControl)
+    <tr>
+        <td>
+            <table width="100%" class="gvGeneral">
+                <thead class="title_bar">
+                    <tr>
+                        @if (Model.DeleteControl)
+                        {
+                            <th style="text-align:center; vertical-align:middle;">Del.</th>
+                        }
+                        <th style="width:15%; text-align:left; vertical-align:middle;">Company Code</th>
+                        <th style="width:18%; text-align:left; vertical-align:middle;">Printer Name</th>
+                        <th style="width:12%; text-align:left; vertical-align:middle;">Created By</th>
+                        <th style="width:18%; text-align:left; vertical-align:middle;">Created Date</th>
+                        <th style="width:12%; text-align:left; vertical-align:middle;">Updated By</th>
+                        <th style="width:18%; text-align:left; vertical-align:middle;">Updated Date</th>
+                        <th style="width:8%; text-align:center; vertical-align:middle;">Default</th>
+                        @if (Model.ViewHistoryControl)
+                        {
+                            <th style="text-align:center; vertical-align:middle;">Audit Trail</th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.GridData != null && Model.GridData.Rows.Count > 0)
                     {
-                        <td style="text-align:center; vertical-align:middle;">
-                            <a href="@Model.GetUrl(BasePageModel.EnumAction.Delete, row["ID_Print_Align_Init"].ToString())">
-                                <img src="@Url.Content("~/image/delete1.gif")" alt="Delete" border="0" />
-                            </a>
-                        </td>
+                        @foreach (DataRow row in Model.GridData.Rows)
+                        {
+                            string createdDateText = "";
+                            string updatedDateText = "";
+
+                            if (row["CREATED_DATE"] != DBNull.Value && row["CREATED_DATE"] != null)
+                            {
+                                try
+                                {
+                                    createdDateText = Convert.ToDateTime(row["CREATED_DATE"]).ToString("dd/MM/yyyy h:mm:ss tt");
+                                }
+                                catch
+                                {
+                                    createdDateText = row["CREATED_DATE"]?.ToString() ?? "";
+                                }
+                            }
+
+                            if (row["UPDATED_DATE"] != DBNull.Value && row["UPDATED_DATE"] != null)
+                            {
+                                try
+                                {
+                                    updatedDateText = Convert.ToDateTime(row["UPDATED_DATE"]).ToString("dd/MM/yyyy h:mm:ss tt");
+                                }
+                                catch
+                                {
+                                    updatedDateText = row["UPDATED_DATE"]?.ToString() ?? "";
+                                }
+                            }
+
+                            <tr onmouseover="Highlight(this)" onmouseout="UnHighlight(this)">
+                                @if (Model.DeleteControl)
+                                {
+                                    <td style="text-align:center; vertical-align:middle;">
+                                        <a href="@Model.GetUrl(BasePageModel.EnumAction.Delete, row["ID_Print_Align_Init"].ToString())">
+                                            <img src="@Url.Content("~/image/delete1.gif")" alt="Delete" border="0" />
+                                        </a>
+                                    </td>
+                                }
+
+                                <td style="text-align:left; vertical-align:middle;">@row["CompanyCode"]</td>
+
+                                <td style="text-align:left; vertical-align:middle;">
+                                    <a href="@Model.GetUrl(BasePageModel.EnumAction.View, row["ID_Print_Align_Init"].ToString())">
+                                        @row["Printer_Name"]
+                                    </a>
+                                </td>
+
+                                <td style="text-align:left; vertical-align:middle;">@row["CREATED_BY"]</td>
+                                <td style="text-align:left; vertical-align:middle;">@createdDateText</td>
+                                <td style="text-align:left; vertical-align:middle;">@row["UPDATED_BY"]</td>
+                                <td style="text-align:left; vertical-align:middle;">@updatedDateText</td>
+                                <td style="text-align:center; vertical-align:middle;">@row["Default_Printer"]</td>
+
+                                @if (Model.ViewHistoryControl)
+                                {
+                                    <td style="text-align:center; vertical-align:middle;">
+                                        <a href="@Model.GetUrl(BasePageModel.EnumAction.History, row["ID_Print_Align_Init"].ToString())" target="_blank">View</a>
+                                    </td>
+                                }
+                            </tr>
+                        }
                     }
-                    <td style="text-align:left; vertical-align:middle;">@row["CompanyCode"]</td>
-                    <td style="text-align:left; vertical-align:middle;">
-                        <a href="@Model.GetUrl(BasePageModel.EnumAction.View, row["ID_Print_Align_Init"].ToString())">@row["Printer_Name"]</a>
-                    </td>
-                    <td style="text-align:left; vertical-align:middle;">@row["CREATED_BY"]</td>
-                    <td style="text-align:left; vertical-align:middle;">
-                        @(row["CREATED_DATE"] != DBNull.Value
-                            ? DateTime.Parse(row["CREATED_DATE"].ToString(), CultureInfo.InvariantCulture).ToString("dd/MM/yyyy h:mm:ss tt")
-                            : "")
-                    </td>
-                    <td style="text-align:left; vertical-align:middle;">@row["UPDATED_BY"]</td>
-                    <td style="text-align:left; vertical-align:middle;">
-                        @(row["UPDATED_DATE"] != DBNull.Value
-                            ? DateTime.Parse(row["UPDATED_DATE"].ToString(), CultureInfo.InvariantCulture).ToString("dd/MM/yyyy h:mm:ss tt")
-                            : "")
-                    </td>
-                    <td style="text-align:center; vertical-align:middle;">@row["Default_Printer"]</td>
-                    @if (Model.ViewHistoryControl)
+                    else
                     {
-                        <td style="text-align:center; vertical-align:middle;">
-                            <a href="@Model.GetUrl(BasePageModel.EnumAction.History, row["ID_Print_Align_Init"].ToString())" target="_blank">View</a>
-                        </td>
+                        <tr>
+                            <td colspan="@(7 + (Model.DeleteControl ? 1 : 0) + (Model.ViewHistoryControl ? 1 : 0))"
+                                style="text-align:center; color:red; font-weight:bold;">
+                                Record Not Found
+                            </td>
+                        </tr>
                     }
-                </tr>
-            }
-        }
-        else
-        {
-            <tr><td colspan="@(7 + (Model.DeleteControl ? 1 : 0) + (Model.ViewHistoryControl ? 1 : 0))" style="text-align:center; color:red; font-weight:bold;">Record Not Found</td></tr>
-        }
-        </tbody>
-    </table>
-</td></tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
 </table>
+
 @{
     ViewData["TotalRecords"] = Model.TotalRecords;
     ViewData["TotalPages"] = Model.TotalPages;
     ViewData["CurrentPage"] = Model.PageNo;
     ViewData["BaseListUrl"] = Model.GenerateList;
 }
+
 <partial name="_GridFooter" />
 
 <table style="width: 636px">
@@ -96,8 +135,10 @@
     </tr>
     <tr>
         <td>
-            1. For first time installation, please download&nbsp;<a href="@Url.Page("PRINT_ALIGN_INIT", "DownloadExe")">here</a>
-            &nbsp;and settings <a href="@Url.Page("PRINT_ALIGN_INIT", "DownloadSettings")">here</a>
+            1. For first time installation, please download&nbsp;
+            <a href="@Url.Page("PRINT_ALIGN_INIT", "DownloadExe")">here</a>
+            &nbsp;and settings
+            <a href="@Url.Page("PRINT_ALIGN_INIT", "DownloadSettings")">here</a>
         </td>
     </tr>
     <tr>
